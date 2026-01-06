@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Meta - ProDig</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        #status-message {
+            text-align: center;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .success {
+            background-color: #25d366;
+            color: white;
+        }
+        
+        .error {
+            background-color: #ff6b6b;
+            color: white;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .fb-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .fb-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .animated {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro con Meta</h1>
+        <div id="status-message"></div>
+
+        <!-- Cargando SDK -->
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+        <script>
+            // Inicialización del SDK
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId: '3710976249209678', // el ID de su aplicación va aquí
+                    autoLogAppEvents: true,
+                    xfbml: true,
+                    version: 'v23.0' // La versión de Graph API va aquí
+                });
+            };
+
+            // Escucha de eventos del mensaje de registro de sesión
+            window.addEventListener('message', (event) => {
+                if (!event.origin.endsWith('facebook.com')) return;
+                try {
+                    const data = JSON.parse(event.data);
+                    if (data.type === 'WA_EMBEDDED_SIGNUP') {
+                        console.log('message event:', data); // eliminar después de probar
+                        // tu código va aquí
+                    }
+                } catch {
+                    console.log('message event:', event.data); // eliminar después de probar
+                    // tu código va aquí
+                }
+            });
+
+            // Función para mostrar mensajes de estado
+            const showStatus = (message, isError = false) => {
+                const statusDiv = document.getElementById('status-message');
+                statusDiv.textContent = message;
+                statusDiv.className = isError ? 'error' : 'success';
+                statusDiv.style.display = 'block';
+                setTimeout(() => {
+                    statusDiv.style.display = 'none';
+                }, 5000);
+            };
+
+            // Respuesta de devolución de llamada
+            const fbLoginCallback = (response) => {
+                if (response.authResponse) {
+                    const code = response.authResponse.code;
+                    console.log('response: ', code);
+                    showStatus('Inicio de sesión exitoso');
+                } else {
+                    console.log('response: ', response);
+                    showStatus('No se pudo iniciar sesión. Por favor, intenta de nuevo.', true);
+                }
+            }
+
+            // Método de lanzamiento y registro de devolución de llamada
+            const launchWhatsAppSignup = () => {
+                FB.login(fbLoginCallback, {
+                    config_id: '24703602615984147', // su ID de configuración va aquí
+                    response_type: 'code',
+                    override_default_response_type: true,
+                    extras: {
+                        setup: {},
+                    }
+                });
+            }
+        </script>
+
+        <button onclick="launchWhatsAppSignup()" class="fb-button animated">
+            Iniciar sesión con Facebook
+        </button>
+    </div>
+</body>
+</html>

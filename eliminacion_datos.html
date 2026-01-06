@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminación de Datos - Prospectiva Digital</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f8f9fa; }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .logo { font-size: 1.8rem; font-weight: bold; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; transition: all 0.3s ease; }
+        .nav-links a:hover { transform: translateY(-2px); }
+        main { padding: 120px 2rem 60px 2rem; min-height: calc(100vh - 100px); }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 2rem 3rem; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); text-align: center; }
+        .container h3 { font-size: 2rem; color: #0a2b4c; border-bottom: 2px solid #e1e8ed; padding-bottom: 10px; margin-bottom: 1.5rem; }
+        .container p { color: #555; margin-bottom: 1rem; }
+        .container strong { color: #0a2b4c; }
+        #eliminarDatosBtn { background-color: #d9534f; color: white; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; transition: background-color 0.3s ease, opacity 0.3s ease; margin-top: 1rem; }
+        #eliminarDatosBtn:hover { background-color: #c9302c; }
+        #eliminarDatosBtn:disabled { background-color: #aaa; cursor: not-allowed; }
+        #mensajeConfirmacion { display: none; color: #28a745; font-weight: bold; margin-top: 20px; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 2rem 0; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo" style="color: white; text-decoration: none;">ProDig</a>
+            <ul class="nav-links">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="privacidad.html">Privacidad</a></li>
+                <li><a href="condiciones.html">Condiciones</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h3>Instrucciones para la Eliminación de Datos de Usuario</h3>
+            <p>Si desea que eliminemos sus datos personales de nuestros registros, por favor, utilice el siguiente botón.</p>
+            <p>Al hacer clic en el botón "Solicitar Eliminación", se enviará una solicitud automática para procesar su petición. La eliminación de sus datos se completará en un plazo máximo de <strong>48 horas</strong>.</p>
+            <p><strong>Importante:</strong> La eliminación de sus datos puede afectar su capacidad para utilizar ciertos servicios o funcionalidades de nuestro sitio web.</p>
+            
+            <form id="elimination-form" action="https://formspree.io/f/xwpbenqd" method="POST">
+                <input type="hidden" name="_subject" value="Solicitud de Eliminación de Datos de Usuario">
+                <input type="hidden" name="message" value="Un usuario ha solicitado la eliminación de sus datos personales desde la página web. Por favor, proceder según el protocolo.">
+                <button type="submit" id="eliminarDatosBtn">Solicitar Eliminación de Datos</button>
+            </form>
+
+            <p id="mensajeConfirmacion">¡Solicitud enviada! Su petición de eliminación de datos ha sido recibida y será procesada en un plazo máximo de 48 horas.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Prospectiva Digital. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        const form = document.getElementById('elimination-form');
+        const button = document.getElementById('eliminarDatosBtn');
+        const confirmationMessage = document.getElementById('mensajeConfirmacion');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            button.disabled = true;
+            button.textContent = 'Enviando...';
+
+            const data = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    form.style.display = 'none';
+                    confirmationMessage.style.display = 'block';
+                } else {
+                    throw new Error('Error en la respuesta del servidor.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Hubo un problema al enviar la solicitud. Por favor, intente de nuevo más tarde o contacte a mauricio.pineda@prospectivadigital.com');
+                button.disabled = false;
+                button.textContent = 'Solicitar Eliminación de Datos';
+            }
+        });
+    </script>
+</body>
+</html>
