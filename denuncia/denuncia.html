@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denuncia Pública - HostGator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #d9534f;
+            --secondary-color: #5bc0de;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --container-bg: #fff;
+            --border-color: #eee;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 960px;
+            margin: 20px auto;
+            overflow: hidden;
+            padding: 20px;
+            background: var(--container-bg);
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        #language-selector {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        #language-selector select {
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .section {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .complaint-text {
+            width: 100%;
+            height: 350px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            box-sizing: border-box;
+            background-color: #fafafa;
+            resize: none;
+            line-height: 1.5;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            height: 100%;
+            width: 2px;
+            background: var(--primary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item::before {
+            content: '🗓️';
+            position: absolute;
+            left: 5px;
+            top: 0;
+            font-size: 20px;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .timeline-description {
+            margin-top: 5px;
+        }
+        
+        .evidence-container {
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            margin-bottom: 20px;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .evidence-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .evidence-item img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .evidence-item p {
+            max-width: 600px;
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 20px auto;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-button:hover {
+            background-color: #46b8da;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="language-selector">
+            <label for="lang-select">Choose Language:</label>
+            <select id="lang-select" onchange="switchLanguage()">
+                <option value="en" selected>English</option>
+                <option value="es">Español</option>
+            </select>
+        </div>
+
+        <div id="en-content" style="display: block;">
+            <header>
+                <h1>Timeline and Evidence of the Complaint against HostGator</h1>
+                <p>For breach of technical support value proposition and deficient service.</p>
+            </header>
+            
+            <section class="section">
+                <h2>Formal Complaint Statement</h2>
+                <textarea class="complaint-text" readonly>
+To: Newfold Digital (HostGator Parent Company)
+
+Subject: Claim for Breach of Contract and Lack of Adequate Technical Support - Ticket #1549419
+
+From: HÉCTOR MAURICIO PINEDA MORA
+Email: hmauricio.pineda@gmail.com
+Phone: 3144897092
+
+Dear Representatives of Newfold Digital,
+
+I am writing to file a formal complaint against your subsidiary, HostGator, due to a severe and prolonged breach in the provision of their technical support service, which has resulted in a complete paralysis of my digital operations. The situation is summarized by the failure to resolve a technical issue that has persisted for six days, despite the promise of support with a maximum response time of 24 hours.
+
+Below, I detail the events in chronological order, based on the communications that I attach as evidence (email and chats):
+
+August 20, 2025: I acquired a VPS plan with n8n and a domain automatizarempresa.online. The same day, I opened support ticket #1549419 to resolve two critical issues: the main domain change and the non-receipt of the verification code via text message.
+
+August 21, 2025: I received a generic response from a virtual assistant.
+
+August 21 and August 23, 2025: Due to the lack of a real solution, I re-contacted your team, even providing a detailed video to illustrate the problem. These requests did not receive a substantial response.
+
+August 25, 2025: A human support agent, Bruno J., responded to my request, but only to inform me that he "was beginning to process" my case, almost 5 days after I opened the ticket.
+
+August 26, 2025: The support team adjusted some DNS, but it was still useless because the domain does not point to the hosting, and HTTPS is not working. Therefore, my automations are not running because they lack HTTPS.
+
+The technical issue remains unresolved as of today, August 26, 2025. The breach of your value proposition, which advertises technical support within a maximum of 24 hours, is clear. This not only demonstrates a deficiency in your service but also negligence in addressing your customers' needs. My attempts to seek help through social media platforms like "X" (Twitter) also failed to generate a solution, instead referring me back to the same ineffective support channel.
+
+I request an immediate investigation into my case and appropriate compensation for the time, resources, and business opportunities lost due to your lack of response and resolution.
+
+I look forward to your prompt response and resolution.
+
+Sincerely,
+
+HÉCTOR MAURICIO PINEDA MORA
+                </textarea>
+            </section>
+
+            <section class="section">
+                <h2>Timeline of Events</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">August 20, 2025</div>
+                        <div class="timeline-description">Purchase of the service and first contact with support (Ticket #1549419) to change the main domain and report issues with the verification code.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">August 21, 2025</div>
+                        <div class="timeline-description">Response from a virtual assistant with generic instructions. You reiterate the problem by sending a video.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">August 23, 2025</div>
+                        <div class="timeline-description">Complaint about lack of response over the weekend.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">August 25, 2025</div>
+                        <div class="timeline-description">A human support agent responds, stating that he is beginning to process the case, almost 5 days after the ticket was opened.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">August 26, 2025</div>
+                        <div class="timeline-description">Support adjusted some DNS, but it did not help. The domain still doesn't point to the hosting, and HTTPS is not working, so the automations do not run.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section evidence-container">
+                <h2>Case Evidence</h2>
+                <h3>Original video of the complaint</h3>
+                <p>Video demonstrating the initial problem with the service configuration.</p>
+                <div class="video-wrapper">
+                    <iframe src="https://drive.google.com/file/d/16SZ0hCZzW7Cio5n6n03T2r3rRsw4JKxa/preview" allow="autoplay; fullscreen"></iframe>
+                </div>
+
+                <h3>New video (August 26, 2025)</h3>
+                <p>Video demonstrating that after the DNS change, the problem persists.</p>
+                <div class="video-wrapper">
+                    <iframe src="https://drive.google.com/file/d/1ia9dLuDQzufh0r1ID8AZvILK94yeYWkw/preview" allow="autoplay; fullscreen"></iframe>
+                </div>
+
+                <div class="evidence-item">
+                    <p>It asks me to configure HTTPS, but if it doesn't allow me to configure the domain, I can't do anything with the hosting.</p>
+                    <img src="http://www.prospectivadigital.com/denuncia/hostingSinFuncionar.png" alt="Screenshot of non-functional hosting">
+                </div>
+
+                <div class="evidence-item">
+                    <p>It asks me to configure the domain, but the blue button doesn't work and I can't do anything with the domain.</p>
+                    <img src="http://www.prospectivadigital.com/denuncia/dominioNoConfigura.png" alt="Screenshot of unconfigurable domain">
+                </div>
+
+                <div class="evidence-item">
+                    <p>I even wrote to them on Twitter and their response was to refer me back to the same problem.</p>
+                    <img src="http://www.prospectivadigital.com/denuncia/x.jpg" alt="Screenshot of the response on X (Twitter)">
+                </div>
+                
+                <h3>Support Documents</h3>
+                <p>The PDF file with emails and support chats can be downloaded directly from your web page.</p>
+                <a href="http://www.prospectivadigital.com/denuncia/UnidosCorreos.pdf" class="download-button" download>Download Support Files</a>
+            </section>
+        </div>
+
+        <div id="es-content" style="display: none;">
+            <header>
+                <h1>Cronología y Evidencia de la Denuncia contra HostGator</h1>
+                <p>Por incumplimiento de promesa de valor de soporte técnico y servicio deficiente.</p>
+            </header>
+            
+            <section class="section">
+                <h2>Declaración de Denuncia</h2>
+                <textarea class="complaint-text" readonly>
+A la atención de: Newfold Digital (Matriz de HostGator)
+
+Asunto: Reclamación por Incumplimiento de Contrato y Falta de Soporte Técnico Adecuado - Ticket #1549419
+
+De: HÉCTOR MAURICIO PINEDA MORA
+Email: hmauricio.pineda@gmail.com
+Teléfono: 3144897092
+
+Estimados Representantes de Newfold Digital,
+
+Me dirijo a ustedes para presentar una denuncia formal contra su subsidiaria, HostGator, debido a un grave y prolongado incumplimiento en la prestación de su servicio de soporte técnico, lo cual ha resultado en una completa parálisis de mis operaciones digitales. La situación se resume en la falta de solución a un problema técnico que ha persistido durante seis días, a pesar de la promesa de soporte con un tiempo de respuesta de 24 horas.
+
+A continuación, detallo los eventos en orden cronológico, con base en las comunicaciones que adjunto como evidencia (correo electrónico y chats):
+
+20 de agosto de 2025: Adquirí un plan de VPS con n8n y un dominio automatizarempresa.online. El mismo día, abrí el ticket de soporte #1549419 para resolver dos problemas críticos: el cambio de dominio principal y la no recepción del código de verificación por mensaje de texto.
+
+21 de agosto de 2025: Recibí una respuesta genérica de un asistente virtual.
+
+21 de agosto de 2025 y 23 de agosto de 2025: Ante la falta de una solución real, volví a contactar a su equipo, incluso proporcionando un video detallado para ilustrar el problema. Estas solicitudes no recibieron una respuesta sustancial.
+
+25 de agosto de 2025: Un agente de soporte, Bruno J., respondió a mi solicitud, pero solo para informarme que "estaba empezando a tramitar" mi caso, casi 5 días después de que abrí el ticket.
+
+26 de agosto de 2025: El soporte ajustó algunos DNS, pero no sirvió de nada porque el dominio no apunta hacia el hosting y no sirve el HTTPS, por lo tanto, las automatizaciones que hago no me corren porque no tienen el HTTPS.
+
+El problema continúa sin resolverse hasta el día de hoy, 26 de agosto de 2025. El incumplimiento de su promesa de valor, que se publicita como soporte técnico en un máximo de 24 horas, es claro. Ello no solo demuestra una deficiencia en su servicio, sino también la negligencia en la atención a las necesidades de sus clientes. Mis intentos de buscar ayuda a través de redes sociales como "X" (Twitter) tampoco generaron una solución, sino que me remitieron de vuelta al mismo canal de soporte ineficaz.
+
+Solicito una investigación inmediata de mi caso y una compensación adecuada por el tiempo, los recursos y las oportunidades de negocio perdidas debido a su falta de respuesta y solución.
+
+A la espera de su pronta respuesta y resolución.
+
+Atentamente,
+
+HÉCTOR MAURICIO PINEDA MORA 
+                </textarea>
+            </section>
+
+            <section class="section">
+                <h2>Línea de Tiempo de los Eventos</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">20 de agosto de 2025</div>
+                        <div class="timeline-description">Compra del servicio y primer contacto con soporte (Ticket #1549419) para cambiar el dominio principal y reportar problemas con el código de verificación.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">21 de agosto de 2025</div>
+                        <div class="timeline-description">Respuesta de un asistente virtual con instrucciones genéricas. Usted reitera el problema enviando un video.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">23 de agosto de 2025</div>
+                        <div class="timeline-description">Reclamo por falta de respuesta durante el fin de semana.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">25 de agosto de 2025</div>
+                        <div class="timeline-description">Un agente de soporte humano responde, indicando que está empezando a tramitar el caso, casi 5 días después de la apertura del ticket.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">26 de agosto de 2025</div>
+                        <div class="timeline-description">El soporte ajustó algunos DNS, pero no sirvió de nada porque el dominio no apunta hacia el hosting y no sirve el HTTPS, por lo tanto, las automatizaciones que hago no me corren porque no tienen el HTTPS.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section evidence-container">
+                <h2>Evidencia del Caso</h2>
+                <h3>Video de la denuncia inicial</h3>
+                <p>Video demostrando el problema de configuración del servicio.</p>
+                <div class="video-wrapper">
+                    <iframe src="https://drive.google.com/file/d/16SZ0hCZzW7Cio5n6n03T2r3rRsw4JKxa/preview" allow="autoplay; fullscreen"></iframe>
+                </div>
+
+                <h3>Nuevo video (26 de agosto de 2025)</h3>
+                <p>Video demostrando que, después del ajuste de DNS, el problema persiste.</p>
+                <div class="video-wrapper">
+                    <iframe src="https://drive.google.com/file/d/1ia9dLuDQzufh0r1ID8AZvILK94yeYWkw/preview" allow="autoplay; fullscreen"></iframe>
+                </div>
+
+                <div class="evidence-item">
+                    <p>Me pide que configure HTTPS pero si no deja configurar el dominio no puedo hacer nada con el hosting:</p>
+                    <img src="http://www.prospectivadigital.com/denuncia/hostingSinFuncionar.png" alt="Captura de pantalla del hosting sin funcionar">
+                </div>
+
+                <div class="evidence-item">
+                    <p>Me pide que configure el dominio, pero el botón azul no sirve y no puedo hacer nada con él.</p>
+                    <img src="http://www.prospectivadigital.com/denuncia/dominioNoConfigura.png" alt="Captura de pantalla del dominio sin configurar">
+                </div>
+
+                <div class="evidence-item">
+                    <p>Incluso les escribí por Twitter y su respuesta fue remitirme al mismo problema.</p>
+                    <img src="http://www.prospectivadigital.com/denuncia/x.jpg" alt="Captura de pantalla de la respuesta en X (Twitter)">
+                </div>
+                
+                <h3>Documentos de Soporte</h3>
+                <p>El archivo PDF con los correos y chats de soporte puede ser descargado directamente desde su página web.</p>
+                <a href="http://www.prospectivadigital.com/denuncia/UnidosCorreos.pdf" class="download-button" download>Descargar Archivos de Soporte</a>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function switchLanguage() {
+            const lang = document.getElementById('lang-select').value;
+            if (lang === 'en') {
+                document.getElementById('en-content').style.display = 'block';
+                document.getElementById('es-content').style.display = 'none';
+            } else {
+                document.getElementById('en-content').style.display = 'none';
+                document.getElementById('es-content').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
