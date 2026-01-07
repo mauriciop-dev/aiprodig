@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Power Apps — ProDig</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --pd-teal:#128c7e;
+      --pd-teal-dark:#075e54;
+      --pd-yellow:#F2C80F;
+      --bg:#f6f8fa;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --max-width:1400px;
+      --gap:18px;
+    }
+
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:var(--bg);color:#0f172a}
+    .container{max-width:var(--max-width);margin:28px auto;padding:20px}
+
+    /* Header */
+    .header{display:flex;align-items:center;gap:16px;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--pd-teal),var(--pd-teal-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;box-shadow:0 6px 18px rgba(16,24,40,.08)}
+    .brand h1{font-size:1.05rem;margin:0;color:var(--pd-teal-dark)}
+    .brand p{margin:0;font-size:.85rem;color:var(--muted)}
+
+    .top-actions{display:flex;gap:10px;align-items:center}
+    .btn{padding:8px 12px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+    .btn-outline{background:transparent;border:1px solid rgba(15,23,42,.06);color:var(--pd-teal-dark)}
+    .btn-primary{background:var(--pd-teal);color:#fff;box-shadow:0 6px 18px rgba(18,140,126,.12)}
+    .btn-yellow{background:var(--pd-yellow);color:#111;font-weight:700;padding:10px 14px;border-radius:10px}
+
+    /* Layout */
+    .main{margin-top:18px}
+    .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:0 8px 28px rgba(15,23,42,.06);overflow:hidden}
+    .card-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+    .card-title{font-weight:700;color:var(--pd-teal-dark);margin:0}
+    .card-sub{font-size:.9rem;color:var(--muted);margin:0}
+
+    /* Big responsive app area */
+    .app-wrapper{width:100%;height:760px;border-radius:10px;overflow:hidden;background:#fff}
+    @media (max-width:1100px){ .app-wrapper{height:640px} }
+    @media (max-width:800px){ .app-wrapper{height:520px} }
+    .app-wrapper iframe{width:100%;height:100%;border:0;display:block}
+
+    /* Row of small cards under the app */
+    .cards-row{display:flex;gap:var(--gap);margin-top:var(--gap);flex-wrap:wrap}
+    .cards-row .small-card{flex:1 1 calc((100% - 3 * var(--gap)) / 4);min-width:220px;background:linear-gradient(180deg,#fff,#fbfdff);border-radius:10px;padding:12px;box-shadow:0 8px 22px rgba(2,6,23,.04);border:1px solid rgba(15,23,42,.03)}
+    @media (max-width:1100px){ .cards-row .small-card{flex:1 1 calc((100% - 2 * var(--gap)) / 2)} }
+    @media (max-width:700px){ .cards-row .small-card{flex:1 1 100%} }
+    .small-card h4{margin:0 0 8px 0;color:#0b2540}
+    .small-card p{margin:0;color:var(--muted);font-size:.95rem}
+
+    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:.9rem}
+    footer a{color:var(--pd-teal-dark);text-decoration:none;font-weight:600}
+
+    /* Modal / apagar luces for tutorial or focused app */
+    .overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.82);z-index:2000;padding:20px}
+    .overlay.show{display:flex}
+    .video-modal{width:80vw;max-width:1200px;height:68vh;max-height:820px;background:#000;border-radius:10px;box-shadow:0 18px 60px rgba(0,0,0,0.5);position:relative;overflow:hidden}
+    @media (max-width:900px){ .video-modal{width:94vw;height:52vh} }
+    .video-modal iframe{width:100%;height:100%;border:0;display:block}
+    .video-close{position:absolute;right:10px;top:10px;background:rgba(255,255,255,0.12);color:#fff;border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;backdrop-filter:blur(4px)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header" role="banner">
+      <div class="brand">
+        <div class="logo">PD</div>
+        <div>
+          <h1>ProDig — Power Apps</h1>
+          <p class="muted">Aplicación en línea · Impacto directo en Dashboard</p>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <button class="btn btn-outline" onclick="location.href='https://prospectivadigital.com'" title="Ir a Prospectiva Digital">Ir a ProDig</button>
+        <button id="refreshBtn" class="btn btn-outline" title="Recargar aplicación">⟳ Recargar</button>
+        <button id="openAppBtn" class="btn btn-primary" title="Abrir en Power Apps">Abrir en Power Apps</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Central embedded Power Apps -->
+      <section class="card">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">Aplicación en línea — Interactúa con el Dashboard</h2>
+            <p class="card-sub">La app está publicada y puede afectar los datos mostrados en el dashboard en tiempo real.</p>
+          </div>
+
+          <div>
+            <button class="btn btn-yellow" id="open-tutorial">Ver tutorial</button>
+          </div>
+        </div>
+
+        <div class="app-wrapper" id="appWrap">
+          <!-- Usar el link que compartiste como src; si requiere otra forma de embed, reemplazar por URL de play/embed -->
+          <iframe id="powerAppFrame"
+            title="Power Apps — Aplicación"
+            src="https://apps.powerapps.com/play/e/27d9c635-210b-ed57-a2c4-a969f23bd3ea/a/4a97438c-ade5-4a5a-a854-bbf48b00b041?tenantId=2ad045e8-9630-4e58-ba0e-a0a3392ea54c&hint=bffd6d0f-c037-4e48-b143-a7a8c130c7b6&sourcetime=1761170499834"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+
+        <p class="small muted" style="margin-top:12px">Si la app no carga correctamente, usa "Abrir en Power Apps" o revisa permisos de la aplicación en el portal.</p>
+      </section>
+
+      <!-- Four small cards horizontally under the app -->
+      <div class="cards-row" aria-live="polite">
+        <div class="small-card">
+          <h4>Impacto en Power BI</h4>
+          <p>Acciones en la app actualizan tablas y triggers que afectan el dashboard.</p>
+        </div>
+        <div class="small-card">
+          <h4>Conexión</h4>
+          <p>Conecta la app a servicios y fuentes en tiempo real (Dataverse, SQL, APIs).</p>
+        </div>
+        <div class="small-card">
+          <h4>Automate</h4>
+          <p>Flujos que reaccionan a cambios para notificaciones y procesos.</p>
+        </div>
+        <div class="small-card">
+          <h4>Seguridad</h4>
+          <p>Control de accesos y permisos según roles para proteger datos.</p>
+        </div>
+      </div>
+
+      <footer>
+        © <strong>ProDig</strong> · <a href="https://prospectivadigital.com" target="_blank" rel="noopener">prospectivadigital.com</a> · Mauricio Pineda · 314 489 7092
+      </footer>
+    </main>
+  </div>
+
+  <!-- Overlay modal para tutorial (efecto apagar luces) -->
+  <div id="video-overlay" class="overlay" aria-hidden="true">
+    <div class="video-modal" role="dialog" aria-modal="true" aria-label="Video tutorial">
+      <button id="video-close" class="video-close" aria-label="Cerrar">&times;</button>
+      <iframe id="modal-video" src="" title="Video tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script>
+        // URL de la app que compartiste
+    const appUrl = 'https://apps.powerapps.com/play/e/27d9c635-210b-ed57-a2c4-a969f23bd3ea/a/4a97438c-ade5-4a5a-a854-bbf48b00b041?tenantId=2ad045e8-9630-4e58-ba0e-a0a3392ea54c&hint=bffd6d0f-c037-4e48-b143-a7a8c130c7b6&sourcetime=1761170499834';
+
+    document.getElementById('refreshBtn').addEventListener('click', () => {
+      const iframe = document.getElementById('powerAppFrame');
+      iframe.src = iframe.src.split('#')[0] + (iframe.src.includes('?') ? '&' : '?') + 't=' + Date.now();
+    });
+
+    document.getElementById('openAppBtn').addEventListener('click', () => {
+      window.open(appUrl, '_blank', 'noopener');
+    });
+
+    // Tutorial video modal (reuse same behavior as powerbi page)
+    function toEmbedUrl(url){
+      if(!url) return '';
+      const idMatch = url.match(/(?:v=|\/embed\/|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+      const id = idMatch ? idMatch[1] : null;
+      const tMatch = url.match(/[?&](?:t|start)=([0-9]+)s?/);
+      const start = tMatch ? Number(tMatch[1]) : 0;
+      if(id) return 'https://www.youtube.com/embed/' + id + (start ? '?start=' + start : '');
+      return url;
+    }
+
+    // Si quieres cambiar el tutorial, sustituye aquí la URL
+    const tutorialUrl = toEmbedUrl('https://www.youtube.com/watch?v=fyT_Jp0p6E0&t=240s');
+
+    const openTutorialBtn = document.getElementById('open-tutorial');
+    const overlay = document.getElementById('video-overlay');
+    const modalVideo = document.getElementById('modal-video');
+    const closeBtn = document.getElementById('video-close');
+
+    function showVideo(url){
+      const embed = toEmbedUrl(url || tutorialUrl);
+      modalVideo.src = embed + (embed.includes('?') ? '&' : '?') + 'autoplay=1';
+      overlay.classList.add('show');
+      overlay.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+    function hideVideo(){
+      overlay.classList.remove('show');
+      overlay.setAttribute('aria-hidden','true');
+      modalVideo.src = '';
+      document.body.style.overflow = '';
+    }
+
+    openTutorialBtn.addEventListener('click', ()=> showVideo(tutorialUrl));
+    closeBtn.addEventListener('click', hideVideo);
+    overlay.addEventListener('click', (e)=> { if(e.target === overlay) hideVideo(); });
+    document.addEventListener('keydown', (e)=> { if(e.key === 'Escape') hideVideo(); });
+  </script>
+</body>
+</html>

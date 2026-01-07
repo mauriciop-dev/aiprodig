@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Chatbot para Comunidades</title>
+
+    <!-- Añadido: marked para parsear Markdown y DOMPurify para sanitizar HTML -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
+
+    <style>
+        /* base box model */
+        *, *::before, *::after { box-sizing: border-box; }
+
+        html, body { height: 100%; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f2f5;
+            height: 100vh;
+        }
+
+        /* Chat fijo pegado a la izquierda, 20% del ancho y full height.
+           Se fuerza un ancho mínimo para laptops/portátiles para evitar recortes. */
+        .chat-window {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 20%;
+            min-width: 240px;
+            max-width: 420px;
+            height: 100vh;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background-color: #fff;
+            z-index: 1000;
+        }
+
+        .chat-header {
+            background-color: #075e54;
+            color: white;
+            padding: 12px 16px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.05rem;
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 16px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .message {
+            padding: 10px 14px;
+            border-radius: 16px;
+            max-width: 75%;
+            line-height: 1.4;
+            word-break: break-word;
+        }
+
+        .user-message {
+            background-color: #dcf8c6;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .bot-message {
+            background-color: #f1f1f1;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .chat-input-area {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            background-color: #f9f9f9;
+            gap: 8px;
+        }
+
+        #chat-input {
+            flex: 1;
+            min-width: 0;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            padding: 10px 14px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        #send-button {
+            background-color: #128c7e;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #send-button:hover { background-color: #075e54; }
+
+        /* ========= CONTENIDO PRINCIPAL ========= */
+        .main-content {
+            margin-left: max(20%, 240px);
+            padding: 28px;
+            transition: margin-left .2s ease;
+            min-height: 100vh;
+        }
+
+        /* title row: título a la izquierda, botón a la derecha */
+        .title-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+
+        .page-title {
+            font-size: 1.6rem;
+            margin: 0;
+            color: #0b5345;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            margin: 6px 0 18px 0;
+            color: #333;
+            max-width: 900px;
+            line-height: 1.4;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 14px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+        }
+
+        /* Dashboard full-width debajo del título */
+        .full-dashboard {
+            margin-bottom: 22px;
+        }
+        .dashboard-wrapper {
+            width: 100%;
+            height: 480px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .dashboard-wrapper iframe { width:100%; height:100%; border:0; display:block; }
+
+        /* grid secundario para otras tarjetas */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        /* responsive wrappers para video in-page (si quieres mostrarlo allí) */
+        .embed-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+        }
+        .embed-wrapper iframe {
+            position: absolute;
+            top:0; left:0; width:100%; height:100%; border:0;
+        }
+
+        .video-actions { margin-top:12px; display:flex; gap:12px; align-items:center; }
+
+        .btn-primary {
+            background: #128c7e;
+            color: #fff;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .btn-primary.right {
+            margin-left: auto;
+        }
+        .btn-secondary {
+            background: #eee;
+            color: #333;
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* SLIDER para Recursos */
+        .slider {
+            height: 80px;
+            display:flex;
+            align-items:center;
+            justify-content:flex-start;
+            padding: 8px 12px;
+            font-size: 1rem;
+            color: #222;
+            overflow: hidden;
+            position: relative;
+        }
+        .slide {
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            opacity: 0;
+            transition: opacity 600ms ease;
+            white-space: nowrap;
+        }
+        .slide.show { opacity: 1; }
+
+        /* Modal / efecto "apagar luces" (overlay oscuro) */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            padding: 20px;
+        }
+        .overlay.show { display: flex; }
+
+        .video-modal {
+            width: 50vw;
+            max-width: 980px;
+            height: 50vh;
+            max-height: 720px;
+            background: #000;
+            border-radius: 10px;
+            box-shadow: 0 18px 60px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        .video-modal iframe { width:100%; height:100%; border:0; display:block; }
+
+        .video-close {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background: rgba(255,255,255,0.12);
+            color: #fff;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1100px) {
+            .video-modal { width: 70vw; height: 48vh; }
+            .dashboard-wrapper { height: 420px; }
+        }
+        @media (max-width: 900px) {
+            .content-grid { grid-template-columns: 1fr; }
+            .dashboard-wrapper { height: 360px; }
+        }
+        @media (max-width: 600px) {
+            .chat-window {
+                width: 80%;
+                min-width: 0;
+                max-width: none;
+                border-radius: 0 12px 12px 0;
+            }
+            .main-content { margin-left: 0; padding: 16px; }
+            .video-modal { width: 94vw; height: 48vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-window">
+        <div class="chat-header">Asistente I.A. Comunidades</div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="bot-message">Para iniciar solo escribe: Hola</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Escribe tu mensaje...">
+            <button id="send-button" aria-label="Enviar">&#10148;</button>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content" role="main">
+        <div class="title-row">
+            <div>
+                <h1 class="page-title">Administración Inteligente de Conjuntos Residenciales</h1>
+                <p class="subtitle">Panel de control y materiales explicativos para la administración y vecinos. Aquí puedes contar con guías, videos y métricas en tiempo real.</p>
+            </div>
+            <!-- botón a la derecha del título -->
+            <button id="open-video-btn" class="btn-primary" type="button">Ver video explicativo</button>
+        </div>
+
+        <!-- Dashboard: ocupa todo el ancho bajo el título -->
+        <section class="card full-dashboard">
+            <div class="dashboard-wrapper">
+                <iframe src="https://lookerstudio.google.com/embed/reporting/59194546-69e4-4aff-be13-196649517767/page/92YcF"
+                        title="Dashboard"
+                        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+            </div>
+        </section>
+
+        <!-- grid secundario -->
+        <div class="content-grid" style="margin-top:20px;">
+            <section class="card">
+                <h3 style="margin-top:0;font-size:1rem;">Recursos</h3>
+                <div class="slider" id="provider-slider" aria-live="polite">
+                    <div class="slide" id="slide-0"></div>
+                    <div class="slide" id="slide-1"></div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3 style="margin-top:0;font-size:1rem;">Contacto</h3>
+                <p style="color:#444;font-size:.95rem;margin:0 0 8px 0;">
+                    Desarrollado por <a href="https://prospectivadigital.com" target="_blank" rel="noopener noreferrer">ProDig</a>
+                </p>
+                <p style="color:#444;font-size:.95rem;margin:0 0 4px 0;">Mauricio Pineda — 314 489 7092</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Overlay modal para video (efecto apagar luces) -->
+    <div id="video-overlay" class="overlay" aria-hidden="true">
+        <div class="video-modal" role="dialog" aria-modal="true" aria-label="Video explicativo">
+            <button id="video-close" class="video-close" aria-label="Cerrar">&times;</button>
+            <iframe id="modal-video" src="" title="Video explicativo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const sendButton = document.getElementById('send-button');
+        const webhookUrl = 'https://prodig.app.n8n.cloud/webhook/b738bd9b-a4cf-4db6-a44d-fd3dd12389ca/chat';
+
+        function addMessage(message, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', sender === 'user' ? 'user-message' : 'bot-message');
+
+            if (sender === 'user') {
+                messageDiv.textContent = message;
+            } else {
+                try {
+                    const html = marked.parse(message);
+                    messageDiv.innerHTML = DOMPurify.sanitize(html);
+                } catch (e) {
+                    messageDiv.textContent = message;
+                }
+            }
+
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // simple simulated reply for fallback / demo
+        function simulatedReply(text){
+            const t = text.toLowerCase();
+            if (t.includes('pago')) return 'Tu saldo actual es $120. Próximo vencimiento: 2025-11-05.';
+            if (t.includes('acta') || t.includes('document')) return 'Puedes descargar las actas en la sección de documentos (demo).';
+            if (t.includes('portería') || t.includes('portero')) return 'Aviso enviado a portería. Tiempo estimado: 5 min.';
+            return 'Mensaje recibido. La administración te responderá pronto (demo).';
+        }
+
+        async function sendMessage() {
+            const messageText = chatInput.value.trim();
+            if (messageText === '') return;
+
+            addMessage(messageText, 'user');
+            chatInput.value = '';
+            chatInput.disabled = true;
+            sendButton.disabled = true;
+
+            const loading = document.createElement('div');
+            loading.classList.add('message', 'bot-message');
+            loading.textContent = 'Enviando...';
+            chatMessages.appendChild(loading);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            const controller = new AbortController();
+            const startTime = Date.now();
+            const TIMEOUT_MS = 20000; // aumentar a 20s para pruebas
+            const timeout = setTimeout(() => {
+                console.warn('Abortando request tras', Date.now() - startTime, 'ms');
+                controller.abort();
+            }, TIMEOUT_MS);
+
+            try {
+                // Generar o recuperar sessionId persistente
+                let sessionId = localStorage.getItem('n8n_chat_session');
+                if (!sessionId) {
+                    sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
+                    localStorage.setItem('n8n_chat_session', sessionId);
+                }
+
+                console.log('Enviando JSON a', webhookUrl, { action: 'sendMessage', sessionId, chatInput: messageText });
+
+                // Intento principal: POST JSON con el formato que espera el Chat Trigger de n8n
+                let response;
+                try {
+                    response = await fetch(webhookUrl, {
+                        method: 'POST',
+                        mode: 'cors',
+                        credentials: 'omit',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            action: 'sendMessage',
+                            sessionId: sessionId,
+                            chatInput: messageText
+                        }),
+                        signal: controller.signal
+                    });
+                } catch (err) {
+                    // Si falla por CORS / preflight, reintentar con FormData (manteniendo las mismas claves)
+                    console.warn('POST JSON falló, reintentando con FormData. Error:', err);
+                    const form = new FormData();
+                    form.append('action', 'sendMessage');
+                    form.append('sessionId', sessionId);
+                    form.append('chatInput', messageText);
+                    response = await fetch(webhookUrl, {
+                        method: 'POST',
+                        mode: 'cors',
+                        credentials: 'omit',
+                        body: form,
+                        signal: controller.signal
+                    });
+                }
+
+                clearTimeout(timeout);
+                console.log('Respuesta status:', response.status);
+
+                if (!response.ok) {
+                    const txt = await response.text().catch(() => null);
+                    chatMessages.removeChild(loading);
+                    addMessage('Error del servidor: ' + (txt || response.status), 'bot');
+                    return;
+                }
+
+                // Intentar parsear JSON y buscar la propiedad de salida esperada
+                let data;
+                try {
+                    data = await response.json();
+                } catch (e) {
+                    const txt = await response.text().catch(() => null);
+                    chatMessages.removeChild(loading);
+                    addMessage(txt || 'Respuesta no JSON recibida', 'bot');
+                    return;
+                }
+
+                chatMessages.removeChild(loading);
+                const replyText = data.output || data.reply || data.message || data.text || JSON.stringify(data);
+                addMessage(replyText, 'bot');
+
+            } catch (error) {
+                clearTimeout(timeout);
+                console.error('Error enviando mensaje:', error);
+                chatMessages.removeChild(loading);
+                if (error.name === 'AbortError') {
+                    addMessage('Tiempo de espera agotado. Intenta de nuevo.', 'bot');
+                } else {
+                    addMessage('No se pudo conectar al servidor. Uso de respuesta demo.', 'bot');
+                    addMessage(simulatedReply(messageText), 'bot');
+                }
+            } finally {
+                chatInput.disabled = false;
+                sendButton.disabled = false;
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                chatInput.focus();
+            }
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') sendMessage();
+        });
+
+        // ================= video modal logic =================
+        // convertir varias formas de URL de YouTube a la forma embed
+        function toEmbedUrl(url) {
+            if (!url) return '';
+            // buscar ID de 11 caracteres en formatos comunes: watch?v=, youtu.be/ o embed/
+            const m = url.match(/(?:v=|\/embed\/|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+            if (m) return 'https://www.youtube.com/embed/' + m[1];
+            return url;
+        }
+
+        // URL integrada por defecto (tu video)
+        let ytEmbedUrl = toEmbedUrl('https://www.youtube.com/watch?v=aQ9mIPAAjjU');
+
+         const openBtn = document.getElementById('open-video-btn');
+         const overlay = document.getElementById('video-overlay');
+         const modalVideo = document.getElementById('modal-video');
+         const closeBtn = document.getElementById('video-close');
+
+         function showVideoModal(url) {
+            if (url) {
+                ytEmbedUrl = toEmbedUrl(url.trim());
+            } else if (!ytEmbedUrl) {
+                const userUrl = prompt('https://www.youtube.com/watch?v=aQ9mIPAAjjU');
+                if (!userUrl) return;
+                ytEmbedUrl = toEmbedUrl(userUrl.trim());
+            }
+
+             // cargar y reproducir
+             modalVideo.src = ytEmbedUrl + (ytEmbedUrl.includes('?') ? '&' : '?') + 'autoplay=1';
+             overlay.classList.add('show');
+             overlay.setAttribute('aria-hidden', 'false');
+             document.body.style.overflow = 'hidden';
+         }
+
+         function hideVideoModal() {
+             overlay.classList.remove('show');
+             overlay.setAttribute('aria-hidden', 'true');
+             modalVideo.src = '';
+             document.body.style.overflow = '';
+         }
+
+
+         openBtn.addEventListener('click', () => showVideoModal(ytEmbedUrl));
+         closeBtn.addEventListener('click', hideVideoModal);
+         overlay.addEventListener('click', (e) => {
+             if (e.target === overlay) hideVideoModal();
+         });
+         document.addEventListener('keydown', (e) => {
+             if (e.key === 'Escape') hideVideoModal();
+         });
+
+        // ================= provider slider =================
+        (function providerSlider(){
+            const providers = [
+                'Pedro Otalora - Plomero - 325 413 25 69',
+                'Pedro Ortíz - Electricista - 312 569 7845',
+                'Pedro Molano - Carpintero - 310 334 5689'
+            ];
+            const DISPLAY_MS = 10000;
+            let index = 0;
+            const slideA = document.getElementById('slide-0');
+            const slideB = document.getElementById('slide-1');
+            let showingA = true;
+
+            // initialize texts
+            slideA.textContent = providers[0];
+            slideA.classList.add('slide','show');
+            slideB.classList.add('slide');
+
+            setInterval(() => {
+                index = (index + 1) % providers.length;
+                const nextText = providers[index];
+
+                if (showingA) {
+                    slideB.textContent = nextText;
+                    slideB.classList.add('show');
+                    slideA.classList.remove('show');
+                } else {
+                    slideA.textContent = nextText;
+                    slideA.classList.add('show');
+                    slideB.classList.remove('show');
+                }
+                showingA = !showingA;
+            }, DISPLAY_MS);
+        })();
+        // ====================================================
+    </script>
+
+</body>
+</html>

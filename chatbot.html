@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot ProDig</title>
+    <style>
+        :root {
+            --prodig-blue: #003366;
+            --prodig-gold: #FFD700;
+            --light-gray: #f4f4f4;
+            --dark-text: #333;
+            --light-text: #fff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-gray);
+        }
+        #chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            max-width: 90%;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background-color: #fff;
+        }
+        #chat-header {
+            background-color: var(--prodig-blue);
+            color: var(--light-text);
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        #chat-header span {
+            font-weight: normal;
+            font-size: 0.8em;
+            opacity: 0.9;
+        }
+        #chat-messages {
+            flex-grow: 1;
+            padding: 15px;
+            height: 300px;
+            overflow-y: auto;
+            background-color: #fff;
+        }
+        .message {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .message.user {
+            text-align: right;
+        }
+        .message.bot .bubble {
+            background-color: var(--light-gray);
+            color: var(--dark-text);
+        }
+        .message.user .bubble {
+            background-color: var(--prodig-blue);
+            color: var(--light-text);
+        }
+        .bubble {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 20px;
+            max-width: 80%;
+        }
+        #chat-input {
+            display: flex;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        #chat-input input {
+            flex-grow: 1;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            padding: 10px 15px;
+            font-size: 1em;
+        }
+        #chat-input button {
+            background-color: var(--prodig-blue);
+            color: var(--light-text);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+            line-height: 40px;
+            text-align: center;
+        }
+        #chat-input button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chat-container">
+    <div id="chat-header">
+        Asistente Virtual ProDig<br>
+        <span>Prospectiva Digital</span>
+    </div>
+    <div id="chat-messages"></div>
+    <div id="chat-input">
+        <input type="text" id="user-input" placeholder="Escribe tu pregunta...">
+        <button id="send-btn">&rarr;</button>
+    </div>
+</div>
+
+<script>
+    const knowledgeBase = {
+        "quienes somos": {
+            answer: "En ProDig - Prospectiva Digital, ayudamos a las empresas a transformar y optimizar sus procesos mediante el uso de herramientas del ecosistema Microsoft (Power BI, Power Apps, Power Automate, SharePoint), plataformas de automatización como n8n y soluciones de Inteligencia Artificial local para maximizar la productividad y la eficiencia.",
+            keywords: ["quienes son", "empresa", "acerca de", "prodig"]
+        },
+        "propuesta de valor": {
+            answer: "Nuestra propuesta de valor incluye: Consultoría 360° en automatización, implementaciones a medida con Microsoft Power Platform y n8n, soluciones de IA local, integraciones de ecosistemas y análisis avanzado de datos.",
+            keywords: ["valor", "ofrecen", "diferencia", "automatizacion"]
+        },
+        "como trabajamos": {
+            answer: "Nuestro proceso de trabajo se divide en 5 fases: 1. Diagnóstico inicial, 2. Mapa de oportunidades, 3. Diseño de la solución, 4. Implementación y capacitación, y 5. Soporte y optimización continua.",
+            keywords: ["proceso", "trabajan", "metodologia"]
+        },
+        "power bi": {
+            answer: "Usamos Power BI para consolidar datos de múltiples fuentes (Excel, ERPs, etc.) en dashboards interactivos. Esto permite visualizar inventarios, rutas, costos y más en tiempo real, reduciendo drásticamente el tiempo de generación de reportes.",
+            keywords: ["power bi", "bi", "dashboard", "reportes"]
+        },
+        "power apps": {
+            answer: "Con Power Apps desarrollamos aplicaciones móviles personalizadas para digitalizar tareas en campo, como reportes de mantenimiento, inspecciones, uso de repuestos y firmas de clientes, eliminando el papel y mejorando la trazabilidad.",
+            keywords: ["power apps", "apps", "aplicaciones", "movil"]
+        },
+        "power automate": {
+            answer: "Utilizamos Power Automate para crear flujos de trabajo que automatizan tareas repetitivas. Por ejemplo, podemos clasificar hojas de vida recibidas por correo, extraer datos clave con IA y guardarlos en SharePoint, ahorrando horas de trabajo manual.",
+            keywords: ["power automate", "flujos", "automatizar tareas", "automatizacion"]
+        },
+        "n8n": {
+            answer: "n8n es una herramienta que usamos para integrar ecosistemas dispersos. Por ejemplo, podemos sincronizar pedidos de Shopify con un CRM como HubSpot y actualizar el estado de envío de DHL automáticamente, manteniendo toda la información del cliente centralizada y en tiempo real.",
+            keywords: ["n8n", "integracion", "conectar sistemas"]
+        },
+        "ia local": {
+            answer: "Ofrecemos soluciones de Inteligencia Artificial local, instalando modelos de lenguaje en servidores internos de la empresa. Esto es ideal para crear chatbots de soporte técnico o asistentes internos que usan datos sensibles, garantizando la seguridad y privacidad de la información.",
+            keywords: ["ia", "inteligencia artificial", "local", "chatbot interno"]
+        },
+        "consultoria": {
+            answer: "Nuestra consultoría ayuda a las empresas a identificar qué procesos pueden automatizar y qué tecnologías usar. Hacemos un mapa de procesos, identificamos áreas de alto impacto y proponemos un roadmap tecnológico para una digitalización escalonada y efectiva.",
+            keywords: ["consultoria", "diagnostico", "roadmap", "modernizar"]
+        },
+        "servicios": {
+            answer: "Ofrecemos: Implementación de Power BI, creación de apps con Power Apps, automatización con Power Automate, integración con n8n, IA local y consultoría para la transformación digital.",
+            keywords: ["servicios", "productos", "soluciones", "automatizacion"]
+        },
+        "contacto": {
+            answer: "Puedes contactarnos en Bogotá, Colombia. Teléfono: +57 314 489 7092. Correo: mauricio.pineda@prospectivadigital.com. Atendemos de Lunes a Viernes de 8:00 AM a 6:00 PM y Sábados de 9:00 AM a 2:00 PM.",
+            keywords: ["contacto", "telefono", "correo", "direccion", "horario"]
+        },
+        "experiencia": {
+            answer: "Contamos con más de 20 años de experiencia en proyectos tecnológicos y de automatización, más de 50 proyectos completados y un 98% de satisfacción del cliente. Somos expertos en el ecosistema Microsoft y herramientas de integración.",
+            keywords: ["experiencia", "tiempo", "proyectos"]
+        },
+        "greeting": {
+            answer: "¡Hola! Soy el asistente virtual de ProDig. ¿En qué puedo ayudarte hoy? Puedes preguntarme sobre nuestros servicios, tecnologías o cómo trabajamos.",
+            keywords: ["hola", "buenos dias", "buenas tardes"]
+        }
+    };
+
+    const messagesContainer = document.getElementById('chat-messages');
+    const userInput = document.getElementById('user-input');
+    const sendBtn = document.getElementById('send-btn');
+
+    function addMessage(sender, text) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message', sender);
+        
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        bubble.textContent = text;
+        
+        messageElement.appendChild(bubble);
+        messagesContainer.appendChild(messageElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function findAnswer(userText) {
+        const lowerUserText = userText.toLowerCase();
+        let bestMatch = { score: 0, answer: "Lo siento, no he podido entender tu pregunta. Podras reformularla? Puedes preguntar sobre quines somos, nuestros servicios (Power BI, Power Apps, n8n, IA Local), o nuestro proceso de trabajo." };
+
+        if (lowerUserText.includes("hola") || lowerUserText.includes("buenos")) {
+            return knowledgeBase["greeting"].answer;
+        }
+
+        for (const key in knowledgeBase) {
+            const entry = knowledgeBase[key];
+            let currentScore = 0;
+
+            entry.keywords.forEach(keyword => {
+                if (lowerUserText.includes(keyword)) {
+                    currentScore++;
+                }
+            });
+            
+            if (currentScore > bestMatch.score) {
+                bestMatch = { score: currentScore, answer: entry.answer };
+            }
+        }
+        return bestMatch.answer;
+    }
+
+    function handleUserInput() {
+        const text = userInput.value.trim();
+        if (text === "") return;
+
+        addMessage('user', text);
+        userInput.value = "";
+
+        setTimeout(() => {
+            const botResponse = findAnswer(text);
+            addMessage('bot', botResponse);
+        }, 500);
+    }
+
+    sendBtn.addEventListener('click', handleUserInput);
+    userInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            handleUserInput();
+        }
+    });
+
+    // Initial greeting
+    setTimeout(() => {
+        addMessage('bot', knowledgeBase.greeting.answer);
+    }, 1000);
+
+</script>
+
+</body>
+</html>
