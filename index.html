@@ -908,7 +908,8 @@
                 const response = await fetch(form.action, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json' // Indicamos que enviamos JSON
+                        'Content-Type': 'application/json', // Esto es lo que n8n espera ver
+                        'Accept': 'application/json'
                     },
                     body: JSON.stringify(data)
                 });
