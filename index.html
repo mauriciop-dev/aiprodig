@@ -907,6 +907,7 @@
             try {
                 const response = await fetch(form.action, {
                     method: 'POST',
+                    mode: "cors",
                     headers: {
                         'Content-Type': 'application/json' // Indicamos que enviamos JSON
                     },
