@@ -1053,7 +1053,7 @@
         function appendMessage(text, type) {
             const messageDiv = document.createElement('div');
             messageDiv.classList.add('message', `${type}-message`);
-            messageDiv.textContent = text;
+            messageDiv.innerHTML = text; // Use innerHTML to render HTML tags from bot response
             chatMessages.appendChild(messageDiv);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
