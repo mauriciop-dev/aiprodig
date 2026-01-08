@@ -573,6 +573,33 @@
             padding: 0 10px;
         }
 
+        /* Chat Options */
+        .chat-options-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+            padding: 0 15px;
+        }
+
+        .chat-option-btn {
+            background: white;
+            border: 1px solid #667eea;
+            color: #667eea;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .chat-option-btn:hover {
+            background: #667eea;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
         /* Footer */
         footer {
             background: #2c3e50;
@@ -968,6 +995,51 @@
             }
         });
 
+        // Opciones iniciales y de seguimiento
+        const initialOptions = [
+            "Nuestros Servicios",
+            "Automatización",
+            "IA Local",
+            "Contactar con un experto"
+        ];
+
+        const followUpOptions = [
+            "Volver al inicio",
+            "Ver casos de éxito",
+            "Solicitar demo",
+            "Otra consulta"
+        ];
+
+        function appendOptions(options) {
+            const optionsContainer = document.createElement('div');
+            optionsContainer.classList.add('chat-options-container');
+
+            options.forEach(optionText => {
+                const btn = document.createElement('button');
+                btn.classList.add('chat-option-btn');
+                btn.textContent = optionText;
+                btn.onclick = () => {
+                    appendMessage(optionText, 'user');
+                    sendToWebhook(optionText);
+                };
+                optionsContainer.appendChild(btn);
+            });
+
+            chatMessages.appendChild(optionsContainer);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Mostrar opciones iniciales al cargar (o podrías hacerlo al abrir el chat por primera vez)
+        setTimeout(() => {
+            // Limpiar mensaje inicial hardcodeado si lo hubiera, o simplemente agregarlo dinámicamente
+            const initialMsg = document.querySelector('.bot-message');
+            if (initialMsg) {
+                initialMsg.textContent = "Hola. Estoy aquí para responder tus preguntas o puedes seleccionar una opción:";
+                appendOptions(initialOptions);
+            }
+        }, 500);
+
+
         chatForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const userInput = chatInput.value.trim();
@@ -1014,6 +1086,9 @@
                 const botResponse = data.output || 'No he podido procesar tu respuesta.';
 
                 appendMessage(botResponse, 'bot');
+
+                // Mostrar opciones de seguimiento después de la respuesta
+                setTimeout(() => appendOptions(followUpOptions), 800);
 
             } catch (error) {
                 console.error('Error communicating with webhook:', error);
