@@ -491,16 +491,18 @@
         .chat-window {
             display: none;
             position: fixed;
-            bottom: 100px;
-            right: 20px;
-            width: 370px;
-            height: 500px;
+            top: 0;
+            right: 0;
+            width: 20%;
+            min-width: 320px;
+            /* Fallback for small screens */
+            height: 100vh;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
             flex-direction: column;
             overflow: hidden;
             z-index: 1000;
+            transition: transform 0.3s ease;
         }
 
         .chat-window.open {
@@ -945,8 +947,25 @@
         let sessionId = sessionStorage.getItem('chatSessionId') || `session_${Date.now()}`;
         sessionStorage.setItem('chatSessionId', sessionId);
 
-        launcher.addEventListener('click', () => {
+        const chatOverlay = document.createElement('div'); // Optional: darker background if needed, but not requested.
+
+        function toggleChat() {
             chatWindow.classList.toggle('open');
+        }
+
+        launcher.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent immediate closing
+            toggleChat();
+        });
+
+        // Close chat when clicking outside
+        document.addEventListener('click', (e) => {
+            const isClickInsideChat = chatWindow.contains(e.target);
+            const isClickOnLauncher = launcher.contains(e.target);
+
+            if (!isClickInsideChat && !isClickOnLauncher && chatWindow.classList.contains('open')) {
+                chatWindow.classList.remove('open');
+            }
         });
 
         chatForm.addEventListener('submit', (e) => {
