@@ -897,10 +897,11 @@
 
     <script>
         const form = document.getElementById('contact-form');
+        // ESTO ES NUEVO Y NO AFECTA AL CHAT
         async function enviarFormularioContacto(event) {
             event.preventDefault(); // Evita que la página se recargue
 
-            // Seleccionamos los campos específicos del formulario de contacto
+            // Captura los datos del formulario de contacto (los cuadros de arriba)
             const nombre = document.querySelector('input[placeholder="Tu nombre completo"]').value;
             const email = document.querySelector('input[placeholder="tu@email.com"]').value;
             const telefono = document.querySelector('input[placeholder="+57 300 000 0000"]').value;
@@ -912,6 +913,7 @@
             const datos = { nombre, email, telefono, empresa, url_empresa, linkedin_empresa, mensaje };
 
             try {
+                // AQUÍ USA EL WEBHOOK DEL FORMULARIO (DIFERENTE AL DEL CHAT)
                 const response = await fetch('https://n8n.automatizarempresa.online/webhook/934542f3-e4c2-492e-8a4e-2c03d0c12c5f', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -919,18 +921,18 @@
                 });
 
                 if (response.ok) {
-                    alert("¡Formulario enviado! La IA de ProDig está analizando tu empresa.");
+                    alert("¡Formulario enviado! n8n está procesando los datos de " + datos.empresa);
                     document.getElementById('contact-form').reset();
                 } else {
                     alert("Error al conectar con el servidor de n8n.");
                 }
             } catch (error) {
-                console.error("Error:", error);
+                console.error("Error en formulario:", error);
             }
         }
 
-        // Conectamos la función al botón naranja del formulario
-        document.querySelector('.contact-form button').addEventListener('click', enviarFormularioContacto);
+        // Vinculamos esta nueva función SOLO al botón del formulario
+        document.querySelector('.contact-form button').onclick = enviarFormularioContacto;
 
         // Custom Chat Logic
         const launcher = document.getElementById('chat-launcher');
