@@ -897,19 +897,19 @@
 
     <script>
         const form = document.getElementById('contact-form');
-        async function enviarFormulario(event) {
+        async function enviarFormularioContacto(event) {
             event.preventDefault(); // Evita que la página se recargue
 
-            // Capturamos los datos exactos del formulario
-            const datos = {
-                nombre: document.querySelector('input[placeholder="Tu nombre completo"]').value,
-                email: document.querySelector('input[placeholder="tu@email.com"]').value,
-                telefono: document.querySelector('input[placeholder="+57 300 000 0000"]').value,
-                empresa: document.querySelector('input[placeholder="Nombre de tu empresa"]').value,
-                url_empresa: document.querySelector('input[placeholder="https://www.tuempresa.com"]')?.value || '',
-                linkedin_empresa: document.querySelector('input[placeholder="https://www.linkedin.com/company/tuempresa"]')?.value || '',
-                mensaje: document.querySelector('textarea').value
-            };
+            // Seleccionamos los campos específicos del formulario de contacto
+            const nombre = document.querySelector('input[placeholder="Tu nombre completo"]').value;
+            const email = document.querySelector('input[placeholder="tu@email.com"]').value;
+            const telefono = document.querySelector('input[placeholder="+57 300 000 0000"]').value;
+            const empresa = document.querySelector('input[placeholder="Nombre de tu empresa"]').value;
+            const url_empresa = document.querySelector('input[placeholder="https://www.tuempresa.com"]')?.value || '';
+            const linkedin_empresa = document.querySelector('input[placeholder="https://www.linkedin.com/company/tuempresa"]')?.value || '';
+            const mensaje = document.querySelector('textarea').value;
+
+            const datos = { nombre, email, telefono, empresa, url_empresa, linkedin_empresa, mensaje };
 
             try {
                 const response = await fetch('https://n8n.automatizarempresa.online/webhook/934542f3-e4c2-492e-8a4e-2c03d0c12c5f', {
@@ -919,20 +919,18 @@
                 });
 
                 if (response.ok) {
-                    const result = await response.json();
-                    alert("¡Éxito! La IA de ProDig ha recibido tus datos.");
+                    alert("¡Formulario enviado! La IA de ProDig está analizando tu empresa.");
                     document.getElementById('contact-form').reset();
                 } else {
-                    alert("Error en el servidor de n8n.");
+                    alert("Error al conectar con el servidor de n8n.");
                 }
             } catch (error) {
-                console.error("Error conectando con n8n:", error);
-                alert("Error de conexión al enviar.");
+                console.error("Error:", error);
             }
         }
 
-        // Asignar la función al botón del formulario
-        document.querySelector('.contact-form button').onclick = enviarFormulario;
+        // Conectamos la función al botón naranja del formulario
+        document.querySelector('.contact-form button').addEventListener('click', enviarFormularioContacto);
 
         // Custom Chat Logic
         const launcher = document.getElementById('chat-launcher');
