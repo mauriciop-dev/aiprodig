@@ -77,10 +77,22 @@ def publish_article(number):
         .content {{ font-size: 1.1rem; color: #444; }}
         .content p {{ margin-bottom: 1.5rem; }}
         .sources {{ margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee; font-size: 0.9rem; color: #7f8c8d; }}
-        .social-share {{ display: flex; gap: 1rem; margin-top: 3rem; justify-content: center; }}
-        .btn-share {{ padding: 10px 20px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; font-size: 0.9rem; }}
-        .btn-facebook {{ background: #1877f2; }}
-        .btn-whatsapp {{ background: #25d366; }}
+        .social-share {{ display: flex; gap: 1.5rem; margin-top: 3rem; justify-content: center; }}
+        .btn-action {{
+            display: flex; align-items: center; gap: 0.6rem;
+            padding: 10px 24px; border-radius: 50px;
+            border: none; cursor: pointer;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; font-weight: bold; font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: inherit; text-decoration: none;
+        }}
+        .btn-action:hover {{
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }}
+        .btn-action svg {{ width: 20px; height: 20px; }}
         .footer {{ background: #2c3e50; color: white; text-align: center; padding: 2rem 0; margin-top: 4rem; }}
         nav {{ display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }}
         .logo {{ font-size: 1.5rem; font-weight: bold; color: white; text-decoration: none; }}
@@ -108,8 +120,22 @@ def publish_article(number):
         </div>
         
         <div class="social-share">
-            <a href="#" class="btn-share btn-facebook"><i class="fab fa-facebook-f"></i> Me gusta</a>
-            <a href="#" class="btn-share btn-whatsapp"><i class="fab fa-whatsapp"></i> Compartir</a>
+            <button class="btn-action" aria-label="Me gusta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                </svg>
+                <span>Me gusta</span>
+            </button>
+            <button class="btn-action" aria-label="Compartir">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                </svg>
+                <span>Compartir</span>
+            </button>
         </div>
     </article>
 
