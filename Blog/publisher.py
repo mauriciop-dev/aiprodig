@@ -30,27 +30,29 @@ def publish_article(number):
         line = line.strip()
         if not line: continue
         
-        if line.lower().startswith('titulo:'):
+        lower_line = line.lower()
+        if lower_line.startswith('titulo:') or lower_line.startswith('título:') or lower_line.startswith('título del artículo:'):
             article_data['title'] = line.split(':', 1)[1].strip()
-        elif line.lower().startswith('fecha:'):
+        elif lower_line.startswith('fecha:') or lower_line.startswith('fecha de publicación:'):
             article_data['date'] = line.split(':', 1)[1].strip()
-        elif line.lower().startswith('categoría:'):
+        elif lower_line.startswith('categoría:') or lower_line.startswith('categoria:'):
             article_data['category'] = line.split(':', 1)[1].strip()
-        elif line.lower().startswith('meta descripción:'):
+        elif lower_line.startswith('meta descripción:') or lower_line.startswith('meta descripcion:'):
             article_data['meta'] = line.split(':', 1)[1].strip()
-        elif line.lower().startswith('imagen:'):
+        elif lower_line.startswith('imagen:') or lower_line.startswith('imagen del articulo:'):
             article_data['image'] = line.split(':', 1)[1].strip()
-        elif line.lower().startswith('fuentes:'):
+        elif lower_line.startswith('fuentes:'):
             article_data['sources'] = line.split(':', 1)[1].strip()
-        elif line.lower().startswith('cuerpo:'):
+        elif lower_line.startswith('cuerpo:') or lower_line.startswith('cuerpo del artículo:') or lower_line.startswith('cuerpo del articulo:'):
             current_key = 'body'
-            # Add the rest of the line if there's text after 'Cuerpo:'
             rest = line.split(':', 1)[1].strip()
             if rest: body_lines.append(rest)
         elif current_key == 'body':
             body_lines.append(line)
 
     article_data['body'] = body_lines
+    if 'sources' not in article_data:
+        article_data['sources'] = ''
     
     # Template for individual article page
     slug = slugify(article_data['title'])
