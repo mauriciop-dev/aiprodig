@@ -68,6 +68,12 @@ def publish_article(number):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{article_data['title']} - Blog AIPRODIG</title>
     <meta name="description" content="{article_data['meta']}">
+    <meta property="og:title" content="{article_data['title']} - Blog AIPRODIG">
+    <meta property="og:description" content="{article_data['meta']}">
+    <meta property="og:image" content="https://aiprodig.com/Blog/images/{article_data['image']}">
+    <meta property="og:url" content="https://aiprodig.com/Blog/{html_filename}">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         body {{ font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; margin: 0; padding: 0; background: #fff; }}
@@ -122,13 +128,13 @@ def publish_article(number):
         </div>
         
         <div class="social-share">
-            <button class="btn-action" aria-label="Me gusta">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://aiprodig.com/Blog/{html_filename}" target="_blank" rel="noopener noreferrer" class="btn-action" aria-label="Me gusta">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
                 </svg>
                 <span>Me gusta</span>
-            </button>
-            <button class="btn-action" aria-label="Compartir">
+            </a>
+            <a href="https://api.whatsapp.com/send?text=https://aiprodig.com/Blog/{html_filename}" target="_blank" rel="noopener noreferrer" class="btn-action" aria-label="Compartir">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="18" cy="5" r="3"></circle>
                     <circle cx="6" cy="12" r="3"></circle>
@@ -137,7 +143,7 @@ def publish_article(number):
                     <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
                 </svg>
                 <span>Compartir</span>
-            </button>
+            </a>
         </div>
     </article>
 
@@ -173,8 +179,9 @@ def update_index(base_path, article_data, html_filename):
     
     # Insert before the closing grid div
     if '<!-- Los artículos se cargarán aquí' in content:
-        placeholder = '<!-- Los artículos se cargarán aquí dinámicamente o se añadirán manualmente -->'
-        content = content.replace(placeholder, placeholder + new_card)
+        if f'href="{html_filename}"' not in content:
+            placeholder = '<!-- Los artículos se cargarán aquí dinámicamente o se añadirán manualmente -->'
+            content = content.replace(placeholder, placeholder + new_card)
     
     with open(index_path, 'w', encoding='utf-8') as f:
         f.write(content)
