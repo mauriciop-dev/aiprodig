@@ -48,5 +48,12 @@ Listado de fuentes
 La meta descripción es para que la uses en esta pagina según corresponda.
 Al finalizar el cuerpo del articulo, inserta las opciones de ME gusta y de compartir en redes sociales
 
+FORMATO DE TEXTO EN EL CUERPO DEL ARTICULO:
+
+Dale formato por párrafos al cuerpo del articulo, según corresponda.
+
+Crea subtitulos en negrilla según corresponda.
+
+resalta en comillas y negrilla fraeses impactantes del articulo.
 
 Esta página conservará el mismo diseño y estética de la pagina principal del sitio
