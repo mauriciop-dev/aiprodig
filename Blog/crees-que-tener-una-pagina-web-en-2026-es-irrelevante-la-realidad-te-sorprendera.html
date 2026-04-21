@@ -42,6 +42,175 @@
         nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
         .logo { font-size: 1.5rem; font-weight: bold; color: white; text-decoration: none; }
         header { position: fixed; width: 100%; top: 0; z-index: 1000; }
+        /* Floating Buttons Container */
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background: #128c7e;
+        }
+
+        /* Custom Chat Styles */
+        .custom-chat-launcher {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(118, 75, 162, 0.5);
+            z-index: 1001;
+            transition: transform 0.3s ease;
+        }
+
+        .custom-chat-launcher:hover {
+            transform: scale(1.1);
+        }
+
+        .chat-window {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 450px;
+            max-width: 90%;
+            height: 100vh;
+            background: white;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 2000;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .chat-window.open {
+            display: flex;
+            animation: slideInSidebar 0.3s ease-out;
+        }
+
+        @keyframes slideInSidebar {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 25px 20px;
+            overflow-y: auto;
+            background-color: #fcfcfc;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            line-height: 1.4;
+            font-size: 0.9rem;
+        }
+
+        .user-message {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+
+        .bot-message {
+            background: #e9ecef;
+            color: #333;
+            align-self: flex-start;
+        }
+
+        .chat-options-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 5px;
+        }
+
+        .chat-option-btn {
+            background: #fff;
+            border: 1px solid #667eea;
+            color: #667eea;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .chat-option-btn:hover {
+            background: #667eea;
+            color: #fff;
+        }
+
+        .chat-input-form {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            gap: 10px;
+        }
+
+        .chat-input-form input {
+            flex-grow: 1;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 20px;
+            background-color: #f0f0f0;
+            font-family: inherit;
+        }
+
+        .chat-input-form button {
+            border: none;
+            background: transparent;
+            color: #764ba2;
+            font-size: 24px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -87,5 +256,122 @@
     <footer class="footer">
         <p>&copy; 2026 ProDig Blog - Todos los derechos reservados</p>
     </footer>
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/573043509444?text=Hola%20ProDig,%20me%20interesa%20conocer%20más%20sobre%20sus%20servicios"
+            class="whatsapp-float" title="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <div class="custom-chat-launcher" id="chat-launcher">I.A.</div>
+    </div>
+
+    <div class="chat-window" id="chat-window">
+        <div class="chat-header">Asistente ProDig</div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">¡Hola! 👋 Soy ProDig. ¿Cómo puedo ayudarte hoy?</div>
+        </div>
+        <form class="chat-input-form" id="chat-form">
+            <input type="text" id="chat-input" placeholder="Escribe tu pregunta..." autocomplete="off">
+            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+    <script>
+        const launcher = document.getElementById('chat-launcher');
+        const chatWindow = document.getElementById('chat-window');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatForm = document.getElementById('chat-form');
+        const chatInput = document.getElementById('chat-input');
+
+        const webhookUrl = 'https://n8n.automatizarempresa.online/webhook/1d4c933d-2dd1-453d-b413-2481fab30717/chat';
+        let sessionId = sessionStorage.getItem('chatSessionId') || `session_${Date.now()}`;
+        sessionStorage.setItem('chatSessionId', sessionId);
+
+        function toggleChat() {
+            chatWindow.classList.toggle('open');
+        }
+
+        launcher.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleChat();
+        });
+
+        document.addEventListener('click', (e) => {
+            const isClickInsideChat = chatWindow.contains(e.target);
+            const isClickOnLauncher = launcher.contains(e.target);
+            if (!isClickInsideChat && !isClickOnLauncher && chatWindow.classList.contains('open')) {
+                chatWindow.classList.remove('open');
+            }
+        });
+
+        const initialOptions = ["Nuestros Servicios", "Automatización", "IA Local", "Contactar con un experto"];
+        const followUpOptions = ["Volver al inicio", "Ver casos de éxito", "Solicitar demo", "Otra consulta"];
+
+        function appendOptions(options) {
+            const optionsContainer = document.createElement('div');
+            optionsContainer.classList.add('chat-options-container');
+            options.forEach(optionText => {
+                const btn = document.createElement('button');
+                btn.classList.add('chat-option-btn');
+                btn.textContent = optionText;
+                btn.onclick = () => {
+                    appendMessage(optionText, 'user');
+                    sendToWebhook(optionText);
+                };
+                optionsContainer.appendChild(btn);
+            });
+            chatMessages.appendChild(optionsContainer);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        setTimeout(() => {
+            const initialMsg = document.querySelector('.bot-message');
+            if (initialMsg) {
+                initialMsg.textContent = "Hola. Estoy aquí para responder tus preguntas o puedes seleccionar una opción:";
+                appendOptions(initialOptions);
+            }
+        }, 500);
+
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const userInput = chatInput.value.trim();
+            if (!userInput) return;
+            appendMessage(userInput, 'user');
+            chatInput.value = '';
+            sendToWebhook(userInput);
+        });
+
+        function appendMessage(text, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message', `${type}-message`);
+            messageDiv.innerHTML = text;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        async function sendToWebhook(userInput) {
+            appendMessage('Escribiendo...', 'bot');
+            try {
+                const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chatInput: userInput, sessionId: sessionId }),
+                });
+                const botTypingIndicator = chatMessages.querySelector('.bot-message:last-child');
+                if (botTypingIndicator && botTypingIndicator.textContent === 'Escribiendo...') {
+                    chatMessages.removeChild(botTypingIndicator);
+                }
+                const data = await response.json();
+                const botResponse = data.output || 'No he podido procesar tu respuesta.';
+                appendMessage(botResponse, 'bot');
+                setTimeout(() => appendOptions(followUpOptions), 800);
+            } catch (error) {
+                console.error('Error:', error);
+                const botTypingIndicator = chatMessages.querySelector('.bot-message:last-child');
+                if (botTypingIndicator) chatMessages.removeChild(botTypingIndicator);
+                appendMessage('Error: No se pudo obtener respuesta.', 'bot');
+            }
+        }
+    </script>
 </body>
 </html>
