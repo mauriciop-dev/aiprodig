@@ -1,59 +1,52 @@
-SECCION BLOG DE AIPRODIG
+# PROTOCOLO DE REINGENIERÍA Y AUTOMATIZACIÓN: BLOG PRODIG v2.0
 
-La sección principal del blog del sitio web aiprodig se ubicara en aiprodig.conm/blog
+## 1. VISIÓN ESTRATÉGICA
+El blog no es solo un repositorio de artículos, es el motor de autoridad para la "Gran Convergencia" (Del Bit al Átomo). Debe reflejar la metodología MDDC (Metodología de Desarrollo Dirigida por Contexto) y estar optimizado para una audiencia global (Español e Inglés).
 
-La estructura del blog será:
+## 2. ESTRUCTURA DE URLS (REINGENIERÍA)
+Para evitar la fragmentación en Analytics, se unifican las rutas bajo minúsculas y sin extensiones .html visibles:
 
-aiprodig.conm/blog   -- página principal del blog
-aiprodig.conm/blog/images -- imágenes de cada post
-aiprodig.conm/blog/artículos -- cada articulo en un txt
+- **Home Blog (ES):** `aiprodig.com/blog`
+- **Home Blog (EN):** `aiprodig.com/en/blog`
+- **Artículos (ES):** `aiprodig.com/blog/[slug-titulo-articulo]`
+- **Artículos (EN):** `aiprodig.com/en/blog/[slug-title-article]`
+- **Recursos:** `aiprodig.com/blog/images/` | `aiprodig.com/blog/articulos/`
 
-Organizaciones de archivos:
+## 3. ORGANIZACIÓN DE ARCHIVOS FUENTE
+- `/articulos/articulo[N].txt`: Contiene la metadata y cuerpo.
+- `/images/imagen[N].jpg`: Imagen principal del post.
 
-En la carpeta /artículos, se irán cargando los textos de los artículos secuencialmente con el nombre articulo1.txt articulo2.txt articulo3.txt y así sucesivamente.
+**Estructura del archivo .txt:**
+- Título: [Título del post]
+- Fecha: [DD/MM/AAAA]
+- Categoría: [IA-Empresas | IA-Tecnología | IA-Automatización | IA-Media]
+- Meta-Descripción: [Resumen para SEO]
+- Imagen: [imagenN.jpg]
+- Cuerpo: [Texto completo]
+- Fuentes: [Lista de links]
 
-En la carpeta /images, se irán cargando las imágenes de los articulo secuencialmente con el nombre imagen1.jpg imagen2.jpg imagen3.jpg y así sucesivamente.
+## 4. SISTEMA DE PROCESAMIENTO (SCRIPT PYTHON)
+Al activar el comando de publicación (Activador: "45" en el chat), el script ejecutará:
 
-Estructura de archivos txt:
+1. **Traducción Contextual:** Generar la versión en inglés manteniendo el tono experto y técnico de ProDig.
+2. **Generación de Slugs:** Crear URLs amigables basadas en el título.
+3. **Inyección de Componentes:**
+   - Script de Google Analytics 4.
+   - Botones de "Me Gusta" y "Compartir" (LinkedIn, X, WhatsApp).
+   - Botón de WhatsApp flotante (+57 314 489 7092).
+   - Modal de contacto integrado con Formspree.
+4. **Despliegue:** Realizar `git add`, `commit` y `push` automático a GitHub para actualización vía Vercel/Cloudflare.
 
-Cada archivo .txt incluirá un Titulo del articulo, Una fecha de publicación, una Categoría, una meta descripción, un cuerpo del articulo, unas fuentes y en imagen se indicara el nombre de la imagen que debe acompañar el articulo.
+## 5. DISEÑO Y FORMATO (UI/UX)
+- **Estética:** Mantener el estilo "Material Design" de ProDig (Limpio, profesional, fuentes Google Sans/Arial).
+- **Home del Blog:** - Título: "BLOG AIPRODIG".
+    - Layout: Dos columnas de tarjetas verticales.
+    - Tarjeta: Imagen pequeña, Título (Size 10), Meta-descripción y Etiqueta de Categoría.
+- **Página de Artículo:**
+    - Título centrado, Fecha de publicación y Categoría visible.
+    - Imagen proporcionada al ancho del texto.
+    - Cuerpo: Párrafos claros, subtítulos en negrilla, frases impactantes resaltadas en **"comillas y negrilla"**.
+    - Footer: Sección de fuentes, botones sociales y CTA de contacto.
 
-PUBLICACION DE ARTICULO
-
-Para publicar el articulo, cada articulo, yo cargare el archivo .txt en la carpeta /artículos y la imagen correspondiente en la carpeta /images
-
-Cuando escriba en el chat de antigravity el numero 45, me preguntaras por el numero de articulo que quiero publicar y yo escribiré el numero del articulo a publicar.
-
-Como mencione anteriormente, en el archivo .txt encontraras el nombre de la imagen que debe acompañar dicho articulo.
-
-ORGANIZACION DE /Blog
-
-EL titulo de esta pagina sera "BLOG AIPRODIG"
-
-Cada nuevo articulo se presentara en una tarjeta vertical que tendrá el titulo del articulo en letra 10, la imagen correspondiente pequeña y la meta descripción proporcionada.
-
-En la pagina /Blog se presentaran dos columnas de tarjetas y cada tarjeta con la estructura descrita.
-
-El Blog se organizara por categorías: IA-Empresas, IA-Tecnología, IA-Automatización, IA-Media y cada tarjeta mostrara la categoría a la que pertenece.
-
-Cada articulo se publicara en una pagina independiente /blog/"Titulo del articulo"
-
-CADA PAGINA DEL ARTICULO TENDRA ESTA ESTRUCTURA:
-
-Fecha de publicación
-Titulo del articulo centrado en la pagina
-Imagen en tamaño proporcionado al ancho que ocupe el texto en la pagina.
-Cuerpo del articulo formateado por párrafos, de acuerdo al archivo .txt.
-Listado de fuentes
-La meta descripción es para que la uses en esta pagina según corresponda.
-Al finalizar el cuerpo del articulo, inserta las opciones de ME gusta y de compartir en redes sociales
-
-FORMATO DE TEXTO EN EL CUERPO DEL ARTICULO:
-
-Dale formato por párrafos al cuerpo del articulo, según corresponda.
-
-Crea subtitulos en negrilla según corresponda.
-
-resalta en comillas y negrilla fraeses impactantes del articulo.
-
-Esta página conservará el mismo diseño y estética de la pagina principal del sitio
+## 6. METODOLOGÍA DE DESARROLLO (MDDC)
+Cada artículo generado debe servir como un activo de contexto. El sistema debe asegurar que las etiquetas `canonical` estén correctamente puestas para que la versión en inglés y español se reconozcan como traducciones mutuas y no contenido duplicado.
