@@ -18,23 +18,25 @@ def create_slug(title):
     return slug
 
 def parse_txt(file_path):
-    """Extrae la metadata y el cuerpo del archivo .txt"""
+    """Extrae la metadata y el cuerpo del archivo .txt con alta flexibilidad"""
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # Regex para extraer campos (versión más robusta)
-    def get_field(field, text, dotall=False):
-        match = re.search(f"{field}:\\s*(.*?)(?=\\n[A-Z][a-z]+:|$)", text, re.DOTALL if dotall else 0)
-        return match.group(1).strip() if match else ""
+    def get_field(patterns, text, dotall=False):
+        for pattern in patterns:
+            match = re.search(f"{pattern}:\\s*(.*?)(?=\\n[\\w\\s]+:|$)", text, (re.DOTALL if dotall else 0) | re.IGNORECASE)
+            if match:
+                return match.group(1).strip()
+        return ""
 
     data = {
-        "titulo": get_field("Título", content),
-        "fecha": get_field("Fecha", content),
-        "categoria": get_field("Categoría", content),
-        "meta": get_field("Meta-Descripción", content),
-        "imagen": get_field("Imagen", content),
-        "cuerpo": get_field("Cuerpo", content, dotall=True),
-        "fuentes": get_field("Fuentes", content, dotall=True)
+        "titulo": get_field(["Título del artículo", "Título", "Titulo"], content),
+        "fecha": get_field(["Fecha de publicación", "Fecha"], content),
+        "categoria": get_field(["Categoría", "Categoria"], content),
+        "meta": get_field(["Meta descripción", "Meta-Descripción", "Meta"], content),
+        "imagen": get_field(["Imagen"], content),
+        "cuerpo": get_field(["Cuerpo del artículo", "Cuerpo"], content, dotall=True),
+        "fuentes": get_field(["Fuentes"], content, dotall=True)
     }
     return data
 

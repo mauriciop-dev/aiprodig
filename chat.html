@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProDig AI | Smart Assistant</title>
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="chat.css">
+    <!-- Essential Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Background Canvas for Three.js -->
+    <div id="canvas-container"></div>
+
+    <main class="app-container">
+        <header class="app-header">
+            <div class="logo-area">
+                <div class="pulse-dot"></div>
+                <span class="brand">PRODIG <span class="accent">AI</span></span>
+            </div>
+            <div class="header-status">
+                <span class="status-indicator"></span>
+                Sistemas Inteligentes Activos
+            </div>
+        </header>
+
+        <section id="chat-window" class="glass-morph">
+            <div id="messages-area">
+                <!-- Starting Message -->
+                <div class="message assistant">
+                    <p>Hola. Soy el asistente inteligente de <strong>ProDig</strong>.</p>
+                    <p>Estoy aquí para resolver tus dudas sobre nuestros servicios de IA, automatización y consultoría estratégica. ¿En qué puedo apoyarte?</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="input-container glass-morph">
+            <input type="text" id="user-input" placeholder="Escribe tu consulta aquí..." autocomplete="off">
+            <button id="send-btn" title="Enviar mensaje">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </footer>
+    </main>
+
+    <!-- Audio assets -->
+    <audio id="ping-sound" src="https://assets.mixkit.co/active_storage/sfx/2354/2354-preview.mp3" preload="auto"></audio>
+
+    <script src="chat.js"></script>
+</body>
+</html>
