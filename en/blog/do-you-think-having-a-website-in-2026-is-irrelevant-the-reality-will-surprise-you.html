@@ -23,7 +23,7 @@
         body { font-family: 'Outfit', sans-serif; line-height: 1.8; color: var(--text-main); background: #fff; }
         
         .article-header { position: relative; padding: 4.5rem 2rem; text-align: center; background: var(--bg-header); border-bottom: 1px solid #e2e8f0; overflow: hidden; }
-        #bg-canvas { position: absolute; top:0; left:0; width:100%; height:100%; opacity: 1; }
+        #bg-canvas { position: absolute; top:0; left:0; width:100%; height:100%; }
         .header-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
         .category-tag { background: var(--accent); color: white; padding: 0.3rem 1rem; border-radius: 99px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
         .main-title { font-size: 2.8rem; margin: 1rem 0; font-weight: 700; color: var(--primary); }
@@ -64,14 +64,14 @@
 
     <main class="article-container">
         <img src="/Blog/images/imagen1.jpg" alt="Do you think having a website in 2026 is irrelevant? The reality will surprise you." class="hero-image">
-        <article class="article-body"><p class='article-paragraph'>Social networks are the megaphone, but your website is the source of truth. While Instagram and TikTok feed entertainment, AIs feed on the structured index of the web.</p><h3 class='article-subtitle'>"Your website is the source of truth"</h3><p class='article-paragraph'><b>1.</b> AIs don't <b>"listen"</b> to rumors, they read data
-Social networks are <b>"walled gardens."</b> Meta and TikTok put up barriers so that Google or OpenAI AIs can't track their content. In contrast, a website with a sitemap (sitemap.xml) is an open invitation for AIs to index your services with precision.</p><p class='article-paragraph'><b>2.</b> The <b>"Professional Passport"</b>
+        <article class="article-body"><p class='article-paragraph'>Social networks are the megaphone, but your website is the source of truth. While Instagram and TikTok feed entertainment, AIs feed on the structured index of the web.</p><h3 class='article-subtitle'>"Your website is the source of truth"</h3><p class='article-paragraph'><b>1.</b> AIs don't "listen" to rumors, they read data
+Social networks are "walled gardens." Meta and TikTok put up barriers so that Google or OpenAI AIs can't track their content. In contrast, a website with a sitemap (sitemap.xml) is an open invitation for AIs to index your services with precision.</p><p class='article-paragraph'><b>2.</b> The "Professional Passport"
 Having your own domain is not just an aesthetic luxury; it's the infrastructure of your business. It is your centralized digital identity.</p><p class='article-paragraph'><b>3.</b> Reflection vs. Impulse
-On social networks, speed and the algorithm prevail; on a website, information architecture prevails. This gives search engines E-E-A-T (Experience, Expertise, Authoritativeness, and Trustworthiness) signals.</p><p class='article-paragraph'><b>4.</b> The Trust Crisis and what's <b>"Real"</b>
+On social networks, speed and the algorithm prevail; on a website, information architecture prevails. This gives search engines E-E-A-T (Experience, Expertise, Authoritativeness, and Trustworthiness) signals.</p><p class='article-paragraph'><b>4.</b> The Trust Crisis and what's "Real"
 With the proliferation of deepfakes, a website linked to a registered domain and a physical/legal address offers a layer of validation that a social media profile no longer guarantees.</p><p class='article-paragraph'><b>5.</b> Ownership vs. Renting
 If Instagram decides to change its policies today, your audience disappears. Your website is your property.</p><p class='article-paragraph'><b>6.</b> Zero-Party Data (Privacy)
 On your website, you own the statistics. On social media, your customers' data belongs to the platform.</p><p class='article-paragraph'><b>7.</b> Automation and AI Agents
-In the very near future, your customers' AI agents will enter your website to schedule appointments or buy products. Those agents need a clear interface to operate.</p><p class='article-paragraph'><b>8.</b> The <b>"Identity Curation"</b> Argument
+In the very near future, your customers' AI agents will enter your website to schedule appointments or buy products. Those agents need a clear interface to operate.</p><p class='article-paragraph'><b>8.</b> The "Identity Curation" Argument
 The process of creating a website requires a reflective pause. That same awareness that you put into writing your website is what AIs detect as signals of authority.</p><p class='article-paragraph'>Conclusion:
 In the heart of the AI era, the website has not died; it has evolved to become the core of your digital ecosystem. It is where you validate your authority and where you truly own your message.</p><p class='article-paragraph'>Final Considerations:
 Every time you update your website with precise information, you are updating the brain of the virtual assistants that your customers consult daily. Without a web, you are invisible to the eyes of artificial intelligence.</p><p class='article-paragraph'>Your website is the 'social contract' of the company with your customers and audience. It is where what you say becomes official.</p></article>
@@ -117,7 +117,7 @@ Every time you update your website with precise information, you are updating th
         const aid = "do-you-think-having-a-website-in-2026-is-irrelevant-the-reality-will-surprise-you";
         const lbtn = document.getElementById('likeBtn');
         const lcnt = document.getElementById('likeCount');
-        let count = parseInt(localStorage.getItem('L_'+aid)) || Math.floor(Math.random()*15)+12;
+        let count = parseInt(localStorage.getItem('L_'+aid)) || Math.floor(Math.random()*15)+30;
         let liked = localStorage.getItem('H_'+aid) === 'Y';
         function up() { lcnt.innerText = count; lbtn.className = liked ? 'btn-action btn-like active' : 'btn-action btn-like'; }
         lbtn.onclick = () => { if(liked) count--; else count++; liked=!liked; localStorage.setItem('L_'+aid, count); localStorage.setItem('H_'+aid, liked?'Y':'N'); up(); };

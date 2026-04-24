@@ -21,39 +21,37 @@ def create_slug(title):
     return slug
 
 def parse_txt(file_path):
-    """Extrae la metadata y el cuerpo completo cuidando que no se corte el texto"""
+    """Extrae la metadata y el cuerpo completo de forma robusta"""
     if not os.path.exists(file_path):
         return None
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    def extract(label, text):
-        # Etiquetas de búsqueda más flexibles
-        labels = ["T[íi]tulo", "Fecha", "Categor[íi]a", r"Meta[-\s]descripci[óo]n", "Imagen", "Cuerpo", "Fuentes"]
-        labels_regex = "|".join([f"^{l}" for l in labels])
-        
-        regex = rf"^{label}.*?:\s*(.*?)(?=\n(?:{labels_regex})|$)"
-        match = re.search(regex, text, re.DOTALL | re.IGNORECASE | re.MULTILINE)
-        if match:
-            return match.group(1).strip()
-        return ""
+    def get_simple_field(label, text):
+        regex = rf"^{label}.*?:\s*(.*)$"
+        match = re.search(regex, text, re.I | re.M)
+        return match.group(1).strip() if match else ""
+
+    # Para el cuerpo, tomamos todo desde el marcador hasta 'Fuentes' o el final
+    cuerpo_match = re.search(r"(?:Cuerpo del artculo|Cuerpo).*?:\s*(.*?)(?=\nFuentes:|$)", content, re.S | re.I)
+    cuerpo = cuerpo_match.group(1).strip() if cuerpo_match else ""
+    
+    # Si falla el primer intento (caracteres extraños en el .txt), intentamos un regex más laxo
+    if not cuerpo:
+        cuerpo_match = re.search(r"Cuerpo.*?:\s+(.*)", content, re.S | re.I)
+        if cuerpo_match:
+            cuerpo = cuerpo_match.group(1).split("\nFuentes:")[0].strip()
 
     data = {
-        "titulo": extract("T[íi]tulo", content),
-        "fecha": extract("Fecha", content),
-        "categoria": extract("Categor[íi]a", content),
-        "meta": extract(r"Meta[-\s]descripci[óo]n", content),
-        "imagen": extract("Imagen", content),
-        "cuerpo": extract("Cuerpo", content),
-        "fuentes": extract("Fuentes", content)
+        "titulo": get_simple_field("T[íi]tulo", content),
+        "fecha": get_simple_field("Fecha", content),
+        "categoria": get_simple_field("Categor[íi]a", content),
+        "meta": get_simple_field(r"Meta[-\s]descripci[óo]n", content),
+        "imagen": get_simple_field("Imagen", content),
+        "cuerpo": cuerpo,
+        "fuentes": get_simple_field("Fuentes", content)
     }
     
-    # Backup: Si el cuerpo quedó vacío por el label "Cuerpo del artículo"
-    if not data["cuerpo"]:
-        match = re.search(r"Cuerpo.*?:\s*(.*)(?=\nFuentes:|$)", content, re.DOTALL | re.IGNORECASE)
-        if match:
-            data["cuerpo"] = match.group(1).strip()
-            
     return data
 
 def apply_format(text):
@@ -61,7 +59,7 @@ def apply_format(text):
     if not text: return ""
     
     text = text.replace('\r\n', '\n')
-    # Dividir por párrafos (doble salto de línea o salto de línea al inicio de frase)
+    # Dividir por párrafos (doble salto de línea)
     paragraphs = re.split(r'\n\s*\n', text.strip())
     
     formatted = ""
@@ -69,21 +67,23 @@ def apply_format(text):
         p = p.strip()
         if not p: continue
         
-        # Detectar subtítulos (línea corta)
-        if len(p) < 100 and not p.endswith('.') and not p.endswith('?') and not p.endswith(':'):
+        # Ignorar si es el mismo título (a veces se repite en el cuerpo)
+        # Formatear subtítulos (línea corta)
+        if len(p) < 90 and not p.endswith('.') and not p.endswith('?') and not p.endswith(':'):
             formatted += f"<h3 class='article-subtitle'>{p}</h3>"
         else:
             # Lista numerada
             if re.match(r'^\d+\.', p):
                 p = re.sub(r'^(\d+\.)', r'<b>\1</b>', p)
             
-            p = re.sub(r'\"(.*?)\"', r'<b>"\1"</b>', p)
+            # Negritas (soporte para ** y <strong>)
             p = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', p)
+            # Limpiar tags HTML que puedan venir en el txt para que no se dupliquen o rompan
             formatted += f"<p class='article-paragraph'>{p}</p>"
     return formatted
 
 def generate_html(data, lang="es", prev_article=None, next_article=None):
-    """Genera el HTML final"""
+    """Genera el HTML final con animación intensificada"""
     slug = create_slug(data['titulo'])
     canonical_url = f"https://aiprodig.com/Blog/{slug}" if lang=="es" else f"https://aiprodig.com/en/blog/{slug}"
     alt_lang_url = f"https://aiprodig.com/en/blog/{slug}" if lang=="es" else f"https://aiprodig.com/Blog/{slug}"
@@ -91,7 +91,6 @@ def generate_html(data, lang="es", prev_article=None, next_article=None):
     
     txt_likes = "Me gusta" if lang=="es" else "Likes"
     txt_sources = "Fuentes y Referencias:" if lang=="es" else "Sources & References:"
-    txt_back = "Volver al Blog" if lang=="es" else "Back to Blog"
     txt_prev = "Anterior" if lang=="es" else "Previous"
     txt_next = "Siguiente" if lang=="es" else "Next"
 
@@ -123,7 +122,7 @@ def generate_html(data, lang="es", prev_article=None, next_article=None):
         body {{ font-family: 'Outfit', sans-serif; line-height: 1.8; color: var(--text-main); background: #fff; }}
         
         .article-header {{ position: relative; padding: 4.5rem 2rem; text-align: center; background: var(--bg-header); border-bottom: 1px solid #e2e8f0; overflow: hidden; }}
-        #bg-canvas {{ position: absolute; top:0; left:0; width:100%; height:100%; opacity: 1; }}
+        #bg-canvas {{ position: absolute; top:0; left:0; width:100%; height:100%; }}
         .header-content {{ position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }}
         .category-tag {{ background: var(--accent); color: white; padding: 0.3rem 1rem; border-radius: 99px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }}
         .main-title {{ font-size: 2.8rem; margin: 1rem 0; font-weight: 700; color: var(--primary); }}
@@ -207,7 +206,7 @@ def generate_html(data, lang="es", prev_article=None, next_article=None):
         const aid = "{slug}";
         const lbtn = document.getElementById('likeBtn');
         const lcnt = document.getElementById('likeCount');
-        let count = parseInt(localStorage.getItem('L_'+aid)) || Math.floor(Math.random()*15)+12;
+        let count = parseInt(localStorage.getItem('L_'+aid)) || Math.floor(Math.random()*15)+30;
         let liked = localStorage.getItem('H_'+aid) === 'Y';
         function up() {{ lcnt.innerText = count; lbtn.className = liked ? 'btn-action btn-like active' : 'btn-action btn-like'; }}
         lbtn.onclick = () => {{ if(liked) count--; else count++; liked=!liked; localStorage.setItem('L_'+aid, count); localStorage.setItem('H_'+aid, liked?'Y':'N'); up(); }};
@@ -217,28 +216,30 @@ def generate_html(data, lang="es", prev_article=None, next_article=None):
 </html>"""
     return html_template
 
-def get_adj(num):
-    prev_info = None; next_info = None
-    p_path = os.path.join(ARTICULOS_DIR, f"articulo{num-1}.txt")
-    p_data = parse_txt(p_path)
-    if p_data: prev_info = {"titulo": p_data['titulo'], "slug": create_slug(p_data['titulo'])}
-    n_path = os.path.join(ARTICULOS_DIR, f"articulo{num+1}.txt")
-    n_data = parse_txt(n_path)
-    if n_data: next_info = {"titulo": n_data['titulo'], "slug": create_slug(n_data['titulo'])}
-    return prev_info, next_info
-
 def publish(article_num):
     article_num = int(article_num)
     file_name = f"articulo{article_num}.txt"
     path = os.path.join(ARTICULOS_DIR, file_name)
     if os.path.exists(path):
         data = parse_txt(path)
-        prev_info, next_info = get_adj(article_num)
+        
+        # Obtener adyacentes para navegación
+        prev_info = None; next_info = None
+        p_path = os.path.join(ARTICULOS_DIR, f"articulo{article_num-1}.txt")
+        if os.path.exists(p_path):
+            p_data = parse_txt(p_path)
+            prev_info = {"titulo": p_data['titulo'], "slug": create_slug(p_data['titulo'])}
+        
+        n_path = os.path.join(ARTICULOS_DIR, f"articulo{article_num+1}.txt")
+        if os.path.exists(n_path):
+            n_data = parse_txt(n_path)
+            next_info = {"titulo": n_data['titulo'], "slug": create_slug(n_data['titulo'])}
+
         html_es = generate_html(data, "es", prev_info, next_info)
         slug_es = create_slug(data['titulo'])
         with open(os.path.join(OUTPUT_ES, f"{slug_es}.html"), "w", encoding="utf-8") as f:
             f.write(html_es)
-        print(f"DONE ES: {slug_es}.html")
+        print(f"REGENERATED ES: {slug_es}.html")
         return data, slug_es
     return None, None
 

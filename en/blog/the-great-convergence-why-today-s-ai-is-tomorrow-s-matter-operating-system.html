@@ -23,7 +23,7 @@
         body { font-family: 'Outfit', sans-serif; line-height: 1.8; color: var(--text-main); background: #fff; }
         
         .article-header { position: relative; padding: 4.5rem 2rem; text-align: center; background: var(--bg-header); border-bottom: 1px solid #e2e8f0; overflow: hidden; }
-        #bg-canvas { position: absolute; top:0; left:0; width:100%; height:100%; opacity: 1; }
+        #bg-canvas { position: absolute; top:0; left:0; width:100%; height:100%; }
         .header-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
         .category-tag { background: var(--accent); color: white; padding: 0.3rem 1rem; border-radius: 99px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
         .main-title { font-size: 2.8rem; margin: 1rem 0; font-weight: 700; color: var(--primary); }
@@ -64,8 +64,8 @@
 
     <main class="article-container">
         <img src="/Blog/images/imagen3.jpg" alt="The Great Convergence: Why Today's AI is Tomorrow's Matter Operating System" class="hero-image">
-        <article class="article-body"><p class='article-paragraph'>Software development has reached a tipping point. For decades, we have lived in a divided world: on one side, digital logic (bits) and, on the other, physical reality (atoms). At ProDig, we believe this division is obsolete. We are entering the era of <b>"The Great Convergence"</b>.</p><p class='article-paragraph'>The software is no longer just for screens
-Today, when we implement a multi-agent AI system or an automation with n8n, we are not simply optimizing a database. We are creating digital thought structures. Our MDDC (Context-Driven Development Methodology) methodology is the first step in mastering this transition.</p><p class='article-paragraph'>By prioritizing context over syntax, we enable artificial intelligence to understand human intention. <b>"If an AI can understand the intention behind an administrative task, it will soon be able to understand the intention behind physical form."</b></p><p class='article-paragraph'>From Bit to Atom: The path towards Programmable Matter
+        <article class="article-body"><p class='article-paragraph'>Software development has reached a tipping point. For decades, we have lived in a divided world: on one side, digital logic (bits) and, on the other, physical reality (atoms). At ProDig, we believe this division is obsolete. We are entering the era of "The Great Convergence".</p><p class='article-paragraph'>The software is no longer just for screens
+Today, when we implement a multi-agent AI system or an automation with n8n, we are not simply optimizing a database. We are creating digital thought structures. Our MDDC (Context-Driven Development Methodology) methodology is the first step in mastering this transition.</p><p class='article-paragraph'>By prioritizing context over syntax, we enable artificial intelligence to understand human intention. "If an AI can understand the intention behind an administrative task, it will soon be able to understand the intention behind physical form."</p><p class='article-paragraph'>From Bit to Atom: The path towards Programmable Matter
 Programmable matter is ProDig's final horizon. Imagine a world where physical structures are not static, but can change shape and function according to user needs. To get there, we must first perfect the intelligence that will govern those atoms.</p><p class='article-paragraph'>At ProDig, every line of code and every digital asset we develop, like PAIC, is an experiment in this direction. We are building the software that, in a few years, will stop living on servers to live within the very structure of our cities and tools.</p><h3 class='article-subtitle'>"We are not programming applications; we are programming the reality of the future."</h3><p class='article-paragraph'>This is why the Latin American Institute of Programmable Matter (ILMP) is our North Star. It's not just about technology; it's about creating a physical reality that is as adaptable, efficient, and democratic as open-source software.</p></article>
         <div class="sources"><h4>Sources & References:</h4><div><p class='article-paragraph'>ProDig Manifesto: From Bit to Atom (2026).
 Research on Programmable Matter and Contextual AI - ProDig Lab.
@@ -111,7 +111,7 @@ MDDC Framework Whitepaper.</p></div></div>
         const aid = "the-great-convergence-why-today-s-ai-is-tomorrow-s-matter-operating-system";
         const lbtn = document.getElementById('likeBtn');
         const lcnt = document.getElementById('likeCount');
-        let count = parseInt(localStorage.getItem('L_'+aid)) || Math.floor(Math.random()*15)+12;
+        let count = parseInt(localStorage.getItem('L_'+aid)) || Math.floor(Math.random()*15)+30;
         let liked = localStorage.getItem('H_'+aid) === 'Y';
         function up() { lcnt.innerText = count; lbtn.className = liked ? 'btn-action btn-like active' : 'btn-action btn-like'; }
         lbtn.onclick = () => { if(liked) count--; else count++; liked=!liked; localStorage.setItem('L_'+aid, count); localStorage.setItem('H_'+aid, liked?'Y':'N'); up(); };

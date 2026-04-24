@@ -128,8 +128,8 @@
         }
         function draw() {
             ctx.clearRect(0,0,canvas.width, canvas.height);
-            ctx.fillStyle = 'rgba(37, 99, 235, 0.15)';
-            ctx.strokeStyle = 'rgba(37, 99, 235, 0.05)';
+            ctx.fillStyle = 'rgba(37, 99, 235, 0.45)';
+            ctx.strokeStyle = 'rgba(37, 99, 235, 0.25)';
             particles.forEach((p, i) => {
                 p.x += p.vx; p.y += p.vy;
                 if(p.x < 0 || p.x > canvas.width) p.vx *= -1;
