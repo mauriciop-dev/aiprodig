@@ -127,7 +127,7 @@ MDDC Framework Whitepaper."""
         "fecha": "April 23, 2026",
         "categoria": "Digital Strategy / AI",
         "meta": "Discover how to turn the knowledge trapped in your company into high-value digital assets through ProDig's layered architecture.",
-        "imagen": "imagen4.png",
+        "imagen": "imagen4.jpg",
         "cuerpo": """You punctually pay the payroll of your engineers, your lawyers, and your sales team. However, every day, at 5:00 p.m., the most valuable asset of your company gets up from the chair and goes home: the knowledge of how things are done.
 
 If that knowledge does not stay on your servers in a structured way, you are not really the owner of a company; you are the tenant of your employees' brains. At ProDig, we believe that the division between digital logic and physical execution is obsolete. That's why we help companies cross the bridge of "The Great Convergence".
