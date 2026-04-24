@@ -1,11 +1,13 @@
 import os
 import re
-import shutil
+import html
 from datetime import datetime
 
 # --- CONFIGURACIÓN DE RUTAS ---
 ARTICULOS_DIR = "Blog/artículos/"
 IMAGES_DIR = "Blog/images/"
+# Usamos rutas absolutas para las imágenes para evitar errores de case-sensitivity
+IMG_PATH_URL = "/Blog/images/"
 OUTPUT_ES = "Blog/"
 OUTPUT_EN = "en/blog/"
 
@@ -24,7 +26,9 @@ def parse_txt(file_path):
     
     def get_field(patterns, text, dotall=False):
         for pattern in patterns:
-            match = re.search(f"{pattern}:\\s*(.*?)(?=\\n[\\w\\s]+:|$)", text, (re.DOTALL if dotall else 0) | re.IGNORECASE)
+            # Búsqueda más flexible que permite cualquier combinación de caracteres antes del :
+            regex = f"^{pattern}.*?:\\s*(.*?)(?=\\n[\\w\\s]+:|$)"
+            match = re.search(regex, text, (re.DOTALL if dotall else 0) | re.IGNORECASE | re.MULTILINE)
             if match:
                 return match.group(1).strip()
         return ""
@@ -42,15 +46,12 @@ def parse_txt(file_path):
 
 def apply_format(text):
     """Aplica negritas y resaltado de frases impactantes"""
-    # Formatear párrafos
     paragraphs = text.split('\n\n')
     formatted = ""
     for p in paragraphs:
         p = p.strip()
         if p:
-            # Resaltar frases entre comillas y negrita: "frase" -> <b>"frase"</b>
             p = re.sub(r'\"(.*?)\"', r'<b>"\1"</b>', p)
-            # Detectar subtítulos (líneas cortas sin punto final)
             if len(p) < 80 and not p.endswith('.') and not p.endswith(':'):
                 formatted += f"<h3 class='article-subtitle'>{p}</h3>"
             else:
@@ -58,14 +59,16 @@ def apply_format(text):
     return formatted
 
 def generate_html(data, lang="es"):
-    """Genera el HTML final con la estética ProDig (Material Design)"""
+    """Genera el HTML final con la estética ProDig (Premium)"""
     slug = create_slug(data['titulo'])
-    canonical_url = f"https://aiprodig.com/blog/{slug}" if lang=="es" else f"https://aiprodig.com/en/blog/{slug}"
-    alt_lang_url = f"https://aiprodig.com/en/blog/{slug}" if lang=="es" else f"https://aiprodig.com/blog/{slug}"
+    canonical_url = f"https://aiprodig.com/Blog/{slug}" if lang=="es" else f"https://aiprodig.com/en/blog/{slug}"
+    alt_lang_url = f"https://aiprodig.com/en/blog/{slug}" if lang=="es" else f"https://aiprodig.com/Blog/{slug}"
     alt_lang = "en" if lang=="es" else "es"
     
-    # Google Analytics ID
-    ga_id = "G-G5Z4R6W8NX" 
+    # Textos según idioma
+    txt_likes = "Me gusta" if lang=="es" else "Likes"
+    txt_sources = "Fuentes y Referencias:" if lang=="es" else "Sources & References:"
+    txt_back = "Volver al Blog" if lang=="es" else "Back to Blog"
 
     html_template = f"""<!DOCTYPE html>
 <html lang="{lang}">
@@ -79,8 +82,10 @@ def generate_html(data, lang="es"):
     <link rel="canonical" href="{canonical_url}">
     <link rel="alternate" hreflang="{alt_lang}" href="{alt_lang_url}">
     
-    <!-- Fonts & Styles -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <style>
         :root {{
             --primary: #000000;
@@ -91,178 +96,264 @@ def generate_html(data, lang="es"):
             --bg-card: #f9fafb;
         }}
         
-        body {{
-            font-family: 'Outfit', sans-serif;
-            line-height: 1.6;
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            background: var(--bg-body);
-        }}
+        * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+        body {{ font-family: 'Outfit', sans-serif; line-height: 1.6; color: var(--text-main); background: var(--bg-body); }}
         
-        .article-container {{
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 0 1.5rem;
-        }}
-        
-        header {{
+        /* Header con Animación Materia Programable */
+        .article-header {{
+            position: relative;
+            padding: 8rem 2rem 4rem;
             text-align: center;
-            margin-bottom: 3rem;
+            background: #000;
+            color: white;
+            overflow: hidden;
         }}
+        
+        #bg-canvas {{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+        }}
+        
+        .header-content {{ position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }}
         
         .category-tag {{
             background: var(--accent);
             color: white;
-            padding: 0.25rem 1rem;
+            padding: 0.3rem 1.2rem;
             border-radius: 99px;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.1em;
         }}
         
-        .date {{
-            color: var(--text-secondary);
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }}
-        
-        .main-title {{
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin: 1.5rem 0;
-            font-weight: 600;
-        }}
+        .main-title {{ font-size: 3rem; margin: 1.5rem 0; font-weight: 700; line-height: 1.1; }}
+        .date {{ opacity: 0.7; font-size: 0.9rem; }}
+
+        /* Contenido */
+        .article-container {{ max-width: 850px; margin: 0 auto; padding: 4rem 1.5rem; }}
         
         .hero-image {{
             width: 100%;
             height: auto;
-            border-radius: 12px;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            margin-top: -6rem;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            background: #eee;
         }}
         
-        .article-body {{
-            font-size: 1.15rem;
-            color: var(--text-main);
-            margin-bottom: 4rem;
-        }}
-        
-        .article-subtitle {{
-            font-size: 1.8rem;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }}
-        
-        .article-paragraph {{
-            margin-bottom: 1.5rem;
-        }}
-        
-        b, strong {{
-            font-weight: 600;
-        }}
+        .article-body {{ font-size: 1.2rem; color: var(--text-main); margin-top: 4rem; }}
+        .article-subtitle {{ font-size: 1.8rem; margin: 3rem 0 1.5rem; font-weight: 700; color: #000; }}
+        .article-paragraph {{ margin-bottom: 1.8rem; }}
+        b {{ font-weight: 700; color: #000; }}
         
         .sources {{
             background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 4rem;
-            border-left: 4px solid var(--accent);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin: 4rem 0;
+            border-left: 5px solid var(--accent);
         }}
         
+        /* Footer de Interacción */
         .interaction-footer {{
             border-top: 1px solid #eee;
-            padding-top: 2rem;
+            padding-top: 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 2rem;
         }}
         
-        .btn-share {{
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            border: 1px solid #eee;
+        .like-container {{ display: flex; align-items: center; gap: 1rem; }}
+        
+        .btn-action {{
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #ddd;
             background: white;
             cursor: pointer;
             font-family: inherit;
-            transition: all 0.2s;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             text-decoration: none;
             color: var(--text-main);
-            font-size: 0.9rem;
+            font-weight: 600;
         }}
         
-        .btn-share:hover {{
-            background: #f3f4f6;
-            transform: translateY(-2px);
-        }}
+        .btn-action:hover {{ background: #f8f9fa; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }}
+        .btn-like.active {{ background: #fee2e2; border-color: #f87171; color: #dc2626; }}
         
+        .share-group {{ display: flex; gap: 0.8rem; }}
+        
+        /* WhatsApp Floating */
         .whatsapp-float {{
             position: fixed;
             bottom: 30px;
             right: 30px;
             background: #25d366;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
             text-decoration: none;
+            font-size: 32px;
+            transition: transform 0.3s;
+        }}
+        .whatsapp-float:hover {{ transform: scale(1.1) rotate(10deg); }}
+
+        @media (max-width: 768px) {{
+            .main-title {{ font-size: 2.2rem; }}
+            .hero-image {{ margin-top: -3rem; }}
         }}
     </style>
-    
-    <!-- GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={ga_id}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){{dataLayer.push(arguments);}}
-        gtag('js', new Date());
-        gtag('config', '{ga_id}');
-    </script>
 </head>
 <body>
-    <main class="article-container">
-        <header>
+    <header class="article-header">
+        <canvas id="bg-canvas"></canvas>
+        <div class="header-content">
             <span class="category-tag">{data['categoria']}</span>
-            <p class="date">{data['fecha']}</p>
             <h1 class="main-title">{data['titulo']}</h1>
-        </header>
-        
-        <img src="/blog/images/{data['imagen']}" alt="{data['titulo']}" class="hero-image">
+            <p class="date">{data['fecha']}</p>
+        </div>
+    </header>
+
+    <main class="article-container">
+        <img src="{IMG_PATH_URL}{data['imagen']}" alt="{data['titulo']}" class="hero-image">
         
         <article class="article-body">
             {apply_format(data['cuerpo'])}
         </article>
         
         <section class="sources">
-            <h4>Fuentes y Referencias:</h4>
-            <div class="sources-list">{apply_format(data['fuentes'])}</div>
+            <h4>{txt_sources}</h4>
+            <div style="margin-top: 1rem;">{apply_format(data['fuentes'])}</div>
         </section>
         
         <footer class="interaction-footer">
-            <div class="interaction-buttons">
-                <button class="btn-share" onclick="alert('¡Gracias por tu apoyo!')">❤️ Me gusta</button>
+            <div class="like-container">
+                <button id="likeBtn" class="btn-action btn-like">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>{txt_likes}</span>
+                    <span id="likeCount">0</span>
+                </button>
             </div>
-            <div class="share-buttons" style="display:flex; gap: 0.5rem;">
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url={canonical_url}" class="btn-share" target="_blank">LinkedIn</a>
-                <a href="https://twitter.com/intent/tweet?url={canonical_url}&text={data['titulo']}" class="btn-share" target="_blank">X</a>
-                <a href="https://wa.me/?text={data['titulo']}%20{canonical_url}" class="btn-share" target="_blank">WhatsApp</a>
+            
+            <div class="share-group">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={canonical_url}" class="btn-action" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/intent/tweet?url={canonical_url}" class="btn-action" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://wa.me/?text={data['titulo']}%20{canonical_url}" class="btn-action" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
         </footer>
+        
+        <div style="margin-top: 4rem; text-align: center;">
+            <a href="/Blog" style="text-decoration: none; color: var(--accent); font-weight: 600;">&larr; {txt_back}</a>
+        </div>
     </main>
 
     <a href="https://wa.me/573144897092" class="whatsapp-float" target="_blank">
-        <span style="font-size: 24px">WP</span>
+        <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Scripts de Funcionalidad -->
+    <script>
+        // --- ANIMACIÓN FONDO (MATERIA PROGRAMABLE) ---
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function initCanvas() {{
+            canvas.width = window.innerWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+            particles = [];
+            for (let i = 0; i < 80; i++) {{
+                particles.push({{
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    size: Math.random() * 2 + 1
+                }});
+            }}
+        }}
+
+        function animate() {{
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+            
+            particles.forEach((p, i) => {{
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+                
+                for (let j = i + 1; j < particles.length; j++) {{
+                    const p2 = particles[j];
+                    const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                    if (dist < 100) {{
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }}
+                }}
+            }});
+            requestAnimationFrame(animate);
+        }}
+
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        animate();
+
+        // --- CONTADOR DE LIKES (PERSISTENCIA LOCAL) ---
+        const articleId = "{slug}";
+        const likeBtn = document.getElementById('likeBtn');
+        const likeCountEl = document.getElementById('likeCount');
+        
+        // Simulación de persistencia (en producción usaría una DB real)
+        let likes = parseInt(localStorage.getItem('likes_' + articleId)) || Math.floor(Math.random() * 50) + 10;
+        let hasLiked = localStorage.getItem('hasLiked_' + articleId) === 'true';
+
+        function updateUI() {{
+            likeCountEl.textContent = likes;
+            if (hasLiked) likeBtn.classList.add('active');
+            else likeBtn.classList.remove('active');
+        }}
+
+        likeBtn.onclick = () => {{
+            if (!hasLiked) {{
+                likes++;
+                hasLiked = true;
+            }} else {{
+                likes--;
+                hasLiked = false;
+            }}
+            localStorage.setItem('likes_' + articleId, likes);
+            localStorage.setItem('hasLiked_' + articleId, hasLiked);
+            updateUI();
+        }};
+        
+        updateUI();
+    </script>
 </body>
 </html>"""
     return html_template
@@ -270,31 +361,22 @@ def generate_html(data, lang="es"):
 def publish(article_num):
     file_name = f"articulo{article_num}.txt"
     path = os.path.join(ARTICULOS_DIR, file_name)
-    
-    if not os.path.exists(path):
-        # Intentar sin tilde
-        path = os.path.join("Blog/articulos/", file_name)
+    if not os.path.exists(path): path = os.path.join("Blog/articulos/", file_name)
 
     if os.path.exists(path):
         data = parse_txt(path)
-        
-        # Generar Versión ES
+        # ES
         html_es = generate_html(data, "es")
         slug_es = create_slug(data['titulo'])
-        
-        es_path = os.path.join(OUTPUT_ES, f"{slug_es}.html")
-        with open(es_path, "w", encoding="utf-8") as f:
+        with open(os.path.join(OUTPUT_ES, f"{slug_es}.html"), "w", encoding="utf-8") as f:
             f.write(html_es)
-            
-        if not os.path.exists(OUTPUT_EN): os.makedirs(OUTPUT_EN)
-        
-        print(f"✅ Artículo {article_num} generado en ES: {es_path}")
+        print(f"Generated ES Version: {slug_es}.html")
         return data, slug_es
     else:
-        print(f"❌ Error: No se encontró {path}")
+        print(f"File {path} not found.")
         return None, None
 
 if __name__ == "__main__":
     import sys
-    num = sys.argv[1] if len(sys.argv) > 1 else input("Número de artículo: ")
+    num = sys.argv[1] if len(sys.argv) > 1 else input("Article number: ")
     publish(num)

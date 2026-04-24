@@ -8,10 +8,12 @@
     
     <!-- SEO & Canonical -->
     <link rel="canonical" href="https://aiprodig.com/en/blog/why-is-traditional-agile-slowing-down-your-company-in-the-age-of-ai">
-    <link rel="alternate" hreflang="es" href="https://aiprodig.com/blog/why-is-traditional-agile-slowing-down-your-company-in-the-age-of-ai">
+    <link rel="alternate" hreflang="es" href="https://aiprodig.com/Blog/why-is-traditional-agile-slowing-down-your-company-in-the-age-of-ai">
     
-    <!-- Fonts & Styles -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <style>
         :root {
             --primary: #000000;
@@ -22,153 +24,144 @@
             --bg-card: #f9fafb;
         }
         
-        body {
-            font-family: 'Outfit', sans-serif;
-            line-height: 1.6;
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            background: var(--bg-body);
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; line-height: 1.6; color: var(--text-main); background: var(--bg-body); }
         
-        .article-container {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 0 1.5rem;
-        }
-        
-        header {
+        /* Header con Animación Materia Programable */
+        .article-header {
+            position: relative;
+            padding: 8rem 2rem 4rem;
             text-align: center;
-            margin-bottom: 3rem;
+            background: #000;
+            color: white;
+            overflow: hidden;
         }
+        
+        #bg-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+        }
+        
+        .header-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
         
         .category-tag {
             background: var(--accent);
             color: white;
-            padding: 0.25rem 1rem;
+            padding: 0.3rem 1.2rem;
             border-radius: 99px;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
         
-        .date {
-            color: var(--text-secondary);
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-        
-        .main-title {
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin: 1.5rem 0;
-            font-weight: 600;
-        }
+        .main-title { font-size: 3rem; margin: 1.5rem 0; font-weight: 700; line-height: 1.1; }
+        .date { opacity: 0.7; font-size: 0.9rem; }
+
+        /* Contenido */
+        .article-container { max-width: 850px; margin: 0 auto; padding: 4rem 1.5rem; }
         
         .hero-image {
             width: 100%;
             height: auto;
-            border-radius: 12px;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            margin-top: -6rem;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            background: #eee;
         }
         
-        .article-body {
-            font-size: 1.15rem;
-            color: var(--text-main);
-            margin-bottom: 4rem;
-        }
-        
-        .article-subtitle {
-            font-size: 1.8rem;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-        
-        .article-paragraph {
-            margin-bottom: 1.5rem;
-        }
-        
-        b, strong {
-            font-weight: 600;
-        }
+        .article-body { font-size: 1.2rem; color: var(--text-main); margin-top: 4rem; }
+        .article-subtitle { font-size: 1.8rem; margin: 3rem 0 1.5rem; font-weight: 700; color: #000; }
+        .article-paragraph { margin-bottom: 1.8rem; }
+        b { font-weight: 700; color: #000; }
         
         .sources {
             background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 4rem;
-            border-left: 4px solid var(--accent);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin: 4rem 0;
+            border-left: 5px solid var(--accent);
         }
         
+        /* Footer de Interacción */
         .interaction-footer {
             border-top: 1px solid #eee;
-            padding-top: 2rem;
+            padding-top: 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 2rem;
         }
         
-        .btn-share {
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            border: 1px solid #eee;
+        .like-container { display: flex; align-items: center; gap: 1rem; }
+        
+        .btn-action {
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #ddd;
             background: white;
             cursor: pointer;
             font-family: inherit;
-            transition: all 0.2s;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             text-decoration: none;
             color: var(--text-main);
-            font-size: 0.9rem;
+            font-weight: 600;
         }
         
-        .btn-share:hover {
-            background: #f3f4f6;
-            transform: translateY(-2px);
-        }
+        .btn-action:hover { background: #f8f9fa; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .btn-like.active { background: #fee2e2; border-color: #f87171; color: #dc2626; }
         
+        .share-group { display: flex; gap: 0.8rem; }
+        
+        /* WhatsApp Floating */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
             background: #25d366;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
             text-decoration: none;
+            font-size: 32px;
+            transition: transform 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
+
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.2rem; }
+            .hero-image { margin-top: -3rem; }
         }
     </style>
-    
-    <!-- GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G5Z4R6W8NX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-G5Z4R6W8NX');
-    </script>
 </head>
 <body>
-    <main class="article-container">
-        <header>
+    <header class="article-header">
+        <canvas id="bg-canvas"></canvas>
+        <div class="header-content">
             <span class="category-tag">AI-Automation</span>
-            <p class="date">April 16, 2026</p>
             <h1 class="main-title">Why is traditional 'Agile' slowing down your company in the age of AI?</h1>
-        </header>
-        
-        <img src="/blog/images/imagen2.jpg" alt="Why is traditional 'Agile' slowing down your company in the age of AI?" class="hero-image">
+            <p class="date">April 16, 2026</p>
+        </div>
+    </header>
+
+    <main class="article-container">
+        <img src="/Blog/images/imagen2.jpg" alt="Why is traditional 'Agile' slowing down your company in the age of AI?" class="hero-image">
         
         <article class="article-body">
             <p class='article-paragraph'>In the competitive business landscape, <b>"agility"</b> has been the mantra for the last decade. However, we are witnessing a paradox: the same tools designed to speed up development are, in many cases, becoming the main bottleneck.</p><p class='article-paragraph'>The Great Mismatch: From Days to Seconds
@@ -182,24 +175,119 @@ Real agility in the AI era is not in following a Scrum manual, but in the speed 
         </article>
         
         <section class="sources">
-            <h4>Fuentes y Referencias:</h4>
-            <div class="sources-list"><h3 class='article-subtitle'>ProDig Research Lab</h3></div>
+            <h4>Sources & References:</h4>
+            <div style="margin-top: 1rem;"><h3 class='article-subtitle'>ProDig Research Lab</h3></div>
         </section>
         
         <footer class="interaction-footer">
-            <div class="interaction-buttons">
-                <button class="btn-share" onclick="alert('¡Gracias por tu apoyo!')">❤️ Me gusta</button>
+            <div class="like-container">
+                <button id="likeBtn" class="btn-action btn-like">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Likes</span>
+                    <span id="likeCount">0</span>
+                </button>
             </div>
-            <div class="share-buttons" style="display:flex; gap: 0.5rem;">
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://aiprodig.com/en/blog/why-is-traditional-agile-slowing-down-your-company-in-the-age-of-ai" class="btn-share" target="_blank">LinkedIn</a>
-                <a href="https://twitter.com/intent/tweet?url=https://aiprodig.com/en/blog/why-is-traditional-agile-slowing-down-your-company-in-the-age-of-ai&text=Why is traditional 'Agile' slowing down your company in the age of AI?" class="btn-share" target="_blank">X</a>
-                <a href="https://wa.me/?text=Why is traditional 'Agile' slowing down your company in the age of AI?%20https://aiprodig.com/en/blog/why-is-traditional-agile-slowing-down-your-company-in-the-age-of-ai" class="btn-share" target="_blank">WhatsApp</a>
+            
+            <div class="share-group">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://aiprodig.com/en/blog/why-is-traditional-agile-slowing-down-your-company-in-the-age-of-ai" class="btn-action" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/intent/tweet?url=https://aiprodig.com/en/blog/why-is-traditional-agile-slowing-down-your-company-in-the-age-of-ai" class="btn-action" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://wa.me/?text=Why is traditional 'Agile' slowing down your company in the age of AI?%20https://aiprodig.com/en/blog/why-is-traditional-agile-slowing-down-your-company-in-the-age-of-ai" class="btn-action" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
         </footer>
+        
+        <div style="margin-top: 4rem; text-align: center;">
+            <a href="/Blog" style="text-decoration: none; color: var(--accent); font-weight: 600;">&larr; Back to Blog</a>
+        </div>
     </main>
 
     <a href="https://wa.me/573144897092" class="whatsapp-float" target="_blank">
-        <span style="font-size: 24px">WP</span>
+        <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Scripts de Funcionalidad -->
+    <script>
+        // --- ANIMACIÓN FONDO (MATERIA PROGRAMABLE) ---
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+            particles = [];
+            for (let i = 0; i < 80; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    size: Math.random() * 2 + 1
+                });
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+            
+            particles.forEach((p, i) => {
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+                
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                    if (dist < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        animate();
+
+        // --- CONTADOR DE LIKES (PERSISTENCIA LOCAL) ---
+        const articleId = "why-is-traditional-agile-slowing-down-your-company-in-the-age-of-ai";
+        const likeBtn = document.getElementById('likeBtn');
+        const likeCountEl = document.getElementById('likeCount');
+        
+        // Simulación de persistencia (en producción usaría una DB real)
+        let likes = parseInt(localStorage.getItem('likes_' + articleId)) || Math.floor(Math.random() * 50) + 10;
+        let hasLiked = localStorage.getItem('hasLiked_' + articleId) === 'true';
+
+        function updateUI() {
+            likeCountEl.textContent = likes;
+            if (hasLiked) likeBtn.classList.add('active');
+            else likeBtn.classList.remove('active');
+        }
+
+        likeBtn.onclick = () => {
+            if (!hasLiked) {
+                likes++;
+                hasLiked = true;
+            } else {
+                likes--;
+                hasLiked = false;
+            }
+            localStorage.setItem('likes_' + articleId, likes);
+            localStorage.setItem('hasLiked_' + articleId, hasLiked);
+            updateUI();
+        };
+        
+        updateUI();
+    </script>
 </body>
 </html>

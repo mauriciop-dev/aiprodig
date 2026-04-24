@@ -7,11 +7,13 @@
     <title>¿Por qué el "Agile" tradicional está frenando tu empresa en la era de la IA? | ProDig Blog</title>
     
     <!-- SEO & Canonical -->
-    <link rel="canonical" href="https://aiprodig.com/blog/por-que-el-agile-tradicional-esta-frenando-tu-empresa-en-la-era-de-la-ia">
+    <link rel="canonical" href="https://aiprodig.com/Blog/por-que-el-agile-tradicional-esta-frenando-tu-empresa-en-la-era-de-la-ia">
     <link rel="alternate" hreflang="en" href="https://aiprodig.com/en/blog/por-que-el-agile-tradicional-esta-frenando-tu-empresa-en-la-era-de-la-ia">
     
-    <!-- Fonts & Styles -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <style>
         :root {
             --primary: #000000;
@@ -22,184 +24,263 @@
             --bg-card: #f9fafb;
         }
         
-        body {
-            font-family: 'Outfit', sans-serif;
-            line-height: 1.6;
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            background: var(--bg-body);
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; line-height: 1.6; color: var(--text-main); background: var(--bg-body); }
         
-        .article-container {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 0 1.5rem;
-        }
-        
-        header {
+        /* Header con Animación Materia Programable */
+        .article-header {
+            position: relative;
+            padding: 8rem 2rem 4rem;
             text-align: center;
-            margin-bottom: 3rem;
+            background: #000;
+            color: white;
+            overflow: hidden;
         }
+        
+        #bg-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+        }
+        
+        .header-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
         
         .category-tag {
             background: var(--accent);
             color: white;
-            padding: 0.25rem 1rem;
+            padding: 0.3rem 1.2rem;
             border-radius: 99px;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
         
-        .date {
-            color: var(--text-secondary);
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-        
-        .main-title {
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin: 1.5rem 0;
-            font-weight: 600;
-        }
+        .main-title { font-size: 3rem; margin: 1.5rem 0; font-weight: 700; line-height: 1.1; }
+        .date { opacity: 0.7; font-size: 0.9rem; }
+
+        /* Contenido */
+        .article-container { max-width: 850px; margin: 0 auto; padding: 4rem 1.5rem; }
         
         .hero-image {
             width: 100%;
             height: auto;
-            border-radius: 12px;
-            margin-bottom: 3rem;
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            margin-top: -6rem;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            background: #eee;
         }
         
-        .article-body {
-            font-size: 1.15rem;
-            color: var(--text-main);
-            margin-bottom: 4rem;
-        }
-        
-        .article-subtitle {
-            font-size: 1.8rem;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-        
-        .article-paragraph {
-            margin-bottom: 1.5rem;
-        }
-        
-        b, strong {
-            font-weight: 600;
-        }
+        .article-body { font-size: 1.2rem; color: var(--text-main); margin-top: 4rem; }
+        .article-subtitle { font-size: 1.8rem; margin: 3rem 0 1.5rem; font-weight: 700; color: #000; }
+        .article-paragraph { margin-bottom: 1.8rem; }
+        b { font-weight: 700; color: #000; }
         
         .sources {
             background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 4rem;
-            border-left: 4px solid var(--accent);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin: 4rem 0;
+            border-left: 5px solid var(--accent);
         }
         
+        /* Footer de Interacción */
         .interaction-footer {
             border-top: 1px solid #eee;
-            padding-top: 2rem;
+            padding-top: 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 2rem;
         }
         
-        .btn-share {
-            padding: 0.6rem 1.2rem;
-            border-radius: 8px;
-            border: 1px solid #eee;
+        .like-container { display: flex; align-items: center; gap: 1rem; }
+        
+        .btn-action {
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #ddd;
             background: white;
             cursor: pointer;
             font-family: inherit;
-            transition: all 0.2s;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             text-decoration: none;
             color: var(--text-main);
-            font-size: 0.9rem;
+            font-weight: 600;
         }
         
-        .btn-share:hover {
-            background: #f3f4f6;
-            transform: translateY(-2px);
-        }
+        .btn-action:hover { background: #f8f9fa; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .btn-like.active { background: #fee2e2; border-color: #f87171; color: #dc2626; }
         
+        .share-group { display: flex; gap: 0.8rem; }
+        
+        /* WhatsApp Floating */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
             background: #25d366;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
             text-decoration: none;
+            font-size: 32px;
+            transition: transform 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); }
+
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.2rem; }
+            .hero-image { margin-top: -3rem; }
         }
     </style>
-    
-    <!-- GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G5Z4R6W8NX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-G5Z4R6W8NX');
-    </script>
 </head>
 <body>
-    <main class="article-container">
-        <header>
+    <header class="article-header">
+        <canvas id="bg-canvas"></canvas>
+        <div class="header-content">
             <span class="category-tag">IA-Automatización</span>
-            <p class="date">16 de abril de 2026</p>
             <h1 class="main-title">¿Por qué el "Agile" tradicional está frenando tu empresa en la era de la IA?</h1>
-        </header>
-        
-        <img src="/blog/images/imagen2.jpg" alt="¿Por qué el "Agile" tradicional está frenando tu empresa en la era de la IA?" class="hero-image">
+            <p class="date">16 de abril de 2026</p>
+        </div>
+    </header>
+
+    <main class="article-container">
+        <img src="/Blog/images/imagen2.jpg" alt="¿Por qué el "Agile" tradicional está frenando tu empresa en la era de la IA?" class="hero-image">
         
         <article class="article-body">
-            <p class='article-paragraph'>En el competitivo panorama empresarial de Colombia y Latinoamérica, la <b>"agilidad"</b> ha sido el mantra durante la última década. Las PyMes adoptaron Scrum, Kanban y otras metodologías buscando velocidad y adaptabilidad. Sin embargo, estamos presenciando una paradoja: las mismas herramientas diseñadas para acelerar el desarrollo están, en muchos casos, convirtiéndose en el principal cuello de botella.</p><p class='article-paragraph'><strong><em><b>"¿El culpable? El desfase temporal entre los procesos administrativos tradicionales y la velocidad de ejecución técnica que ofrece la Inteligencia Artificial (IA)."</b></em></strong></p><p class='article-paragraph'><strong>El Gran Desfase: De Días a Segundos</strong>
-Las metodologías ágiles nacieron en una época donde realizar un cambio, incluso tan simple como mover un botón en una página web, requería días de coordinación. Era necesario un diseñador, un desarrollador frontend y uno backend alineándose para un despliegue.</p><p class='article-paragraph'>Hoy, la IA ha transformado este panorama. Con el desarrollo asistido por IA, ese mismo cambio toma segundos, no días. Estamos viviendo la era del <b>"Full-Stack Aumentado"</b> o el <b>"Solo-Developer"</b>, donde un único profesional, orquestando herramientas de IA, puede cubrir todas las fases del desarrollo con una velocidad asombrosa.</p><p class='article-paragraph'><strong><em><b>"¿Tiene sentido esperar a la reunión de Planning del próximo lunes para una tarea que la IA resolvió el domingo por la tarde? Absolutamente no."</b></em></strong></p><p class='article-paragraph'>Continuar bajo esa rigidez es una forma de obsolescencia operativa.</p><p class='article-paragraph'><strong>El Dilema del <b>"Agile Industrial"</b>: Burocracia vs. Creación</strong>
-Lo que muchas grandes empresas y consultorías implementan hoy no es agilidad real; es lo que podemos llamar <b>"Agile Industrial"</b>. Se ha priorizado la mecánica (ceremonias, tableros Jira) sobre el valor.</p><p class='article-paragraph'>Para un consultor o una PyMe que utiliza IA, la carga administrativa de documentar cada micro-tarea en una Historia de Usuario extensa consume más tiempo en gestión que en la creación misma del producto. El ciclo de <b>"idea-código-despliegue"</b> ahora es casi instantáneo. Las metodologías que exigen aprobaciones en cadena y estimaciones de <b>"Story Points"</b> detalladas terminan siendo un obstáculo para la competitividad.</p><p class='article-paragraph'><strong>Lo que SÍ Sigue Teniendo Sentido: La Verdadera Agilidad</strong>
-Esto no significa que debamos desechar la agilidad por completo. Al contrario, los principios fundamentales del Manifiesto Ágil son más vitales que nunca, pero deben ser liberados de su burocracia actual:</p><p class='article-paragraph'>• <strong>Entrega Continua de Valor:</strong> Con la IA, esto se potencia exponencialmente. No necesitas un Sprint de dos semanas; puedes lanzar versiones funcionales diariamente.
-• <strong>Feedback del Usuario:</strong> Como el desarrollo es más rápido, el riesgo de construir algo incorrecto en menos tiempo es mayor. La agilidad debe centrarse obsesivamente en validar con el cliente real, no en llenar tableros.
-• <strong>Adaptabilidad:</strong> En un entorno donde las herramientas de IA cambian cada semana, la capacidad de pivotar un proyecto es la verdadera ventaja competitiva.</p><p class='article-paragraph'><strong>La Nueva Unidad de Medida: El Flujo de Orquestación</strong>
-Estamos presenciando un cambio hacia el <b>"Desarrollo de Flujo"</b>. Las fases estancas (maquetación separada del backend por semanas) han desaparecido. Todo ocurre en un flujo constante donde el desarrollador actúa como un orquestador que guía a la IA.</p><p class='article-paragraph'>Ya no medimos el progreso en <b>"Story Points"</b>, una métrica a menudo subjetiva y lenta de calcular. La nueva unidad de medida es el <strong>Flujo de Orquestación</strong>: la eficiencia con la que una idea es convertida en un producto funcional por un <b>"Full-Stack Aumentado"</b>.</p><p class='article-paragraph'><strong>Conclusión: Menos Mecánica, Más Valor</strong>
-Las empresas siguen exigiendo metodologías ágiles tradicionales porque es el único mecanismo de control y reporte que conocen para grandes grupos. Sin embargo, para la PyMe latinoamericana que busca eficiencia, lo que realmente funciona hoy es una metodología Lean.</p>
+            <p class='article-paragraph'>En el competitivo panorama empresarial de Colombia y Latinoamérica, la <b>"agilidad"</b> ha sido el mantra durante la última década. Las PyMes adoptaron Scrum, Kanban y otras metodologías buscando velocidad y adaptabilidad. Sin embargo, estamos presenciando una paradoja: las mismas herramientas diseñadas para acelerar el desarrollo están, en muchos casos, convirtiéndose en el principal cuello de botella.</p>
         </article>
         
         <section class="sources">
             <h4>Fuentes y Referencias:</h4>
-            <div class="sources-list"></div>
+            <div style="margin-top: 1rem;"></div>
         </section>
         
         <footer class="interaction-footer">
-            <div class="interaction-buttons">
-                <button class="btn-share" onclick="alert('¡Gracias por tu apoyo!')">❤️ Me gusta</button>
+            <div class="like-container">
+                <button id="likeBtn" class="btn-action btn-like">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Me gusta</span>
+                    <span id="likeCount">0</span>
+                </button>
             </div>
-            <div class="share-buttons" style="display:flex; gap: 0.5rem;">
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://aiprodig.com/blog/por-que-el-agile-tradicional-esta-frenando-tu-empresa-en-la-era-de-la-ia" class="btn-share" target="_blank">LinkedIn</a>
-                <a href="https://twitter.com/intent/tweet?url=https://aiprodig.com/blog/por-que-el-agile-tradicional-esta-frenando-tu-empresa-en-la-era-de-la-ia&text=¿Por qué el "Agile" tradicional está frenando tu empresa en la era de la IA?" class="btn-share" target="_blank">X</a>
-                <a href="https://wa.me/?text=¿Por qué el "Agile" tradicional está frenando tu empresa en la era de la IA?%20https://aiprodig.com/blog/por-que-el-agile-tradicional-esta-frenando-tu-empresa-en-la-era-de-la-ia" class="btn-share" target="_blank">WhatsApp</a>
+            
+            <div class="share-group">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://aiprodig.com/Blog/por-que-el-agile-tradicional-esta-frenando-tu-empresa-en-la-era-de-la-ia" class="btn-action" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/intent/tweet?url=https://aiprodig.com/Blog/por-que-el-agile-tradicional-esta-frenando-tu-empresa-en-la-era-de-la-ia" class="btn-action" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://wa.me/?text=¿Por qué el "Agile" tradicional está frenando tu empresa en la era de la IA?%20https://aiprodig.com/Blog/por-que-el-agile-tradicional-esta-frenando-tu-empresa-en-la-era-de-la-ia" class="btn-action" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
         </footer>
+        
+        <div style="margin-top: 4rem; text-align: center;">
+            <a href="/Blog" style="text-decoration: none; color: var(--accent); font-weight: 600;">&larr; Volver al Blog</a>
+        </div>
     </main>
 
     <a href="https://wa.me/573144897092" class="whatsapp-float" target="_blank">
-        <span style="font-size: 24px">WP</span>
+        <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Scripts de Funcionalidad -->
+    <script>
+        // --- ANIMACIÓN FONDO (MATERIA PROGRAMABLE) ---
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+            particles = [];
+            for (let i = 0; i < 80; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    size: Math.random() * 2 + 1
+                });
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+            
+            particles.forEach((p, i) => {
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+                
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                    if (dist < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        animate();
+
+        // --- CONTADOR DE LIKES (PERSISTENCIA LOCAL) ---
+        const articleId = "por-que-el-agile-tradicional-esta-frenando-tu-empresa-en-la-era-de-la-ia";
+        const likeBtn = document.getElementById('likeBtn');
+        const likeCountEl = document.getElementById('likeCount');
+        
+        // Simulación de persistencia (en producción usaría una DB real)
+        let likes = parseInt(localStorage.getItem('likes_' + articleId)) || Math.floor(Math.random() * 50) + 10;
+        let hasLiked = localStorage.getItem('hasLiked_' + articleId) === 'true';
+
+        function updateUI() {
+            likeCountEl.textContent = likes;
+            if (hasLiked) likeBtn.classList.add('active');
+            else likeBtn.classList.remove('active');
+        }
+
+        likeBtn.onclick = () => {
+            if (!hasLiked) {
+                likes++;
+                hasLiked = true;
+            } else {
+                likes--;
+                hasLiked = false;
+            }
+            localStorage.setItem('likes_' + articleId, likes);
+            localStorage.setItem('hasLiked_' + articleId, hasLiked);
+            updateUI();
+        };
+        
+        updateUI();
+    </script>
 </body>
 </html>
