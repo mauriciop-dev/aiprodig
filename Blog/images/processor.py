@@ -10,7 +10,7 @@ if not os.path.exists(ARTICULOS_DIR):
 
 IMAGES_DIR = "Blog/images/"
 IMG_PATH_URL = "/Blog/images/"
-OUTPUT_ES = "Blog/"
+OUTPUT_ES = "blog/"
 OUTPUT_EN = "en/blog/"
 
 def create_slug(title):
