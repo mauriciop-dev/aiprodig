@@ -113,10 +113,45 @@ No estamos programando aplicaciones; estamos programando la realidad del futuro.
         const aid = "el-activo-invisible-por-que-su-empresa-es-mas-pobre-de-lo-que-dicen-sus-libros-contables";
         const lbtn = document.getElementById('likeBtn');
         const lcnt = document.getElementById('likeCount');
-        let count = parseInt(localStorage.getItem('L_'+aid)) || Math.floor(Math.random()*15)+30;
+        const API_BASE = "https://s34xeek7.functions.insforge.app";
+        
+        let count = 0;
         let liked = localStorage.getItem('H_'+aid) === 'Y';
-        function up() { lcnt.innerText = count; lbtn.className = liked ? 'btn-action btn-like active' : 'btn-action btn-like'; }
-        lbtn.onclick = () => { if(liked) count--; else count++; liked=!liked; localStorage.setItem('L_'+aid, count); localStorage.setItem('H_'+aid, liked?'Y':'N'); up(); };
+
+        async function fetchStats() {
+            try {
+                const r = await fetch(API_BASE + "/get-stats");
+                const data = await r.json();
+                const item = data.find(i => i.article_id === aid);
+                if (item) {
+                    count = item.likes_count;
+                    up();
+                }
+            } catch (e) { console.error("Error fetching stats", e); }
+        }
+
+        function up() { 
+            lcnt.innerText = count; 
+            lbtn.className = liked ? 'btn-action btn-like active' : 'btn-action btn-like'; 
+        }
+
+        lbtn.onclick = async () => { 
+            if(liked) return; // Prevent multiple likes for now or handle decrement
+            
+            count++; 
+            liked = true;
+            localStorage.setItem('H_'+aid, 'Y');
+            up();
+
+            try {
+                await fetch(API_BASE + "/handle-likes", {
+                    method: 'POST',
+                    body: JSON.stringify({ article_id: aid })
+                });
+            } catch (e) { console.error("Error saving like", e); }
+        };
+
+        fetchStats();
         up();
     </script>
 </body>
