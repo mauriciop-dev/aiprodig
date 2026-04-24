@@ -247,8 +247,10 @@ def generate_html(data, lang="es", prev_article=None, next_article=None):
         fetchStats();
         up();
     </script>
+    <script src="/blog/images/telemetry.js"></script>
 </body>
 </html>"""
+
     return html_template
 
 def publish(article_num):

@@ -1,40 +1,55 @@
-// Telemetría ProDig Shadow Agent
-const API_URL = 'https://s34xeek7.functions.insforge.app/event-tracking';
+// ProDig Global Telemetry System
+const TELEMETRY_ENDPOINT = 'https://s34xeek7.functions.insforge.app/prodig-telemetry';
 
-const trackProDigEvent = async (eventName, details = {}) => {
+const sendTelemetry = async (eventName, metadata = {}) => {
     const payload = {
-        event: eventName,
+        event_name: eventName,
         url: window.location.pathname,
-        lang: navigator.language,
-        user_id: localStorage.getItem('prodig_user_id') || 'anon_' + Math.random().toString(36).substr(2, 9),
-        ...details
+        user_lang: navigator.language || navigator.userLanguage,
+        timestamp: new Date().toISOString(),
+        metadata: {
+            ...metadata,
+            screen_resolution: `${window.screen.width}x${window.screen.height}`,
+            referrer: document.referrer
+        }
     };
 
-    if (!localStorage.getItem('prodig_user_id')) {
-        localStorage.setItem('prodig_user_id', payload.user_id);
-    }
-
     try {
-        await fetch(API_URL, {
+        // Usamos keepalive para asegurar que los eventos de cierre de sesión se envíen
+        await fetch(TELEMETRY_ENDPOINT, {
             method: 'POST',
-            mode: 'cors',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
+            body: JSON.stringify(payload),
+            keepalive: true,
+            mode: 'cors'
         });
     } catch (e) {}
 };
 
-// Auto-track: Vista de página
-window.addEventListener('DOMContentLoaded', () => trackProDigEvent('page_view'));
+// 1. Carga de página (page_view)
+window.addEventListener('DOMContentLoaded', () => sendTelemetry('page_view'));
 
-// Auto-track: Clics en elementos interactivos
+// 2. Interacciones (botones y enlaces externos)
 document.addEventListener('click', (e) => {
-    const target = e.target.closest('button, a, .interactive');
+    const target = e.target.closest('a, button');
     if (target) {
-        trackProDigEvent('click', { 
-            element: target.tagName, 
-            text: target.innerText?.substring(0, 30),
-            id: target.id 
+        const isExternal = target.tagName === 'A' && target.hostname !== window.location.hostname;
+        sendTelemetry('interaction', {
+            type: target.tagName,
+            text: target.innerText?.trim().substring(0, 50),
+            id: target.id,
+            is_external: isExternal,
+            href: target.href
         });
     }
-});
+});
+
+// 3. Fin de sesión (session_end)
+window.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+        sendTelemetry('session_end', {
+            time_on_page: performance.now()
+        });
+    }
+});
+
