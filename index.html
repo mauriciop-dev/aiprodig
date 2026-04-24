@@ -857,52 +857,61 @@
     <!-- Blog Section -->
     <section id="blog" class="blog-preview" style="padding: 6rem 0; background: #fff;">
         <div class="container">
-            <div class="section-title">
-                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Blog AIPRODIG</h2>
-                <p style="text-align: center; color: #666; margin-bottom: 3rem;">Nuestra visión sobre la IA y la transformación digital</p>
+            <div class="section-title" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
+                <div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem; text-align: left;">Blog AIPRODIG</h2>
+                    <p style="color: #666; text-align: left;">Nuestra visión sobre la IA y la transformación digital</p>
+                </div>
+                <a href="/Blog" class="btn" style="padding: 10px 20px; font-size: 0.9rem; border: 1px solid #2563eb; color: #2563eb; background: transparent;">Ver todo <i class="fas fa-external-link-alt"></i></a>
             </div>
-            <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+            <div class="blog-carousel" style="display: flex; overflow-x: auto; gap: 1.5rem; padding: 1rem 0 2rem; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch;">
                 <!-- Card 4 -->
-                <div class="blog-card" style="border: 1px solid #eee; border-radius: 20px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                    <img src="/Blog/images/imagen4.png" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 2rem; flex-grow: 1; display: flex; flex-direction: column;">
-                        <span style="color: #2563eb; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem;">Estrategia Digital / IA</span>
-                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: #0f172a;">El Activo Invisible: ¿Soberanía o Arriendo?</h3>
-                        <p style="color: #64748b; font-size: 1rem; margin-bottom: 2rem; line-height: 1.5;">Descubre cómo convertir el conocimiento atrapado en su empresa en activos digitales de alto valor.</p>
-                        <a href="/Blog/el-activo-invisible-por-que-su-empresa-es-mas-pobre-de-lo-que-dicen-sus-libros-contables.html" style="margin-top: auto; color: #2563eb; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">Leer más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <!-- Card 1 -->
-                <div class="blog-card" style="border: 1px solid #eee; border-radius: 20px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                    <img src="/Blog/images/imagen3.jpg" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 2rem; flex-grow: 1; display: flex; flex-direction: column;">
-                        <span style="color: #2563eb; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem;">IA-Tecnología</span>
-                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: #0f172a;">La Gran Convergencia: IA y Materia</h3>
-                        <p style="color: #64748b; font-size: 1rem; margin-bottom: 2rem; line-height: 1.5;">Exploramos cómo la IA se convertirá en el sistema operativo de la materia física y la metodología MDDC.</p>
-                        <a href="/Blog/la-gran-convergencia-por-que-la-ia-de-hoy-es-el-sistema-operativo-de-la-materia-de-manana.html" style="margin-top: auto; color: #2563eb; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">Leer más <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="blog-card" style="border: 1px solid #eee; border-radius: 20px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                    <img src="/Blog/images/imagen1.jpg" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 2rem; flex-grow: 1; display: flex; flex-direction: column;">
-                        <span style="color: #2563eb; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem;">IA-Empresas</span>
-                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: #0f172a;">Web en 2026: ¿Importa aún?</h3>
-                        <p style="color: #64748b; font-size: 1rem; margin-bottom: 2rem; line-height: 1.5;">La realidad del SEO y la identidad digital en la era de los modelos de lenguaje y la IA.</p>
-                        <a href="/Blog/crees-que-tener-una-pagina-web-en-2026-es-irrelevante-la-realidad-te-sorprendera.html" style="margin-top: auto; color: #2563eb; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">Leer más <i class="fas fa-arrow-right"></i></a>
+                <div class="blog-card" style="flex: 0 0 300px; border: 1px solid #eee; border-radius: 20px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: start;">
+                    <img src="/Blog/images/imagen4.jpg" style="width: 100%; height: 180px; object-fit: cover;">
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
+                        <span style="color: #2563eb; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem;">Estrategia Digital / IA</span>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: #0f172a;">El Activo Invisible: ¿Soberanía o Arriendo?</h3>
+                        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.4;">Descubre cómo convertir el conocimiento atrapado en su empresa en activos digitales.</p>
+                        <a href="/Blog/el-activo-invisible-por-que-su-empresa-es-mas-pobre-de-lo-que-dicen-sus-libros-contables.html" style="margin-top: auto; color: #2563eb; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="blog-card" style="border: 1px solid #eee; border-radius: 20px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                    <img src="/Blog/images/imagen2.jpg" style="width: 100%; height: 220px; object-fit: cover;">
-                    <div style="padding: 2rem; flex-grow: 1; display: flex; flex-direction: column;">
-                        <span style="color: #2563eb; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem;">IA-Agilidad</span>
-                        <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: #0f172a;">Agile vs Inteligencia Artificial</h3>
-                        <p style="color: #64748b; font-size: 1rem; margin-bottom: 2rem; line-height: 1.5;">Por qué las metodologías tradicionales están frenando la ejecución acelerada en la era de la IA.</p>
-                        <a href="/Blog/por-que-el-agile-tradicional-esta-frenando-tu-empresa-en-la-era-de-la-ia.html" style="margin-top: auto; color: #2563eb; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">Leer más <i class="fas fa-arrow-right"></i></a>
+                <div class="blog-card" style="flex: 0 0 300px; border: 1px solid #eee; border-radius: 20px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: start;">
+                    <img src="/Blog/images/imagen3.jpg" style="width: 100%; height: 180px; object-fit: cover;">
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
+                        <span style="color: #2563eb; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem;">IA-Tecnología</span>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: #0f172a;">La Gran Convergencia: IA y Materia</h3>
+                        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.4;">Exploramos cómo la IA se convertirá en el sistema operativo de la materia física.</p>
+                        <a href="/Blog/la-gran-convergencia-por-que-la-ia-de-hoy-es-el-sistema-operativo-de-la-materia-de-manana.html" style="margin-top: auto; color: #2563eb; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Card 1 -->
+                <div class="blog-card" style="flex: 0 0 300px; border: 1px solid #eee; border-radius: 20px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: start;">
+                    <img src="/Blog/images/imagen1.jpg" style="width: 100%; height: 180px; object-fit: cover;">
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
+                        <span style="color: #2563eb; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem;">IA-Empresas</span>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: #0f172a;">Web en 2026: ¿Importa aún?</h3>
+                        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.4;">La realidad del SEO y la identidad digital en la era de los modelos de lenguaje y la IA.</p>
+                        <a href="/Blog/crees-que-tener-una-pagina-web-en-2026-es-irrelevante-la-realidad-te-sorprendera.html" style="margin-top: auto; color: #2563eb; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="blog-card" style="flex: 0 0 300px; border: 1px solid #eee; border-radius: 20px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: start;">
+                    <img src="/Blog/images/imagen2.jpg" style="width: 100%; height: 180px; object-fit: cover;">
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
+                        <span style="color: #2563eb; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem;">IA-Agilidad</span>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: #0f172a;">Agile vs Inteligencia Artificial</h3>
+                        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.4;">Por qué las metodologías tradicionales están frenando la ejecución acelerada.</p>
+                        <a href="/Blog/por-que-el-agile-tradicional-esta-frenando-tu-empresa-en-la-era-de-la-ia.html" style="margin-top: auto; color: #2563eb; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">Leer más <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
+            <style>
+                .blog-carousel::-webkit-scrollbar { height: 8px; }
+                .blog-carousel::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
+                .blog-carousel::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+                .blog-carousel::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+            </style>
         </div>
     </section>
 
