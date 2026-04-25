@@ -3,74 +3,92 @@ import re
 
 import unicodedata
 
+
 def slugify(text):
-    text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('ascii')
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
     text = text.lower()
-    text = re.sub(r'[^\w\s-]', '', text)
-    text = re.sub(r'[\s_-]+', '-', text)
-    text = text.strip('-')
+    text = re.sub(r"[^\w\s-]", "", text)
+    text = re.sub(r"[\s_-]+", "-", text)
+    text = text.strip("-")
     return text
 
+
 def publish_article(number):
-    base_path = 'c:/Users/micnu/OneDrive/PROYECTOS/AIPRODIG/Blog'
-    txt_path = os.path.join(base_path, 'artículos', f'articulo{number}.txt')
-    
+    base_path = "c:/Users/micnu/OneDrive/PROYECTOS/AIPRODIG/Blog"
+    txt_path = os.path.join(base_path, "artículos", f"articulo{number}.txt")
+
     if not os.path.exists(txt_path):
         print(f"Error: No se encontró el archivo {txt_path}")
         return
 
-    with open(txt_path, 'r', encoding='utf-8') as f:
+    with open(txt_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
     article_data = {}
     current_key = None
     body_lines = []
-    
+
     for line in lines:
         line = line.strip()
-        if not line: continue
-        
+        if not line:
+            continue
+
         lower_line = line.lower()
-        if lower_line.startswith('titulo:') or lower_line.startswith('título:') or lower_line.startswith('título del artículo:'):
-            article_data['title'] = line.split(':', 1)[1].strip()
-        elif lower_line.startswith('fecha:') or lower_line.startswith('fecha de publicación:'):
-            article_data['date'] = line.split(':', 1)[1].strip()
-        elif lower_line.startswith('categoría:') or lower_line.startswith('categoria:'):
-            article_data['category'] = line.split(':', 1)[1].strip()
-        elif lower_line.startswith('meta descripción:') or lower_line.startswith('meta descripcion:'):
-            article_data['meta'] = line.split(':', 1)[1].strip()
-        elif lower_line.startswith('imagen:') or lower_line.startswith('imagen del articulo:'):
-            article_data['image'] = line.split(':', 1)[1].strip()
-        elif lower_line.startswith('fuentes:'):
-            article_data['sources'] = line.split(':', 1)[1].strip()
-        elif lower_line.startswith('cuerpo:') or lower_line.startswith('cuerpo del artículo:') or lower_line.startswith('cuerpo del articulo:'):
-            current_key = 'body'
-            rest = line.split(':', 1)[1].strip()
-            if rest: body_lines.append(rest)
-        elif current_key == 'body':
+        if (
+            lower_line.startswith("titulo:")
+            or lower_line.startswith("título:")
+            or lower_line.startswith("título del artículo:")
+        ):
+            article_data["title"] = line.split(":", 1)[1].strip()
+        elif lower_line.startswith("fecha:") or lower_line.startswith(
+            "fecha de publicación:"
+        ):
+            article_data["date"] = line.split(":", 1)[1].strip()
+        elif lower_line.startswith("categoría:") or lower_line.startswith("categoria:"):
+            article_data["category"] = line.split(":", 1)[1].strip()
+        elif lower_line.startswith("meta") and (
+            "descripcion" in lower_line or "descripción" in lower_line
+        ):
+            article_data["meta"] = line.split(":", 1)[1].strip()
+        elif lower_line.startswith("imagen") or lower_line.startswith(
+            "imagen del articulo"
+        ):
+            article_data["image"] = line.split(":", 1)[1].strip()
+        elif lower_line.startswith("fuentes:"):
+            article_data["sources"] = line.split(":", 1)[1].strip()
+        elif (
+            lower_line.startswith("cuerpo:")
+            or lower_line.startswith("cuerpo del artículo:")
+            or lower_line.startswith("cuerpo del articulo:")
+        ):
+            current_key = "body"
+            rest = line.split(":", 1)[1].strip()
+            if rest:
+                body_lines.append(rest)
+        elif current_key == "body":
             body_lines.append(line)
 
-    article_data['body'] = body_lines
-    if 'sources' not in article_data:
-        article_data['sources'] = ''
-    
+    article_data["body"] = body_lines
+    if "sources" not in article_data:
+        article_data["sources"] = ""
+
     # Template for individual article page
-    slug = slugify(article_data['title'])
+    slug = slugify(article_data["title"])
     html_filename = f"{slug}.html"
     html_path = os.path.join(base_path, html_filename)
-    
-    body_html = "".join([f"<p>{p}</p>" for p in article_data['body']])
-    
+
+    body_html = "".join([f"<p>{p}</p>" for p in article_data["body"]])
+
     html_content = f"""<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{article_data['title']} - Blog AIPRODIG</title>
-    <meta name="description" content="{article_data['meta']}">
-    <meta property="og:title" content="{article_data['title']} - Blog AIPRODIG">
-    <meta property="og:description" content="{article_data['meta']}">
-    <meta property="og:image" content="https://aiprodig.com/Blog/images/{article_data['image']}">
+    <title>{article_data["title"]} - Blog AIPRODIG</title>
+    <meta name="description" content="{article_data["meta"]}">
+    <meta property="og:title" content="{article_data["title"]} - Blog AIPRODIG">
+    <meta property="og:description" content="{article_data["meta"]}">
+    <meta property="og:image" content="https://aiprodig.com/Blog/images/{article_data["image"]}">
     <meta property="og:url" content="https://aiprodig.com/Blog/{html_filename}">
     <meta property="og:type" content="article">
     <meta name="twitter:card" content="summary_large_image">
@@ -116,15 +134,15 @@ def publish_article(number):
     </header>
 
     <article class="article-container">
-        <div class="date">{article_data['date']} | {article_data['category']}</div>
-        <h1>{article_data['title']}</h1>
-        <img src="images/{article_data['image']}" alt="{article_data['title']}" class="hero-img">
+        <div class="date">{article_data["date"]} | {article_data["category"]}</div>
+        <h1>{article_data["title"]}</h1>
+        <img src="images/{article_data["image"]}" alt="{article_data["title"]}" class="hero-img">
         <div class="content">
             {body_html}
         </div>
         <div class="sources">
             <strong>Fuentes:</strong><br>
-            {article_data['sources']}
+            {article_data["sources"]}
         </div>
         
         <div class="social-share">
@@ -153,41 +171,44 @@ def publish_article(number):
 </body>
 </html>
 """
-    
-    with open(html_path, 'w', encoding='utf-8') as f:
+
+    with open(html_path, "w", encoding="utf-8") as f:
         f.write(html_content)
-    
+
     print(f"Éxito: Artículo publicado en {html_path}")
-    
+
     # Update main index.html
     update_index(base_path, article_data, html_filename)
 
+
 def update_index(base_path, article_data, html_filename):
-    index_path = os.path.join(base_path, 'index.html')
-    with open(index_path, 'r', encoding='utf-8') as f:
+    index_path = os.path.join(base_path, "index.html")
+    with open(index_path, "r", encoding="utf-8") as f:
         content = f.read()
-    
+
     new_card = f"""
             <a href="{html_filename}" class="blog-card">
-                <img src="images/{article_data['image']}" alt="{article_data['title']}" class="blog-card-image">
+                <img src="images/{article_data["image"]}" alt="{article_data["title"]}" class="blog-card-image">
                 <div class="blog-card-content">
-                    <span class="blog-card-category">{article_data['category']}</span>
-                    <h2 class="blog-card-title small-text">{article_data['title']}</h2>
-                    <p class="blog-card-description">{article_data['meta']}</p>
+                    <span class="blog-card-category">{article_data["category"]}</span>
+                    <h2 class="blog-card-title small-text">{article_data["title"]}</h2>
+                    <p class="blog-card-description">{article_data["meta"]}</p>
                 </div>
             </a>"""
-    
+
     # Insert before the closing grid div
-    if '<!-- Los artículos se cargarán aquí' in content:
+    if "<!-- Los artículos se cargarán aquí" in content:
         if f'href="{html_filename}"' not in content:
-            placeholder = '<!-- Los artículos se cargarán aquí dinámicamente o se añadirán manualmente -->'
+            placeholder = "<!-- Los artículos se cargarán aquí dinámicamente o se añadirán manualmente -->"
             content = content.replace(placeholder, placeholder + new_card)
-    
-    with open(index_path, 'w', encoding='utf-8') as f:
+
+    with open(index_path, "w", encoding="utf-8") as f:
         f.write(content)
+
 
 if __name__ == "__main__":
     import sys
+
     if len(sys.argv) > 1:
         publish_article(sys.argv[1])
     else:
