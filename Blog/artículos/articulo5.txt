@@ -72,10 +72,4 @@ En un mundo donde el 90% del contenido es ruido de máquinas, la "señal humana"
 
 ¿Es su presencia digital un eco temporal en un algoritmo, o un pilar estructurado de verdad en el que la IA de mañana confiará?
 
-Fuentes:
-- Unidad de Análisis de Online Khadamate (https://onlinekhadamate.com)
-- Principios de Calidad de Búsqueda de Google (https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
-- J.D. Power Vehicle Dependability Study (VDS) 2024 (https://www.jdpower.com)
-- Manifiesto ProDig 2026: Arquitectura de Información en 3 Capas
-- Google Search Central - Guide to Automatic Content (https://developers.google.com/search/docs/essentials)
-- E-E-A-T: Experience, Expertise, Authoritativeness, and Trustworthiness (https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
+Fuentes: Unidad de Análisis de Online Khadamate (https://onlinekhadamate.com) | Principios de Calidad de Búsqueda de Google (https://developers.google.com/search/docs/fundamentals/creating-helpful-content) | J.D. Power Vehicle Dependability Study (VDS) 2024 (https://www.jdpower.com) | Manifiesto ProDig 2026: Arquitectura de Información en 3 Capas | Google Search Central (https://developers.google.com/search/docs/essentials) | E-E-A-T (https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
