@@ -37,16 +37,37 @@ Al activar el comando de publicación (Activador: "45" en el chat), el script ej
    - Modal de contacto integrado con Formspree.
 4. **Despliegue:** Realizar `git add`, `commit` y `push` automático a GitHub para actualización vía Vercel/Cloudflare.
 
-## 5. DISEÑO Y FORMATO (UI/UX)
-- **Estética:** Mantener el estilo "Material Design" de ProDig (Limpio, profesional, fuentes Google Sans/Arial).
-- **Home del Blog:** - Título: "BLOG AIPRODIG".
-    - Layout: Dos columnas de tarjetas verticales.
-    - Tarjeta: Imagen pequeña, Título (Size 10), Meta-descripción y Etiqueta de Categoría.
-- **Página de Artículo:**
-    - Título centrado, Fecha de publicación y Categoría visible.
-    - Imagen proporcionada al ancho del texto.
-    - Cuerpo: Párrafos claros, subtítulos en negrilla, frases impactantes resaltadas en **"comillas y negrilla"**.
-    - Footer: Sección de fuentes, botones sociales y CTA de contacto.
+## 5. ESTÁNDAR DE DISEÑO DE PÁGINA DE ARTÍCULO (ÚNICO Y CONSISTENTE)
+Todas las páginas de artículo DEBEN seguir el formato visual del artículo de referencia: https://aiprodig.com/Blog/el-activo-invisible-por-que-su-empresa-es-mas-pobre-de-lo-que-dicen-sus-libros-contables
+
+**Componentes obligatorios:**
+1. **Header:** `<header class="article-header">` con canvas de partículas (#bg-canvas), `.header-content`, `.category-tag`, `.main-title` (2.8rem, font-weight 700), `.date`.
+2. **Contenedor:** `.article-container` (max-width 800px, centrado).
+3. **Imagen hero:** `.hero-image` (border-radius 20px, margin-top -3.5rem, z-index 10, box-shadow 0 20px 40px).
+4. **Cuerpo:** `.article-body` con `.article-subtitle` para h2 y `.article-paragraph` para párrafos.
+5. **Fuentes:** `.sources` (background #f1f5f9, padding 2rem, border-radius 16px, border-left 6px solid var(--accent)).
+6. **Navegación:** `.post-nav` con `.nav-btn` (Anterior/Siguiente) y `.back-home` (botón home circular).
+7. **Footer interactivo:** `.interaction-footer` con botón like, botones LinkedIn y WhatsApp.
+8. **WhatsApp flotante:** `.whatsapp-float` (bottom 30px, right 30px, background #25d366).
+9. **Script de likes:** Integración con InsForge API (`/get-stats` y `/handle-likes`).
+
+**CSS Variables obligatorias:**
+```css
+:root {
+    --primary: #0f172a;
+    --accent: #2563eb;
+    --text-main: #334155;
+    --bg-header: #f8fafc;
+}
+```
+
+**Meta tags obligatorios:**
+- `canonical` apuntando a la versión sin .html
+- `alternate hreflang="en"` apuntando a la versión en inglés
+- Google Fonts: Outfit (300, 400, 600, 700)
+- Font Awesome 6.0.0
+
+**NOTA:** El publisher.py DEBE generar TODOS los artículos con este formato exacto. Los artículos con estilos antiguos (header fijo con nav, fuente Segoe UI, footer con logo, etc.) deben ser re-generados.
 
 ## 5.1. ETIQUETA "NUEVO" EN TARJETAS DE ARTÍCULOS
 - Al publicar un nuevo artículo, el publisher.py DEBE agregar la etiqueta "Nuevo" al primer artículo de las tarjetas del home (index.html principal).

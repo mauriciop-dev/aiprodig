@@ -1,6 +1,5 @@
 import os
 import re
-
 import unicodedata
 
 
@@ -13,15 +12,7 @@ def slugify(text):
     return text
 
 
-def publish_article(number):
-    project_root = "c:/Users/micnu/OneDrive/PROYECTOS/AIPRODIG"
-    base_path = os.path.join(project_root, "Blog")
-    txt_path = os.path.join(base_path, "artículos", f"articulo{number}.txt")
-
-    if not os.path.exists(txt_path):
-        print(f"Error: No se encontró el archivo {txt_path}")
-        return
-
+def parse_article(txt_path):
     with open(txt_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
@@ -33,7 +24,6 @@ def publish_article(number):
         line = line.strip()
         if not line:
             continue
-
         lower_line = line.lower()
         if (
             lower_line.startswith("titulo:")
@@ -72,116 +62,218 @@ def publish_article(number):
     article_data["body"] = body_lines
     if "sources" not in article_data:
         article_data["sources"] = ""
+    return article_data
 
-    # Template for individual article page
+
+def build_body_html(body_lines):
+    html_parts = []
+    for line in body_lines:
+        if line.startswith(
+            ("1. ", "2. ", "3. ", "4. ", "5. ", "6. ", "7. ", "8. ", "9. ")
+        ):
+            html_parts.append(
+                f'<p class="article-paragraph"><strong>{line}</strong></p>'
+            )
+        elif line.startswith(("* ")):
+            html_parts.append(f'<p class="article-paragraph">{line[2:]}</p>')
+        elif re.match(r"^\d+\.\s", line):
+            html_parts.append(f'<p class="article-paragraph">{line}</p>')
+        elif line.startswith('"') or line.startswith('"'):
+            html_parts.append(f'<p class="article-paragraph"><em>{line}</em></p>')
+        else:
+            html_parts.append(f'<p class="article-paragraph">{line}</p>')
+    return "\n            ".join(html_parts)
+
+
+def build_sources_html(sources):
+    if not sources:
+        return ""
+    links = [l.strip() for l in sources.split("|") if l.strip()]
+    items = "\n            ".join(
+        [f'<p class="article-paragraph">{l}</p>' for l in links]
+    )
+    return f"""<div class="sources">
+            <h4>Fuentes y Referencias:</h4>
+            {items}
+        </div>"""
+
+
+def publish_article(number):
+    project_root = "c:/Users/micnu/OneDrive/PROYECTOS/AIPRODIG"
+    base_path = os.path.join(project_root, "Blog")
+    txt_path = os.path.join(base_path, "artículos", f"articulo{number}.txt")
+
+    if not os.path.exists(txt_path):
+        print(f"Error: No se encontró el archivo {txt_path}")
+        return
+
+    article_data = parse_article(txt_path)
     slug = slugify(article_data["title"])
     html_filename = f"{slug}.html"
     html_path = os.path.join(base_path, html_filename)
+    article_id = slug
 
-    body_html = "".join([f"<p>{p}</p>" for p in article_data["body"]])
+    sources_html = build_sources_html(article_data.get("sources", ""))
+    body_html = build_body_html(article_data["body"])
+
+    canonical_url = f"https://aiprodig.com/Blog/{html_filename}"
+    article_url = f"https://aiprodig.com/Blog/{html_filename}"
 
     html_content = f"""<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{article_data["title"]} - Blog AIPRODIG</title>
     <meta name="description" content="{article_data["meta"]}">
-    <meta property="og:title" content="{article_data["title"]} - Blog AIPRODIG">
-    <meta property="og:description" content="{article_data["meta"]}">
-    <meta property="og:image" content="https://aiprodig.com/Blog/images/{article_data["image"]}">
-    <meta property="og:url" content="https://aiprodig.com/Blog/{html_filename}">
-    <meta property="og:type" content="article">
-    <meta name="twitter:card" content="summary_large_image">
+    <title>{article_data["title"]} | ProDig Blog</title>
+    
+    <link rel="canonical" href="{canonical_url}">
+    <link rel="alternate" hreflang="en" href="https://aiprodig.com/en/blog/{slug}">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <style>
-        body {{ font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: #333; margin: 0; padding: 0; background: #fff; }}
-        header {{ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 0; text-align: center; }}
-        .article-container {{ max-width: 800px; margin: 120px auto 60px; padding: 0 2rem; }}
-        .date {{ color: #7f8c8d; font-size: 0.9rem; text-align: center; margin-bottom: 1rem; }}
-        h1 {{ font-size: 2.5rem; text-align: center; color: #2c3e50; margin-bottom: 2rem; line-height: 1.2; }}
-        .hero-img {{ width: 100%; height: auto; border-radius: 15px; margin-bottom: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }}
-        .content {{ font-size: 1.1rem; color: #444; }}
-        .content p {{ margin-bottom: 1.5rem; }}
-        .sources {{ margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee; font-size: 0.9rem; color: #7f8c8d; }}
-        .social-share {{ display: flex; gap: 1.5rem; margin-top: 3rem; justify-content: center; }}
-        .btn-action {{
-            display: flex; align-items: center; gap: 0.6rem;
-            padding: 10px 24px; border-radius: 50px;
-            border: none; cursor: pointer;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white; font-weight: bold; font-size: 0.95rem;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            font-family: inherit; text-decoration: none;
+        :root {{
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --text-main: #334155;
+            --bg-header: #f8fafc;
         }}
-        .btn-action:hover {{
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
-        }}
-        .btn-action svg {{ width: 20px; height: 20px; }}
-        .footer {{ background: #2c3e50; color: white; text-align: center; padding: 2rem 0; margin-top: 4rem; }}
-        nav {{ display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }}
-        .logo {{ font-size: 1.5rem; font-weight: bold; color: white; text-decoration: none; }}
-        header {{ position: fixed; width: 100%; top: 0; z-index: 1000; }}
+        * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+        body {{ font-family: 'Outfit', sans-serif; line-height: 1.8; color: var(--text-main); background: #fff; }}
+        
+        .article-header {{ position: relative; padding: 4.5rem 2rem; text-align: center; background: var(--bg-header); border-bottom: 1px solid #e2e8f0; overflow: hidden; }}
+        #bg-canvas {{ position: absolute; top:0; left:0; width:100%; height:100%; }}
+        .header-content {{ position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }}
+        .category-tag {{ background: var(--accent); color: white; padding: 0.3rem 1rem; border-radius: 99px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }}
+        .main-title {{ font-size: 2.8rem; margin: 1rem 0; font-weight: 700; color: var(--primary); }}
+        .date {{ opacity: 0.6; font-size: 0.9rem; }}
+
+        .article-container {{ max-width: 800px; margin: 0 auto; padding: 0 1.5rem 6rem; }}
+        .hero-image {{ width: 100%; height: auto; border-radius: 20px; margin-top: -3.5rem; position: relative; z-index: 10; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }}
+        .article-body {{ font-size: 1.2rem; margin-top: 4rem; text-align: justify; }}
+        .article-subtitle {{ font-size: 1.8rem; margin: 3rem 0 1.5rem; font-weight: 700; color: var(--primary); }}
+        .article-paragraph {{ margin-bottom: 1.8rem; }}
+        
+        .sources {{ background: #f1f5f9; padding: 2rem; border-radius: 16px; margin: 4rem 0; border-left: 6px solid var(--accent); }}
+        .sources h4 {{ margin-bottom: 1rem; font-size: 1.1rem; }}
+        .sources p {{ margin-bottom: 0.5rem; font-size: 0.95rem; }}
+        
+        .post-nav {{ display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; margin: 4rem 0; padding: 1.5rem 0; border-top: 1px solid #eee; }}
+        .nav-btn {{ text-decoration: none; display: flex; flex-direction: column; transition: 0.3s; }}
+        .nav-btn span {{ font-weight: 700; font-size: 0.8rem; color: var(--accent); text-transform: uppercase; }}
+        .nav-btn small {{ color: var(--text-main); font-size: 0.85rem; }}
+        .back-home {{ width: 44px; height: 44px; border-radius: 50%; background: #f1f5f9; display: flex; align-items: center; justify-content: center; color: var(--text-main); text-decoration: none; }}
+
+        .interaction-footer {{ display: flex; justify-content: space-between; align-items: center; padding: 1.5rem; background: #f8fafc; border-radius: 16px; }}
+        .btn-action {{ padding: 0.7rem 1.2rem; border-radius: 12px; border: 1px solid #ddd; background: white; cursor: pointer; text-decoration: none; color: inherit; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; }}
+        .btn-like.active {{ background: #eff6ff; color: var(--accent); border-color: var(--accent); }}
+        
+        .whatsapp-float {{ position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }}
+
+        @media (max-width: 600px) {{ .main-title {{ font-size: 2rem; }} .post-nav {{ grid-template-columns: 1fr; text-align: center; }} .back-home {{ margin: 0 auto; order: -1; }} }}
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">ProDig Blog</a>
-            <div style="color: white; font-size: 0.9rem;">Prospectiva Digital</div>
-        </nav>
+    <header class="article-header">
+        <canvas id="bg-canvas"></canvas>
+        <div class="header-content">
+            <span class="category-tag">{article_data["category"]}</span>
+            <h1 class="main-title">{article_data["title"]}</h1>
+            <p class="date">{article_data["date"]}</p>
+        </div>
     </header>
 
-    <article class="article-container">
-        <div class="date">{article_data["date"]} | {article_data["category"]}</div>
-        <h1>{article_data["title"]}</h1>
-        <img src="images/{article_data["image"]}" alt="{article_data["title"]}" class="hero-img">
-        <div class="content">
+    <main class="article-container">
+        <img src="/Blog/images/{article_data["image"]}" alt="{article_data["title"]}" class="hero-image">
+        <article class="article-body">
             {body_html}
-        </div>
-        <div class="sources">
-            <strong>Fuentes:</strong><br>
-            {article_data["sources"]}
-        </div>
+        </article>
+        {sources_html}
         
-        <div class="social-share">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://aiprodig.com/Blog/{html_filename}" target="_blank" rel="noopener noreferrer" class="btn-action" aria-label="Me gusta">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
-                </svg>
-                <span>Me gusta</span>
-            </a>
-            <a href="https://api.whatsapp.com/send?text=https://aiprodig.com/Blog/{html_filename}" target="_blank" rel="noopener noreferrer" class="btn-action" aria-label="Compartir">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="18" cy="5" r="3"></circle>
-                    <circle cx="6" cy="12" r="3"></circle>
-                    <circle cx="18" cy="19" r="3"></circle>
-                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                </svg>
-                <span>Compartir</span>
-            </a>
-        </div>
-    </article>
+        <nav class="post-nav">
+            <a href="/Blog" class="back-home"><i class="fa-solid fa-house"></i></a>
+            <div></div>
+        </nav>
+        
+        <footer class="interaction-footer">
+            <button id="likeBtn" class="btn-action btn-like"><i class="fa-solid fa-heart"></i> <span id="likeCount">0</span> Me gusta</button>
+            <div style="display:flex; gap:1rem;">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={article_url}" class="btn-action" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/?text={article_data["title"]}%20{article_url}" class="btn-action" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </footer>
+    </main>
 
-    <footer class="footer">
-        <p>&copy; 2026 ProDig Blog - Todos los derechos reservados</p>
-    </footer>
+    <a href="https://wa.me/573144897092" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        function init() {{
+            canvas.width = window.innerWidth; canvas.height = canvas.parentElement.offsetHeight;
+            particles = [];
+            for(let i=0; i<65; i++) particles.push({{x:Math.random()*canvas.width, y:Math.random()*canvas.height, vx:(Math.random()-0.5)*0.6, vy:(Math.random()-0.5)*0.6}});
+        }}
+        function draw() {{
+            ctx.clearRect(0,0,canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(37, 99, 235, 0.45)';
+            ctx.strokeStyle = 'rgba(37, 99, 235, 0.25)';
+            particles.forEach((p,i) => {{
+                p.x+=p.vx; p.y+=p.vy;
+                if(p.x<0||p.x>canvas.width) p.vx*=-1; if(p.y<0||p.y>canvas.height) p.vy*=-1;
+                ctx.beginPath(); ctx.arc(p.x,p.y,2.5,0,Math.PI*2); ctx.fill();
+                for(let j=i+1; j<particles.length; j++) {{
+                    let p2 = particles[j]; let d = Math.hypot(p.x-p2.x, p.y-p2.y);
+                    if(d<130) {{ ctx.beginPath(); ctx.lineWidth=1; ctx.moveTo(p.x,p.y); ctx.lineTo(p2.x,p2.y); ctx.stroke(); }}
+                }}
+            }});
+            requestAnimationFrame(draw);
+        }}
+        window.onresize = init; init(); draw();
+
+        const aid = "{article_id}";
+        const lbtn = document.getElementById('likeBtn');
+        const lcnt = document.getElementById('likeCount');
+        const API_BASE = "https://s34xeek7.functions.insforge.app";
+        
+        let count = 0;
+        let liked = localStorage.getItem('H_'+aid) === 'Y';
+
+        async function fetchStats() {{
+            try {{
+                const r = await fetch(API_BASE + "/get-stats");
+                const data = await r.json();
+                const item = data.find(i => i.article_id === aid);
+                if (item) {{ count = item.likes_count; up(); }}
+            }} catch (e) {{ console.error("Error fetching stats", e); }}
+        }}
+
+        function up() {{ lcnt.innerText = count; lbtn.className = liked ? 'btn-action btn-like active' : 'btn-action btn-like'; }}
+
+        lbtn.onclick = async () => {{
+            if(liked) return;
+            count++; liked = true;
+            localStorage.setItem('H_'+aid, 'Y');
+            up();
+            try {{ await fetch(API_BASE + "/handle-likes", {{ method: 'POST', body: JSON.stringify({{ article_id: aid }}) }}); }}
+            catch (e) {{ console.error("Error saving like", e); }}
+        }};
+
+        fetchStats(); up();
+    </script>
 </body>
-</html>
-"""
+</html>"""
 
     with open(html_path, "w", encoding="utf-8") as f:
         f.write(html_content)
 
     print(f"Éxito: Artículo publicado en {html_path}")
 
-    # Update main index.html
     update_index(base_path, article_data, html_filename)
 
-    # Update project root index.html (home page carousel)
     root_index_path = os.path.join(project_root, "index.html")
     if os.path.exists(root_index_path):
         update_root_index(root_index_path, article_data, html_filename)
@@ -189,51 +281,32 @@ def publish_article(number):
 
 def update_index(base_path, article_data, html_filename):
     index_path = os.path.join(base_path, "index.html")
+    if not os.path.exists(index_path):
+        return
     with open(index_path, "r", encoding="utf-8") as f:
         content = f.read()
 
     nuevo_badge = '<div style="position: absolute; top: 1rem; left: 1rem; background: #ef4444; color: white; font-size: 0.7rem; font-weight: 800; padding: 0.3rem 0.8rem; border-radius: 99px; z-index: 5; text-transform: uppercase;">Nuevo</div>'
-    card = f"""                    <div class="blog-card" style="flex: 0 0 300px; border: 1px solid #eee; border-radius: 20px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: start; position: relative;">
-                        {nuevo_badge}
-                        <img src="/Blog/images/{article_data["image"]}" style="width: 100%; height: 180px; object-fit: cover;">
-                        <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
-                            <span style="color: #2563eb; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem;">{article_data["category"]}</span>
-                            <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: #0f172a;">{article_data["title"]}</h3>
-                            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.4;">{article_data["meta"]}</p>
-                            <a href="/Blog/{html_filename}" style="margin-top: auto; color: #2563eb; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">Leer más <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>"""
+    card = f"""            <div class="blog-card">
+                <img src="/Blog/images/{article_data["image"]}" class="card-img" alt="{article_data["title"]}" style="position: relative;">
+                {nuevo_badge}
+                <div class="card-content">
+                    <span class="card-tag">{article_data["category"]}</span>
+                    <h3>{article_data["title"]}</h3>
+                    <p>{article_data["meta"]}</p>
+                    <a href="/Blog/{html_filename}" class="read-more">Leer Artículo <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>"""
 
-    marker = "<!-- Card 5 -->"
+    marker = "<!-- Artículo 4 -->"
     if marker in content:
-        content = content.replace(marker, card + "\n                    " + marker)
-    elif "<!-- Card" in content:
+        content = content.replace(marker, card + "\n\n" + marker)
+    elif "<!-- Artículo" in content:
         import re
 
-        match = re.search(r"(<!-- Card \d+ -->)", content)
+        match = re.search(r"(<!-- Artículo \d+ -->)", content)
         if match:
-            content = content.replace(
-                match.group(1), card + "\n                    " + match.group(1)
-            )
-    elif '<div class="blog-carousel"' in content:
-        pos = content.find('<div class="blog-carousel"')
-        end = content.find(">", pos) + 1
-        content = content[:end] + "\n" + card + "\n                " + content[end:]
-
-    if "position: relative; padding: 0 3rem;" not in content:
-        if '<div class="blog-carousel-wrapper"' not in content:
-            carousel_start = '<div class="blog-carousel"'
-            wrapper = f"""<div class="blog-carousel-wrapper" style="position: relative; padding: 0 3rem;">
-                <button class="blog-nav-btn blog-nav-prev" onclick="scrollBlog(-1)" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: 1px solid #e2e8f0; background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.2s;">
-                    <i class="fas fa-chevron-left" style="color: #2563eb; font-size: 1.2rem;"></i>
-                </button>
-                <div class="blog-carousel" id="blogCarousel" style="display: flex; overflow-x: hidden; gap: 1.5rem; padding: 1rem 0 2rem; scroll-snap-type: x mandatory;">
-"""
-            content = content.replace(carousel_start, wrapper)
-            content = content.replace(
-                "</div>\n            </div>\n            <style>",
-                '</div>\n                <button class="blog-nav-btn blog-nav-next" onclick="scrollBlog(1)" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: 1px solid #e2e8f0; background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.2s;">\n                    <i class="fas fa-chevron-right" style="color: #2563eb; font-size: 1.2rem;"></i>\n                </button>\n            </div>\n            <script>\n                function scrollBlog(dir) {\n                    const c = document.getElementById(\'blogCarousel\');\n                    const card = c ? c.querySelector(\'.blog-card\') : null;\n                    const cardWidth = card ? card.offsetWidth + 24 : 324;\n                    if (c) c.scrollBy({ left: cardWidth * dir, behavior: \'smooth\' });\n                }\n            </script>',
-            )
+            content = content.replace(match.group(1), card + "\n\n" + match.group(1))
 
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(content)
@@ -285,8 +358,8 @@ def update_root_index(root_index_path, article_data, html_filename):
 """
             content = content.replace(carousel_start, wrapper)
             content = content.replace(
-                "</div>\n            </div>\n            <style>",
-                '</div>\n                <button class="blog-nav-btn blog-nav-next" onclick="scrollBlog(1)" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: 1px solid #e2e8f0; background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.2s;">\n                    <i class="fas fa-chevron-right" style="color: #2563eb; font-size: 1.2rem;"></i>\n                </button>\n            </div>\n            <script>\n                function scrollBlog(dir) {\n                    const c = document.getElementById(\'blogCarousel\');\n                    const card = c ? c.querySelector(\'.blog-card\') : null;\n                    const cardWidth = card ? card.offsetWidth + 24 : 324;\n                    if (c) c.scrollBy({ left: cardWidth * dir, behavior: \'smooth\' });\n                }\n            </script>',
+                "</div>\n            </div>\n            <script>",
+                '</div>\n                <button class="blog-nav-btn blog-nav-next" onclick="scrollBlog(1)" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: 1px solid #e2e8f0; background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.2s;">\n                    <i class="fas fa-chevron-right" style="color: #2563eb; font-size: 1.2rem;"></i>\n                </button>\n            </div>\n            <script>',
             )
 
     with open(root_index_path, "w", encoding="utf-8") as f:
