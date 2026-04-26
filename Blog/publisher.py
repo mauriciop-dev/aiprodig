@@ -14,7 +14,8 @@ def slugify(text):
 
 
 def publish_article(number):
-    base_path = "c:/Users/micnu/OneDrive/PROYECTOS/AIPRODIG/Blog"
+    project_root = "c:/Users/micnu/OneDrive/PROYECTOS/AIPRODIG"
+    base_path = os.path.join(project_root, "Blog")
     txt_path = os.path.join(base_path, "artículos", f"articulo{number}.txt")
 
     if not os.path.exists(txt_path):
@@ -180,29 +181,115 @@ def publish_article(number):
     # Update main index.html
     update_index(base_path, article_data, html_filename)
 
+    # Update project root index.html (home page carousel)
+    root_index_path = os.path.join(project_root, "index.html")
+    if os.path.exists(root_index_path):
+        update_root_index(root_index_path, article_data, html_filename)
+
 
 def update_index(base_path, article_data, html_filename):
     index_path = os.path.join(base_path, "index.html")
     with open(index_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    new_card = f"""
-            <a href="{html_filename}" class="blog-card">
-                <img src="images/{article_data["image"]}" alt="{article_data["title"]}" class="blog-card-image">
-                <div class="blog-card-content">
-                    <span class="blog-card-category">{article_data["category"]}</span>
-                    <h2 class="blog-card-title small-text">{article_data["title"]}</h2>
-                    <p class="blog-card-description">{article_data["meta"]}</p>
-                </div>
-            </a>"""
+    nuevo_badge = '<div style="position: absolute; top: 1rem; left: 1rem; background: #ef4444; color: white; font-size: 0.7rem; font-weight: 800; padding: 0.3rem 0.8rem; border-radius: 99px; z-index: 5; text-transform: uppercase;">Nuevo</div>'
+    card = f"""                    <div class="blog-card" style="flex: 0 0 300px; border: 1px solid #eee; border-radius: 20px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: start; position: relative;">
+                        {nuevo_badge}
+                        <img src="/Blog/images/{article_data["image"]}" style="width: 100%; height: 180px; object-fit: cover;">
+                        <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
+                            <span style="color: #2563eb; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem;">{article_data["category"]}</span>
+                            <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: #0f172a;">{article_data["title"]}</h3>
+                            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.4;">{article_data["meta"]}</p>
+                            <a href="/Blog/{html_filename}" style="margin-top: auto; color: #2563eb; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>"""
 
-    # Insert before the closing grid div
-    if "<!-- Los artículos se cargarán aquí" in content:
-        if f'href="{html_filename}"' not in content:
-            placeholder = "<!-- Los artículos se cargarán aquí dinámicamente o se añadirán manualmente -->"
-            content = content.replace(placeholder, placeholder + new_card)
+    marker = "<!-- Card 5 -->"
+    if marker in content:
+        content = content.replace(marker, card + "\n                    " + marker)
+    elif "<!-- Card" in content:
+        import re
+
+        match = re.search(r"(<!-- Card \d+ -->)", content)
+        if match:
+            content = content.replace(
+                match.group(1), card + "\n                    " + match.group(1)
+            )
+    elif '<div class="blog-carousel"' in content:
+        pos = content.find('<div class="blog-carousel"')
+        end = content.find(">", pos) + 1
+        content = content[:end] + "\n" + card + "\n                " + content[end:]
+
+    if "position: relative; padding: 0 3rem;" not in content:
+        if '<div class="blog-carousel-wrapper"' not in content:
+            carousel_start = '<div class="blog-carousel"'
+            wrapper = f"""<div class="blog-carousel-wrapper" style="position: relative; padding: 0 3rem;">
+                <button class="blog-nav-btn blog-nav-prev" onclick="scrollBlog(-1)" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: 1px solid #e2e8f0; background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.2s;">
+                    <i class="fas fa-chevron-left" style="color: #2563eb; font-size: 1.2rem;"></i>
+                </button>
+                <div class="blog-carousel" id="blogCarousel" style="display: flex; overflow-x: hidden; gap: 1.5rem; padding: 1rem 0 2rem; scroll-snap-type: x mandatory;">
+"""
+            content = content.replace(carousel_start, wrapper)
+            content = content.replace(
+                "</div>\n            </div>\n            <style>",
+                '</div>\n                <button class="blog-nav-btn blog-nav-next" onclick="scrollBlog(1)" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: 1px solid #e2e8f0; background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.2s;">\n                    <i class="fas fa-chevron-right" style="color: #2563eb; font-size: 1.2rem;"></i>\n                </button>\n            </div>\n            <script>\n                function scrollBlog(dir) {\n                    const c = document.getElementById(\'blogCarousel\');\n                    const card = c ? c.querySelector(\'.blog-card\') : null;\n                    const cardWidth = card ? card.offsetWidth + 24 : 324;\n                    if (c) c.scrollBy({ left: cardWidth * dir, behavior: \'smooth\' });\n                }\n            </script>',
+            )
 
     with open(index_path, "w", encoding="utf-8") as f:
+        f.write(content)
+
+
+def update_root_index(root_index_path, article_data, html_filename):
+    with open(root_index_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    nuevo_badge = '<div style="position: absolute; top: 1rem; left: 1rem; background: #ef4444; color: white; font-size: 0.7rem; font-weight: 800; padding: 0.3rem 0.8rem; border-radius: 99px; z-index: 5; text-transform: uppercase;">Nuevo</div>'
+    card = f"""                <!-- Card N -->
+                <div class="blog-card" style="flex: 0 0 300px; border: 1px solid #eee; border-radius: 20px; overflow: hidden; transition: 0.3s; display: flex; flex-direction: column; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); scroll-snap-align: start; position: relative;">
+                    {nuevo_badge}
+                    <img src="/Blog/images/{article_data["image"]}" style="width: 100%; height: 180px; object-fit: cover;">
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
+                        <span style="color: #2563eb; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem;">{article_data["category"]}</span>
+                        <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem; color: #0f172a;">{article_data["title"]}</h3>
+                        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.4;">{article_data["meta"]}</p>
+                        <a href="/Blog/{html_filename}" style="margin-top: auto; color: #2563eb; text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem;">Leer más <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>"""
+
+    marker = "<!-- Card 5 -->"
+    if marker in content:
+        content = content.replace(
+            marker, card + "\n                    <!-- Card 5 -->"
+        )
+    elif "<!-- Card" in content:
+        import re
+
+        match = re.search(r"(<!-- Card \d+ -->)", content)
+        if match:
+            content = content.replace(
+                match.group(1), card + "\n                    " + match.group(1)
+            )
+    elif '<div class="blog-carousel"' in content:
+        pos = content.find('<div class="blog-carousel"')
+        end = content.find(">", pos) + 1
+        content = content[:end] + "\n" + card + "\n                " + content[end:]
+
+    if "position: relative; padding: 0 3rem;" not in content:
+        if '<div class="blog-carousel-wrapper"' not in content:
+            carousel_start = '<div class="blog-carousel"'
+            wrapper = f"""<div class="blog-carousel-wrapper" style="position: relative; padding: 0 3rem;">
+                <button class="blog-nav-btn blog-nav-prev" onclick="scrollBlog(-1)" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: 1px solid #e2e8f0; background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.2s;">
+                    <i class="fas fa-chevron-left" style="color: #2563eb; font-size: 1.2rem;"></i>
+                </button>
+                <div class="blog-carousel" id="blogCarousel" style="display: flex; overflow-x: hidden; gap: 1.5rem; padding: 1rem 0 2rem; scroll-snap-type: x mandatory;">
+"""
+            content = content.replace(carousel_start, wrapper)
+            content = content.replace(
+                "</div>\n            </div>\n            <style>",
+                '</div>\n                <button class="blog-nav-btn blog-nav-next" onclick="scrollBlog(1)" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: 1px solid #e2e8f0; background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.2s;">\n                    <i class="fas fa-chevron-right" style="color: #2563eb; font-size: 1.2rem;"></i>\n                </button>\n            </div>\n            <script>\n                function scrollBlog(dir) {\n                    const c = document.getElementById(\'blogCarousel\');\n                    const card = c ? c.querySelector(\'.blog-card\') : null;\n                    const cardWidth = card ? card.offsetWidth + 24 : 324;\n                    if (c) c.scrollBy({ left: cardWidth * dir, behavior: \'smooth\' });\n                }\n            </script>',
+            )
+
+    with open(root_index_path, "w", encoding="utf-8") as f:
         f.write(content)
 
 

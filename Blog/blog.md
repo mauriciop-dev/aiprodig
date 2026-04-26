@@ -48,5 +48,11 @@ Al activar el comando de publicación (Activador: "45" en el chat), el script ej
     - Cuerpo: Párrafos claros, subtítulos en negrilla, frases impactantes resaltadas en **"comillas y negrilla"**.
     - Footer: Sección de fuentes, botones sociales y CTA de contacto.
 
+## 5.1. ETIQUETA "NUEVO" EN TARJETAS DE ARTÍCULOS
+- Al publicar un nuevo artículo, el publisher.py DEBE agregar la etiqueta "Nuevo" al primer artículo de las tarjetas del home (index.html principal).
+- La etiqueta se implementa como un badge rojo con estilo: `background: #ef4444; color: white; font-size: 0.7rem; font-weight: 800; padding: 0.3rem 0.8rem; border-radius: 99px; z-index: 5; text-transform: uppercase;`.
+- La etiqueta se posiciona en la esquina superior izquierda de la tarjeta.
+- La etiqueta "Nuevo" solo debe aparecer en el artículo más reciente de las tarjetas del home principal (index.html). El home del blog (Blog/index.html) y el article body NO llevan esta etiqueta.
+
 ## 6. METODOLOGÍA DE DESARROLLO (MDDC)
 Cada artículo generado debe servir como un activo de contexto. El sistema debe asegurar que las etiquetas `canonical` estén correctamente puestas para que la versión en inglés y español se reconozcan como traducciones mutuas y no contenido duplicado.
