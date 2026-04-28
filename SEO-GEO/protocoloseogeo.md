@@ -63,32 +63,50 @@ El script genera automáticamente el schema basándose en seo-type:
 - **service:** → Service + Organization
 - **product:** → Product + Organization
 
-## 6. Script de Automatización (seo_generator.py)
-**Ubicación:** `/SEO-GEO/seo_generator.py`
+## 6. Scripts de Automatización
+**Ubicación:** `/SEO-GEO/`
+
+| Script | Función |
+|--------|---------|
+| `geo.py` | Comando unificado (inyecta + genera) |
+| `seo_injector.py` | Inyecta meta tags seo-* en páginas |
+| `seo_generator.py` | Genera sitemap.xml y llms.txt |
+
+## 7. Comando "implementar seo"
+**Descripción:** Ejecuta todo el proceso SEO-GEO automáticamente.
 
 **Uso:**
 ```bash
-python SEO-GEO/seo_generator.py
+python SEO-GEO/geo.py
 ```
 
-**Funciones:**
-1. Escanea todos los archivos .html del proyecto
-2. Extrae metadatos de meta tags seo-* 
-3. Genera sitemap.xml con prioridades
-4. Genera llms.txt con contexto para IAs
-5. Valida límites de caracteres (title ≤60, description ≤160)
+**Qué hace:**
+1. Ejecuta seo_injector.py (inyecta meta tags en páginas existentes)
+2. Ejecuta seo_generator.py (genera sitemap.xml y llms.txt)
+3. Muestra resumen de cambios y warnings
 
-**Ejecución automática:**
-- Pre-deploy: `python SEO-GEO/seo_generator.py`
-- O configurar en package.json: `"seo": "python SEO-GEO/seo_generator.py"`
+**Alias (opcional):**
+```bash
+# En terminal, agregar a ~/.bashrc o ~/.zshrc:
+alias geo="python SEO-GEO/geo.py"
+```
 
-## 7. Plantilla estándar
+**Integración npm (opcional):**
+```json
+// En package.json
+"scripts": {
+  "seo": "python SEO-GEO/geo.py"
+}
+```
+Uso: `npm run seo`
+
+## 8. Plantilla estándar
 Todas las páginas nuevas deben usar: `/SEO-GEO/template.html`
 
-## 8. Workflow completo
+## 9. Workflow completo
 1. Crear nueva página usando template.html
 2. Completar meta tags seo-* con contenido real
-3. Ejecutar `python SEO-GEO/seo_generator.py`
+3. Ejecutar `python SEO-GEO/geo.py` (escribir "implementar seo")
 4. Verificar sitemap.xml y llms.txt generados
 
 ---
