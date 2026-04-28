@@ -1,0 +1,61 @@
+# ProDig (Prospectiva Digital)
+> Consultoría de vanguardia en Inteligencia Artificial y desarrollo de activos digitales.
+
+## Resumen
+ProDig, liderada por Mauricio Pineda, se especializa en la creación de soluciones basadas en IA para optimizar procesos empresariales y residenciales.
+
+## Productos y Activos
+- **PAIC:** Plataforma de Administración Inteligente de Conjuntos (SaaS) https://www.paicai.com.co/
+- **NexoSalud:** Integración de datos de salud y cumplimiento normativo (RDA) https://nexosalud-rda.vercel.app/
+- **Notaria Digital:** Verificación de documentos mediante blockchain https://validador-hazel.vercel.app/
+
+## Servicios
+- **Sitios Web IA integrados con IA y/o automatización**
+- **SEO y GEO - Ser el referente de las IAs**
+- **Chatbots - Iniciá en el mundo de IA**
+- **SaaS - Demo en 48 horas**
+- **IA Local - RAG seguro en tu empresa**
+- **Power Platform - Power BI, Power Apps, Power Automate**
+- **Agentes de IA con Google ADK**
+- **Capacitación en IA**
+- **Consultoría especializada**
+
+## Stack Tecnológico
+n8n, Supabase, Vercel, GitHub y modelos avanzados de IA (Gemini, OpenAI). Vibe Coding.
+
+## Contacto y Ubicación
+Sede principal en Bogotá, Colombia.
+Web: https://aiprodig.com
+WhatsApp: +57 3144897092
+email: info@aiprodig.com
+
+## Páginas del Sitio
+### Home
+- ProDig - Prospectiva Digital | Transformamos el futuro de...: https://aiprodig.com/
+### Servicios y Productos
+- Chatbot ProDig: https://aiprodig.com/frontend/chatbot.html
+### Blog
+- Do you think having a website in 2026 is irrelevant? The reality will surprise you. | ProDig Blog: https://aiprodig.com/en/blog/do-you-think-having-a-website-in-2026-is-irrelevant-the-reality-will-surprise-you.html
+- ProDig Blog | Digital Foresight: https://aiprodig.com/en/blog/index.html
+- The Great Convergence: Why Today's AI is Tomorrow's Matter Operating System | ProDig Blog: https://aiprodig.com/en/blog/the-great-convergence-why-today-s-ai-is-tomorrow-s-matter-operating-system.html
+- The Invisible Asset: Why your company is poorer than your accounting books say? | ProDig Blog: https://aiprodig.com/en/blog/the-invisible-asset-why-your-company-is-poorer-than-your-accounting-books-say.html
+- Why is traditional 'Agile' slowing down your company in the age of AI? | ProDig Blog: https://aiprodig.com/en/blog/why-is-traditional-agile-slowing-down-your-company-in-the-age-of-ai.html
+### Otras Páginas
+- ¿Crees que tener una página web en 2026 es irrelevante? L...: https://aiprodig.com/Blog/crees-que-tener-una-pagina-web-en-2026-es-irrelevante-la-realidad-te-sorprendera.html
+- Del Caos Algorítmico a la Tasa de Referencia: La Metamorf...: https://aiprodig.com/Blog/del-caos-algoritmico-a-la-tasa-de-referencia-la-metamorfosis-del-seo-al-geo-y-el-surgimiento-de-la-autoridad-humana-en-2026.html
+- El Activo Invisible: ¿Por qué su empresa es más pobre de...: https://aiprodig.com/Blog/el-activo-invisible-por-que-su-empresa-es-mas-pobre-de-lo-que-dicen-sus-libros-contables.html
+- Blog ProDig | Prospectiva Digital: https://aiprodig.com/Blog/index.html
+- La Gran Convergencia: Por qué la IA de hoy es el Sistema...: https://aiprodig.com/Blog/la-gran-convergencia-por-que-la-ia-de-hoy-es-el-sistema-operativo-de-la-materia-de-manana.html
+- ¿Por qué el : https://aiprodig.com/Blog/por-que-el-agile-tradicional-esta-frenando-tu-empresa-en-la-era-de-la-ia.html
+- ProDig AI | Smart Assistant: https://aiprodig.com/chat.html
+- Chatbot ProDig: https://aiprodig.com/chatbot.html
+- Chatbot retráctil lateral: https://aiprodig.com/chatbot_lateral.html
+- Términos y Condiciones - Prospectiva Digital: https://aiprodig.com/condiciones.html
+- Prueba de Chatbot para Comunidades: https://aiprodig.com/conjuntos.html
+- Denuncia Pública - HostGator: https://aiprodig.com/denuncia/denuncia.html
+- Eliminación de Datos - Prospectiva Digital: https://aiprodig.com/eliminacion_datos.html
+- Power Apps — ProDig: https://aiprodig.com/powerapps.html
+- Power BI — ProDig: https://aiprodig.com/powerbi.html
+- Política de Privacidad - Prospectiva Digital: https://aiprodig.com/privacidad.html
+- ProDig - Prospectiva Digital | Transformamos el futuro de...: https://aiprodig.com/pruebas/index.html
+- Registro Meta - ProDig: https://aiprodig.com/registrometa.html

@@ -1,0 +1,31 @@
+# ProDig (Prospectiva Digital)
+> Consultoría de vanguardia en Inteligencia Artificial y desarrollo de activos digitales.
+
+## Resumen
+ProDig, liderada por Mauricio Pineda, se especializa en la creación de soluciones basadas en IA para optimizar procesos empresariales y residenciales. Nos enfocamos en transformar la tecnología en activos tangibles que generen valor residual.  
+
+## Productos y Activos
+- **PAIC:** Plataforma de Administración Inteligente de Conjuntos (SaaS para administración residencial). https://www.paicai.com.co/
+- **NexoSalud:** Integración de datos de salud y cumplimiento normativo (RDA) resolución 1888. https://nexosalud-rda.vercel.app/
+- **Notaria Digital:** Verificación de documentos mediante tecnología blockchain. https://validador-hazel.vercel.app/
+
+## Servicios
+- **Sitios Web IA** integrados con IA y/o automatización
+- **SEO y GEO** En 2026 ya no es solo salir en Google, ahora es ser el referente de las IAs
+- **Chatbots** La forma mas fácil, rápida y eficiente de que tu empresa inicie en el mundo de IA
+- **SaaS** Tienes un idea de una plataforma o aplicación? En 48 horas hacemos un Demo!
+- **IA Local** Quiere implementar IA en su empresa, pero teme por la seguridad? en 48 hocemos un DEMO de un RAG Local en su empresa, usted y sus empleados los prueban y lo aprueban!
+- **RAG** IA son Seguridad sin salir de su empresa, haga que la información de su empresa genere valor.
+- **Power Platform" tableros de Power BI, Power automate, Power Apps. implementa IA de forma segura usando la infraestructura de Microsoft.
+- **Agentes de IA** Con el ADK de Google creamos agentes que le ayudan a reducir las horas hombre en su empresa (todas  las tareas repetitivas son susceptibles de ser automatizadas con Agentes"
+- **Capacitación** Usted y sus empleados necesitan capacitación en inteligencia artificial? allá en su empresa?
+- **Consultoría** si requiere una consultoría especializada y entender como la IA  puede impactar su empresa, puedo ayudarlo. aproveche la primera hora de consultoría gratis en su empresa (solo paga los viáticos)
+
+## Stack Tecnológico
+Desarrollamos con n8n, Supabase, Vercel, GitHub y modelos avanzados de IA (Gemini, OpenAI). Vibe Coding, Ingeniería de contexto.
+
+## Contacto y Ubicación
+Sede principal en Bogotá, Colombia.
+Web: https://aiprodig.com
+WhatsApp: +57 3144897092
+email: info@aiprodig.com
