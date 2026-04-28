@@ -61,28 +61,34 @@ def extract_metadata(html_path):
 
         base_path = html_path.as_posix().replace("\\", "/")
 
+        seo_section = parser.meta_tags.get("seo-section", "")
+        seo_priority = parser.meta_tags.get("seo-priority", "")
+
         if base_path == "index.html" or base_path == "./index.html":
             url = BASE_URL + "/"
-            priority = "1.0"
-            section = "home"
+            priority = seo_priority or "1.0"
+            section = seo_section or "home"
             changefreq = "weekly"
         elif "/Blog/" in base_path or "/blog/" in base_path:
             url = BASE_URL + "/" + base_path
-            priority = parser.meta_tags.get("seo-priority", "0.6")
-            section = "blog"
+            priority = seo_priority or "0.6"
+            section = seo_section or "blog"
             changefreq = "monthly"
-        elif parser.meta_tags.get("seo-section"):
-            section = parser.meta_tags.get("seo-section")
+        elif seo_section:
+            section = seo_section
             url = BASE_URL + "/" + base_path
             if section in ("services", "products"):
-                priority = "0.8"
+                priority = seo_priority or "0.8"
                 changefreq = "monthly"
-            else:
-                priority = parser.meta_tags.get("seo-priority", "0.3")
+            elif section == "legal":
+                priority = seo_priority or "0.3"
                 changefreq = "yearly"
+            else:
+                priority = seo_priority or "0.8"
+                changefreq = "monthly"
         else:
             url = BASE_URL + "/" + base_path
-            priority = parser.meta_tags.get("seo-priority", "0.8")
+            priority = seo_priority or "0.8"
             section = "page"
             changefreq = "monthly"
 

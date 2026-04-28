@@ -12,4 +12,12 @@
 .qwen
 .roo
 .trae
+
+# Python
+__pycache__/
+*.pyc
+.pyo
+
+# Local
+nul
 .windsurf

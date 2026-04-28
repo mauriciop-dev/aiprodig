@@ -50,12 +50,13 @@ email: info@aiprodig.com
 - ProDig AI | Smart Assistant: https://aiprodig.com/chat.html
 - Chatbot ProDig: https://aiprodig.com/chatbot.html
 - Chatbot retráctil lateral: https://aiprodig.com/chatbot_lateral.html
-- Términos y Condiciones - Prospectiva Digital: https://aiprodig.com/condiciones.html
 - Prueba de Chatbot para Comunidades: https://aiprodig.com/conjuntos.html
 - Denuncia Pública - HostGator: https://aiprodig.com/denuncia/denuncia.html
-- Eliminación de Datos - Prospectiva Digital: https://aiprodig.com/eliminacion_datos.html
 - Power Apps — ProDig: https://aiprodig.com/powerapps.html
 - Power BI — ProDig: https://aiprodig.com/powerbi.html
-- Política de Privacidad - Prospectiva Digital: https://aiprodig.com/privacidad.html
 - ProDig - Prospectiva Digital | Transformamos el futuro de...: https://aiprodig.com/pruebas/index.html
+### Legal
+- Términos y Condiciones - Prospectiva Digital: https://aiprodig.com/condiciones.html
+- Eliminación de Datos - Prospectiva Digital: https://aiprodig.com/eliminacion_datos.html
+- Política de Privacidad - Prospectiva Digital: https://aiprodig.com/privacidad.html
 - Registro Meta - ProDig: https://aiprodig.com/registrometa.html
