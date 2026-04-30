@@ -23,9 +23,26 @@ class SEOInjector:
             with open(html_path, "r", encoding="utf-8", errors="ignore") as f:
                 content = f.read()
 
-            if "seo-title" in content:
-                print(f"   [SKIP] {html_path} - ya tiene meta tags")
+            if "seo-title" in content and 'rel="canonical"' in content:
+                print(f"   [SKIP] {html_path} - ya tiene meta tags y canonical")
                 return False
+
+            if "seo-title" in content and 'rel="canonical"' not in content:
+                base_path = html_path.as_posix().replace("\\", "/")
+                url = (
+                    f"{BASE_URL}/{base_path}"
+                    if base_path != "index.html"
+                    else BASE_URL + "/"
+                )
+                canonical_tag = f'\n    <!-- Canonical URL -->\n    <link rel="canonical" href="{url}">'
+                insert_pattern = r'(<meta name="seo-title")'
+                new_content = re.sub(
+                    insert_pattern, canonical_tag + r"\n    \1", content, count=1
+                )
+                with open(html_path, "w", encoding="utf-8") as f:
+                    f.write(new_content)
+                print(f"   [ADD] {html_path} - anadido canonical")
+                return True
 
             title_match = re.search(r"<title>(.*?)</title>", content, re.IGNORECASE)
             title = title_match.group(1).strip() if title_match else ""
@@ -109,6 +126,11 @@ class SEOInjector:
     <meta property="og:site_name" content="ProDig - Prospectiva Digital">
 '''
 
+            canonical_tag = f'''
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{url}">
+'''
+
             twitter_tags = f'''
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -116,7 +138,7 @@ class SEOInjector:
     <meta name="twitter:description" content="{self.truncate(og_desc, 160)}">
 '''
 
-            new_meta_block = seo_tags + og_tags + twitter_tags
+            new_meta_block = seo_tags + canonical_tag + og_tags + twitter_tags
 
             insert_pattern = r'(<meta charset="UTF-8">)'
             new_content = re.sub(
