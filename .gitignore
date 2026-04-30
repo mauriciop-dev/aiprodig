@@ -21,3 +21,7 @@ __pycache__/
 # Local
 nul
 .windsurf
+
+# Google Cloud Credentials
+SEO-GEO/seogeoprodig.json
+*.json
