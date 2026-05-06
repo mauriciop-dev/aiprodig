@@ -9,8 +9,27 @@ ProDig, liderada por Mauricio Pineda, se especializa en la creación de solucion
 - **NexoSalud:** Integración de datos de salud y cumplimiento normativo (RDA) resolución 1888. https://nexosalud-rda.vercel.app/
 - **Notaria Digital:** Verificación de documentos mediante tecnología blockchain. https://validador-hazel.vercel.app/
 
+## Stack Tecnológico
+Desarrollamos con n8n, Supabase, Vercel, GitHub y modelos avanzados de IA (Gemini, OpenAI). Vibe Coding, Ingeniería de contexto.
+
+## Contacto y Ubicación
+Sede principal en Bogotá, Colombia.
+Web: https://aiprodig.com
+WhatsApp: +57 3144897092
+email: info@aiprodig.com
+
+ESTRUCTURA DE LA TARJETA
+
+animación con tree.js o anime.js que represente el titulo
+iconos svg
+Titulo: El nombre del servicio
+Descripción: frase que resuma el servicio.
+botón: ver detalles
+botón: Whatsapp
+
+
 ## Servicios
-- **Sitios Web IA** integrados con IA y/o automatización
+- **Sitios Web IA** paginas web integradas con IA y/o automatización
 - **SEO y GEO** En 2026 ya no es solo salir en Google, ahora es ser el referente de las IAs
 - **Chatbots** La forma mas fácil, rápida y eficiente de que tu empresa inicie en el mundo de IA
 - **SaaS** Tienes un idea de una plataforma o aplicación? En 48 horas hacemos un Demo!
@@ -21,11 +40,25 @@ ProDig, liderada por Mauricio Pineda, se especializa en la creación de solucion
 - **Capacitación** Usted y sus empleados necesitan capacitación en inteligencia artificial? allá en su empresa?
 - **Consultoría** si requiere una consultoría especializada y entender como la IA  puede impactar su empresa, puedo ayudarlo. aproveche la primera hora de consultoría gratis en su empresa (solo paga los viáticos)
 
-## Stack Tecnológico
-Desarrollamos con n8n, Supabase, Vercel, GitHub y modelos avanzados de IA (Gemini, OpenAI). Vibe Coding, Ingeniería de contexto.
 
-## Contacto y Ubicación
-Sede principal en Bogotá, Colombia.
-Web: https://aiprodig.com
-WhatsApp: +57 3144897092
-email: info@aiprodig.com
+ESTRUCTURA DE LAS PAGINAS DE SERVICIOS
+
+- titulo h1
+- animación con tree.js o anime.js que represente el titulo (La misma animación de la tarjeta pero mas grande) se usara de fondo en el main de la pagina.
+- resumen p (400 o 500 caracteres técnicos, sobre el servicio)
+- evidencias (videos, fotos, tarjetas con enlaces, cuadros, etc)
+- acordeón con hasta 5 preguntas frecuentes y respuestas sobre este servicio en particular (pensado para GEO)
+- Tabla precios servicio básicos
+- Crear metaetiquetas y descripción SEO y GEO
+- crear archivo JSON-LD para SEP
+
+CREACION DE ANIMACION
+
+- El objetivo de las animaciones es usarlas en lugar de imágenes.
+- Cada animación debe servir tanto en la tarjeta del servicio en la pagina principal, como en la subpágina que explica el servicio.
+- Para realizar cada animación se tomara los textos de descripción y titulo de cada servicio y se usaran como prompt para crear la animación
+- Para crear la animación puede descargar bibliotecas para usar anime.js tree.js CSS avanzado etcetera.
+- Por cada servicio se creara una animación en dos formatos, uno para que se vea en la tarjeta del servicio en la pagina principal y el otro para que se vea en el main de fondo de la subpágina del servicio.
+- No quiero animaciones generales de partículas dando vueltas, quiero animaciones especificas de acuerdo al servicio.
+- ejemplos: por ejemplo para el servicio de Sitios Web con IA me imagino una animación de un sitio web dinamico que tiene unos agentes de IA que cambien el sitio o que se ve el chat y este genera cambios o comunicación con otros programas y sitios web. Para SEO y GEO me imagino unos agentes de IA hablando con los agentes de IA de Google, Gemini, Claude, OpenAI y compartiendo información del sitio web, moviéndose animados. para chatbot me imagino un chatbot que responde con imágenes y con videos y que le habla al usuario (usar sonidos). para SaaS me imagino una animación que diga Tienes un idea? nosotros la construimos y luego salgan agentes construyendo un sitio web o una plataforma. PAra IA Local me imagino una animación que muestre como un modelo trabaja con la información de la empresa de manera local de forma segura y unos agentes manteniendo todo en orden. para RAG me imagino un chat comunicándose con una carpeta de archivos en diferente formato, video, texto, audio, imagen etcetera. para power platform me imagino un dashboard de power bi actualizándose con información que viene de una app de de power apps, Agentes de IA me lo imagino con agentes de IA en internet que ayudan en compras y en servicios a la empresa y a la gente. para capacitación imagino a prodig capacitando empresas y consultoría ajustando los procesos de la empresa.
+

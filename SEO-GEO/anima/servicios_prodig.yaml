@@ -1,0 +1,13 @@
+services:
+  sitios_web_ia:
+    title: "Sitios Web IA"
+    description: "Desarrollo de ecosistemas digitales que no solo informan, sino que operan. Integración nativa con flujos de trabajo autónomos."
+    animation_prompt: "Agentes de IA modificando la estructura de un sitio web en tiempo real basado en un chat lateral."
+  seo_geo:
+    title: "SEO y GEO"
+    description: "Optimización para Generative Engine Optimization. Logramos que su marca sea la respuesta predeterminada de Gemini y GPT."
+    animation_prompt: "Agentes de ProDig intercambiando paquetes de datos con avatares de Gemini, Claude y OpenAI."
+  ia_local:
+    title: "IA Local"
+    description: "Privacidad absoluta. Implementación de LLMs en servidores propios para procesamiento de datos sensibles sin salida a internet."
+    animation_prompt: "Un modelo de lenguaje procesando datos dentro de un escudo digital transparente con agentes de seguridad."
