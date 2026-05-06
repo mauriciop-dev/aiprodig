@@ -1,0 +1,231 @@
+<!DOCTYPE name="html">
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Platform | ProDig - Prospectiva Digital</title>
+    <meta name="description" content="Ecosistema Microsoft Power Platform con IA. Power BI, Power Apps, Power Automate potenciados con inteligencia artificial. Bogotá, Colombia.">
+    <meta name="keywords" content="Power Platform, Power BI, Power Apps, Power Automate, Microsoft IA, Power Platform + AI">
+    <meta name="seo-title" content="Power Platform | Ecosistema Microsoft con IA">
+    <link rel="canonical" href="https://aiprodig.com/power-platform.html">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; color: #333; overflow-x: hidden; }
+        header { background: linear-gradient(135deg, #0078d4, #106ebe); color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .logo { font-size: 1.8rem; font-weight: bold; background: linear-gradient(45deg, #fff, #f0f0f0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; }
+        .hero-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; }
+        .hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding-top: 80px; background: linear-gradient(135deg, #0c2d48, #145374, #2e86ab); }
+        .hero-content { text-align: center; color: white; max-width: 800px; padding: 2rem; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; background: linear-gradient(45deg, #00a8e8, #0078d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .resumen-tecnico { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 15px; margin: 2rem 0; }
+        .resumen-tecnico h3 { color: #00a8e8; }
+        .btn { padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background: linear-gradient(45deg, #00a8e8, #0078d4); color: white; }
+        .section { padding: 80px 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; }
+        .evidencias-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .evidencia-card { background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); text-align: center; }
+        .evidencia-card h4 { color: #0078d4; margin-bottom: 1rem; }
+        .evidencia-card .icon-microsoft { font-size: 3rem; color: #0078d4; margin-bottom: 1rem; }
+        .faq-section { background: #f8f9fa; }
+        .faq-item { background: white; border-radius: 15px; margin-bottom: 1rem; }
+        .faq-question { padding: 1.5rem; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 1.5rem; }
+        .faq-item.active .faq-answer { max-height: 500px; padding: 1.5rem; border-top: 1px solid #eee; }
+        .pricing-section { background: linear-gradient(135deg, #0c2d48, #145374); color: white; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .pricing-card { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 2rem; text-align: center; }
+        .pricing-card .price { font-size: 2.5rem; font-weight: bold; background: linear-gradient(45deg, #00a8e8, #0078d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .pricing-card ul { list-style: none; padding: 0; text-align: left; }
+        .pricing-card ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+        .pricing-card ul li::before { content: '✓'; color: #00a8e8; position: absolute; left: 0; }
+        .contact-section { background: linear-gradient(135deg, #0078d4, #106ebe); color: white; text-align: center; }
+        footer { background: #0c2d48; color: white; text-align: center; padding: 2rem 0; }
+        .back-link { position: absolute; top: 100px; left: 2rem; color: white; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">ProDig</a>
+            <ul class="nav-links">
+                <li><a href="/#inicio">Inicio</a></li>
+                <li><a href="/#servicios">Servicios</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <section class="hero-section">
+        <a href="/#servicios" class="back-link"><i class="fas fa-arrow-left"></i> Volver</a>
+        <div class="hero-content">
+            <h1>Power Platform</h1>
+            <p>Ecosistema Microsoft potenciado con Inteligencia Artificial</p>
+            <div class="resumen-tecnico">
+                <h3>Resumen Técnico</h3>
+                <p>Potenciamos tu ecosistema Microsoft integrando IA en Power BI para analytics predictivo, Power Apps para aplicaciones inteligentes con Copilot, y Power Automate para flujos de trabajo automatizados con intelligence. Creamos soluciones que combinan la robustez del ecosistema Microsoft con las capacidades de los últimos modelos de IA, permitiendo análisis de datos avanzado, automatización inteligente y aplicaciones que aprenden de tus procesos.</p>
+            </div>
+            <a href="#contacto" class="btn btn-primary"><i class="fab fa-microsoft"></i> Implementar Power Platform + IA</a>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="section-title"><h2>Componentes con IA</h2></div>
+            <div class="evidencias-grid">
+                <div class="evidencia-card">
+                    <div class="icon-microsoft"><i class="fas fa-chart-bar"></i></div>
+                    <h4>Power BI + IA</h4>
+                    <p>Dashboards predictivos, análisis de tendencias con ML integrado, insights automáticos y natural language queries.</p>
+                </div>
+                <div class="evidencia-card">
+                    <div class="icon-microsoft"><i class="fas fa-mobile-alt"></i></div>
+                    <h4>Power Apps + Copilot</h4>
+                    <p>Aplicaciones que se crean con lenguaje natural. Copilot帮助你 construir apps hablando.</p>
+                </div>
+                <div class="evidencia-card">
+                    <div class="icon-microsoft"><i class="fas fa-cogs"></i></div>
+                    <h4>Power Automate + AI</h4>
+                    <p>Flujos inteligentes que clasifican, extraen información y toman decisiones basadas en IA.</p>
+                </div>
+                <div class="evidencia-card">
+                    <div class="icon-microsoft"><i class="fas fa-robot"></i></div>
+                    <h4>Copilot Integration</h4>
+                    <p>Asistente de IA integrado en todo el ecosistema. Consulta tus datos conversacionalmente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-title"><h2>Preguntas Frecuentes</h2></div>
+            <div class="faq-item">
+                <div class="faq-question">¿Necesito licencia de Microsoft 365?</div>
+                <div class="faq-answer">
+                    <p>Sí, Power Platform requiere licencias específicas. Evaluamos tu licensing actual y recomendamos la mejor configuración. Hay opciones para empresas de todos los tamaños, desde planes por usuario hasta licencias enterprise.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cuánto tiempo toma implementar?</div>
+                <div class="faq-answer">
+                    <p>Un dashboard de Power BI con IA básico toma 1-2 semanas. Una aplicación de Power Apps con Copilot toma 3-4 semanas. Automatizaciones complejas 2-3 semanas. Combinaciones de varios componentes 6-12 semanas.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Podemos migrar desde otras plataformas?</div>
+                <div class="faq-answer">
+                    <p>Sí, migramos desde Excel complejo, sistemas Legacy, y otras plataformas de BI. También podemos integrar con sistemas existentes manteniendo la infraestructura actual mientras migramos gradualmente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section pricing-section">
+        <div class="container">
+            <div class="section-title"><h2>Planes Power Platform</h2></div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$1,500<span>/proyecto</span></div>
+                    <ul>
+                        <li>Power BI Dashboard con IA</li>
+                        <li>1 app de Power Apps</li>
+                        <li>5 automatizaciones</li>
+                        <li>Capacitación equipo</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Professional</h3>
+                    <div class="price">$4,000<span>/proyecto</span></div>
+                    <ul>
+                        <li>Suite Power Platform completo</li>
+                        <li>Power BI Enterprise</li>
+                        <li>Apps ilimitadas</li>
+                        <li>Automatizaciones Avanzadas</li>
+                        <li>Copilot Integration</li>
+                        <li>Soporte 6 meses</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">$10,000+<span>/proyecto</span></div>
+                    <ul>
+                        <li>Arquitectura Enterprise</li>
+                        <li>Múltiples departamentos</li>
+                        <li>Integración sistemas legacy</li>
+                        <li>Centro de excelencia</li>
+                        <li>Equipo dedicado</li>
+                        <li>SLA 99.9%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacto" class="section contact-section">
+        <div class="container">
+            <h2>¿Usas Microsoft 365?</h2>
+            <p>Potencia todo el ecosistema con IA</p>
+            <a href="https://wa.me/573144897092?text=Hola%20ProDig,%20me%20interesa%20Power%20Platform" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Consultar Power Platform</a>
+        </div>
+    </section>
+    <footer><div class="container"><p>&copy; 2026 ProDig</p></div></footer>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Service","name":"Power Platform","description":"Ecosistema Microsoft con IA","provider":{"@type":"Organization","name":"ProDig","url":"https://aiprodig.com"},"priceRange":"$1500-$10000+"}
+    </script>
+    <script>
+        const canvas = document.getElementById('heroCanvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({canvas, alpha: true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        
+        const apps = ['📊', '📱', '⚙️', '🤖'];
+        const colors = [0x00a8e8, 0x0078d4, 0x106ebe, 0x00bcf2];
+        
+        for(let i = 0; i < 20; i++) {
+            const geo = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+            const mat = new THREE.MeshBasicMaterial({ color: colors[i % colors.length], transparent: true, opacity: 0.7 });
+            const cube = new THREE.Mesh(geo, mat);
+            cube.position.set((Math.random()-0.5)*10, (Math.random()-0.5)*6, (Math.random()-0.5)*3);
+            cube.userData = { 
+                baseY: cube.position.y, 
+                phase: Math.random() * Math.PI * 2,
+                velocity: new THREE.Vector3((Math.random()-0.5)*0.01, 0, 0)
+            };
+            scene.add(cube);
+        }
+        
+        const connectionMat = new THREE.LineBasicMaterial({ color: 0x00a8e8, transparent: true, opacity: 0.4 });
+        const connections = [];
+        for(let i = 0; i < 5; i++) {
+            const geo = new THREE.BufferGeometry();
+            const line = new THREE.Line(geo, connectionMat);
+            connections.push(line);
+            scene.add(line);
+        }
+        
+        camera.position.z = 5;
+        let cubeIndex = 0;
+        
+        function animate() {
+            requestAnimationFrame(animate);
+            scene.children.forEach((obj, i) => {
+                if(obj.isMesh) {
+                    obj.position.y = obj.userData.baseY + Math.sin(Date.now() * 0.002 + obj.userData.phase) * 0.3;
+                    obj.rotation.x += 0.01;
+                    obj.rotation.y += 0.01;
+                }
+            });
+            renderer.render(scene, camera);
+        }
+        animate();
+        window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
+        document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('active')));
+    </script>
+</body>
+</html>

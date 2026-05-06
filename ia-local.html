@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Local | ProDig - Prospectiva Digital</title>
+    <meta name="description" content="Inteligencia artificial local con privacidad y seguridad garantizada. Modelos como GPT-OSS, DeepSeek ejecutándose en tus servidores. Bogotá, Colombia.">
+    <meta name="keywords" content="IA local, privacy AI, modelos locales, on-premise AI, GPT-OSS, DeepSeek">
+    <meta name="seo-title" content="IA Local | Privacidad y Seguridad con Modelos Locales">
+    <link rel="canonical" href="https://aiprodig.com/ia-local.html">
+    <meta property="og:title" content="IA Local | ProDig">
+    <meta property="og:url" content="https://aiprodig.com/ia-local.html">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; color: #333; overflow-x: hidden; }
+        header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .logo { font-size: 1.8rem; font-weight: bold; background: linear-gradient(45deg, #fff, #f0f0f0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; }
+        .hero-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; }
+        .hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding-top: 80px; background: linear-gradient(135deg, #0c0c0c, #1a1a2e, #16213e); }
+        .hero-content { text-align: center; color: white; max-width: 800px; padding: 2rem; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; background: linear-gradient(45deg, #00d2ff, #3a7bd5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .resumen-tecnico { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 15px; margin: 2rem 0; }
+        .resumen-tecnico h3 { color: #00d2ff; }
+        .btn { padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background: linear-gradient(45deg, #00d2ff, #3a7bd5); color: #0c0c0c; }
+        .section { padding: 80px 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; }
+        .evidencias-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .evidencia-card { background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .evidencia-card h4 { color: #1e3c72; margin-bottom: 1rem; }
+        .faq-section { background: #f8f9fa; }
+        .faq-item { background: white; border-radius: 15px; margin-bottom: 1rem; }
+        .faq-question { padding: 1.5rem; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 1.5rem; }
+        .faq-item.active .faq-answer { max-height: 500px; padding: 1.5rem; border-top: 1px solid #eee; }
+        .pricing-section { background: linear-gradient(135deg, #0c0c0c, #1a1a2e); color: white; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .pricing-card { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 2rem; text-align: center; }
+        .pricing-card .price { font-size: 2.5rem; font-weight: bold; background: linear-gradient(45deg, #00d2ff, #3a7bd5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .pricing-card ul { list-style: none; padding: 0; text-align: left; }
+        .pricing-card ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+        .pricing-card ul li::before { content: '✓'; color: #00d2ff; position: absolute; left: 0; }
+        .contact-section { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; }
+        footer { background: #0c0c0c; color: white; text-align: center; padding: 2rem 0; }
+        .back-link { position: absolute; top: 100px; left: 2rem; color: white; text-decoration: none; }
+        .security-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(0,210,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid #00d2ff; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">ProDig</a>
+            <ul class="nav-links">
+                <li><a href="/#inicio">Inicio</a></li>
+                <li><a href="/#servicios">Servicios</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <section class="hero-section">
+        <a href="/#servicios" class="back-link"><i class="fas fa-arrow-left"></i> Volver</a>
+        <div class="hero-content">
+            <div class="security-badge"><i class="fas fa-shield-alt"></i> 100% Privado</div>
+            <h1>IA Local</h1>
+            <p>Privacidad y seguridad con modelos ejecutándose en tu infraestructura</p>
+            <div class="resumen-tecnico">
+                <h3>Resumen Técnico</h3>
+                <p>Implementamos inteligencia artificial en tu infraestructura (on-premise o cloud privado) eliminando la dependencia de terceros para el procesamiento de datos sensibles. Utilizamos modelos de código abierto como GPT-OSS, DeepSeek, Llama y Mistral optimizados para hardware local. Tus datos nunca salen de tu perímetro de seguridad, cumplimiento total con GDPR, LGPD y regulaciones locales.</p>
+            </div>
+            <a href="#contacto" class="btn btn-primary"><i class="fas fa-lock"></i> Implementar IA Local</a>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="section-title"><h2>Beneficios de IA Local</h2></div>
+            <div class="evidencias-grid">
+                <div class="evidencia-card">
+                    <h4><i class="fas fa-user-secret"></i> Completa Privacidad</h4>
+                    <p>Tus datos sensibles nunca abandonan tu infraestructura. Control total sobre dónde se procesa y almacena la información.</p>
+                </div>
+                <div class="evidencia-card">
+                    <h4><i class="fas fa-server"></i> Sin Latencia</h4>
+                    <p>Procesamiento local significa respuesta instantánea sin depender de conexiones a servicios externos.</p>
+                </div>
+                <div class="evidencia-card">
+                    <h4><i class="fas fa-file-contract"></i> Cumplimiento Legal</h4>
+                    <p>Cumple con GDPR, LGPD, y regulaciones sectoriales. Auditoría completa de cómo se procesan los datos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-title"><h2>Preguntas Frecuentes</h2></div>
+            <div class="faq-item">
+                <div class="faq-question">¿Qué hardware necesito?</div>
+                <div class="faq-answer">
+                    <p>Depende del modelo. Modelos pequeños (7B parámetros) funcionan en GPUs de gama media (RTX 3090/4090). Modelos grandes requieren GPUs profesionales (A100, H100). Evaluamos tu infraestructura existente y recomendamos upgrades.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Puedo usar mis propios datos para entrenar?</div>
+                <div class="faq-answer">
+                    <p>Sí, puedes hacer fine-tuning con tus datos para crear un modelo especializado en tu dominio. Esto se hace completamente offline en tu infraestructura.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Qué pasa si no tengo infraestructura?</div>
+                <div class="faq-answer">
+                    <p>Ofrecemos soluciones híbridas donde el procesamiento sensible se hace en tu cloud privado y el resto en infraestructura serverless. También podemos configurar ambientes cloud privados dedicados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section pricing-section">
+        <div class="container">
+            <div class="section-title"><h2>Planes IA Local</h2></div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$3,000<span>/impl</span></div>
+                    <ul>
+                        <li>Configuración de infraestructura</li>
+                        <li>Modelo 7B instalado</li>
+                        <li>API de acceso</li>
+                        <li>Documentación</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Professional</h3>
+                    <div class="price">$8,000<span>/impl</span></div>
+                    <ul>
+                        <li>Modelo 70B optimizado</li>
+                        <li>Fine-tuning con tus datos</li>
+                        <li>Interfaz web segura</li>
+                        <li>Integración con sistemas</li>
+                        <li>Soporte 6 meses</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">$20,000+<span>/impl</span></div>
+                    <ul>
+                        <li>Cluster de GPUs</li>
+                        <li>Modelos múltiples</li>
+                        <li>Alta disponibilidad</li>
+                        <li>Equipo dedicado</li>
+                        <li>SLA 99.9%</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacto" class="section contact-section">
+        <div class="container">
+            <h2>¿Tus datos son sensibles?</h2>
+            <p>Implementa IA sin sacrificar privacidad</p>
+            <a href="https://wa.me/573144897092?text=Hola%20ProDig,%20me%20interesa%20IA%20Local" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Consultar Privacidad</a>
+        </div>
+    </section>
+    <footer><div class="container"><p>&copy; 2026 ProDig</p></div></footer>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Service","name":"IA Local","description":"Inteligencia artificial local con privacidad garantizada","provider":{"@type":"Organization","name":"ProDig","url":"https://aiprodig.com"},"priceRange":"$3000-$20000+"}
+    </script>
+    <script>
+        const canvas = document.getElementById('heroCanvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({canvas, alpha: true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        
+        const ringGroup = new THREE.Group();
+        for(let i = 0; i < 5; i++) {
+            const geo = new THREE.TorusGeometry(1.5 + i * 0.5, 0.02, 16, 100);
+            const mat = new THREE.MeshBasicMaterial({ color: 0x00d2ff, transparent: true, opacity: 0.5 - i * 0.08 });
+            const torus = new THREE.Mesh(geo, mat);
+            torus.userData = { rotSpeed: (Math.random() * 0.01 + 0.005) * (i % 2 === 0 ? 1 : -1) };
+            ringGroup.add(torus);
+        }
+        scene.add(ringGroup);
+        
+        const shieldGeo = new THREE.SphereGeometry(0.3, 32, 32);
+        const shieldMat = new THREE.MeshBasicMaterial({ color: 0x00d2ff });
+        const shield = new THREE.Mesh(shieldGeo, shieldMat);
+        shield.position.z = 2;
+        scene.add(shield);
+        
+        camera.position.z = 6;
+        
+        function animate() {
+            requestAnimationFrame(animate);
+            ringGroup.children.forEach(ring => { ring.rotation.x += ring.userData.rotSpeed; ring.rotation.y += ring.userData.rotSpeed * 0.5; });
+            shield.position.x = Math.sin(Date.now() * 0.002) * 0.5;
+            shield.position.y = Math.cos(Date.now() * 0.002) * 0.5;
+            renderer.render(scene, camera);
+        }
+        animate();
+        window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
+        document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('active')));
+    </script>
+</body>
+</html>

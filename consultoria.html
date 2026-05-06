@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoría | ProDig - Prospectiva Digital</title>
+    <meta name="description" content="Consultoría estratégica en IA y automatización. Impacto transformador para tu empresa. Primera hora gratis. Bogotá, Colombia.">
+    <meta name="keywords" content="consultoría IA, estrategia IA, transformación digital, auditoría tecnológica, advisory">
+    <meta name="seo-title" content="Consultoría | Impacto Estratégico - Primera Hora Gratis">
+    <link rel="canonical" href="https://aiprodig.com/consultoria.html">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; color: #333; overflow-x: hidden; }
+        header { background: linear-gradient(135deg, #c31432, #240b36); color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .logo { font-size: 1.8rem; font-weight: bold; background: linear-gradient(45deg, #fff, #f0f0f0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; }
+        .hero-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; }
+        .hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding-top: 80px; background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); }
+        .hero-content { text-align: center; color: white; max-width: 800px; padding: 2rem; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; background: linear-gradient(45deg, #ff9966, #ff5e62); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .resumen-tecnico { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 15px; margin: 2rem 0; }
+        .resumen-tecnico h3 { color: #ff9966; }
+        .free-hour { background: linear-gradient(135deg, #ff9966, #ff5e62); color: white; padding: 1rem 2rem; border-radius: 30px; display: inline-block; margin-bottom: 1rem; font-weight: bold; }
+        .btn { padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background: linear-gradient(45deg, #ff9966, #ff5e62); color: white; }
+        .section { padding: 80px 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; }
+        .evidencias-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .evidencia-card { background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .evidencia-card h4 { color: #c31432; margin-bottom: 1rem; }
+        .process-step { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+        .step-number { background: linear-gradient(135deg, #ff9966, #ff5e62); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
+        .faq-section { background: #f8f9fa; }
+        .faq-item { background: white; border-radius: 15px; margin-bottom: 1rem; }
+        .faq-question { padding: 1.5rem; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 1.5rem; }
+        .faq-item.active .faq-answer { max-height: 500px; padding: 1.5rem; border-top: 1px solid #eee; }
+        .pricing-section { background: linear-gradient(135deg, #0f0c29, #302b63); color: white; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .pricing-card { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 2rem; text-align: center; }
+        .pricing-card .price { font-size: 2.5rem; font-weight: bold; background: linear-gradient(45deg, #ff9966, #ff5e62); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .pricing-card ul { list-style: none; padding: 0; text-align: left; }
+        .pricing-card ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+        .pricing-card ul li::before { content: '✓'; color: #ff9966; position: absolute; left: 0; }
+        .contact-section { background: linear-gradient(135deg, #c31432, #240b36); color: white; text-align: center; }
+        footer { background: #0f0c29; color: white; text-align: center; padding: 2rem 0; }
+        .back-link { position: absolute; top: 100px; left: 2rem; color: white; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">ProDig</a>
+            <ul class="nav-links">
+                <li><a href="/#inicio">Inicio</a></li>
+                <li><a href="/#servicios">Servicios</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <section class="hero-section">
+        <a href="/#servicios" class="back-link"><i class="fas fa-arrow-left"></i> Volver</a>
+        <div class="hero-content">
+            <div class="free-hour"><i class="fas fa-gift"></i> Primera Hora Gratis</div>
+            <h1>Consultoría</h1>
+            <p>Impacto estratégico para tu transformación digital</p>
+            <div class="resumen-tecnico">
+                <h3>Resumen Técnico</h3>
+                <p>Nuestros consultores senior analizan tu situación actual, identifican oportunidades de automatización e IA, y diseñan un roadmap tecnológico personalizado. Sesiones de diagnóstico profundo, análisis de procesos, evaluación de madurez digital, y recomendaciones acionables con ROI estimado. La primera hora de consultoría es completamente gratuita para conocer tu caso y explorar cómo podemos ayudarte.</p>
+            </div>
+            <a href="#contacto" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Agendar Consulta Gratis</a>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="section-title"><h2>Proceso de Consultoría</h2></div>
+            <div class="evidencias-grid">
+                <div class="evidencia-card">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h4>Diagnóstico Inicial</h4>
+                            <p>Evaluamos tu madurez digital actual, procesos clave y puntos de dolor en 60 minutos de discovery.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="evidencia-card">
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h4>Análisis de Oportunidades</h4>
+                            <p>Identificamos proyectos de alto impacto con ROI calculable. Priorizamos por factibilidad y beneficio.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="evidencia-card">
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h4>Roadmap Estratégico</h4>
+                            <p>Te entregamos un plan de implementación con fases, tiempos, inversiones y recursos necesarios.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="evidencia-card">
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div>
+                            <h4>Acompañamiento</h4>
+                            <p>Podemos acompañarte en la ejecución del roadmap o simplemente darte las herramientas para que lo hagas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-title"><h2>Preguntas Frecuentes</h2></div>
+            <div class="faq-item">
+                <div class="faq-question">¿Qué incluye la primera hora gratis?</div>
+                <div class="faq-answer">
+                    <p>La primera hora incluye un diagnóstico inicial de tu situación, identificación de 2-3 oportunidades de alto impacto, y una visión general de cómo abordarías esas oportunidades. Es 100% sin compromiso y sin costo.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cuánto cuesta un proyecto de consultoría completo?</div>
+                <div class="faq-answer">
+                    <p>Depende del alcance. Un diagnóstico sectorial simple parte de $1,500. Un roadmap completo con análisis de procesos y plan de implementación detallado parte de $5,000. Proyectos de transformación enterprise varían según necesidades.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cuánto tiempo toma un proyecto?</div>
+                <div class="faq-answer">
+                    <p>Un diagnóstico rápido toma 1-2 semanas. Un roadmap completo toma 3-6 semanas dependiendo de la complejidad de tu organización. Proyectos de transformación enterprise pueden tomar varios meses con fases definidas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section pricing-section">
+        <div class="container">
+            <div class="section-title"><h2>Servicios de Consultoría</h2></div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Diagnóstico Express</h3>
+                    <div class="price">$1,500</div>
+                    <ul>
+                        <li>4 horas de sesiones</li>
+                        <li>Análisis de 3 procesos</li>
+                        <li>Informe de oportunidades</li>
+                        <li>Plan de acción básico</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Roadmap Completo</h3>
+                    <div class="price">$5,000</div>
+                    <ul>
+                        <li>20 horas de consultoría</li>
+                        <li>Análisis profundo de procesos</li>
+                        <li>Roadmap de 12 meses</li>
+                        <li>Modelo de costos y ROI</li>
+                        <li>Presentacion ejecutiva</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Transformación Integral</h3>
+                    <div class="price">$15,000+</div>
+                    <ul>
+                        <li>Proyecto de 3-6 meses</li>
+                        <li>Equipo dedicado</li>
+                        <li>Gestión de implementación</li>
+                        <li>Monitoreo KPIs</li>
+                        <li>Entrega de resultados</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacto" class="section contact-section">
+        <div class="container">
+            <h2>Tu primera hora de consultoría es gratis</h2>
+            <p>Agenda hoy y descubre tu potencial de transformación</p>
+            <a href="https://wa.me/573144897092?text=Hola%20ProDig,%20quiero%20mi%20consultoria%20gratis" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Agendar Ahora</a>
+        </div>
+    </section>
+    <footer><div class="container"><p>&copy; 2026 ProDig</p></div></footer>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Service","name":"Consultoría","description":"Consultoría estratégica en IA y automatización","provider":{"@type":"Organization","name":"ProDig","url":"https://aiprodig.com"},"priceRange":"$1500-$15000+"}
+    </script>
+    <script>
+        const canvas = document.getElementById('heroCanvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({canvas, alpha: true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        
+        const stars = [];
+        for(let i = 0; i < 200; i++) {
+            const geo = new THREE.SphereGeometry(0.02, 8, 8);
+            const mat = new THREE.MeshBasicMaterial({ color: 0xff9966, transparent: true, opacity: Math.random() });
+            const star = new THREE.Mesh(geo, mat);
+            star.position.set((Math.random()-0.5)*15, (Math.random()-0.5)*10, (Math.random()-0.5)*5);
+            star.userData = { twinkleSpeed: Math.random() * 0.02 + 0.01 };
+            stars.push(star);
+            scene.add(star);
+        }
+        
+        const lineGeo = new THREE.BufferGeometry();
+        const linePositions = [];
+        for(let i = 0; i < 10; i++) {
+            linePositions.push((Math.random()-0.5)*8, (Math.random()-0.5)*4, (Math.random()-0.5)*2);
+        }
+        lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+        const line = new THREE.Line(lineGeo, new THREE.LineBasicMaterial({ color: 0xff9966, transparent: true, opacity: 0.3 }));
+        scene.add(line);
+        
+        camera.position.z = 5;
+        
+        function animate() {
+            requestAnimationFrame(animate);
+            const time = Date.now() * 0.001;
+            stars.forEach(star => {
+                star.material.opacity = 0.3 + Math.sin(time * star.userData.twinkleSpeed * 10) * 0.4;
+            });
+            renderer.render(scene, camera);
+        }
+        animate();
+        window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
+        document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('active')));
+    </script>
+</body>
+</html>

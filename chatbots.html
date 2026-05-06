@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbots | ProDig - Prospectiva Digital</title>
+    <meta name="description" content="Chatbots con respuesta multimedia y audio interactivo. Asistentes virtuales avanzados con IA conversacional para tu empresa. Bogotá, Colombia.">
+    <meta name="keywords" content="chatbot, chatbot con audio, asistente virtual, IA conversacional, chatbot multimedia">
+    <meta name="seo-title" content="Chatbots con IA | Respuesta Multimedia y Audio Interactivo">
+    <meta name="seo-description" content="Chatbots con respuesta multimedia y audio interactivo. Asistentes virtuales avanzados con IA conversacional.">
+    <meta name="seo-type" content="service">
+    <link rel="canonical" href="https://aiprodig.com/chatbots.html">
+    <meta property="og:title" content="Chatbots con IA | ProDig">
+    <meta property="og:description" content="Chatbots con respuesta multimedia y audio interactivo.">
+    <meta property="og:url" content="https://aiprodig.com/chatbots.html">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; color: #333; overflow-x: hidden; }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .logo { font-size: 1.8rem; font-weight: bold; background: linear-gradient(45deg, #fff, #f0f0f0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; }
+        .hero-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; }
+        .hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding-top: 80px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 0%, #0f3460 100%); }
+        .hero-content { text-align: center; color: white; z-index: 2; max-width: 800px; padding: 2rem; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; background: linear-gradient(45deg, #ff9a9e, #fad0c4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .resumen-tecnico { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 15px; margin: 2rem 0; border: 1px solid rgba(255,255,255,0.2); }
+        .resumen-tecnico h3 { color: #ff9a9e; margin-bottom: 0.5rem; }
+        .btn { padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background: linear-gradient(45deg, #ff9a9e, #fad0c4); color: #1a1a2e; }
+        .section { padding: 80px 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .evidencias-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .evidencia-card { background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .faq-section { background: #f8f9fa; }
+        .faq-item { background: white; border-radius: 15px; margin-bottom: 1rem; overflow: hidden; }
+        .faq-question { padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; font-weight: 600; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 1.5rem; }
+        .faq-item.active .faq-answer { max-height: 500px; padding: 1.5rem; border-top: 1px solid #eee; }
+        .pricing-section { background: linear-gradient(135deg, #1a1a2e, #16213e); color: white; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .pricing-card { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 2rem; text-align: center; }
+        .pricing-card .price { font-size: 2.5rem; font-weight: bold; background: linear-gradient(45deg, #ff9a9e, #fad0c4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .pricing-card ul { list-style: none; padding: 0; text-align: left; }
+        .pricing-card ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+        .pricing-card ul li::before { content: '✓'; color: #ff9a9e; position: absolute; left: 0; }
+        .contact-section { background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-align: center; }
+        footer { background: #1a1a2e; color: white; text-align: center; padding: 2rem 0; }
+        .back-link { position: absolute; top: 100px; left: 2rem; color: white; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">ProDig</a>
+            <ul class="nav-links">
+                <li><a href="/#inicio">Inicio</a></li>
+                <li><a href="/#servicios">Servicios</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <section class="hero-section">
+        <a href="/#servicios" class="back-link"><i class="fas fa-arrow-left"></i> Volver</a>
+        <div class="hero-content">
+            <h1>Chatbots</h1>
+            <p>Respuesta multimedia y audio interactivo para tu negocio</p>
+            <div class="resumen-tecnico">
+                <h3>Resumen Técnico</h3>
+                <p>Desarrollamos chatbots avanzados que van más allá del texto. Nuestros asistentes integran generación de imágenes con DALL-E, síntesis de voz para respuestas auditivas, análisis de documentos en tiempo real y conexiones con APIs externas. Cada chatbot se entrena con los datos específicos de tu empresa para proporcionar respuestas precisas y personalizadas que evolucionan con cada interacción.</p>
+            </div>
+            <a href="#contacto" class="btn btn-primary"><i class="fas fa-comments"></i> Implementar Chatbot</a>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="section-title"><h2>Capacidades del Chatbot</h2></div>
+            <div class="evidencias-grid">
+                <div class="evidencia-card">
+                    <h4><i class="fas fa-microphone"></i> Audio Interactivo</h4>
+                    <p>El usuario puede hablar y el chatbot responde con voz sintética natural, creando conversaciones fluidas.</p>
+                </div>
+                <div class="evidencia-card">
+                    <h4><i class="fas fa-image"></i> Generación de Imágenes</h4>
+                    <p>El chatbot puede generar imágenes relevantes como respuestas, ideal para e-commerce y educación.</p>
+                </div>
+                <div class="evidencia-card">
+                    <h4><i class="fas fa-file-pdf"></i> Análisis de Documentos</h4>
+                    <p>Capacidad de recibir PDFs, Word, Excel y extraer información relevante al instante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-title"><h2>Preguntas Frecuentes</h2></div>
+            <div class="faq-item">
+                <div class="faq-question">¿Qué canales puedo integrar con mi chatbot?</div>
+                <div class="faq-answer">
+                    <p>Integramos con WhatsApp Business, Web (embebido), Telegram, Slack, Teams, Instagram, Facebook Messenger y API REST para sistemas personalizados. Cada canal mantiene la misma inteligencia y memoria de conversación.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿El chatbot aprende de las conversaciones?</div>
+                <div class="faq-answer">
+                    <p>Sí, implementamos sistemas de aprendizaje donde el chatbot analiza las interacciones para mejorar sus respuestas. También puedes alimentarlo manualmente con nuevos documentos y conocimientos.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cuánto tiempo toma implementar un chatbot?</div>
+                <div class="faq-answer">
+                    <p>Un chatbot básico con Q&A está listo en 5 días. Chatbots con voz, generación de imágenes y conexiones a sistemas empresariales tardan 2-4 semanas.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Puedo usar mi propia voz para el chatbot?</div>
+                <div class="faq-answer">
+                    <p>Sí, podemos clonar tu voz o la de un actor de voz para que el chatbot hable con una voz personalizada y reconocible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section pricing-section">
+        <div class="container">
+            <div class="section-title"><h2>Planes Chatbot</h2></div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Básico</h3>
+                    <div class="price">$500<span>/impl</span></div>
+                    <ul>
+                        <li>Chatbot texto multilenguaje</li>
+                        <li>Integración web + WhatsApp</li>
+                        <li>100 documentos para training</li>
+                        <li>Soporte 30 días</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Avanzado</h3>
+                    <div class="price">$1,200<span>/impl</span></div>
+                    <ul>
+                        <li>Chatbot con voz (TTS/STT)</li>
+                        <li>Generación de imágenes</li>
+                        <li>Documentos ilimitados</li>
+                        <li>Integración con CRM</li>
+                        <li>Analytics avanzado</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">$2,500+<span>/impl</span></div>
+                    <ul>
+                        <li>Chatbot multimodal completo</li>
+                        <li>Voz personalizada (clonación)</li>
+                        <li>Integraciones API无限</li>
+                        <li>Equipo dedicado</li>
+                        <li>SLA garantizado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacto" class="section contact-section">
+        <div class="container">
+            <h2>¿Listo para implementar tu chatbot?</h2>
+            <a href="https://wa.me/573144897092?text=Hola%20ProDig,%20me%20interesa%20un%20chatbot" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Chatear con Experto</a>
+        </div>
+    </section>
+    <footer><div class="container"><p>&copy; 2026 ProDig</p></div></footer>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Service","name":"Chatbots","description":"Chatbots con respuesta multimedia y audio interactivo","provider":{"@type":"Organization","name":"ProDig","url":"https://aiprodig.com"},"priceRange":"$500-$2500+"}
+    </script>
+    <script>
+        const canvas = document.getElementById('heroCanvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({canvas, alpha: true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        
+        const msgGroup = new THREE.Group();
+        const colors = [0xff6b6b, 0x4ecdc4, 0xffe66d, 0x95e1d3, 0xf38181];
+        
+        for(let i = 0; i < 20; i++) {
+            const geometry = new THREE.BoxGeometry(Math.random() * 0.5 + 0.3, Math.random() * 0.3 + 0.1, 0.1);
+            const material = new THREE.MeshBasicMaterial({ color: colors[i % colors.length], transparent: true, opacity: 0.8 });
+            const msg = new THREE.Mesh(geometry, material);
+            msg.position.set((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 6, (Math.random() - 0.5) * 3);
+            msg.userData = { velocity: new THREE.Vector3((Math.random() - 0.5) * 0.02, (Math.random() - 0.5) * 0.02, 0), rotSpeed: Math.random() * 0.02 };
+            msgGroup.add(msg);
+        }
+        scene.add(msgGroup);
+        camera.position.z = 5;
+        
+        function animate() {
+            requestAnimationFrame(animate);
+            msgGroup.children.forEach(msg => {
+                msg.position.add(msg.userData.velocity);
+                msg.rotation.z += msg.userData.rotSpeed;
+                if(Math.abs(msg.position.x) > 5) msg.userData.velocity.x *= -1;
+                if(Math.abs(msg.position.y) > 3) msg.userData.velocity.y *= -1;
+            });
+            renderer.render(scene, camera);
+        }
+        animate();
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('active')));
+    </script>
+</body>
+</html>

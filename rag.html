@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG | ProDig - Prospectiva Digital</title>
+    <meta name="description" content="Retrieval-Augmented Generation para valorización de datos internos. Chat con tus documentos PDF, audio y video. Bogotá, Colombia.">
+    <meta name="keywords" content="RAG, retrieval augmented generation, chat con documentos, vector database, embeddings">
+    <meta name="seo-title" content="RAG | Chat con tus Datos Internos Multiformato">
+    <link rel="canonical" href="https://aiprodig.com/rag.html">
+    <meta property="og:title" content="RAG | ProDig">
+    <meta property="og:url" content="https://aiprodig.com/rag.html">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; color: #333; overflow-x: hidden; }
+        header { background: linear-gradient(135deg, #834d9b, #d04e9e); color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .logo { font-size: 1.8rem; font-weight: bold; background: linear-gradient(45deg, #fff, #f0f0f0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; }
+        .hero-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; }
+        .hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding-top: 80px; background: linear-gradient(135deg, #1c1c3c, #2d1b4e, #1a1a2e); }
+        .hero-content { text-align: center; color: white; max-width: 800px; padding: 2rem; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; background: linear-gradient(45deg, #d04e9e, #834d9b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .resumen-tecnico { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 15px; margin: 2rem 0; }
+        .resumen-tecnico h3 { color: #d04e9e; }
+        .btn { padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background: linear-gradient(45deg, #d04e9e, #834d9b); color: white; }
+        .section { padding: 80px 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; }
+        .evidencias-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .evidencia-card { background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        .evidencia-card h4 { color: #834d9b; margin-bottom: 1rem; }
+        .faq-section { background: #f8f9fa; }
+        .faq-item { background: white; border-radius: 15px; margin-bottom: 1rem; }
+        .faq-question { padding: 1.5rem; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 1.5rem; }
+        .faq-item.active .faq-answer { max-height: 500px; padding: 1.5rem; border-top: 1px solid #eee; }
+        .pricing-section { background: linear-gradient(135deg, #1c1c3c, #2d1b4e); color: white; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .pricing-card { background: rgba(255,255,255,0.1); border-radius: 20px; padding: 2rem; text-align: center; }
+        .pricing-card .price { font-size: 2.5rem; font-weight: bold; background: linear-gradient(45deg, #d04e9e, #834d9b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .pricing-card ul { list-style: none; padding: 0; text-align: left; }
+        .pricing-card ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+        .pricing-card ul li::before { content: '✓'; color: #d04e9e; position: absolute; left: 0; }
+        .contact-section { background: linear-gradient(135deg, #834d9b, #d04e9e); color: white; text-align: center; }
+        footer { background: #1c1c3c; color: white; text-align: center; padding: 2rem 0; }
+        .back-link { position: absolute; top: 100px; left: 2rem; color: white; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">ProDig</a>
+            <ul class="nav-links">
+                <li><a href="/#inicio">Inicio</a></li>
+                <li><a href="/#servicios">Servicios</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <section class="hero-section">
+        <a href="/#servicios" class="back-link"><i class="fas fa-arrow-left"></i> Volver</a>
+        <div class="hero-content">
+            <h1>RAG</h1>
+            <p>Retrieval-Augmented Generation - Chat con tus datos internos</p>
+            <div class="resumen-tecnico">
+                <h3>Resumen Técnico</h3>
+                <p>Transforma tus datos internos en conocimiento accesible mediante IA. Nuestro sistema RAG indexa documentos PDF, Word, Excel, presentaciones, audio y video, creando una base de conocimiento vectorial que permite a cualquier empleado chatear con tus datos y obtener respuestas precisas con citas a las fuentes. El sistema entiende contexto, puede responder preguntas complejas y resumir información de múltiples fuentes simultáneamente.</p>
+            </div>
+            <a href="#contacto" class="btn btn-primary"><i class="fas fa-database"></i> Implementar RAG</a>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="section-title"><h2>Formatos Soportados</h2></div>
+            <div class="evidencias-grid">
+                <div class="evidencia-card">
+                    <h4><i class="fas fa-file-pdf"></i> Documentos</h4>
+                    <p>PDF, Word, Excel, PowerPoint, texto plano. Indexamos el contenido completo preservando estructura y tablas.</p>
+                </div>
+                <div class="evidencia-card">
+                    <h4><i class="fas fa-headphones"></i> Audio</h4>
+                    <p>Transcribimos y indexamos llamadas, reuniones, podcasts. Busca dentro de contenido de audio sin escucharlo.</p>
+                </div>
+                <div class="evidencia-card">
+                    <h4><i class="fas fa-video"></i> Video</h4>
+                    <p>Extraemos audio de videos, transcribimos y creamos índices por temas y timestamps. Encuentra el momento exacto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-title"><h2>Preguntas Frecuentes</h2></div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cuánta información puede procesar el sistema?</div>
+                <div class="faq-answer">
+                    <p>Escalamos desde miles hasta millones de documentos. La arquitectura permite añadir nodos de procesamiento según el volumen. Para empresas medianas, procesamos 100k+ documentos sin problemas.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Los datos se entrenan con nuestra información?</div>
+                <div class="faq-answer">
+                    <p>No, el RAG no entrena modelos. Usa retrieval para encontrar la información relevante y la presenta al modelo como contexto. Tu información permanece privada y no se comparte con terceros.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Cómo se asegura la calidad de las respuestas?</div>
+                <div class="faq-answer">
+                    <p>Cada respuesta incluye citas a los documentos fuente con puntuación de relevancia. También implementamos validación de respuestas contra fuentes originales para casos de uso críticos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section pricing-section">
+        <div class="container">
+            <div class="section-title"><h2>Planes RAG</h2></div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$2,000<span>/impl</span></div>
+                    <ul>
+                        <li>Hasta 10,000 documentos</li>
+                        <li>Formatos: PDF, Word, Excel</li>
+                        <li>Interfaz web de chat</li>
+                        <li>Búsqueda básica</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Professional</h3>
+                    <div class="price">$5,000<span>/impl</span></div>
+                    <ul>
+                        <li>Hasta 100,000 documentos</li>
+                        <li>+ Audio y Video</li>
+                        <li>Integración API</li>
+                        <li>Search avanzado con filtros</li>
+                        <li>Soporte 6 meses</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">$12,000+<span>/impl</span></div>
+                    <ul>
+                        <li>Documentos ilimitados</li>
+                        <li>Multitenancy</li>
+                        <li>Sistemas de permisos</li>
+                        <li>Analytics y dashboards</li>
+                        <li>Equipo dedicado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacto" class="section contact-section">
+        <div class="container">
+            <h2>¿Tienes muchos datos sin usar?</h2>
+            <p>Convierte tu conocimiento en un asistente conversacional</p>
+            <a href="https://wa.me/573144897092?text=Hola%20ProDig,%20me%20interesa%20RAG" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Consultar RAG</a>
+        </div>
+    </section>
+    <footer><div class="container"><p>&copy; 2026 ProDig</p></div></footer>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Service","name":"RAG","description":"Retrieval-Augmented Generation para datos internos","provider":{"@type":"Organization","name":"ProDig","url":"https://aiprodig.com"},"priceRange":"$2000-$12000+"}
+    </script>
+    <script>
+        const canvas = document.getElementById('heroCanvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({canvas, alpha: true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        
+        const particles = new THREE.Group();
+        const docTypes = ['📄', '🎵', '🎬', '📊', '📝'];
+        const colors = [0xd04e9e, 0x834d9b, 0xff6b6b, 0x4ecdc4, 0xffe66d];
+        
+        for(let i = 0; i < 40; i++) {
+            const geo = new THREE.PlaneGeometry(0.3, 0.4);
+            const canvas2 = document.createElement('canvas');
+            canvas2.width = 64; canvas2.height = 64;
+            const ctx = canvas2.getContext('2d');
+            ctx.fillStyle = '#ffffff';
+            ctx.font = '40px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(docTypes[i % docTypes.length], 32, 45);
+            const texture = new THREE.CanvasTexture(canvas2);
+            const mat = new THREE.MeshBasicMaterial({ map: texture, transparent: true, side: THREE.DoubleSide });
+            const plane = new THREE.Mesh(geo, mat);
+            plane.position.set((Math.random()-0.5)*10, (Math.random()-0.5)*6, (Math.random()-0.5)*3);
+            plane.userData = { velocity: new THREE.Vector3((Math.random()-0.5)*0.01, (Math.random()-0.5)*0.01, 0), rotSpeed: Math.random() * 0.02 };
+            particles.add(plane);
+        }
+        scene.add(particles);
+        
+        const lineGeo = new THREE.BufferGeometry();
+        const linePoints = [];
+        for(let i = 0; i < 20; i++) {
+            linePoints.push(new THREE.Vector3((Math.random()-0.5)*8, (Math.random()-0.5)*4, (Math.random()-0.5)*2));
+        }
+        lineGeo.setFromPoints(linePoints);
+        const line = new THREE.Line(lineGeo, new THREE.LineBasicMaterial({ color: 0xd04e9e, transparent: true, opacity: 0.3 }));
+        scene.add(line);
+        
+        camera.position.z = 5;
+        
+        function animate() {
+            requestAnimationFrame(animate);
+            particles.children.forEach(p => {
+                p.position.add(p.userData.velocity);
+                p.rotation.z += p.userData.rotSpeed;
+                if(Math.abs(p.position.x) > 5) p.userData.velocity.x *= -1;
+                if(Math.abs(p.position.y) > 3) p.userData.velocity.y *= -1;
+            });
+            renderer.render(scene, camera);
+        }
+        animate();
+        window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
+        document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('active')));
+    </script>
+</body>
+</html>

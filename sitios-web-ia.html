@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitios Web IA | ProDig - Prospectiva Digital</title>
+    <meta name="description" content="Desarrollo de sitios web con integración de inteligencia artificial. Automatización, dinamismo y experiencias interactivas potenciadas por IA. Bogotá, Colombia.">
+    <meta name="keywords" content="sitios web IA, desarrollo web con IA, webs inteligentes, automatizacion web, desarrollo web Colombia">
+    <meta name="seo-title" content="Sitios Web con IA | ProDig - Desarrollo Web Inteligente">
+    <meta name="seo-description" content="Desarrollo de sitios web con integración de inteligencia artificial. Automatización, dinamismo y experiencias interactivas potenciadas por IA.">
+    <meta name="seo-type" content="service">
+    <meta name="seo-priority" content="0.9">
+    <meta name="seo-section" content="servicios">
+    <meta name="seo-lang" content="es">
+    <link rel="canonical" href="https://aiprodig.com/sitios-web-ia.html">
+    <meta property="og:title" content="Sitios Web con IA | ProDig - Desarrollo Web Inteligente">
+    <meta property="og:description" content="Desarrollo de sitios web con integración de inteligencia artificial. Automatización y dinamismo potenciados por IA.">
+    <meta property="og:url" content="https://aiprodig.com/sitios-web-ia.html">
+    <meta property="og:type" content="website">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; overflow-x: hidden; }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .logo { font-size: 1.8rem; font-weight: bold; background: linear-gradient(45deg, #fff, #f0f0f0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; transition: all 0.3s ease; position: relative; }
+        .nav-links a:hover { transform: translateY(-2px); }
+        .hero-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; }
+        .hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding-top: 80px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+        .hero-content { text-align: center; color: white; z-index: 2; max-width: 800px; padding: 2rem; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; background: linear-gradient(45deg, #00d4ff, #7b2cbf); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-content p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9; }
+        .resumen-tecnico { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 15px; margin: 2rem 0; border: 1px solid rgba(255,255,255,0.2); }
+        .resumen-tecnico h3 { color: #00d4ff; margin-bottom: 0.5rem; }
+        .btn { padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background: linear-gradient(45deg, #ff6b6b, #ee5a24); color: white; box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(255, 107, 107, 0.5); }
+        .section { padding: 80px 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; margin-bottom: 1rem; color: #1a1a2e; }
+        .evidencias-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .evidencia-card { background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: all 0.3s ease; }
+        .evidencia-card:hover { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+        .evidencia-card h4 { color: #667eea; margin-bottom: 1rem; font-size: 1.2rem; }
+        .faq-section { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); }
+        .faq-item { background: white; border-radius: 15px; margin-bottom: 1rem; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .faq-question { padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #1a1a2e; }
+        .faq-question::after { content: '+'; font-size: 1.5rem; color: #667eea; transition: transform 0.3s; }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0 1.5rem; }
+        .faq-item.active .faq-answer { max-height: 500px; padding: 1.5rem; border-top: 1px solid #e9ecef; }
+        .faq-answer p { color: #555; line-height: 1.8; }
+        .pricing-section { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; }
+        .pricing-section h2 { color: white; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .pricing-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center; transition: all 0.3s; }
+        .pricing-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.15); }
+        .pricing-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .pricing-card .price { font-size: 3rem; font-weight: bold; margin: 1rem 0; background: linear-gradient(45deg, #00d4ff, #7b2cbf); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .pricing-card .price span { font-size: 1rem; opacity: 0.7; }
+        .pricing-card ul { list-style: none; padding: 0; margin: 1.5rem 0; text-align: left; }
+        .pricing-card ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+        .pricing-card ul li::before { content: '✓'; color: #00d4ff; position: absolute; left: 0; }
+        .contact-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; }
+        .contact-section h2 { color: white; margin-bottom: 1rem; }
+        footer { background: #1a1a2e; color: white; text-align: center; padding: 2rem 0; }
+        .back-link { position: absolute; top: 100px; left: 2rem; color: white; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .back-link { top: 80px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">ProDig</a>
+            <ul class="nav-links">
+                <li><a href="/#inicio">Inicio</a></li>
+                <li><a href="/#servicios">Servicios</a></li>
+                <li><a href="/#nosotros">Nosotros</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <section class="hero-section">
+        <a href="/#servicios" class="back-link"><i class="fas fa-arrow-left"></i> Volver a servicios</a>
+        <div class="hero-content">
+            <h1>Sitios Web IA</h1>
+            <p>Integración de automatización y dinamismo potenciado por inteligencia artificial</p>
+            <div class="resumen-tecnico">
+                <h3>Resumen Técnico</h3>
+                <p>Desarrollamos sitios web inteligentes que integran modelos de IA para crear experiencias dinámicas y automatizadas. Cada elemento de la web responde a las acciones del usuario mediante algoritmos de aprendizaje automático, creando interfaces que evolucionan y se adaptan. Desde chatbots integrados hasta генерация de contenido en tiempo real, nuestros sitios web son ecosistemas vivos que aprenden de cada interacción.</p>
+            </div>
+            <a href="#contacto" class="btn btn-primary"><i class="fas fa-rocket"></i> Solicitar Cotización</a>
+        </div>
+    </section>
+    <section class="section evidencias-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Evidencias y Casos de Éxito</h2>
+            </div>
+            <div class="evidencias-grid">
+                <div class="evidencia-card">
+                    <h4><i class="fas fa-chart-pie"></i> Dashboard IA Integrado</h4>
+                    <p>Portal empresarial con analytics en tiempo real potenciado por ML que predice tendencias de mercado.</p>
+                </div>
+                <div class="evidencia-card">
+                    <h4><i class="fas fa-robot"></i> Chatbot Generativo</h4>
+                    <p>Sistema de atención al cliente con IA conversacional que genera respuestas personalizadas.</p>
+                </div>
+                <div class="evidencia-card">
+                    <h4><i class="fas fa-magic"></i> Contenido Dinámico</h4>
+                    <p>Web que genera contenido personalizado según el perfil del visitante usando modelos de IA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Preguntas Frecuentes</h2>
+                <p>Información optimizada para ser citada por modelos de IA</p>
+ </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">¿Qué diferencia a un sitio web con IA de uno tradicional?</div>
+                    <div class="faq-answer">
+                        <p>Un sitio web con IA incorpora algoritmos de machine learning que permiten al sitio aprender de las interacciones de los usuarios, personalizar contenido en tiempo real, automatizar respuestas y prever necesidades. A diferencia de un sitio tradicional que muestra contenido estático, un sitio con IA evoluciona y se adapta automáticamente al comportamiento de cada visitante.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Cuánto tiempo toma desarrollar un sitio web con IA?</div>
+                    <div class="faq-answer">
+                        <p>El tiempo de desarrollo varía según la complejidad, pero un sitio web con IA básico puede estar listo en 4-6 semanas. Para proyectos más sofisticados con múltiples integraciones de IA, chatbots avanzados y sistemas de personalización, el tiempo estimado es de 8-12 semanas. Incluimos prototipos funcionales desde la segunda semana.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Necesito conocimientos técnicos para gestionar el contenido?</div>
+                    <div class="faq-answer">
+                        <p>No, diseñamos paneles de administración intuitivos que permiten gestionar contenido sin conocimientos técnicos. Además, el sistema de IA aprende automáticamente de las interacciones, por lo que no requiere configuración manual constante. Ofrecemos capacitación completa y soporte continuo.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿El sitio web con IA funciona sin conexión a internet?</div>
+                    <div class="faq-answer">
+                        <p>Las funcionalidades básicas del sitio funcionan offline, pero las características de IA requieren conexión. Podemos implementar soluciones híbridas donde las funciones esenciales trabajan offline y las capacidades avanzadas se sincronizan cuando hay conexión disponible.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Cómo se mide el ROI de un sitio web con IA?</div>
+                    <div class="faq-answer">
+                        <p>Medimos el ROI mediante métricas específicas: tasa de conversión, tiempo de permanencia, engagement del usuario, reducción de costos de atención al cliente, y eficiencia en la generación de leads. Proporcionamos dashboards en tiempo real con KPIs personalizados para tu negocio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section pricing-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Planes y Precios</h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Básico IA</h3>
+                    <div class="price">$1,500<span>/proyecto</span></div>
+                    <ul>
+                        <li>Diseño responsivo profesional</li>
+                        <li>Chatbot básico con IA</li>
+                        <li>Integración de 1 API de IA</li>
+                        <li>Panel de administración</li>
+                        <li>Soporte 30 días</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-primary">Solicitar Info</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Profesional IA</h3>
+                    <div class="price">$3,500<span>/proyecto</span></div>
+                    <ul>
+                        <li>Diseño personalizado avanzado</li>
+                        <li>Chatbot conversacional completo</li>
+                        <li>Múltiples integraciones de IA</li>
+                        <li>Personalización de contenido</li>
+                        <li>Analytics predictivo</li>
+                        <li>Soporte 90 días</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-primary">Solicitar Info</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise IA</h3>
+                    <div class="price">$7,000+<span>/proyecto</span></div>
+                    <ul>
+                        <li>Desarrollo a medida completo</li>
+                        <li>Sistemas de IA personalizados</li>
+                        <li>Integraciones empresariales</li>
+                        <li>Machine learning customizado</li>
+                        <li>Escalabilidad ilimitada</li>
+                        <li>Soporte prioritario anual</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-primary">Solicitar Info</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacto" class="section contact-section">
+        <div class="container">
+            <h2>¿Listo para transformar tu presencia digital?</h2>
+            <p style="font-size: 1.2rem; margin: 1rem 0 2rem;">Contáctanos y te enviaremos una propuesta personalizada</p>
+            <a href="https://wa.me/573144897092?text=Hola%20ProDig,%20me%20interesa%20el%20servicio%20de%20Sitios%20Web%20IA" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Chatear con un Experto</a>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ProDig - Prospectiva Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Sitios Web IA",
+        "description": "Desarrollo de sitios web con integración de inteligencia artificial",
+        "provider": {
+            "@type": "Organization",
+            "name": "ProDig - Prospectiva Digital",
+            "url": "https://aiprodig.com"
+        },
+        "areaServed": { "@type": "Country", "name": "Colombia" },
+        "priceRange": "$1500-$7000+"
+    }
+    </script>
+    <script>
+        const canvas = document.getElementById('heroCanvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 2000;
+        const posArray = new Float32Array(particlesCount * 3);
+        
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 15;
+        }
+        
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.03,
+            color: 0x00d4ff,
+            transparent: true,
+            opacity: 0.8
+        });
+        
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+        
+        const nodes = [];
+        const nodeCount = 15;
+        const nodeGeometry = new THREE.SphereGeometry(0.1, 16, 16);
+        const nodeMaterial = new THREE.MeshBasicMaterial({ color: 0x7b2cbf });
+        
+        for(let i = 0; i < nodeCount; i++) {
+            const node = new THREE.Mesh(nodeGeometry, nodeMaterial.clone());
+            node.position.set(
+                (Math.random() - 0.5) * 10,
+                (Math.random() - 0.5) * 6,
+                (Math.random() - 0.5) * 5
+            );
+            node.userData = { velocity: new THREE.Vector3(
+                (Math.random() - 0.5) * 0.02,
+                (Math.random() - 0.5) * 0.02,
+                0
+            )};
+            nodes.push(node);
+            scene.add(node);
+        }
+        
+        camera.position.z = 5;
+        
+        let mouseX = 0, mouseY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+        });
+        
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            particlesMesh.rotation.y += 0.001;
+            particlesMesh.rotation.x += 0.0005;
+            
+            nodes.forEach(node => {
+                node.position.add(node.userData.velocity);
+                if(Math.abs(node.position.x) > 5) node.userData.velocity.x *= -1;
+                if(Math.abs(node.position.y) > 3) node.userData.velocity.y *= -1;
+            });
+            
+            camera.position.x += (mouseX * 0.5 - camera.position.x) * 0.05;
+            camera.position.y += (mouseY * 0.5 - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+            
+            renderer.render(scene, camera);
+        }
+        
+        animate();
+        
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                q.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

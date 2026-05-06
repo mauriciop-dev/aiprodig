@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO y GEO | ProDig - Prospectiva Digital</title>
+    <meta name="description" content="Posicionamiento en modelos de lenguaje como Gemini, Claude y GPT. Aumenta tu visibilidad en la era de la IA generativa. Bogotá, Colombia.">
+    <meta name="keywords" content="SEO GEO, posicionamiento IA, LLM optimization, ChatGPT optimization, GEM SEO, visibilidad en IA">
+    <meta name="seo-title" content="SEO y GEO | Posicionamiento en Modelos de IA">
+    <meta name="seo-description" content="Posicionamiento en modelos de lenguaje como Gemini, Claude y GPT. Aumenta tu visibilidad en la era de la IA generativa.">
+    <meta name="seo-type" content="service">
+    <meta name="seo-priority" content="0.9">
+    <meta name="seo-section" content="servicios">
+    <meta name="seo-lang" content="es">
+    <link rel="canonical" href="https://aiprodig.com/seo-y-geo.html">
+    <meta property="og:title" content="SEO y GEO | Posicionamiento en Modelos de IA">
+    <meta property="og:description" content="Posicionamiento en modelos de lenguaje como Gemini, Claude y GPT.">
+    <meta property="og:url" content="https://aiprodig.com/seo-y-geo.html">
+    <meta property="og:type" content="website">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; overflow-x: hidden; }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .logo { font-size: 1.8rem; font-weight: bold; background: linear-gradient(45deg, #fff, #f0f0f0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; transition: all 0.3s ease; }
+        .hero-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1; }
+        .hero-section { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding-top: 80px; background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 50%, #415a77 100%); }
+        .hero-content { text-align: center; color: white; z-index: 2; max-width: 800px; padding: 2rem; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; background: linear-gradient(45deg, #00ff88, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-content p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9; }
+        .resumen-tecnico { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 15px; margin: 2rem 0; border: 1px solid rgba(255,255,255,0.2); }
+        .resumen-tecnico h3 { color: #00ff88; margin-bottom: 0.5rem; }
+        .btn { padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background: linear-gradient(45deg, #00ff88, #00d4ff); color: #0d1b2a; box-shadow: 0 10px 30px rgba(0,255,136,0.3); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,255,136,0.5); }
+        .section { padding: 80px 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; margin-bottom: 1rem; color: #1a1a2e; }
+        .evidencias-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .evidencia-card { background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); transition: all 0.3s ease; }
+        .evidencia-card:hover { transform: translateY(-10px); }
+        .evidencia-card h4 { color: #667eea; margin-bottom: 1rem; }
+        .faq-section { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); }
+        .faq-item { background: white; border-radius: 15px; margin-bottom: 1rem; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .faq-question { padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+        .faq-question::after { content: '+'; font-size: 1.5rem; color: #667eea; transition: transform 0.3s; }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0 1.5rem; }
+        .faq-item.active .faq-answer { max-height: 500px; padding: 1.5rem; border-top: 1px solid #e9ecef; }
+        .pricing-section { background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%); color: white; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .pricing-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; border: 1px solid rgba(255,255,255,0.2); text-align: center; }
+        .pricing-card:hover { transform: translateY(-10px); }
+        .pricing-card .price { font-size: 2.5rem; font-weight: bold; margin: 1rem 0; background: linear-gradient(45deg, #00ff88, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .pricing-card ul { list-style: none; padding: 0; margin: 1.5rem 0; text-align: left; }
+        .pricing-card ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
+        .pricing-card ul li::before { content: '✓'; color: #00ff88; position: absolute; left: 0; }
+        .contact-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; }
+        footer { background: #0d1b2a; color: white; text-align: center; padding: 2rem 0; }
+        .back-link { position: absolute; top: 100px; left: 2rem; color: white; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">ProDig</a>
+            <ul class="nav-links">
+                <li><a href="/#inicio">Inicio</a></li>
+                <li><a href="/#servicios">Servicios</a></li>
+                <li><a href="/#nosotros">Nosotros</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <section class="hero-section">
+        <a href="/#servicios" class="back-link"><i class="fas fa-arrow-left"></i> Volver a servicios</a>
+        <div class="hero-content">
+            <h1>SEO y GEO</h1>
+            <p>Posicionamiento en modelos de lenguaje - Ser citado por Gemini, Claude y GPT</p>
+            <div class="resumen-tecnico">
+                <h3>Resumen Técnico</h3>
+                <p>El GEO (Generative Engine Optimization) es la evolución del SEO tradicional. Optimizamos tu presencia digital para que los modelos de IA como Gemini, Claude, GPT y Perplexity citen tu contenido como fuente autorizada. Utilizamos estrategias de citation engineering, structured data avançado, y optimización de entidades para convertir tu marca en referencia obligatoria en tu industria dentro del ecosistema de IA.</p>
+            </div>
+            <a href="#contacto" class="btn btn-primary"><i class="fas fa-rocket"></i> Mejorar Visibilidad en IA</a>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="section-title"><h2>Evidencias y Metodología</h2></div>
+            <div class="evidencias-grid">
+                <div class="evidencia-card">
+                    <h4><i class="fas fa-search"></i> Análisis de Presencia IA</h4>
+                    <p>Evaluamos cómo tu marca aparece actualmente en los principales LLMs ychatbots del mercado.</p>
+                </div>
+                <div class="evidencia-card">
+                    <h4><i class="fas fa-file-alt"></i> Optimización de Contenido</h4>
+                    <p>Reestructuramos tu contenido para que sea facilmente parseable y citable por modelos de IA.</p>
+                </div>
+                <div class="evidencia-card">
+                    <h4><i class="fas fa-database"></i> Knowledge Graph</h4>
+                    <p>Implementamos Schema.org y knowledge panels para fortalecer tu autoridad entity-based.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-title"><h2>Preguntas Frecuentes</h2></div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">¿Qué diferencia hay entre SEO tradicional y GEO?</div>
+                    <div class="faq-answer">
+                        <p>El SEO tradicional optimiza para motores de búsqueda como Google, mientras que el GEO optimiza para modelos de IA generativa. Los LLMs no indexan como Google; aprenden de patrones y citan fuentes basándose en autoridad, relevancia y estructura. El GEO requiere optimizar para "cited by AI" en lugar de "ranked by algorithm".</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Cuánto tiempo toma ver resultados en GEO?</div>
+                    <div class="faq-answer">
+                        <p>Los primeros resultados aparecen en 4-8 semanas, pero la autoridad de marca en IA se construye a lo largo de 3-6 meses. Realizamos reportes mensuales de citas en LLMs y ajustes estratégicos continuos para maximizar la visibilidad.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Para qué modelos de IA optimizamos?</div>
+                    <div class="faq-answer">
+                        <p>Optimizamos para todos los principales: Google Gemini, OpenAI ChatGPT, Anthropic Claude, Microsoft Copilot, Perplexity, y otros emergentes. Cada modelo tiene particularidades que adaptamos en nuestra estrategia.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿El GEO reemplaza al SEO tradicional?</div>
+                    <div class="faq-answer">
+                        <p>No, el GEO complementa y amplifica el SEO tradicional. Los factores técnicos básicos (velocidad, mobile-friendly, backlinks) siguen siendo relevantes. GEO añade una capa de optimización para el nuevo paradigma de búsqueda generativa.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">¿Cómo miden el éxito del GEO?</div>
+                    <div class="faq-answer">
+                        <p>Medimos mediante: porcentaje de citas en LLMs para términos clave, posición de marca en respuestas generativas, tráfico desde chatbots, y share of voice en el espacio de IA. Proporcionamos dashboard en tiempo real.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section pricing-section">
+        <div class="container">
+            <div class="section-title"><h2>Planes GEO</h2></div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Inicio GEO</h3>
+                    <div class="price">$800<span>/mes</span></div>
+                    <ul>
+                        <li>Análisis de presencia en 5 LLMs</li>
+                        <li>Optimización de 10 páginas</li>
+                        <li>Schema markup básico</li>
+                        <li>Reporte mensual de citas</li>
+                        <li>Soporte por email</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Profesional GEO</h3>
+                    <div class="price">$1,500<span>/mes</span></div>
+                    <ul>
+                        <li>Análisis en todos los LLMs principales</li>
+                        <li>Optimización ilimitada de páginas</li>
+                        <li>Schema markup avanzado</li>
+                        <li>Content strategy para IA</li>
+                        <li>Reporte quincenal</li>
+                        <li>Consultoría mensual</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise GEO</h3>
+                    <div class="price">$3,000<span>/mes</span></div>
+                    <ul>
+                        <li>Equipo dedicado de GEO</li>
+                        <li>Optimización de marca en LLMs</li>
+                        <li>Monitoring continuo 24/7</li>
+                        <li>Citation recovery</li>
+                        <li>Integración con PR y brand</li>
+                        <li>Reportes ejecutivos semanales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacto" class="section contact-section">
+        <div class="container">
+            <h2>¿Tu marca no aparece en las respuestas de IA?</h2>
+            <p>Te ayudamos a posicionarte en el futuro de la búsqueda</p>
+            <a href="https://wa.me/573144897092?text=Hola%20ProDig,%20me%20interesa%20el%20servicio%20de%20SEO%20y%20GEO" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Consultar Ahora</a>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 ProDig - Prospectiva Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "SEO y GEO",
+        "description": "Posicionamiento en modelos de lenguaje - Ser citado por Gemini, Claude y GPT",
+        "provider": { "@type": "Organization", "name": "ProDig", "url": "https://aiprodig.com" },
+        "areaServed": { "@type": "Country", "name": "Colombia" },
+        "priceRange": "$800-$3000/mes"
+    }
+    </script>
+    <script>
+        const canvas = document.getElementById('heroCanvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({canvas, alpha: true, antialias: true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        
+        const agents = [];
+        const colors = [0x00ff88, 0x00d4ff, 0xff6b6b, 0x7b2cbf, 0xffd700];
+        const positions = [
+            new THREE.Vector3(-3, 1, 0), new THREE.Vector3(-3, -1, 0),
+            new THREE.Vector3(3, 1, 0), new THREE.Vector3(3, -1, 0),
+            new THREE.Vector3(0, 2, -1)
+        ];
+        
+        positions.forEach((pos, i) => {
+            const geo = new THREE.SphereGeometry(0.3, 32, 32);
+            const mat = new THREE.MeshBasicMaterial({ color: colors[i % colors.length] });
+            const sphere = new THREE.Mesh(geo, mat);
+            sphere.position.copy(pos);
+            sphere.userData = { 
+                originalPos: pos.clone(),
+                targetPos: pos.clone(),
+                phase: Math.random() * Math.PI * 2
+            };
+            agents.push(sphere);
+            scene.add(sphere);
+        });
+        
+        const linesMaterial = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.3 });
+        const connections = [];
+        for(let i = 0; i < agents.length - 1; i++) {
+            const geo = new THREE.BufferGeometry().setFromPoints([agents[i].position, agents[i+1].position]);
+            const line = new THREE.Line(geo, linesMaterial);
+            connections.push(line);
+            scene.add(line);
+        }
+        
+        camera.position.z = 6;
+        
+        function animate() {
+            requestAnimationFrame(animate);
+            const time = Date.now() * 0.001;
+            
+            agents.forEach((agent, i) => {
+                const offset = Math.sin(time + agent.userData.phase) * 0.3;
+                agent.position.x = agent.userData.originalPos.x + offset;
+                agent.position.y = agent.userData.originalPos.y + Math.cos(time * 0.5 + agent.userData.phase) * 0.2;
+            });
+            
+            connections.forEach((line, i) => {
+                const positions = line.geometry.attributes.position.array;
+                positions[0] = agents[i].position.x;
+                positions[1] = agents[i].position.y;
+                positions[2] = agents[i].position.z;
+                positions[3] = agents[i+1].position.x;
+                positions[4] = agents[i+1].position.y;
+                positions[5] = agents[i+1].position.z;
+                line.geometry.attributes.position.needsUpdate = true;
+            });
+            
+            renderer.render(scene, camera);
+        }
+        animate();
+        
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+        });
+    </script>
+</body>
+</html>
