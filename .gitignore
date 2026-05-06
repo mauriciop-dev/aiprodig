@@ -25,3 +25,6 @@ nul
 # Google Cloud Credentials
 SEO-GEO/seogeoprodig.json
 *.json
+
+# Videos - demasiado grandes para Cloudflare Pages (max 25MB)
+Videos/*.mp4
