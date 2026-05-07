@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProDig AI - Test A2UI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #667EEA;
+            --secondary: #764BA2;
+            --bg-dark: #050505;
+            --text-main: #e9ecef;
+            --text-muted: #adb5bd;
+            --glass-bg: rgba(15, 15, 15, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg-dark);
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-main);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .app-container {
+            position: relative;
+            z-index: 10;
+            width: 95%;
+            max-width: 1100px;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .glass-morph {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+        }
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5px;
+        }
+        .brand { font-size: 1.5rem; font-weight: 600; letter-spacing: 2px; }
+        .accent { color: var(--primary); }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .pulse-dot {
+            width: 10px; height: 10px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        #chat-window {
+            flex: 1;
+            margin-bottom: 25px;
+            border-radius: 28px;
+            padding: 35px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .message {
+            max-width: 75%;
+            padding: 16px 22px;
+            border-radius: 20px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        .message.assistant {
+            align-self: flex-start;
+            background: rgba(102, 126, 234, 0.12);
+            border-bottom-left-radius: 4px;
+            border-left: 3px solid var(--primary);
+        }
+        .input-container {
+            height: 75px;
+            border-radius: 22px;
+            display: flex;
+            padding: 0 25px;
+            align-items: center;
+            gap: 15px;
+        }
+        #user-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.1rem;
+        }
+        #user-input:focus { outline: none; }
+        #send-btn {
+            background: var(--primary);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            color: white;
+            cursor: pointer;
+        }
+        /* A2UI Styles */
+        .a2ui-services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .a2ui-service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+        .a2ui-service-card:hover {
+            background: rgba(102, 126, 234, 0.15);
+            transform: translateY(-3px);
+        }
+        .a2ui-service-icon { font-size: 1.5rem; color: var(--primary); margin-bottom: 8px; }
+        .a2ui-service-title { font-size: 0.9rem; font-weight: 600; color: #e9ecef; }
+        .a2ui-service-desc { font-size: 0.75rem; color: #adb5bd; }
+        
+        .a2ui-contact-form {
+            margin-top: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+        .a2ui-form-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .a2ui-form-group { margin-bottom: 12px; }
+        .a2ui-form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: #adb5bd;
+            margin-bottom: 5px;
+        }
+        .a2ui-form-group input, .a2ui-form-group select, .a2ui-form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.3);
+            color: #e9ecef;
+            font-size: 0.95rem;
+        }
+        .a2ui-submit-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .a2ui-pricing-table { margin-top: 15px; }
+        .a2ui-pricing-header { text-align: center; margin-bottom: 15px; }
+        .a2ui-pricing-header h3 { color: var(--primary); font-size: 1.2rem; }
+        .a2ui-pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .a2ui-price-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .a2ui-price-card.featured {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            border-color: var(--primary);
+        }
+        .a2ui-price-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 10px;
+        }
+        .a2ui-price-title { font-size: 0.95rem; font-weight: 600; color: #e9ecef; }
+        .a2ui-price-amount { font-size: 1.3rem; font-weight: 700; color: var(--primary); }
+        .a2ui-price-desc { font-size: 0.75rem; color: #adb5bd; }
+        
+        .a2ui-process-map { margin-top: 15px; }
+        .a2ui-process-map h3 { color: var(--primary); text-align: center; margin-bottom: 15px; }
+        .a2ui-process-steps { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; justify-content: center; }
+        .a2ui-process-step {
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+            background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 12px; min-width: 100px;
+        }
+        .a2ui-step-number {
+            width: 30px; height: 30px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; color: white;
+        }
+        .a2ui-step-content h4 { font-size: 0.8rem; color: var(--primary); }
+        .a2ui-step-content p { font-size: 0.7rem; color: #adb5bd; }
+        .a2ui-process-arrow { color: var(--primary); }
+        
+        .a2ui-comparison { margin-top: 15px; }
+        .a2ui-comparison h3 { color: var(--primary); text-align: center; margin-bottom: 15px; }
+        .a2ui-comparison-table {
+            background: rgba(255, 255, 255, 0.03); border-radius: 12px; overflow: hidden;
+        }
+        .a2ui-comp-row {
+            display: grid; grid-template-columns: 1fr 1fr 1fr;
+            padding: 10px 12px; font-size: 0.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .a2ui-comp-row.header {
+            background: rgba(102, 126, 234, 0.2); font-weight: 600; color: var(--primary);
+        }
+        .a2ui-comp-row .highlight { color: #00ff88; }
+        
+        .a2ui-calendar {
+            margin-top: 15px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+            border-radius: 16px; padding: 20px;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+        .a2ui-calendar-header { text-align: center; margin-bottom: 15px; }
+        .a2ui-calendar-header i { font-size: 2rem; color: var(--primary); display: block; margin-bottom: 10px; }
+        .a2ui-calendar-header h3 { color: var(--primary); font-size: 1.1rem; }
+        .a2ui-calendar-btn {
+            padding: 14px 20px; border: none; border-radius: 12px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white; font-size: 1rem; font-weight: 600;
+            cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        
+        .a2ui-options-container {
+            display: flex; flex-wrap: wrap; gap: 8px;
+            margin-top: 12px; padding-top: 10px;
+            border-top: 1px solid rgba(102, 126, 234, 0.2);
+        }
+        .a2ui-option-btn {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            border: 1px solid rgba(102, 126, 234, 0.4);
+            color: #e9ecef;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+        .a2ui-option-btn:hover {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        @media (max-width: 600px) {
+            .a2ui-services-grid, .a2ui-pricing-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <main class="app-container">
+        <header class="app-header">
+            <div class="logo-area">
+                <div class="pulse-dot"></div>
+                <span class="brand">PRODIG <span class="accent">AI</span></span>
+            </div>
+        </header>
+
+        <section id="chat-window" class="glass-morph">
+            <div id="messages-area">
+                <div class="message assistant">
+                    <p>Hola. Soy el asistente de <strong>ProDig</strong>. Prueba los componentes A2UI:</p>
+                    <div class="a2ui-options-container">
+                        <button class="a2ui-option-btn" onclick="showA2UI('services')">Servicios</button>
+                        <button class="a2ui-option-btn" onclick="showA2UI('contact')">Contacto</button>
+                        <button class="a2ui-option-btn" onclick="showA2UI('pricing')">Precios</button>
+                        <button class="a2ui-option-btn" onclick="showA2UI('automation')">Automatización</button>
+                        <button class="a2ui-option-btn" onclick="showA2UI('ialocal')">IA Local</button>
+                        <button class="a2ui-option-btn" onclick="showA2UI('demo')">Demo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="input-container glass-morph">
+            <input type="text" id="user-input" placeholder="Escribe tu consulta aquí..." autocomplete="off">
+            <button id="send-btn" onclick="sendMessage()">➤</button>
+        </footer>
+    </main>
+
+    <script>
+        const chatWindow = document.getElementById('chat-window');
+        const messagesArea = document.getElementById('messages-area');
+        const userInput = document.getElementById('user-input');
+
+        function showA2UI(type) {
+            const div = document.createElement('div');
+            div.className = 'message user';
+            div.textContent = type;
+            messagesArea.appendChild(div);
+
+            const responseDiv = document.createElement('div');
+            responseDiv.className = 'message assistant';
+            responseDiv.innerHTML = getA2UIComponent(type);
+            messagesArea.appendChild(responseDiv);
+            
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        function getA2UIComponent(type) {
+            switch(type) {
+                case 'services':
+                    return '<div class="a2ui-services-grid">' +
+                        '<div class="a2ui-service-card"><div class="a2ui-service-icon">🌐</div><div class="a2ui-service-title">Sitios Web IA</div><div class="a2ui-service-desc">Webs inteligentes</div></div>' +
+                        '<div class="a2ui-service-card"><div class="a2ui-service-icon">🔍</div><div class="a2ui-service-title">SEO y GEO</div><div class="a2ui-service-desc">Posicionamiento en IAs</div></div>' +
+                        '<div class="a2ui-service-card"><div class="a2ui-service-icon">💬</div><div class="a2ui-service-title">Chatbots</div><div class="a2ui-service-desc">Asistentes multimedia</div></div>' +
+                        '<div class="a2ui-service-card"><div class="a2ui-service-icon">🚀</div><div class="a2ui-service-title">SaaS</div><div class="a2ui-service-desc">Demos en 48 horas</div></div>' +
+                        '<div class="a2ui-service-card"><div class="a2ui-service-icon">🛡️</div><div class="a2ui-service-title">IA Local</div><div class="a2ui-service-desc">Privacidad total</div></div>' +
+                        '<div class="a2ui-service-card"><div class="a2ui-service-icon">📊</div><div class="a2ui-service-title">Power Platform</div><div class="a2ui-service-desc">Ecosistema Microsoft</div></div>' +
+                        '<div class="a2ui-service-card"><div class="a2ui-service-icon">🤖</div><div class="a2ui-service-title">Agentes de IA</div><div class="a2ui-service-desc">Automatización 24/7</div></div>' +
+                        '<div class="a2ui-service-card"><div class="a2ui-service-icon">🎓</div><div class="a2ui-service-title">Capacitación</div><div class="a2ui-service-desc">Formación equipo</div></div>' +
+                        '<div class="a2ui-service-card"><div class="a2ui-service-icon">💡</div><div class="a2ui-service-title">Consultoría</div><div class="a2ui-service-desc">Roadmap estratégico</div></div>' +
+                        '<div class="a2ui-service-card"><div class="a2ui-service-icon">📚</div><div class="a2ui-service-title">RAG</div><div class="a2ui-service-desc">Chat con documentos</div></div>' +
+                        '</div>';
+                
+                case 'contact':
+                    return '<div class="a2ui-contact-form">' +
+                        '<div class="a2ui-form-header">📧 Agenda una Consultoría</div>' +
+                        '<div class="a2ui-form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre"></div>' +
+                        '<div class="a2ui-form-group"><label>Email</label><input type="email" placeholder="tu@email.com"></div>' +
+                        '<div class="a2ui-form-group"><label>Teléfono</label><input type="tel" placeholder="+57 300 000 0000"></div>' +
+                        '<div class="a2ui-form-group"><label>Servicio de Interés</label><select><option>Selecciona un servicio</option><option>Sitios Web IA</option><option>SEO y GEO</option><option>Chatbots</option><option>Consultoría</option></select></div>' +
+                        '<button class="a2ui-submit-btn">📨 Enviar Solicitud</button></div>';
+                
+                case 'pricing':
+                    return '<div class="a2ui-pricing-table">' +
+                        '<div class="a2ui-pricing-header"><h3>Nuestros Planes</h3><p>Precios en COP</p></div>' +
+                        '<div class="a2ui-pricing-grid">' +
+                        '<div class="a2ui-price-card"><div class="a2ui-price-title">Presencia</div><div class="a2ui-price-amount">$1.200.000</div><div class="a2ui-price-desc">Pago único</div></div>' +
+                        '<div class="a2ui-price-card featured"><div class="a2ui-price-badge">Más Popular</div><div class="a2ui-price-title">Relevancia</div><div class="a2ui-price-amount">$2.500.000</div><div class="a2ui-price-desc">Mensual</div></div>' +
+                        '<div class="a2ui-price-card"><div class="a2ui-price-title">Autoridad AI</div><div class="a2ui-price-amount">$4.800.000+</div><div class="a2ui-price-desc">Mensual</div></div>' +
+                        '</div></div>';
+                
+                case 'automation':
+                    return '<div class="a2ui-process-map">' +
+                        '<h3>¿Cómo Trabajamos?</h3>' +
+                        '<div class="a2ui-process-steps">' +
+                        '<div class="a2ui-process-step"><div class="a2ui-step-number">1</div><div class="a2ui-step-content"><h4>Diagnóstico</h4><p>Analizamos tu contexto</p></div></div>' +
+                        '<div class="a2ui-process-arrow">→</div>' +
+                        '<div class="a2ui-process-step"><div class="a2ui-step-number">2</div><div class="a2ui-step-content"><h4>Estrategia</h4><p>Diseñamos el mapa de procesos</p></div></div>' +
+                        '<div class="a2ui-process-arrow">→</div>' +
+                        '<div class="a2ui-process-step"><div class="a2ui-step-number">3</div><div class="a2ui-step-content"><h4>Ejecución</h4><p>Implementamos la solución</p></div></div>' +
+                        '<div class="a2ui-process-arrow">→</div>' +
+                        '<div class="a2ui-process-step"><div class="a2ui-step-number">4</div><div class="a2ui-step-content"><h4>Acompañamiento</h4><p>Support continuo</p></div></div>' +
+                        '</div></div>';
+                
+                case 'ialocal':
+                    return '<div class="a2ui-comparison">' +
+                        '<h3>IA Local vs IA Cloud</h3>' +
+                        '<div class="a2ui-comparison-table">' +
+                        '<div class="a2ui-comp-row header"><div class="a2ui-comp-col">Características</div><div class="a2ui-comp-col highlight">IA Local</div><div class="a2ui-comp-col">IA Cloud</div></div>' +
+                        '<div class="a2ui-comp-row"><div class="a2ui-comp-col">Privacidad</div><div class="a2ui-comp-col highlight">✓ 100%</div><div class="a2ui-comp-col">✗ Terceros</div></div>' +
+                        '<div class="a2ui-comp-row"><div class="a2ui-comp-col">Internet</div><div class="a2ui-comp-col highlight">✓ No</div><div class="a2ui-comp-col">✗ Requiere</div></div>' +
+                        '<div class="a2ui-comp-row"><div class="a2ui-comp-col">Velocidad</div><div class="a2ui-comp-col highlight">✓ Instantánea</div><div class="a2ui-comp-col">~ Variable</div></div>' +
+                        '<div class="a2ui-comp-row"><div class="a2ui-comp-col">Control</div><div class="a2ui-comp-col highlight">✓ Total</div><div class="a2ui-comp-col">~ Limitado</div></div>' +
+                        '</div></div>';
+                
+                case 'demo':
+                    return '<div class="a2ui-calendar">' +
+                        '<div class="a2ui-calendar-header"><i>📅</i><h3>Agenda tu Consultoría Gratis</h3><p>Primera hora sin costo</p></div>' +
+                        '<div class="a2ui-calendar-item">🕐 Lunes a Viernes: 8:00 AM - 6:00 PM</div>' +
+                        '<div class="a2ui-calendar-item">📞 +57 314 489 7092</div>' +
+                        '<button class="a2ui-calendar-btn">💬 Solicitar por WhatsApp</button></div>';
+                
+                default:
+                    return '<p>Selecciona una opción de los botones de arriba.</p>';
+            }
+        }
+
+        function sendMessage() {
+            const text = userInput.value.trim().toLowerCase();
+            if (!text) return;
+            
+            const userText = userInput.value.trim();
+            
+            // Mostrar mensaje del usuario
+            const userDiv = document.createElement('div');
+            userDiv.className = 'message user';
+            userDiv.textContent = userText;
+            messagesArea.appendChild(userDiv);
+            
+            // Detectar palabra clave y mostrar A2UI
+            let response = null;
+            
+            if (text.includes('servicio')) {
+                response = getA2UIComponent('services');
+            } else if (text.includes('contact') || text.includes('expert') || text.includes('consultar')) {
+                response = getA2UIComponent('contact');
+            } else if (text.includes('precio') || text.includes('costo') || text.includes('plan')) {
+                response = getA2UIComponent('pricing');
+            } else if (text.includes('automatiz') || text.includes('proceso') || text.includes('flujo')) {
+                response = getA2UIComponent('automation');
+            } else if (text.includes('local') || text.includes('privacidad') || text.includes('seguridad')) {
+                response = getA2UIComponent('ialocal');
+            } else if (text.includes('demo') || text.includes('cita') || text.includes('agendar')) {
+                response = getA2UIComponent('demo');
+            }
+            
+            if (response) {
+                const responseDiv = document.createElement('div');
+                responseDiv.className = 'message assistant';
+                responseDiv.innerHTML = response;
+                messagesArea.appendChild(responseDiv);
+            } else {
+                // Respuesta por defecto
+                const responseDiv = document.createElement('div');
+                responseDiv.className = 'message assistant';
+                responseDiv.innerHTML = '<p>Gracias por tu mensaje. ¿Puedo ayudarte con algo específico? Prueba escribir: "servicios", "precios", "contacto", "automatización", "IA local" o "demo"</p>';
+                messagesArea.appendChild(responseDiv);
+            }
+            
+            userInput.value = '';
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+    </script>
+</body>
+</html>
