@@ -793,6 +793,16 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
+        .a2ui-msg {
+            background: linear-gradient(135deg, rgba(102,126,234,0.15), rgba(118,75,162,0.15));
+            border: 1px solid rgba(102,126,234,0.3);
+            border-radius: 12px;
+            padding: 12px 15px;
+            margin: 8px 0;
+            font-size: 0.9rem;
+            animation: fadeIn 0.3s ease;
+        }
+
         /* Footer */
         footer {
             background: #2c3e50;
@@ -1354,6 +1364,30 @@
             "Otra consulta"
         ];
 
+        // A2UI Components
+        function getA2UIHTML(type) {
+            const components = {
+                services: `<div class="a2ui-compact"><strong>🌐 Servicios ProDig:</strong><br>• Sitios Web IA<br>• SEO & GEO<br>• Chatbots<br>• Capacitación</div>`,
+                pricing: `<div class="a2ui-compact"><strong>💰 Planes:</strong><br>• Básico: $299/mes<br>• Pro: $599/mes<br>• Enterprise: Custom</div>`,
+                contact: `<div class="a2ui-compact"><strong>📞 Contacto:</strong><br>¡Escríbenos!<br>Colombia: +57 300 000 0000<br>Email: hola@prodig.com</div>`,
+                demo: `<div class="a2ui-compact"><strong>📅 Agenda Demo:</strong><br>Demo gratuita de 30 min<br>¡Reserva tu cita!</div>`,
+                automation: `<div class="a2ui-compact"><strong>⚙️ Automatización:</strong><br>1. Auditoría<br>2. Diseño<br>3. Implementación<br>4. Medición</div>`,
+                ialocal: `<div class="a2ui-compact"><strong>🔒 IA Local:</strong><br>• Datos en tu servidor<br>• Sin internet funciona<br>• 100% personalizado</div>`
+            };
+            return components[type] || '';
+        }
+
+        function showA2UI(type) {
+            const html = getA2UIHTML(type);
+            if (html) {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = 'bot-message a2ui-msg';
+                msgDiv.innerHTML = html;
+                chatMessages.appendChild(msgDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+
         function appendOptions(options) {
             const optionsContainer = document.createElement('div');
             optionsContainer.classList.add('chat-options-container');
@@ -1364,7 +1398,22 @@
                 btn.textContent = optionText;
                 btn.onclick = () => {
                     appendMessage(optionText, 'user');
-                    sendToWebhook(optionText);
+                    // Show A2UI component for specific options
+                    if (optionText === "Nuestros Servicios") {
+                        showA2UI('services');
+                    } else if (optionText === "Solicitar demo" || optionText === "Contactar con un experto") {
+                        showA2UI('contact');
+                    } else if (optionText === "Automatización") {
+                        showA2UI('automation');
+                    } else if (optionText === "IA Local") {
+                        showA2UI('ialocal');
+                    } else if (optionText === "Ver casos de éxito") {
+                        showA2UI('pricing');
+                    } else {
+                        sendToWebhook(optionText);
+                    }
+                    // Show follow-up options
+                    setTimeout(() => appendOptions(followUpOptions), 1000);
                 };
                 optionsContainer.appendChild(btn);
             });
