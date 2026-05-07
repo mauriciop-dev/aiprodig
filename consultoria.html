@@ -63,6 +63,7 @@
         .pricing-card ul { list-style: none; padding: 0; text-align: left; }
         .pricing-card ul li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; }
         .pricing-card ul li::before { content: '✓'; color: #ff9966; position: absolute; left: 0; }
+        .pricing-card .price-currency { font-size: 0.9rem; opacity: 0.7; margin-bottom: 1rem; text-align: center; }
         .contact-section { background: linear-gradient(135deg, #c31432, #240b36); color: white; text-align: center; }
         footer { background: #0f0c29; color: white; text-align: center; padding: 2rem 0; }
         .back-link { position: absolute; top: 100px; left: 2rem; color: white; text-decoration: none; }
@@ -164,36 +165,46 @@
             <div class="section-title"><h2>Servicios de Consultoría</h2></div>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h3>Diagnóstico Express</h3>
-                    <div class="price">$1,500</div>
+                    <h3>Diagnóstico</h3>
+                    <div class="price">Gratis<span>1ra hora</span></div>
+                    <div class="price-currency">¥0 / $0 USD</div>
                     <ul>
-                        <li>4 horas de sesiones</li>
-                        <li>Análisis de 3 procesos</li>
-                        <li>Informe de oportunidades</li>
-                        <li>Plan de acción básico</li>
+                        <li>Sesión presencial/virtual</li>
+                        <li>Evaluación de madurez digital</li>
+                        <li>Identificación de oportunidades</li>
+                        <li>Fuera de Bogotá: viáticos</li>
+                        <li>Sin compromiso</li>
+                        <li>Gratis</li>
                     </ul>
+                    <a href="https://wa.me/573144897092?text=Hola%20ProDig,%20quiero%20mi%20consultoria%20gratis" class="btn btn-primary">Agendar Gratis</a>
                 </div>
                 <div class="pricing-card">
-                    <h3>Roadmap Completo</h3>
-                    <div class="price">$5,000</div>
+                    <h3>Auditoría</h3>
+                    <div class="price">Consultar<span>asesor</span></div>
+                    <div class="price-currency">¥ - / $ -</div>
                     <ul>
-                        <li>20 horas de consultoría</li>
-                        <li>Análisis profundo de procesos</li>
-                        <li>Roadmap de 12 meses</li>
-                        <li>Modelo de costos y ROI</li>
-                        <li>Presentacion ejecutiva</li>
+                        <li>Mapa de procesos</li>
+                        <li>Informe detallado</li>
+                        <li>Por tamaño de empresa</li>
+                        <li>Plan de implementación</li>
+                        <li>ROI estimado</li>
+                        <li>Hoja de ruta</li>
                     </ul>
+                    <a href="https://wa.me/573144897092?text=Hola%20ProDig,%20me%20interesa%20la%20Auditoria" class="btn btn-primary">Consultar Asesor</a>
                 </div>
                 <div class="pricing-card">
-                    <h3>Transformación Integral</h3>
-                    <div class="price">$15,000+</div>
+                    <h3>Implementación</h3>
+                    <div class="price">Consultar<span>asesor</span></div>
+                    <div class="price-currency">¥ - / $ -</div>
                     <ul>
-                        <li>Proyecto de 3-6 meses</li>
-                        <li>Equipo dedicado</li>
-                        <li>Gestión de implementación</li>
-                        <li>Monitoreo KPIs</li>
-                        <li>Entrega de resultados</li>
+                        <li>Acompañamiento total</li>
+                        <li>Gestión del proyecto</li>
+                        <li>Compra de licencias</li>
+                        <li>Ajuste de perfiles</li>
+                        <li>Implementación técnica</li>
+                        <li>Capacitación continua</li>
                     </ul>
+                    <a href="https://wa.me/573144897092?text=Hola%20ProDig,%20me%20interesa%20la%20Implementacion" class="btn btn-primary">Consultar Asesor</a>
                 </div>
             </div>
         </div>
@@ -207,7 +218,7 @@
     </section>
     <footer><div class="container"><p>&copy; 2026 ProDig</p></div></footer>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Service","name":"Consultoría","description":"Consultoría estratégica en IA y automatización","provider":{"@type":"Organization","name":"ProDig","url":"https://aiprodig.com"},"priceRange":"$1500-$15000+"}
+    {"@context":"https://schema.org","@type":"Service","name":"Consultoría","description":"Consultoría estratégica en IA y automatización","provider":{"@type":"Organization","name":"ProDig","url":"https://aiprodig.com"},"priceRange": "Gratis - Consultar con asesor"}
     </script>
     <script>
         const canvas = document.getElementById('heroCanvas');
