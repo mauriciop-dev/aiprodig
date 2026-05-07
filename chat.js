@@ -1,11 +1,199 @@
 /**
  * chat.js - Experience Engine for ProDig Assistant
- * Features: Three.js Particles, Markdown Rendering, Automated Interaction
+ * Features: Three.js Particles, Markdown Rendering, Automated Interaction, A2UI Components
  */
 
 // --- CONFIGURATION ---
-const N8N_WEBHOOK_URL = 'https://mauricioprodig.app.n8n.cloud/webhook/chatbot-prodig'; // URL detectada o placeholder
+const N8N_WEBHOOK_URL = 'https://n8n.automatizarempresa.online/webhook/1d4c933d-2dd1-453d-b413-2481fab30717/chat';
 const USER_SESSION_ID = 'prodig_user_' + Math.random().toString(36).substr(2, 9);
+
+// --- A2UI COMPONENTS (10 Artefacts) ---
+function getA2UIComponent(type) {
+    const components = {
+        services: `
+            <div class="a2ui-services-grid">
+                <div class="a2ui-grid-header">
+                    <i class="fas fa-rocket"></i> Servicios ProDig
+                </div>
+                <div class="a2ui-grid">
+                    <div class="a2ui-service-card">
+                        <div class="a2ui-service-icon">🌐</div>
+                        <div class="a2ui-service-title">Sitios Web IA</div>
+                        <div class="a2ui-service-desc">Websites autogestionados con AI</div>
+                    </div>
+                    <div class="a2ui-service-card">
+                        <div class="a2ui-service-icon">🔍</div>
+                        <div class="a2ui-service-title">SEO & GEO</div>
+                        <div class="a2ui-service-desc">Posicionamiento local y AI</div>
+                    </div>
+                    <div class="a2ui-service-card">
+                        <div class="a2ui-service-icon">💬</div>
+                        <div class="a2ui-service-title">Chatbots</div>
+                        <div class="a2ui-service-desc">Asistentes IA para tu negocio</div>
+                    </div>
+                    <div class="a2ui-service-card">
+                        <div class="a2ui-service-icon">🎓</div>
+                        <div class="a2ui-service-title">Capacitación</div>
+                        <div class="a2ui-service-desc">Formación equipo</div>
+                    </div>
+                </div>
+            </div>`,
+        contact: `
+            <div class="a2ui-contact-form">
+                <div class="a2ui-form-header">
+                    <i class="fas fa-envelope"></i>
+                    <span>Agenda una Consultoría</span>
+                </div>
+                <form class="a2ui-form" onsubmit="event.preventDefault(); alert('¡Gracias! Te contactaremos pronto.');">
+                    <div class="a2ui-form-group">
+                        <label>Nombre Completo</label>
+                        <input type="text" name="nombre" required placeholder="Tu nombre">
+                    </div>
+                    <div class="a2ui-form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" required placeholder="tu@email.com">
+                    </div>
+                    <div class="a2ui-form-group">
+                        <label>Teléfono</label>
+                        <input type="tel" name="telefono" placeholder="+57 300 000 0000">
+                    </div>
+                    <div class="a2ui-form-group">
+                        <label>Servicio de Interés</label>
+                        <select>
+                            <option>Selecciona un servicio</option>
+                            <option>Sitios Web IA</option>
+                            <option>SEO y GEO</option>
+                            <option>Chatbots</option>
+                            <option>Consultoría</option>
+                        </select>
+                    </div>
+                    <div class="a2ui-form-group">
+                        <label>Mensaje</label>
+                        <textarea rows="3" placeholder="¿Cómo podemos ayudarte?"></textarea>
+                    </div>
+                    <button type="submit" class="a2ui-submit-btn">
+                        <i class="fas fa-paper-plane"></i> Enviar Solicitud
+                    </button>
+                </form>
+            </div>`,
+        pricing: `
+            <div class="a2ui-pricing-table">
+                <div class="a2ui-pricing-header">Planes ProDig</div>
+                <div class="a2ui-pricing-grid">
+                    <div class="a2ui-pricing-card">
+                        <div class="a2ui-price-title">Básico</div>
+                        <div class="a2ui-price-amount">$299</div>
+                        <div class="a2ui-price-period">mes</div>
+                        <ul class="a2ui-price-features">
+                            <li><i class="fas fa-check"></i> Chatbot básico</li>
+                            <li><i class="fas fa-check"></i> 100 msgs/mes</li>
+                            <li><i class="fas fa-check"></i> Email support</li>
+                        </ul>
+                    </div>
+                    <div class="a2ui-pricing-card featured">
+                        <div class="a2ui-price-badge">Popular</div>
+                        <div class="a2ui-price-title">Pro</div>
+                        <div class="a2ui-price-amount">$599</div>
+                        <div class="a2ui-price-period">mes</div>
+                        <ul class="a2ui-price-features">
+                            <li><i class="fas fa-check"></i> Chatbot avanzado</li>
+                            <li><i class="fas fa-check"></i> 500 msgs/mes</li>
+                            <li><i class="fas fa-check"></i> Integraciones</li>
+                            <li><i class="fas fa-check"></i> Analytics</li>
+                        </ul>
+                    </div>
+                    <div class="a2ui-pricing-card">
+                        <div class="a2ui-price-title">Enterprise</div>
+                        <div class="a2ui-price-amount">Custom</div>
+                        <div class="a2ui-price-period">contacto</div>
+                        <ul class="a2ui-price-features">
+                            <li><i class="fas fa-check"></i> Solución completa</li>
+                            <li><i class="fas fa-check"></i> Msgs ilimitados</li>
+                            <li><i class="fas fa-check"></i> Soporte 24/7</li>
+                            <li><i class="fas fa-check"></i> Custom AI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>`,
+        automation: `
+            <div class="a2ui-process-map">
+                <div class="a2ui-process-header">
+                    <i class="fas fa-cogs"></i> Proceso de Automatización
+                </div>
+                <div class="a2ui-process-steps">
+                    <div class="a2ui-step">
+                        <div class="a2ui-step-num">1</div>
+                        <div class="a2ui-step-title">Auditoría</div>
+                        <div class="a2ui-step-desc">Analizamos tus procesos</div>
+                    </div>
+                    <div class="a2ui-step">
+                        <div class="a2ui-step-num">2</div>
+                        <div class="a2ui-step-title">Diseño</div>
+                        <div class="a2ui-step-desc">Creamos el flujo optimizado</div>
+                    </div>
+                    <div class="a2ui-step">
+                        <div class="a2ui-step-num">3</div>
+                        <div class="a2ui-step-title">Implementación</div>
+                        <div class="a2ui-step-desc">Integramos con tus sistemas</div>
+                    </div>
+                    <div class="a2ui-step">
+                        <div class="a2ui-step-num">4</div>
+                        <div class="a2ui-step-title">Medición</div>
+                        <div class="a2ui-step-desc">Monitoreamos resultados</div>
+                    </div>
+                </div>
+            </div>`,
+        ialocal: `
+            <div class="a2ui-benefits-carousel">
+                <div class="a2ui-benefits-header">
+                    <i class="fas fa-shield-alt"></i> IA Local - Privacidad Primero
+                </div>
+                <div class="a2ui-benefits-grid">
+                    <div class="a2ui-benefit-card">
+                        <div class="a2ui-benefit-icon">🔒</div>
+                        <div class="a2ui-benefit-title">Datos en tu servidor</div>
+                        <div class="a2ui-benefit-desc">Tu información nunca sale de tus sistemas</div>
+                    </div>
+                    <div class="a2ui-benefit-card">
+                        <div class="a2ui-benefit-icon">🌐</div>
+                        <div class="a2ui-benefit-title">Funciona sin internet</div>
+                        <div class="a2ui-benefit-desc">Operación offline disponible</div>
+                    </div>
+                    <div class="a2ui-benefit-card">
+                        <div class="a2ui-benefit-icon">⚡</div>
+                        <div class="a2ui-benefit-title">Respuesta instantánea</div>
+                        <div class="a2ui-benefit-desc">Sin latencia de red</div>
+                    </div>
+                    <div class="a2ui-benefit-card">
+                        <div class="a2ui-benefit-icon">🎯</div>
+                        <div class="a2ui-benefit-title">100% Personalizable</div>
+                        <div class="a2ui-benefit-desc">Entrena con tus datos específicos</div>
+                    </div>
+                </div>
+            </div>`,
+        demo: `
+            <div class="a2ui-calendar-booking">
+                <div class="a2ui-calendar-header">
+                    <i class="fas fa-calendar-check"></i> Agenda tu Demo
+                </div>
+                <div class="a2ui-calendar-body">
+                    <div class="a2ui-calendar-info">
+                        <p><strong>Demo gratuita de 30 min</strong></p>
+                        <p>Conoce cómo ProDig puede transformar tu negocio</p>
+                    </div>
+                    <div class="a2ui-calendar-slots">
+                        <button class="a2ui-time-slot">📅 Hoy - 2:00 PM</button>
+                        <button class="a2ui-time-slot">📅 Mañana - 10:00 AM</button>
+                        <button class="a2ui-time-slot">📅 Mañana - 3:00 PM</button>
+                    </div>
+                    <button class="a2ui-calendar-btn" onclick="alert('¡Gracias! Te enviaremos el enlace de la reunión.')">
+                        <i class="fas fa-video"></i> Confirmar Demo
+                    </button>
+                </div>
+            </div>`
+    };
+    return components[type] || null;
+}
 
 // --- 1. THREE.JS BACKGROUND MAGIC ---
 let scene, camera, renderer, particles, starGeo;
@@ -144,6 +332,17 @@ function addMessage(text, side) {
     });
 }
 
+function addA2UIMessage(htmlContent) {
+    const div = document.createElement('div');
+    div.className = 'message assistant a2ui-message';
+    div.innerHTML = htmlContent;
+    messagesArea.appendChild(div);
+    chatWindow.scrollTo({
+        top: chatWindow.scrollHeight,
+        behavior: 'smooth'
+    });
+}
+
 function addTypingIndicator() {
     const id = 'typing-' + Date.now();
     const div = document.createElement('div');
@@ -164,4 +363,34 @@ userInput.addEventListener('keypress', (e) => {
 });
 
 // Focus input on load
-window.onload = () => userInput.focus();
+window.onload = () => {
+    userInput.focus();
+    setTimeout(showQuickReplies, 1500);
+};
+
+// Quick Reply Buttons
+function showQuickReplies() {
+    const quickRepliesDiv = document.createElement('div');
+    quickRepliesDiv.className = 'quick-replies';
+    quickRepliesDiv.innerHTML = `
+        <button onclick="showA2UI('services')">Servicios</button>
+        <button onclick="showA2UI('pricing')">Precios</button>
+        <button onclick="showA2UI('contact')">Contacto</button>
+        <button onclick="showA2UI('demo')">Demo</button>
+    `;
+    messagesArea.appendChild(quickRepliesDiv);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+function showA2UI(type) {
+    const component = getA2UIComponent(type);
+    if (component) {
+        const div = document.createElement('div');
+        div.className = 'message assistant a2ui-message';
+        div.innerHTML = component;
+        messagesArea.appendChild(div);
+        chatWindow.scrollTo({ top: chatWindow.scrollHeight, behavior: 'smooth' });
+        ping.currentTime = 0;
+        ping.play().catch(e => {});
+    }
+}
