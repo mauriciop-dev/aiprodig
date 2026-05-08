@@ -881,6 +881,59 @@
         .security-desc { font-size: 0.75rem; color: #adb5bd; }
         .security-cta { display: block; margin: 15px auto 0; padding: 10px 25px; background: linear-gradient(135deg, #667eea, #764ba2); border: none; border-radius: 25px; color: white; font-weight: 600; cursor: pointer; }
 
+        /* Service Grid */
+        .a2ui-services-box { width: 100%; margin: 10px 0; }
+        .a2ui-svc-header { font-size: 1.1rem; font-weight: 600; color: #667eea; margin-bottom: 12px; }
+        .a2ui-svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .a2ui-svc-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(102,126,234,0.3); border-radius: 10px; padding: 12px; text-align: center; }
+        .a2ui-svc-icon { font-size: 1.5rem; margin-bottom: 6px; }
+        .a2ui-svc-title { font-size: 0.9rem; font-weight: 600; }
+        .a2ui-svc-desc { font-size: 0.75rem; color: #adb5bd; }
+
+        /* Contact Form */
+        .a2ui-contact-box { background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1)); border: 1px solid rgba(102,126,234,0.3); border-radius: 12px; padding: 15px; margin: 10px 0; text-align: center; }
+        .a2ui-contact-header { font-size: 1.1rem; font-weight: 600; color: #667eea; margin-bottom: 10px; }
+        .a2ui-contact-info { font-size: 0.9rem; color: #adb5bd; margin-bottom: 12px; }
+        .a2ui-contact-info p { margin: 5px 0; }
+        .a2ui-contact-btn { padding: 10px 25px; background: linear-gradient(135deg, #667eea, #764ba2); border: none; border-radius: 25px; color: white; font-weight: 600; cursor: pointer; }
+
+        /* Calendar */
+        .a2ui-calendar-box { background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1)); border: 1px solid rgba(102,126,234,0.3); border-radius: 12px; padding: 15px; margin: 10px 0; text-align: center; }
+        .a2ui-cal-header { font-size: 1.1rem; font-weight: 600; color: #667eea; margin-bottom: 8px; }
+        .a2ui-cal-desc { font-size: 0.9rem; color: #adb5bd; margin-bottom: 12px; }
+        .a2ui-cal-slots { display: flex; flex-direction: column; gap: 8px; margin-bottom: 12px; }
+        .a2ui-cal-slot { padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(102,126,234,0.3); border-radius: 8px; color: white; cursor: pointer; }
+        .a2ui-cal-slot:hover { background: rgba(102,126,234,0.2); }
+        .a2ui-cal-btn { padding: 10px 25px; background: linear-gradient(135deg, #667eea, #764ba2); border: none; border-radius: 25px; color: white; font-weight: 600; cursor: pointer; }
+
+        /* Benefits */
+        .a2ui-benefits-box { width: 100%; margin: 10px 0; }
+        .a2ui-ben-header { font-size: 1.1rem; font-weight: 600; color: #667eea; margin-bottom: 12px; }
+        .a2ui-ben-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .a2ui-ben-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(102,126,234,0.3); border-radius: 10px; padding: 12px; text-align: center; }
+        .a2ui-ben-icon { font-size: 1.5rem; margin-bottom: 6px; }
+        .a2ui-ben-title { font-size: 0.85rem; font-weight: 600; }
+        .a2ui-ben-desc { font-size: 0.75rem; color: #adb5bd; }
+
+        /* Process Map */
+        .a2ui-process-box { width: 100%; margin: 10px 0; }
+        .a2ui-pro-header { font-size: 1.1rem; font-weight: 600; color: #667eea; margin-bottom: 12px; }
+        .a2ui-pro-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        .a2ui-pro-step { background: rgba(255,255,255,0.05); border: 1px solid rgba(102,126,234,0.3); border-radius: 10px; padding: 10px; text-align: center; }
+        .a2ui-pro-title { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; }
+        .a2ui-pro-desc { font-size: 0.7rem; color: #adb5bd; }
+
+        /* FAQ */
+        .a2ui-faq-box { width: 100%; margin: 10px 0; background: rgba(255,255,255,0.03); border-radius: 12px; padding: 15px; }
+        .a2ui-faq-header { font-size: 1.1rem; font-weight: 600; color: #667eea; margin-bottom: 12px; }
+        .a2ui-faq-item { margin-bottom: 10px; padding: 10px; background: rgba(255,255,255,0.03); border-radius: 8px; }
+        .a2ui-faq-q { font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; }
+        .a2ui-faq-a { font-size: 0.85rem; color: #adb5bd; }
+
+        @media (max-width: 600px) {
+            .a2ui-ben-grid, .a2ui-pro-steps { grid-template-columns: repeat(2, 1fr); }
+        }
+
         /* Footer */
         footer {
             background: #2c3e50;
@@ -1554,6 +1607,93 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
+        // Additional A2UI Components
+        function renderServiceGrid(data) {
+            const services = data.services || [
+                { icon: '🌐', title: 'Sitios Web IA', desc: 'Websites con inteligencia artificial' },
+                { icon: '🔍', title: 'SEO & GEO', desc: 'Posicionamiento y presencia en IAs' },
+                { icon: '💬', title: 'Chatbots', desc: 'Asistentes IA 24/7' },
+                { icon: '🎓', title: 'Capacitación', desc: 'Formación en IA para equipos' }
+            ];
+            let html = `<div class="a2ui-services-box"><div class="a2ui-svc-header">Nuestros Servicios</div><div class="a2ui-svc-grid">`;
+            services.forEach(s => {
+                html += `<div class="a2ui-svc-card"><div class="a2ui-svc-icon">${s.icon}</div><div class="a2ui-svc-title">${s.title}</div><div class="a2ui-svc-desc">${s.desc}</div></div>`;
+            });
+            html += '</div></div>';
+            const div = document.createElement('div');
+            div.innerHTML = html;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function renderContactForm(data) {
+            const html = `<div class="a2ui-contact-box"><div class="a2ui-contact-header">📞 Contacto ProDig</div><div class="a2ui-contact-info"><p><strong>Colombia:</strong> +57 314 489 7092</p><p><strong>Email:</strong> mauricio.pineda@prospectivadigital.com</p><p><strong>Horario:</strong> Lun-Vie 8AM-6PM</p></div><button class="a2ui-contact-btn" onclick="alert('¡Gracias! Te contactaremos pronto.')">Solicitar Contacto</button></div>`;
+            const div = document.createElement('div');
+            div.innerHTML = html;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function renderCalendar(data) {
+            const html = `<div class="a2ui-calendar-box"><div class="a2ui-cal-header">📅 Agenda tu Demo</div><div class="a2ui-cal-desc">Demo gratuita de 30 minutos</div><div class="a2ui-cal-slots"><button class="a2ui-cal-slot">Hoy - 2:00 PM</button><button class="a2ui-cal-slot">Mañana - 10:00 AM</button><button class="a2ui-cal-slot">Mañana - 3:00 PM</button></div><button class="a2ui-cal-btn" onclick="alert('¡Confirmado! Te enviaremos el enlace.')">Confirmar Cita</button></div>`;
+            const div = document.createElement('div');
+            div.innerHTML = html;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function renderBenefitsCarousel(data) {
+            const benefits = data.benefits || [
+                { icon: '🔒', title: 'Datos Seguros', desc: 'IA local, sin exponer datos' },
+                { icon: '⚡', title: 'Velocidad', desc: 'Respuestas instantánea' },
+                { icon: '🎯', title: 'Personalizado', desc: 'Entrenado con tus documentos' }
+            ];
+            let html = `<div class="a2ui-benefits-box"><div class="a2ui-ben-header">✨ Beneficios ProDig</div><div class="a2ui-ben-grid">`;
+            benefits.forEach(b => {
+                html += `<div class="a2ui-ben-card"><div class="a2ui-ben-icon">${b.icon}</div><div class="a2ui-ben-title">${b.title}</div><div class="a2ui-ben-desc">${b.desc}</div></div>`;
+            });
+            html += '</div></div>';
+            const div = document.createElement('div');
+            div.innerHTML = html;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function renderProcessMap(data) {
+            const steps = data.steps || [
+                { title: '1. Auditoría', desc: 'Analizamos procesos' },
+                { title: '2. Diseño', desc: 'Creamos el flujo' },
+                { title: '3. Implementación', desc: 'Integramos sistemas' },
+                { title: '4. Medición', desc: 'Monitoreamos resultados' }
+            ];
+            let html = `<div class="a2ui-process-box"><div class="a2ui-pro-header">⚙️ Proceso de Automatización</div><div class="a2ui-pro-steps">`;
+            steps.forEach(s => {
+                html += `<div class="a2ui-pro-step"><div class="a2ui-pro-title">${s.title}</div><div class="a2ui-pro-desc">${s.desc}</div></div>`;
+            });
+            html += '</div></div>';
+            const div = document.createElement('div');
+            div.innerHTML = html;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function renderFAQ(data) {
+            const faqs = data.faqs || [
+                { q: '¿Cuánto tiempo tarda?', a: ' typically 1-4 semanas según el proyecto' },
+                { q: '¿Qué incluye?', a: 'Todo lo necesario para tu solución' },
+                { q: '¿Soporte continuo?', a: 'Sí, tenemos planes de mantenimiento' }
+            ];
+            let html = `<div class="a2ui-faq-box"><div class="a2ui-faq-header">❓ Preguntas Frecuentes</div>`;
+            faqs.forEach(f => {
+                html += `<div class="a2ui-faq-item"><div class="a2ui-faq-q">${f.q}</div><div class="a2ui-faq-a">${f.a}</div></div>`;
+            });
+            html += '</div>';
+            const div = document.createElement('div');
+            div.innerHTML = html;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
         // Detect and render any artifact
         function detectAndRenderArtifact(botResponse) {
             try {
@@ -1562,15 +1702,40 @@
                     const parsed = JSON.parse(jsonMatch[0]);
                     const artifact = parsed.artifact;
                     
-                    if (artifact === 'PriceCard') {
-                        renderPriceCard(parsed);
-                        return true;
-                    } else if (artifact === 'MDDC_Stepper') {
-                        renderMDDCStepper(parsed);
-                        return true;
-                    } else if (artifact === 'SecurityModal') {
-                        renderSecurityModal(parsed);
-                        return true;
+                    switch(artifact) {
+                        case 'PriceCard':
+                            renderPriceCard(parsed);
+                            return true;
+                        case 'MDDC_Stepper':
+                            renderMDDCStepper(parsed);
+                            return true;
+                        case 'SecurityModal':
+                            renderSecurityModal(parsed);
+                            return true;
+                        case 'ServiceGrid':
+                        case 'services-grid':
+                            renderServiceGrid(parsed);
+                            return true;
+                        case 'ContactForm':
+                        case 'contact-form':
+                            renderContactForm(parsed);
+                            return true;
+                        case 'CalendarBooking':
+                        case 'calendar-booking':
+                            renderCalendar(parsed);
+                            return true;
+                        case 'BenefitsCarousel':
+                        case 'benefits-carousel':
+                            renderBenefitsCarousel(parsed);
+                            return true;
+                        case 'ProcessMap':
+                        case 'process-map':
+                            renderProcessMap(parsed);
+                            return true;
+                        case 'FAQ':
+                        case 'faq-interactive':
+                            renderFAQ(parsed);
+                            return true;
                     }
                 }
             } catch (e) {}
