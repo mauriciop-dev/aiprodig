@@ -803,6 +803,64 @@
             animation: fadeIn 0.3s ease;
         }
 
+        .price-card-container {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .price-card-header {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .price-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .price-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(102,126,234,0.3);
+            border-radius: 12px;
+            padding: 12px;
+            width: 180px;
+            text-align: center;
+        }
+        .price-card-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        .price-card-price {
+            color: #667eea;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .price-card-benefits {
+            list-style: none;
+            font-size: 0.75rem;
+            color: #adb5bd;
+            text-align: left;
+            padding: 0 5px;
+            margin-bottom: 10px;
+        }
+        .price-card-benefits li {
+            padding: 3px 0;
+        }
+        .price-card-cta {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
         /* Footer */
         footer {
             background: #2c3e50;
@@ -1388,6 +1446,34 @@
             }
         }
 
+        // Render PriceCard artifact
+        function renderPriceCard(data) {
+            const container = document.createElement('div');
+            container.className = 'price-card-container';
+            
+            let html = `<div class="price-card-header">${data.service_name || 'Planes'}</div><div class="price-cards">`;
+            
+            if (data.plans && Array.isArray(data.plans)) {
+                data.plans.forEach(plan => {
+                    html += `
+                        <div class="price-card">
+                            <div class="price-card-title">${plan.plan_name}</div>
+                            <div class="price-card-price">${plan.price_cop}</div>
+                            <ul class="price-card-benefits">
+                                ${plan.benefits.map(b => `<li>${b}</li>`).join('')}
+                            </ul>
+                            <button class="price-card-cta">${plan.cta}</button>
+                        </div>
+                    `;
+                });
+            }
+            
+            html += '</div>';
+            container.innerHTML = html;
+            chatMessages.appendChild(container);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
         function appendOptions(options) {
             const optionsContainer = document.createElement('div');
             optionsContainer.classList.add('chat-options-container');
@@ -1485,10 +1571,32 @@
                 const data = await response.json();
                 const botResponse = data.output || 'No he podido procesar tu respuesta.';
 
-                appendMessage(botResponse, 'bot');
-
-                // Mostrar opciones de seguimiento después de la respuesta
-                setTimeout(() => appendOptions(followUpOptions), 800);
+                // Check for JSON artifact
+                if (botResponse.includes('"artifact"') || botResponse.includes('"plans"')) {
+                    try {
+                        const jsonMatch = botResponse.match(/\{[\s\S]*\}/);
+                        if (jsonMatch) {
+                            const parsed = JSON.parse(jsonMatch[0]);
+                            if (parsed.artifact === 'PriceCard') {
+                                renderPriceCard(parsed);
+                                // Show follow-up options but NOT the raw JSON
+                                setTimeout(() => appendOptions(followUpOptions), 1000);
+                            } else {
+                                appendMessage(botResponse, 'bot');
+                                setTimeout(() => appendOptions(followUpOptions), 800);
+                            }
+                        } else {
+                            appendMessage(botResponse, 'bot');
+                            setTimeout(() => appendOptions(followUpOptions), 800);
+                        }
+                    } catch (e) {
+                        appendMessage(botResponse, 'bot');
+                        setTimeout(() => appendOptions(followUpOptions), 800);
+                    }
+                } else {
+                    appendMessage(botResponse, 'bot');
+                    setTimeout(() => appendOptions(followUpOptions), 800);
+                }
 
             } catch (error) {
                 console.error('Error communicating with webhook:', error);
