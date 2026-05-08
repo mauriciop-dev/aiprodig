@@ -861,6 +861,26 @@
             width: 100%;
         }
 
+        /* MDDC Stepper */
+        .mddc-stepper-container { margin: 10px 0; width: 100%; }
+        .mddc-header { font-size: 1.1rem; font-weight: 600; color: #667eea; text-align: center; margin-bottom: 15px; }
+        .mddc-steps { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .mddc-step { background: rgba(255,255,255,0.05); border: 1px solid rgba(102,126,234,0.3); border-radius: 12px; padding: 12px; width: 140px; text-align: center; }
+        .mddc-step-num { width: 28px; height: 28px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 8px; font-size: 0.9rem; }
+        .mddc-step-title { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; }
+        .mddc-step-desc { font-size: 0.75rem; color: #adb5bd; }
+        .mddc-cta { display: block; margin: 15px auto 0; padding: 10px 25px; background: linear-gradient(135deg, #667eea, #764ba2); border: none; border-radius: 25px; color: white; font-weight: 600; cursor: pointer; }
+
+        /* Security Modal */
+        .security-modal-container { margin: 10px 0; width: 100%; background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1)); border: 1px solid rgba(102,126,234,0.3); border-radius: 16px; padding: 15px; }
+        .security-header { font-size: 1.1rem; font-weight: 600; color: #667eea; text-align: center; margin-bottom: 15px; }
+        .security-features { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .security-feature { background: rgba(255,255,255,0.05); border-radius: 10px; padding: 12px; width: 130px; text-align: center; }
+        .security-icon { font-size: 1.8rem; margin-bottom: 8px; }
+        .security-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+        .security-desc { font-size: 0.75rem; color: #adb5bd; }
+        .security-cta { display: block; margin: 15px auto 0; padding: 10px 25px; background: linear-gradient(135deg, #667eea, #764ba2); border: none; border-radius: 25px; color: white; font-weight: 600; cursor: pointer; }
+
         /* Footer */
         footer {
             background: #2c3e50;
@@ -1474,6 +1494,89 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
+        // Render MDDC_Stepper artifact
+        function renderMDDCStepper(data) {
+            const container = document.createElement('div');
+            container.className = 'mddc-stepper-container';
+            
+            let html = `<div class="mddc-header">Metodología ProDig (MDDC)</div><div class="mddc-steps">`;
+            
+            const steps = data.steps || [
+                { title: 'Fase 1: Ingeniería de Contexto', desc: 'Construimos la biología del proyecto' },
+                { title: 'Fase 2: Orquestación', desc: 'Ejecutamos con IA' },
+                { title: 'Fase 3: Activos', desc: 'Entregamos soluciones autónomas' }
+            ];
+            
+            steps.forEach((step, i) => {
+                html += `
+                    <div class="mddc-step">
+                        <div class="mddc-step-num">${i + 1}</div>
+                        <div class="mddc-step-title">${step.title}</div>
+                        <div class="mddc-step-desc">${step.desc}</div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            if (data.cta) html += `<button class="mddc-cta">${data.cta}</button>`;
+            container.innerHTML = html;
+            chatMessages.appendChild(container);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Render SecurityModal artifact
+        function renderSecurityModal(data) {
+            const container = document.createElement('div');
+            container.className = 'security-modal-container';
+            
+            const features = data.features || [
+                { icon: '🔒', title: 'Procesamiento Local', desc: 'Tus datos nunca salen de tu infraestructura' },
+                { icon: '☁️', title: 'Infraestructura Segura', desc: 'Bajo estándares Microsoft' },
+                { icon: '🛡️', title: 'Soberanía de Datos', desc: 'Tus datos son tuyos siempre' }
+            ];
+            
+            let html = `<div class="security-header">${data.title || '🔐 Seguridad de Datos'}</div><div class="security-features">`;
+            
+            features.forEach(f => {
+                html += `
+                    <div class="security-feature">
+                        <div class="security-icon">${f.icon}</div>
+                        <div class="security-title">${f.title}</div>
+                        <div class="security-desc">${f.desc}</div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            if (data.cta) html += `<button class="security-cta">${data.cta}</button>`;
+            container.innerHTML = html;
+            chatMessages.appendChild(container);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Detect and render any artifact
+        function detectAndRenderArtifact(botResponse) {
+            try {
+                const jsonMatch = botResponse.match(/\{[\s\S]*"artifact"\s*:\s*"([^"]+)"[\s\S]*\}/);
+                if (jsonMatch) {
+                    const parsed = JSON.parse(jsonMatch[0]);
+                    const artifact = parsed.artifact;
+                    
+                    if (artifact === 'PriceCard') {
+                        renderPriceCard(parsed);
+                        return true;
+                    } else if (artifact === 'MDDC_Stepper') {
+                        renderMDDCStepper(parsed);
+                        return true;
+                    } else if (artifact === 'SecurityModal') {
+                        renderSecurityModal(parsed);
+                        return true;
+                    }
+                }
+            } catch (e) {}
+            return false;
+        }
+
         function appendOptions(options) {
             const optionsContainer = document.createElement('div');
             optionsContainer.classList.add('chat-options-container');
@@ -1571,32 +1674,16 @@
                 const data = await response.json();
                 const botResponse = data.output || 'No he podido procesar tu respuesta.';
 
-                // Check for JSON artifact
-                if (botResponse.includes('"artifact"') || botResponse.includes('"plans"')) {
-                    try {
-                        const jsonMatch = botResponse.match(/\{[\s\S]*\}/);
-                        if (jsonMatch) {
-                            const parsed = JSON.parse(jsonMatch[0]);
-                            if (parsed.artifact === 'PriceCard') {
-                                renderPriceCard(parsed);
-                                // Show follow-up options but NOT the raw JSON
-                                setTimeout(() => appendOptions(followUpOptions), 1000);
-                            } else {
-                                appendMessage(botResponse, 'bot');
-                                setTimeout(() => appendOptions(followUpOptions), 800);
-                            }
-                        } else {
-                            appendMessage(botResponse, 'bot');
-                            setTimeout(() => appendOptions(followUpOptions), 800);
-                        }
-                    } catch (e) {
-                        appendMessage(botResponse, 'bot');
-                        setTimeout(() => appendOptions(followUpOptions), 800);
-                    }
-                } else {
+                // Try to detect and render artifact
+                const rendered = detectAndRenderArtifact(botResponse);
+                
+                if (!rendered) {
+                    // If no artifact, show regular text
                     appendMessage(botResponse, 'bot');
-                    setTimeout(() => appendOptions(followUpOptions), 800);
                 }
+                
+                // Show follow-up options
+                setTimeout(() => appendOptions(followUpOptions), 800);
 
             } catch (error) {
                 console.error('Error communicating with webhook:', error);
