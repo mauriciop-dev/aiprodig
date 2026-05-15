@@ -1721,20 +1721,28 @@
             try {
                 console.log('[A2UI] Raw response:', botResponse);
                 
+                // Step 0: Strip markdown code fences if present
+                let cleaned = botResponse.trim();
+                cleaned = cleaned.replace(/^```(?:json)?\s*/i, '').replace(/\s*```\s*$/i, '');
+                cleaned = cleaned.trim();
+                console.log('[A2UI] Cleaned response:', cleaned.substring(0, 100));
+                
                 let parsed = null;
                 
                 // Strategy 1: Try direct JSON.parse (response IS pure JSON)
                 try {
-                    const direct = JSON.parse(botResponse.trim());
+                    const direct = JSON.parse(cleaned);
                     if (direct && direct.artifact) {
                         parsed = direct;
                         console.log('[A2UI] Parsed via direct JSON.parse');
                     }
-                } catch(e) {}
+                } catch(e) {
+                    console.log('[A2UI] Direct parse failed:', e.message);
+                }
                 
                 // Strategy 2: Extract JSON block from text with regex
                 if (!parsed) {
-                    const jsonMatch = botResponse.match(/\{[\s\S]*?"artifact"\s*:\s*"[^"]+?"[\s\S]*\}/);
+                    const jsonMatch = cleaned.match(/\{[\s\S]*?"artifact"\s*:\s*"[^"]+?"[\s\S]*\}/);
                     if (jsonMatch) {
                         try {
                             parsed = JSON.parse(jsonMatch[0]);
