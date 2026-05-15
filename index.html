@@ -1719,48 +1719,92 @@
         // Detect and render any artifact
         function detectAndRenderArtifact(botResponse) {
             try {
-                const jsonMatch = botResponse.match(/\{[\s\S]*"artifact"\s*:\s*"([^"]+)"[\s\S]*\}/);
-                if (jsonMatch) {
-                    const parsed = JSON.parse(jsonMatch[0]);
-                    const artifact = parsed.artifact;
-                    
-                    switch(artifact) {
-                        case 'PriceCard':
-                            renderPriceCard(parsed);
-                            return true;
-                        case 'MDDC_Stepper':
-                            renderMDDCStepper(parsed);
-                            return true;
-                        case 'SecurityModal':
-                            renderSecurityModal(parsed);
-                            return true;
-                        case 'ServiceGrid':
-                        case 'services-grid':
-                            renderServiceGrid(parsed);
-                            return true;
-                        case 'ContactForm':
-                        case 'contact-form':
-                            renderContactForm(parsed);
-                            return true;
-                        case 'CalendarBooking':
-                        case 'calendar-booking':
-                            renderCalendar(parsed);
-                            return true;
-                        case 'BenefitsCarousel':
-                        case 'benefits-carousel':
-                            renderBenefitsCarousel(parsed);
-                            return true;
-                        case 'ProcessMap':
-                        case 'process-map':
-                            renderProcessMap(parsed);
-                            return true;
-                        case 'FAQ':
-                        case 'faq-interactive':
-                            renderFAQ(parsed);
-                            return true;
+                console.log('[A2UI] Raw response:', botResponse);
+                
+                let parsed = null;
+                
+                // Strategy 1: Try direct JSON.parse (response IS pure JSON)
+                try {
+                    const direct = JSON.parse(botResponse.trim());
+                    if (direct && direct.artifact) {
+                        parsed = direct;
+                        console.log('[A2UI] Parsed via direct JSON.parse');
+                    }
+                } catch(e) {}
+                
+                // Strategy 2: Extract JSON block from text with regex
+                if (!parsed) {
+                    const jsonMatch = botResponse.match(/\{[\s\S]*?"artifact"\s*:\s*"[^"]+?"[\s\S]*\}/);
+                    if (jsonMatch) {
+                        try {
+                            parsed = JSON.parse(jsonMatch[0]);
+                            console.log('[A2UI] Parsed via regex extraction');
+                        } catch(e) {
+                            console.log('[A2UI] Regex match found but JSON.parse failed:', e.message);
+                        }
                     }
                 }
-            } catch (e) {}
+                
+                // Strategy 3: Find JSON between code fences ```json ... ```
+                if (!parsed) {
+                    const codeMatch = botResponse.match(/```(?:json)?\s*(\{[\s\S]*?\})\s*```/);
+                    if (codeMatch) {
+                        try {
+                            parsed = JSON.parse(codeMatch[1]);
+                            console.log('[A2UI] Parsed via code fence extraction');
+                        } catch(e) {}
+                    }
+                }
+                
+                if (!parsed || !parsed.artifact) {
+                    console.log('[A2UI] No artifact found');
+                    return false;
+                }
+
+                console.log('[A2UI] Rendering artifact:', parsed.artifact);
+                const artifact = parsed.artifact;
+                    
+                switch(artifact) {
+                    case 'PriceCard':
+                        renderPriceCard(parsed);
+                        return true;
+                    case 'MDDC_Stepper':
+                        renderMDDCStepper(parsed);
+                        return true;
+                    case 'SecurityModal':
+                        renderSecurityModal(parsed);
+                        return true;
+                    case 'ServiceGrid':
+                    case 'services-grid':
+                        renderServiceGrid(parsed);
+                        return true;
+                    case 'ContactForm':
+                    case 'contact-form':
+                        renderContactForm(parsed);
+                        return true;
+                    case 'CalendarBooking':
+                    case 'calendar-booking':
+                        renderCalendar(parsed);
+                        return true;
+                    case 'BenefitsCarousel':
+                    case 'benefits-carousel':
+                        renderBenefitsCarousel(parsed);
+                        return true;
+                    case 'ProcessMap':
+                    case 'process-map':
+                        renderProcessMap(parsed);
+                        return true;
+                    case 'FAQ':
+                    case 'faq-interactive':
+                        renderFAQ(parsed);
+                        return true;
+                    default:
+                        console.log('[A2UI] Unknown artifact type:', artifact);
+                        return false;
+                }
+            } catch (e) {
+                console.log('[A2UI] Error in detectAndRenderArtifact:', e.message);
+            }
             return false;
         }
 
@@ -1859,7 +1903,24 @@
                 }
 
                 const data = await response.json();
-                const botResponse = data.output || 'No he podido procesar tu respuesta.';
+                console.log('[A2UI] Full webhook response:', JSON.stringify(data).substring(0, 500));
+                
+                // Try multiple possible response field names from N8N
+                let botResponse = '';
+                if (typeof data === 'string') {
+                    botResponse = data;
+                } else if (Array.isArray(data) && data.length > 0) {
+                    const first = data[0];
+                    botResponse = first.output || first.text || first.response || first.message || JSON.stringify(first);
+                } else {
+                    botResponse = data.output || data.text || data.response || data.message || '';
+                }
+                
+                if (!botResponse) {
+                    botResponse = 'No he podido procesar tu respuesta.';
+                }
+                
+                console.log('[A2UI] Extracted botResponse:', botResponse.substring(0, 200));
 
                 // Try to detect and render artifact
                 const rendered = detectAndRenderArtifact(botResponse);
