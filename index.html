@@ -1539,18 +1539,25 @@
             const container = document.createElement('div');
             container.className = 'price-card-container';
             
-            let html = `<div class="price-card-header">${data.service_name || 'Planes'}</div><div class="price-cards">`;
+            let html = `<div class="price-card-header">${data.service_name || data.title || 'Planes'}</div><div class="price-cards">`;
             
             if (data.plans && Array.isArray(data.plans)) {
                 data.plans.forEach(plan => {
+                    const name = plan.plan_name || plan.title || plan.name || 'Plan';
+                    const price = plan.price_cop || plan.price || plan.precio || 'Consultar';
+                    const benefits = Array.isArray(plan.benefits) ? plan.benefits : (Array.isArray(plan.features) ? plan.features : []);
+                    const cta = plan.cta || plan.button || 'Más Información';
+                    const link = plan.link || plan.url || '';
+                    
+                    const ctaClick = link ? `onclick="window.open('${link}', '_blank')"` : 
+                        `onclick="window.open('https://wa.me/573144897092?text=Hola%20ProDig,%20me%20interesa%20el%20plan%20${encodeURIComponent(name)}', '_blank')"`;
+                    
                     html += `
                         <div class="price-card">
-                            <div class="price-card-title">${plan.plan_name}</div>
-                            <div class="price-card-price">${plan.price_cop}</div>
-                            <ul class="price-card-benefits">
-                                ${plan.benefits.map(b => `<li>${b}</li>`).join('')}
-                            </ul>
-                            <button class="price-card-cta">${plan.cta}</button>
+                            <div class="price-card-title">${name}</div>
+                            <div class="price-card-price">${price}</div>
+                            ${benefits.length > 0 ? `<ul class="price-card-benefits">${benefits.map(b => `<li>✓ ${b}</li>`).join('')}</ul>` : ''}
+                            <button class="price-card-cta" ${ctaClick}>${cta}</button>
                         </div>
                     `;
                 });
@@ -1642,7 +1649,7 @@
         }
 
         function renderContactForm(data) {
-            const html = `<div class="a2ui-contact-box"><div class="a2ui-contact-header">📞 Contacto ProDig</div><div class="a2ui-contact-info"><p><strong>Colombia:</strong> +57 314 489 7092</p><p><strong>Email:</strong> mauricio.pineda@prospectivadigital.com</p><p><strong>Horario:</strong> Lun-Vie 8AM-6PM</p></div><button class="a2ui-contact-btn" onclick="alert('¡Gracias! Te contactaremos pronto.')">Solicitar Contacto</button></div>`;
+            const html = `<div class="a2ui-contact-box"><div class="a2ui-contact-header">📞 Contacto ProDig</div><div class="a2ui-contact-info"><p><strong>WhatsApp:</strong> +57 314 489 7092</p><p><strong>Email:</strong> mauricio.pineda@prospectivadigital.com</p><p><strong>Horario:</strong> Lun-Vie 8AM-6PM</p></div><button class="a2ui-contact-btn" onclick="window.open('https://wa.me/573144897092?text=Hola%20ProDig,%20quiero%20más%20información', '_blank')">💬 Chatear por WhatsApp</button></div>`;
             const div = document.createElement('div');
             div.innerHTML = html;
             chatMessages.appendChild(div);
