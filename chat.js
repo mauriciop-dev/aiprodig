@@ -416,10 +416,15 @@ async function handleSend() {
             try {
                 parsed = JSON.parse(cleanJson);
             } catch (e) {
-                // If strict parse fails, try to extract JSON using regex (LLM mixed text + JSON)
-                const jsonMatch = botResponse.match(/\{[\s\S]*"artifact"[\s\S]*\}/);
-                if (jsonMatch) {
-                    parsed = JSON.parse(jsonMatch[0]);
+                // If strict parse fails, try to extract JSON safely
+                const firstBrace = botResponse.indexOf('{');
+                const lastBrace = botResponse.lastIndexOf('}');
+                if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+                    try {
+                        parsed = JSON.parse(botResponse.substring(firstBrace, lastBrace + 1));
+                    } catch (e2) {
+                        console.log("Extracted JSON parse failed:", e2);
+                    }
                 }
             }
 
