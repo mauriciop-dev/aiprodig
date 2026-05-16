@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /$
+Allow: /index.html
+Allow: /sitios-web-ia.html
+Allow: /seo-y-geo.html
+Allow: /ia-local.html
+Allow: /agentes-ia.html
+Allow: /capacitacion.html
+Allow: /chatbots.html
+Allow: /consultoria.html
+Allow: /power-platform.html
+Allow: /powerapps.html
+Allow: /powerbi.html
+Allow: /rag.html
+Allow: /saas.html
+Allow: /Blog/
+
+# Restringir paginas internas, pruebas, utilidades y legales para dar prioridad a los servicios y el blog
+Disallow: /backend/
+Disallow: /SEO-GEO/
+Disallow: /Videos/
+Disallow: /frontend/
+Disallow: /pruebas/
+Disallow: /chat.html
+Disallow: /chat-a2ui-test.html
+Disallow: /chatbot.html
+Disallow: /chatbot_lateral.html
+Disallow: /condiciones.html
+Disallow: /eliminacion_datos.html
+Disallow: /privacidad.html
+Disallow: /conjuntos.html
+Disallow: /denuncia/
+Disallow: /registrometa.html
+Disallow: /_ul
+Disallow: /nul
+
+Sitemap: https://aiprodig.com/sitemap.xml

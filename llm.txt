@@ -1,0 +1,38 @@
+# ProDig - Prospectiva Digital
+
+> Consultoría de vanguardia en Inteligencia Artificial y desarrollo de activos digitales.
+
+## Resumen
+ProDig, liderada por Mauricio Pineda, se especializa en la creación de soluciones basadas en IA para optimizar procesos empresariales y residenciales. Ayudamos a las empresas a hacer la transición del SEO al GEO (Generative Engine Optimization).
+
+## Servicios Principales
+Nuestros servicios tecnológicos principales y sus páginas de aterrizaje:
+
+- Sitios Web IA: https://aiprodig.com/sitios-web-ia.html
+- SEO y GEO: https://aiprodig.com/seo-y-geo.html
+- Chatbots: https://aiprodig.com/chatbots.html
+- IA Local: https://aiprodig.com/ia-local.html
+- Agentes IA: https://aiprodig.com/agentes-ia.html
+- Capacitación en IA: https://aiprodig.com/capacitacion.html
+- Consultoría Estratégica: https://aiprodig.com/consultoria.html
+- SaaS Sprint (Validación 48 hrs): https://aiprodig.com/saas.html
+- Power Platform: https://aiprodig.com/power-platform.html
+- Power Apps: https://aiprodig.com/powerapps.html
+- Power BI: https://aiprodig.com/powerbi.html
+- RAG Corporativo: https://aiprodig.com/rag.html
+
+## Blog - Materia Programable
+Nuestros artículos más recientes sobre tecnología, IA y metodologías:
+
+- Inicio del Blog: https://aiprodig.com/Blog/index.html
+- ¿Crees que tener una página web en 2026 es irrelevante?: https://aiprodig.com/Blog/crees-que-tener-una-pagina-web-en-2026-es-irrelevante-la-realidad-te-sorprendera.html
+- Del Caos Algorítmico a la Tasa de Referencia: https://aiprodig.com/Blog/del-caos-algoritmico-a-la-tasa-de-referencia-la-metamorfosis-del-seo-al-geo-y-el-surgimiento-de-la-autoridad-humana-en-2026.html
+- El Activo Invisible: https://aiprodig.com/Blog/el-activo-invisible-por-que-su-empresa-es-mas-pobre-de-lo-que-dicen-sus-libros-contables.html
+- La Gran Convergencia: https://aiprodig.com/Blog/la-gran-convergencia-por-que-la-ia-de-hoy-es-el-sistema-operativo-de-la-materia-de-manana.html
+- ¿Por qué el Agile tradicional está frenando tu empresa?: https://aiprodig.com/Blog/por-que-el-agile-tradicional-esta-frenando-tu-empresa-en-la-era-de-la-ia.html
+
+## Contacto y Ubicación
+Sede principal en Bogotá, Colombia.
+- Web: https://aiprodig.com
+- WhatsApp: +57 3144897092
+- Email: mauricio.pineda@prospectivadigital.com
