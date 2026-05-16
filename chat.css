@@ -284,7 +284,7 @@ body {
 .a2ui-pricing-header { font-size: 1.2rem; font-weight: 600; text-align: center; margin-bottom: 20px; color: var(--primary); }
 .a2ui-pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
 .a2ui-pricing-card { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.1); position: relative; }
-.a2ui-pricing-card.featureed { background: linear-gradient(135deg, rgba(102,126,234,0.2), rgba(118,75,162,0.2)); border-color: var(--primary); }
+.a2ui-pricing-card.featured { background: linear-gradient(135deg, rgba(102,126,234,0.2), rgba(118,75,162,0.2)); border-color: var(--primary); }
 .a2ui-price-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
 .a2ui-price-title { font-weight: 600; font-size: 1rem; margin-bottom: 10px; }
 .a2ui-price-amount { font-size: 1.8rem; font-weight: 700; color: var(--primary); }

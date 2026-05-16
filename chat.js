@@ -195,6 +195,107 @@ function getA2UIComponent(type) {
     return components[type] || null;
 }
 
+function renderA2UIArtifact(data) {
+    let html = '';
+    
+    if (data.artifact === 'ServiceGrid') {
+        html = `
+            <div class="a2ui-services-grid">
+                <div class="a2ui-grid-header">
+                    <i class="fas fa-rocket"></i> Servicios ProDig
+                </div>
+                <div class="a2ui-grid">
+                    ${data.services.map(s => `
+                        <div class="a2ui-service-card">
+                            <div class="a2ui-service-icon">${s.icon}</div>
+                            <div class="a2ui-service-title">${s.title}</div>
+                            <div class="a2ui-service-desc">${s.desc}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>`;
+    } 
+    else if (data.artifact === 'PriceCard') {
+        html = `
+            <div class="a2ui-pricing-table">
+                <div class="a2ui-pricing-header">${data.service_name}</div>
+                <div class="a2ui-pricing-grid">
+                    ${data.plans.map((p, index) => `
+                        <div class="a2ui-pricing-card ${index === 1 ? 'featured' : ''}">
+                            ${index === 1 ? '<div class="a2ui-price-badge">Recomendado</div>' : ''}
+                            <div class="a2ui-price-title">${p.title}</div>
+                            <div class="a2ui-price-amount" style="font-size: 1.5rem; margin: 10px 0;">${p.price}</div>
+                            <ul class="a2ui-price-features">
+                                ${p.benefits.map(b => `<li><i class="fas fa-check" style="color: #00ff88;"></i> ${b}</li>`).join('')}
+                            </ul>
+                            <a href="${p.link}" target="_blank" class="a2ui-calendar-btn" style="text-decoration:none; display:inline-block; text-align:center; margin-top:15px; width: 100%;">
+                                ${p.cta}
+                            </a>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>`;
+    }
+    else if (data.artifact === 'ProcessMap') {
+        html = `
+            <div class="a2ui-process-map">
+                <div class="a2ui-process-header">
+                    <i class="fas fa-cogs"></i> Cómo Funciona
+                </div>
+                <div class="a2ui-process-steps">
+                    ${data.steps.map((s, i) => `
+                        <div class="a2ui-step">
+                            <div class="a2ui-step-num">${i + 1}</div>
+                            <div class="a2ui-step-title">${s.title.replace(/^\d+\.\s*/, '')}</div>
+                            <div class="a2ui-step-desc">${s.desc}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>`;
+    }
+    else if (data.artifact === 'BenefitsCarousel') {
+        html = `
+            <div class="a2ui-benefits-carousel">
+                <div class="a2ui-benefits-header">
+                    <i class="fas fa-star"></i> Beneficios
+                </div>
+                <div class="a2ui-benefits-grid">
+                    ${data.benefits.map(b => `
+                        <div class="a2ui-benefit-card">
+                            <div class="a2ui-benefit-icon">${b.icon}</div>
+                            <div class="a2ui-benefit-title">${b.title}</div>
+                            <div class="a2ui-benefit-desc">${b.desc}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>`;
+    }
+    else if (data.artifact === 'FAQ') {
+        html = `
+            <div class="a2ui-pricing-table">
+                <div class="a2ui-pricing-header"><i class="fas fa-question-circle"></i> Preguntas Frecuentes</div>
+                <div class="a2ui-pricing-grid" style="display:flex; flex-direction:column; gap:10px; padding: 15px;">
+                    ${data.faqs.map(f => `
+                        <div class="a2ui-pricing-card" style="text-align: left;">
+                            <strong style="color: #9d4edd; display: block; margin-bottom: 8px;">${f.q}</strong>
+                            <span style="font-size: 0.9em; color: #ccc;">${f.a}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>`;
+    }
+    else if (data.artifact === 'ContactForm') {
+        html = getA2UIComponent('contact');
+    }
+    
+    if (html) {
+        addA2UIMessage(html);
+    } else {
+        // Fallback for unknown artifacts
+        addMessage(JSON.stringify(data, null, 2), 'assistant');
+    }
+}
+
 // --- 1. THREE.JS BACKGROUND MAGIC ---
 let scene, camera, renderer, particles, starGeo;
 
@@ -302,7 +403,38 @@ async function handleSend() {
         // 4. Extract response (handling n8n array format)
         const botResponse = Array.isArray(data) ? data[0].output : data.output;
         
-        // 5. Add Assistant Message
+        // 5. Try to parse A2UI JSON artifact
+        try {
+            // First try strict parsing (removing markdown code blocks)
+            let cleanJson = botResponse.trim();
+            if (cleanJson.startsWith('```json')) cleanJson = cleanJson.substring(7);
+            else if (cleanJson.startsWith('```')) cleanJson = cleanJson.substring(3);
+            if (cleanJson.endsWith('```')) cleanJson = cleanJson.substring(0, cleanJson.length - 3);
+            cleanJson = cleanJson.trim();
+
+            let parsed = null;
+            try {
+                parsed = JSON.parse(cleanJson);
+            } catch (e) {
+                // If strict parse fails, try to extract JSON using regex (LLM mixed text + JSON)
+                const jsonMatch = botResponse.match(/\{[\s\S]*"artifact"[\s\S]*\}/);
+                if (jsonMatch) {
+                    parsed = JSON.parse(jsonMatch[0]);
+                }
+            }
+
+            if (parsed && parsed.artifact) {
+                renderA2UIArtifact(parsed);
+                // Play premium sound
+                ping.currentTime = 0;
+                ping.play().catch(e => console.log("Audio play blocked by browser"));
+                return;
+            }
+        } catch (e) {
+            // Not JSON or missing artifact, fall back to normal markdown text
+            console.log("JSON parsing skipped/failed:", e);
+        }
+
         addMessage(botResponse || "Disculpa, no pude procesar tu solicitud.", 'assistant');
         
         // Play premium sound
