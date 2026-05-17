@@ -1,0 +1,302 @@
+## TABLAS DE PRECIOS
+
+En cada página crear las tablas de precios con la información de cada servicio.
+La moneda principal es el peso COP, también señalar el precio en Yuanes y dólares de acuerdo a TRM
+
+
+SERVICIO 1
+
+- **Sitios Web IA** paginas web integradas con IA y/o automatización:	
+
+
+Planes sitios web con IA
+
+- si quiere una landing-page sencilla con formulario, botón whatsapp, dominio, hosting, 1 correo por 1 año eso vale desde 800.000
+
+- si quiere que la ayude a configurar su pagina de uno de esos servicios como wix, Hostinger etcetera eso le vale entre 400.000 y 600.000
+
+- Si quiere una pagina a la medida con sus propias especificaciones, pagina principal y hasta 8 subpáginas, con dominio, hosting, 2 correos, desde 1.400.000
+
+- Si quiere una tienda virtual con hasta 8 paginas, dominio, hosting, 4 correos por 1 año inicia en 2.000.000
+
+- si quiere  un desarrollo a la medida mas grande contáctenos
+
+
+SERVICIO 2
+
+- **SEO y GEO** En 2026 ya no es solo salir en Google, ahora es ser el referente de las IAs
+
+Planes SEO + GEO
+
+1. Plan "Presencia" (Nivel Inicial)
+Ideal para: Profesionales independientes o negocios locales que están lanzando su sitio.
+
+Promesa: "Aseguramos que tu marca exista oficialmente en la web para humanos y algoritmos."
+
+Entregables SEO:
+
+Configuración técnica de Google Search Console y Analytics 4.
+
+Optimización de Meta-etiquetas (Títulos y Descripciones) en las páginas principales.
+
+Indexación manual de URLs para aparición inmediata.
+
+Entregables GEO:
+
+Creación de archivo JSON-LD (Organization) para que la IA sepa quién eres.
+
+Implementación de FAQ semánticas (3-5 preguntas clave) para aparecer en fragmentos destacados.
+
+Precio sugerido (COP): $1.200.000 (Pago único o mensualidad baja de mantenimiento).
+
+2. Plan "Relevancia" (Nivel Profesional)
+Ideal para: Empresas en crecimiento que necesitan superar a su competencia directa.
+
+Promesa: "Posicionamos tu sitio como una opción preferida y confiable en los buscadores."
+
+Entregables SEO (Presencia +):
+
+Optimización de velocidad de carga (Core Web Vitals) para evitar rebote.
+
+Estrategia de SEO Local: Optimización de perfil de negocio (Maps) y palabras clave geolocalizadas.
+
+Auditoría de contenido: Ajuste de encabezados (H1-H3) bajo intención de búsqueda.
+
+Entregables GEO (Presencia +):
+
+Marcado de datos avanzado por Categoría/Servicio (Schema Service o Product).
+
+Glosario Semántico: Definición de términos clave del sector para alimentar el conocimiento de las IAs.
+
+Optimización de Atributos Alt en imágenes para búsqueda multimodal.
+
+Precio sugerido (COP): $2.500.000 / mes.
+
+3. Plan "Autoridad AI" (Nivel Élite)
+Ideal para: Marcas que quieren ser la fuente de verdad y el referente número uno de las IAs.
+
+Promesa: "Dominio total. Hacemos que la IA te cite como el experto oficial de tu industria."
+
+Entregables SEO (Relevancia +):
+
+Topic Clusters: Creación de una red de contenidos interconectados que demuestran autoridad temática.
+
+Gestión de Backlinks de autoridad (enlaces externos de calidad).
+
+Reporte de competencia: Análisis de brecha de contenido frente a líderes del mercado.
+
+Entregables GEO (Relevancia +):
+
+Entity Linking: Conexión de tu sitio con perfiles sameAs (Wikipedia, LinkedIn, portafolios) para validar tu E-E-A-T.
+
+Resúmenes TL;DR (Executive Summaries): Bloques de texto diseñados específicamente para ser extraídos por modelos como Gemini o Perplexity.
+
+Monitoreo de Menciones: Informe mensual de cómo y cuánto están citando los LLMs a tu marca.
+
+Precio sugerido (COP): $4.800.000+ / mes.
+
+
+
+SERVICIO 3
+
+- **Chatbots** La forma mas fácil, rápida y eficiente de que tu empresa inicie en el mundo de IA
+
+Servicio: Chatbots Inteligentes
+Concepto: "No es solo un chat; es tu mejor empleado trabajando 24/7."
+
+1. Chatbot de Bienvenida (Básico / Informativo)
+Objetivo: Capturar leads y resolver dudas frecuentes sin intervención humana.
+
+Qué hace: Responde a preguntas basadas en una base de conocimientos (FAQ), entrega horarios, ubicación, servicios y captura datos de contacto.
+
+Diferencial ProDig: Entrenamiento con IA para que no parezca un árbol de decisiones rígido, sino una conversación fluida.
+
+Precio sugerido: $1.200.000 COP (Implementación única) + un pequeño fee mensual de mantenimiento/hosting.
+
+2. Chatbot con A2UI (Avanzado / Agente de Interfaz)
+Objetivo: Ayudar al usuario a "hacer" cosas dentro de la web sin navegar.
+
+Qué hace: Usa Agent-to-User Interface (A2UI). Si el usuario dice "muéstrame los planes", el chatbot no solo envía texto, sino que despliega visualmente la tabla de precios o cambia elementos de la página en tiempo real para guiar al usuario.
+
+Diferencial ProDig: Una experiencia de usuario (UX) futurista. El chat controla la web, convirtiéndose en un guía personalizado.
+
+Precio sugerido: $2.800.000 COP.
+
+3. Chatbot Transaccional (Nivel Élite / RAG + DB)
+Objetivo: Ejecutar procesos de negocio y autoservicio total.
+
+Qué hace: Se conecta mediante APIs a tus bases de datos (Supabase, Google Cloud). Permite consultar estados de cuenta, verificar fechas de entrega, agendar citas reales en el calendario o incluso procesar pagos simples.
+
+Diferencial ProDig: Seguridad de grado empresarial y trazabilidad total. La información se genera en tiempo real desde los datos del cliente.
+
+Precio sugerido: Desde $5.000.000 COP (Varía según la complejidad de las integraciones).
+
+
+SERVICIO 4
+
+- **SaaS** Tienes un idea de una plataforma o aplicación? En 48 horas hacemos un Demo!
+
+Servicio: SaaS Sprint (De la Idea al Mercado)
+El concepto: "No pierdas meses en desarrollo. Validamos tu idea con tecnología real en tiempo récord para que tomes decisiones basadas en datos, no en supuestos."
+
+1. Plan: Demo Sprint (MVP)
+Ideal para validar la funcionalidad principal ante socios o inversores.
+
+Tiempo de entrega: 48 Horas (hábiles).
+
+Incluye:
+
+Despliegue de la función estrella (Core Feature) de tu idea.
+
+Interfaz limpia y profesional (Next.js + Tailwind).
+
+Base de datos inicial integrada (Supabase).
+
+15 días de validación técnica: El demo queda activo para pruebas (incluye consumo de API moderado).
+
+Precio Sugerido: $1.500.000 COP (Pago único).
+
+2. Plan: Lanzamiento (Producción)
+Ideal para iniciar operaciones reales con usuarios finales.
+
+Tiempo de entrega: +48 Horas tras aprobación del Demo.
+
+Incluye:
+
+Sistema de autenticación seguro (OAuth2 / Google / GitHub).
+
+Configuración de correos transaccionales (Resend).
+
+Optimización para SEO y velocidad de carga.
+
+Dominio propio y certificado SSL.
+
+Soporte técnico por los primeros 30 días de operación.
+
+Precio Sugerido: $2.500.000 COP (Adicional al Plan Demo).
+
+3. Plan: Escala ProDig (Mantenimiento)
+Para empresas que ya están facturando y necesitan evolución constante.
+
+Incluye:
+
+Mantenimiento mensual de servidores y base de datos.
+
+Bolsa de horas para nuevas funcionalidades.
+
+Monitoreo de seguridad y respaldos automáticos.
+
+Gestión de costos de infraestructura (APIs y Hosting).
+
+Precio Sugerido: $800.000 COP / mes (Base, varía según el tráfico).
+
+
+SERVICIO 5
+
+- **IA Local** Quiere implementar IA en su empresa, pero teme por la seguridad? en 48 hacemos un DEMO de un RAG Local en su empresa, usted y sus empleados los prueban y lo aprueban!
+
+IA Local: Inteligencia Avanzada con Privacidad Total
+¿Quieres implementar IA en tu empresa pero teme por la seguridad de sus datos?
+En ProDig, eliminamos el riesgo. Llevamos la potencia de los modelos de lenguaje más avanzados directamente a su infraestructura. Su información confidencial nunca sale de su empresa.
+
+Nuestras Soluciones de IA Privada
+1. Demo "Cerebro Seguro" (48 Horas)
+La forma más rápida de comprobar que la IA puede trabajar offline.
+
+Instalamos un modelo de lenguaje local (LLM) en sus servidores o estaciones de trabajo.
+
+Cargamos una muestra de sus documentos (PDF, Excel, Word).
+
+Usted y sus empleados realizan pruebas en tiempo real para verificar la precisión y velocidad de las respuestas sin conexión a internet.
+
+El objetivo: Que usted lo pruebe y lo apruebe antes de cualquier inversión mayor.
+
+2. RAG Corporativo y Transaccional
+Hacemos que su información genere valor inmediato mediante tecnología RAG (Retrieval-Augmented Generation).
+
+IA Conectada a su Realidad: La IA no solo responde preguntas generales, sino que consulta sus manuales, contratos y bases de datos para dar respuestas exactas.
+
+Transaccionalidad Interna: Capacidad para organizar, resumir y cruzar información entre diferentes áreas de la empresa automáticamente.
+
+Privacidad por Diseño: Todo el procesamiento ocurre dentro de su red local.
+
+3. IA Especializada por Áreas
+Configuramos IAs con propósitos específicos y accesos restringidos.
+
+Áreas Críticas: Cree una IA exclusiva para el área Financiera, Legal o de Investigación y Desarrollo (I+D).
+
+Control de Acceso: Usted define qué usuarios pueden interactuar con cada modelo y a qué documentos tienen permiso de acceder.
+
+Entrenamiento Continuo: Ajustamos el sistema para que aprenda de la nueva información que su empresa genera día a día.
+
+
+SERVICIO 6
+
+- **RAG** IA son Seguridad y calidad de información
+
+RAG: Inteligencia y Verdad de Datos
+Haga que la IA deje de adivinar y empiece a responder con la información real de su empresa.
+
+Plan: RAG Documental (Básico)
+Enfoque: Consulta eficiente de archivos estáticos.
+
+Capacidad: La IA consulta directamente archivos en carpetas locales o en la nube (PDF, Word, TXT).
+
+Funcionalidad: Ideal para resolver dudas sobre manuales, reglamentos internos o catálogos de productos.
+
+Seguridad: La IA se limita estrictamente a la información contenida en los documentos proporcionados.
+
+Ideal para: PYMES que necesitan automatizar la consulta de normativas o procesos internos.
+
+Precio: Consultar con asesor
+
+Plan: RAG Semántico (Pro)
+Enfoque: Comprensión de conceptos y significados.
+
+Capacidad: Implementación de Base de Datos Vectorial con tecnología de Embeddings.
+
+Funcionalidad: La IA entiende el contexto. No busca palabras exactas, busca significados. Si el usuario pregunta por un concepto, la IA lo encuentra aunque se usen sinónimos.
+
+Precisión: Reducción drástica de "alucinaciones" de la IA gracias al cruce semántico de datos.
+
+Ideal para: Áreas de Servicio al Cliente, Soporte Técnico y Ventas.
+
+Precio: Consultar con asesor
+
+Plan: RAG Relacional (Élite)
+Enfoque: Análisis de causalidad y conexiones complejas.
+
+Capacidad: Uso de Embeddings de última generación y estructuras de grafos de conocimiento (GraphRAG).
+
+Funcionalidad: La IA conecta puntos entre diferentes fuentes y tipos de archivos. Puede identificar relaciones de causa y efecto en la información histórica de la empresa.
+
+Visión Estratégica: Capacidad para responder preguntas complejas como: "¿Cómo afectó el cambio de política X en el rendimiento del departamento Y?"
+
+Ideal para: Juntas Directivas, Gerencia General y departamentos de Investigación (I+D).
+
+Precio: Consultar con asesor
+
+
+SERVICIO 7
+
+- **Power Platform" tableros de Power BI, Power automate, Power Apps. implementa IA de forma segura usando la infraestructura de Microsoft.
+
+Ecosistema Microsoft: IA y Automatización CorporativaDeje de pagar licencias externas. Use todo el poder de Microsoft Fabric y Power Platform que su empresa ya tiene.Plan: Automatización y Flujos (Básico)Enfoque: Eliminar tareas manuales y repetitivas usando Power Automate.Optimización de Licencias: Aprovechamos sus cuentas de Office 365 para automatizar procesos entre Outlook, SharePoint, Excel y Teams.IA integrada: Implementación de flujos inteligentes que clasifican correos, extraen datos de facturas o envían alertas automáticas.Beneficio: Ahorro inmediato en "horas-hombre" y eliminación de errores humanos en procesos administrativos.Precio: Consultar con asesorPlan: Inteligencia de Negocios (Pro)Enfoque: Decisiones basadas en datos con Power BI y Microsoft Fabric.Tableros de Control (Dashboards): Creación de visualizaciones interactivas que consolidan información de diferentes fuentes de la empresa.Análisis Predictivo: Uso de las capacidades de IA de Microsoft para identificar tendencias de ventas o cuellos de botella operativos.Centralización: Integración de datos dispersos en listas de SharePoint o archivos de Excel en una "Sola Fuente de Verdad".Precio: Consultar con asesorPlan: Movilidad y Campo (Élite)Enfoque: Control total en tiempo real con Power Apps.Apps para personal técnico/ventas: Creamos aplicaciones móviles personalizadas para que su equipo en campo reporte visitas, pedidos o incidencias al instante.Adiós al WhatsApp sin contexto: Reemplace mensajes informales por formularios estructurados que alimentan automáticamente sus tableros de Power BI.Sincronización Total: Usted ve en tiempo real el desempeño de sus equipos desde cualquier dispositivo, con geolocalización y evidencias fotográficas.Precio: Consultar con asesor¿Por qué elegir la consultoría Microsoft de ProDig?El problema comúnLa Solución ProDigPagar licencias de software externo adicional.Usar lo que ya paga: Construimos su software sobre su infraestructura actual.Datos fragmentados en archivos de Excel.Centralización: Información conectada y segura en la nube de Microsoft.Reportes manuales que tardan días.Tiempo Real: Visualización inmediata de la operación de su empresa.Inseguridad en la transferencia de datos.Seguridad Empresarial: Sus datos nunca salen del entorno seguro de su organización.Copy de Gancho para la web:"Su empresa ya tiene el motor (Office 365), nosotros le enseñamos a conducirlo a máxima velocidad. Evite costos innecesarios en software externo y empiece a usar la Inteligencia Artificial con la seguridad que solo la infraestructura de Microsoft puede ofrecer."
+
+SERVICIO 8
+
+- **Agentes de IA** Con el ADK de Google creamos agentes que le ayudan a reducir las horas hombre en su empresa (todas  las tareas repetitivas son susceptibles de ser automatizadas con Agentes"
+
+Agentes de IA: Su Nueva Fuerza Laboral DigitalAutomatice el razonamiento, no solo las tareas. Creamos trabajadores digitales que piensan, actúan y aprenden dentro de su empresa.Plan: Agente de Asistencia (Básico)Enfoque: Automatización de tareas repetitivas de baja complejidad.Habilidades: Búsqueda y extracción de información específica de internet o documentos internos.Ejemplo de uso: Un agente que monitorea precios de la competencia, resume noticias diarias del sector o gestiona la trazabilidad de lectura y feedback de boletines internos.Cerebro: Modelos optimizados para velocidad y precisión en tareas únicas.Beneficio: Libere a su equipo de 2 a 4 horas diarias de trabajo manual.Precio: Consultar con asesorPlan: Agente de Análisis y Patrones (Pro)Enfoque: Inteligencia aplicada a la toma de decisiones.Habilidades: Identificación de patrones en hábitos de empleados, flujos financieros o comportamiento de clientes.Herramientas: Conexión a sus bases de datos y herramientas de análisis en tiempo real.Ejemplo de uso: Un agente que analiza los reportes de ventas y detecta automáticamente anomalías o fugas de dinero que un humano tardaría semanas en notar.Beneficio: Obtenga alertas tempranas y recomendaciones estratégicas basadas en datos reales.Precio: Consultar con asesorPlan: Ecosistema de Agentes Multi-Tarea (Élite)Enfoque: Orquestación de procesos complejos de punta a punta.Habilidades: Varios agentes coordinados entre sí (un "equipo digital"). Uno investiga, otro analiza y otro ejecuta la acción (enviar correos, actualizar CRM, generar facturas).Cerebro: Modelos de razonamiento avanzado (Gemini 1.5 Pro / GPT-4o) con capacidad multimodal.Ejemplo de uso: Un departamento de "Back-Office" virtual que gestiona pedidos desde que llegan al correo hasta que se reflejan en la contabilidad.Beneficio: Escalabilidad total sin aumentar la nómina.Precio: Consultar con asesor¿Por qué implementar Agentes con ProDig?Lo que hace un Software TradicionalLo que hace un Agente de IA ProDigSigue una regla fija (Si pasa A, haga B).Razona: Si pasa algo inesperado, el agente decide la mejor acción según su instrucción.Requiere que usted ingrese los datos manualmente.Busca: El agente tiene herramientas para ir por la información donde esté.Es una herramienta rígida.Evoluciona: Aprende de sus correcciones y mejora su desempeño con el tiempo.Tu toque personal (Copy sugerido):"Un Agente de IA no es un programa, es una capacidad. En ProDig usamos el ADK de Google para darle a su empresa agentes con el cerebro, las herramientas y las habilidades necesarias para que dejen de gastar 'horas-hombre' en tareas que una IA resuelve en segundos."
+
+SERVICIO 9
+
+- **Capacitación** Usted y sus empleados necesitan capacitación en inteligencia artificial? allá en su empresa?
+
+Capacitación: Inteligencia Artificial para Equipos de Alto RendimientoNo deje que su equipo improvise con la tecnología. Transforme la curiosidad en productividad segura y estratégica.Plan: Alfabetización y Seguridad IA (Nivel Inicial)Enfoque: Prevención de riesgos y fundamentos de productividad.Para quién: Empresas que aún no han implementado IA formalmente.El Riesgo: Evite que sus empleados filtren información confidencial por desconocimiento al "copiar y pegar" en herramientas públicas.Temas clave:Uso ético y seguro de la IA (Habeas Data).Fundamentos de Prompt Engineering para obtener mejores resultados.Cómo Gemini y ChatGPT pueden asistir en tareas diarias de oficina.Resultado: Empleados que usan la IA con confianza y sin poner en riesgo la privacidad de la empresa.Precio: Consultar con asesorPlan: Optimización de Activos IA (Nivel Avanzado)Enfoque: Maximizar el retorno de inversión en licencias y herramientas.Para quién: Pymes que ya pagan planes de IA pero no ven los resultados esperados.El Reto: Deje de subutilizar licencias costosas. Enseñamos a su equipo a ir más allá del chat básico.Temas clave:Automatización de tareas complejas con asistentes avanzados.Uso de IA para análisis de datos, creación de reportes y presentaciones.Integración de flujos de trabajo eficientes según cada departamento (Ventas, RH, Finanzas).Resultado: Un equipo que sabe extraer el 100% del valor de la tecnología que usted ya está pagando.Precio: Consultar con asesorPlan: Taller In-Situ "IA en Acción"Enfoque: Capacitación práctica directamente en sus instalaciones.Modalidad: Sesiones presenciales en su empresa para un aprendizaje directo.Qué incluye:Diagnóstico rápido de los procesos actuales de su equipo.Ejercicios prácticos con los documentos y retos reales de su negocio.Creación de una "Guía de Buenas Prácticas" personalizada para su empresa.Beneficio: Resolución de dudas en tiempo real y alineación inmediata de todo el equipo bajo una misma visión tecnológica.Precio: Consultar con asesor¿Por qué capacitar a su personal con ProDig?Antes de la CapacitaciónDespués con ProDigUso informal con riesgo de filtración de datos.Uso seguro bajo políticas de privacidad empresarial.La IA se percibe como una amenaza al empleo.La IA se percibe como la herramienta de productividad definitiva.Resultados mediocres por falta de técnica.Resultados precisos mediante técnicas avanzadas de comunicación con la IA.Subutilización de licencias y herramientas pagas.Eficiencia operativa y máximo aprovechamiento de la inversión.Mensaje Directo para el Empresario:"Sus empleados ya están usando la Inteligencia Artificial. La pregunta es: ¿lo están haciendo de forma segura y eficiente? En ProDig los capacitamos allá mismo, en su oficina, para que usted recupere el control y multiplique la productividad de su equipo desde el primer día."
+
+SERVICIO 10
+
+- **Consultoría** si requiere una consultoría especializada y entender como la IA  puede impactar su empresa, puedo ayudarlo. aproveche la primera hora de consultoría gratis en su empresa (solo paga los viáticos).
+
+Consultoría: Hoja de Ruta para la Transformación con IANo implemente tecnología por moda, hágalo por estrategia. Diseñamos el camino hacia una empresa inteligente y eficiente.Plan: Diagnóstico de Impacto (Sesión Inicial)Enfoque: Evaluar el estado actual y descubrir oportunidades de mejora inmediata.La Primera Hora es Gratis: Realizamos un diagnóstico preliminar de implementación de IA en su empresa (presencial en Bogotá o virtual para el resto del país/mundo).Alcance: Identificación de cuellos de botella operativos y procesos que pueden ser potenciados con Inteligencia Artificial.Condiciones: Si el diagnóstico es presencial fuera de Bogotá, el cliente solo cubre los viáticos.Precio: Sin costo (Primera hora)Plan: Auditoría y Mapa de Procesos (Estratégico)Enfoque: Un plan detallado de batalla para su Pyme o Empresa.Qué incluye: Un estudio profundo según el tamaño de su empresa y la complejidad de sus procesos actuales.Entregable: Un Informe Detallado de Procesos Empresariales que especifica exactamente qué implementaciones de IA se deben realizar en cada área para maximizar el retorno de inversión.Valor: Usted recibe el "plano" de su futura empresa inteligente, listo para ser ejecutado.Precio: Consultar con asesorPlan: Consultoría de Implementación Integral (Élite)Enfoque: Acompañamiento total en la ejecución del proyecto.Qué incluye: Tras el diagnóstico, gestionamos la transformación completa de la empresa.Asesoría en compra de licencias y hardware especializado.Ajuste y rediseño de tareas y perfiles de cargo.Implementación técnica de las soluciones de IA de ProDig.Gestión del cambio y capacitación continua del personal.Precio: En función de los resultados del diagnóstico¿Por qué iniciar con la Consultoría ProDig?PasoAcciónResultado1. DiagnósticoAnálisis inicial gratuito.Usted sabe dónde está parado y hacia dónde puede ir.2. EstrategiaDiseño del mapa de procesos.Un plan claro sin desperdicio de tiempo ni dinero.3. EjecuciónImplementación técnica y humana.Una empresa automatizada, segura y competitiva.Tu toque personal (Copy de cierre):"Muchos venden software, en ProDig vendemos soluciones de negocio. Entendemos que cada empresa es un mundo; por eso, nos sentamos con usted, analizamos su realidad y le entregamos una hoja de ruta clara. Empecemos hoy con un diagnóstico inicial sin costo: usted pone el café, nosotros ponemos la inteligencia."

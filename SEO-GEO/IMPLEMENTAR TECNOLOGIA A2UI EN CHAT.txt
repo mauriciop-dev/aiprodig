@@ -1,0 +1,39 @@
+IMPLEMENTAR TECNOLOGIA A2UI EN CHAT DE LA PAGIAN PRODIG https://aiprodig.com
+
+Actualmente existe un chat que funciona desde N8N (tienes el MCP de N8N listo y operativo, úsalo)
+
+en la carpeta /SEO-GEO
+
+Tienes los archivos:
+
+MANUAL PRODIG.txt --- este es el mismo archivo que tienen en flujo de N8N
+manualdemarcaprodig.txt --- toda lo relacionado con la marca ProDig
+TABLAS DE PRECIOS.txt --- precios de los servicios de ProDig
+EstrategiaProDig.txt --- documento estratégico ProDig
+
+
+QUE HACER
+
+1. leer todos los documentos
+2. De acuerdo a la lectura definir 10 artefactos A2UI para usar en el chat (Líneas de tiempo, formulario, grafica, tarjetas, animaciones, slides, etcetera, según se requiera)
+3. hacer ajustes en interfaz de chat para que los elementos A2UI se muestren adecuadamente.
+4. para que el formulario funcione, haz que envíe la información usando formspree con este enlace https://formspree.io/f/mzdyzqwb
+5. Si es necesario crea los archivos que se requieran: .json, .py, .md, y los demás que sean necesarios.
+6. asegura que esto siempre funcione con el chat.
+7. tienes el mcp de GitHub para subir los archivos, úsalo.
+
+QUE SOLUCIONAMOS CON A2UI
+
+Como el chat tiene un espacio tan reducido y solo se usa texto, algunas respuestas implican el uso de mucho texto y eso aleja a los usuarios, por eso es mas llamativo hacerlo gráficamente.
+
+Respuestas a preguntas:
+
+1.Si ya hay un un chat en N8N este es la url https://n8n.automatizarempresa.online/webhook/1d4c933d-2dd1-453d-b413-2481fab30717/chat
+
+2. Este es el repositorio de GitHub, el que ya venimos manejando con ProDig https://github.com/mauriciop-dev/aiprodig
+
+3. Agent to user Interface (A2UI)
+
+4. No, el formulario es solo uno de los artefactos y si debe incluir los campos que mencionas.
+
+5. es un widget separado, es  una ventana lateral, como un side.

@@ -1,0 +1,42 @@
+CAMBIOS EN LA PAGINA PROYECTOS
+
+
+- El logo de  indutop que esta en la sección main, cambiarlo por el logo de Perímetro de color blanco, este logo lo encuentras en: public\IMAGENES\LOGOS\LOGOS PERIMETRO/INTP_2024_LOGOS PERIMETRO E INDUTOP HISTORIAL-14.png Debe quedar centrado y mas grande que el actual (si puedes déjale debajo que diga centrado "Una marca Indutop"
+
+- En las 3 tarjetas Los textos que están en mayúsculas no se ve completo el texto en mayuscula, amplia la tarjeta verticalmente para que se muestren completos estos textos.
+
+- El slide de logo de clientes debe continuar sin cortarsen los logos
+
+- En la sección de estadísticas los números están en color azul, cámbialos al naranja que estamos manejando en el sitio.
+
+- Link de opiniones de clientes en la pagina de proyectos
+
+- Poner enlace de LinkedIn con logo de imagen
+
+- Entre las secciones Nuestra Experiencia y la sección Quienes somos, Crea una nueva sección, que sea un slide horizontal de trabajos realizados. el objetivo es mostrar los trabajos realizados, puedes hacer un slide horizontal en el que aparezcan las fotos que están en la carpeta public/FOTOS TRABAJOS PERIMETRO, puedes poner de a 4 o 3 fotos, con cambios automático y con flechas de desplazamiento (Dato: Puedes usar los nombre de las carpetas para poner un texto debajo de cada foto, por ejemplo: "Campestre, Chinauta 1", "Campestre, San Francisco El Encuentro 1", "Residencial, Calle 90 1", "Residencial, Calle 90 2" y así sucesivamente") como es arquitectónico haz que tenga un diseño bien elegante.
+
+CAMBISO PAGINA INICIAL
+
+- Hacer mas responsive design en el celular y tablet por que no tiene márgenes, las tarjetas y los objetos de la página, se ven metidas en el borde de la pantalla.
+- Revision general de márgenes para diferentes dispositivos
+
+Hacer una revision general del sitio para dispositivos móviles (la version de escritorio esta perfecta así hasta el momento) pero la version móvil hay que revisarla por que algunas secciones o imágenes se pierden en las orillas de celular o no se ven completas (el manu parece que ya esta arreglado) pero revisa la configuración para dispositivos móviles y mantenla separada de la de ordenador. evita desbordamientos y encapsula los estilos específicos, entre otras mejoras.
+
+
+
+---------
+
+CAMBIOS EN BARNAV
+
+- Quitar el degrade de la barnav y poner el fondo gris
+- Hacer el logo de inicio de Indutop mas grande en proporción en la barnav
+- Colores de marca #CC4D00 #565655 #NaN0000
+- Quitar el menu de categorías de la pagina de proyectos
+- En pantallas como del celular o tablet hacer el menu desplegable que se vea ordenado (poner el botón de las tres líneas y que salgan las opciones) por que en este momento al ver la barnav en un celular el menu se ve desordenado.
+- subir todo a GitHub
+
+CAMBIOS EN SECCIONES
+
+
+
+

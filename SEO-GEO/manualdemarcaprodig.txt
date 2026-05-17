@@ -1,0 +1,239 @@
+
+MANUAL DE MARCA
+ProDig
+Prospectiva Digital
+"Orquestamos Contextos, Programamos Futuros"
+
+Versión 1.0 | 2026
+Tabla de Contenidos
+1. Introducción
+2. Identidad Estratégica
+3. Identidad Visual
+4. Tipografía
+5. Iconografía y Elementos Gráficos
+6. Aplicaciones de la Marca
+7. Normas de Uso
+1. Introducción
+Este manual de marca establece las directrices visuales y estratégicas para la comunicación consistente de ProDig - Prospectiva Digital en todos los puntos de contacto con nuestros stakeholders.
+ProDig no es una fábrica de software tradicional. Somos arquitectos de contextos que transforman visiones estratégicas en ecosistemas digitales funcionales y autoorganizados.
+Este documento garantiza que nuestra identidad se mantenga consistente, reconocible y memorable, reflejando nuestro posicionamiento como líderes en transformación digital e innovación en Latinoamérica.
+2. Identidad Estratégica
+2.1 Visión
+Liderar la transición de Latinoamérica hacia una economía de activos inteligentes, donde la inteligencia artificial no sea una herramienta externa, sino el tejido fundamental que conecte el propósito de las organizaciones con su ejecución física y digital.
+2.2 Misión
+Diseñar, desarrollar y orquestar ecosistemas digitales de alto impacto mediante la Metodología de Desarrollo Dirigida por Contexto (MDDC), permitiendo que empresas y profesionales escalen su potencial a través de la automatización inteligente y la creación de activos SaaS propietarios.
+2.3 Lema Corporativo
+"Orquestamos Contextos, Programamos Futuros"
+2.4 Valores Nucleares
+Soberanía del Contexto
+Entendemos que el código es efímero, pero el contexto es el activo real. Priorizamos la captura y estructuración del conocimiento del negocio para que la tecnología sea siempre una consecuencia de la estrategia.
+Agilidad de Orquestación
+Actuamos como directores de orquesta que guían a la IA para transformar visiones en productos funcionales en tiempos récord. Esta es nuestra definición de Vibe Coding.
+Pragmatismo Ético
+Creemos en una tecnología que proteja al usuario. Promovemos soluciones donde la soberanía de los datos sea innegociable.
+Curiosidad Prospectiva
+Nuestra mirada está puesta en la frontera. Desde la IA actual hasta la investigación en Materia Programable, exploramos hoy lo que será estándar mañana.
+2.5 Diferencial: Metodología MDDC
+ProDig opera bajo la Metodología de Desarrollo Dirigida por Contexto (MDDC), un estándar propio que redefine la creación digital:
+Ingeniería de Contexto: Construcción de la biología del proyecto antes de la primera línea de código
+Orquestación Dirigida por Contexto: Supervisión de la ejecución precisa de IA manteniendo la coherencia del proyecto
+Arquitectura de Activos: Entrega de soluciones autónomas y escalables, no herramientas
+3. Identidad Visual
+3.1 Paleta de Colores
+La paleta de colores de ProDig representa la síntesis entre el presente tecnológico y el futuro prospectivo.
+Color
+Código Hex
+RGB
+Uso
+Púrpura Primario
+#667EEA
+102, 126, 234
+Primario, headings, botones
+Púrpura Secundario
+#764BA2
+118, 75, 162
+Secundario, énfasis
+Blanco
+#FFFFFF
+255, 255, 255
+Fondo principal
+Gris Oscuro
+#333333
+51, 51, 51
+Texto principal
+Gris Neutro
+#999999
+153, 153, 153
+Texto secundario
+
+
+Descripción de Usos
+Púrpura Primario
+Color dominante. Representa innovación, inteligencia y transformación digital. Utilizar en headings, botones primarios y elementos de navegación principal.
+Púrpura Secundario
+Color de profundidad y solidez. Representa la maestría y la experiencia acumulada. Utilizar en elementos secundarios, énfasis y gradientes.
+Blanco
+Claridad y espacio. Fondo principal. Transmite apertura y transparencia.
+Gris Oscuro
+Texto principal y estructura. Asegura legibilidad y profesionalismo.
+Gris Neutro
+Texto secundario, subtítulos y elementos desenfatizados.
+Degradado Primario
+De #667EEA a #764BA2. Utilizar en backgrounds de impacto, ilustraciones y elementos decorativos. Representa el continuum entre presente e innovación futura.
+4. Tipografía
+4.1 Familia Tipográfica
+Elemento
+Fuente
+Tamaño
+Peso
+H1
+Calibri
+40-56pt
+Bold
+H2
+Calibri
+28-36pt
+Bold
+H3
+Calibri
+20-24pt
+Bold
+Body
+Calibri
+12-16pt
+Regular
+Caption
+Calibri
+10-12pt
+Regular
+
+
+Calibri (Display & Headlines)
+Moderna, legible y profesional. Ideales para títulos y headings que deben captar atención. Utilizar en tamaños 28pt en adelante para máximo impacto visual.
+Calibri (Body Text)
+La misma familia en tamaños más pequeños (12-16pt) para texto corrido. Proporciona continuidad visual y facilita la lectura.
+4.2 Jerarquía Tipográfica
+Nivel
+Tamaño
+Peso
+Color
+Espaciado
+Título Principal
+56pt
+Bold
+Púrpura
+24pt abajo
+Encabezado 1
+40pt
+Bold
+Púrpura
+18pt abajo
+Encabezado 2
+32pt
+Bold
+Púrpura Sec.
+12pt abajo
+Encabezado 3
+24pt
+Bold
+Gris Oscuro
+8pt abajo
+
+5. Iconografía y Elementos Gráficos
+5.1 Sistema de Iconos
+Los iconos de ProDig deben ser minimalistas, geométricos y reconocibles a pequeña escala. Utilizar líneas limpias y formas simples que reflejen modernidad y precisión.
+
+Principios de Diseño de Iconos
+Simplicidad: máximo 5 elementos visuales por ícono
+Consistencia: peso de línea uniforme (2-3px a 32x32px)
+Reconocibilidad: funcionan claramente incluso a tamaño pequeño
+Colores: usar únicamente Púrpura Primario o Gris Oscuro
+
+5.2 Elementos Decorativos
+Círculos Concéntricos
+Elemento signature del brand. Representa la expansión, las ondas de contexto propagándose. Utilizar en backgrounds, decoraciones de página y elementos secundarios.
+
+Líneas y Separadores
+Líneas limpias en Púrpura Primario para separar secciones. Ancho: 2-4px. Estas crean ritmo visual y guían la lectura.
+
+Patrones de Fondo
+Utilizar el degradado primario (#667EEA a #764BA2) con ocasionales capas de círculos concéntricos semitransparentes para crear profundidad sin que sea abrumador.
+6. Aplicaciones de la Marca
+6.1 Sitio Web
+Utilizar Púrpura Primario en header, navegación y botones de CTA
+Background blanco con bandas de degradado en secciones de impacto
+Títulos en Calibri Bold, 40-56pt
+Iconografía consistente en todas las secciones de servicios
+
+6.2 Materiales Impresos
+Tarjetas de Presentación: Fondo blanco, nombre y logo en Púrpura Primario
+Membretes: Línea decorativa en Púrpura Primario en encabezado
+Propuestas y Reportes: Portada con degradado, interior blanco
+
+6.3 Presentaciones (PowerPoint/Google Slides)
+Portada: Degradado de fondo, logo blanco, título en Calibri Bold 56pt
+Slides de contenido: Fondo blanco, encabezados en Púrpura Primario
+Línea horizontal en Púrpura Secundario bajo cada encabezado
+
+6.4 Redes Sociales
+Paleta consistente: Púrpura Primario como color principal
+Posts: Texto blanco sobre degradado para máximo contraste
+Stories y Reels: Usar círculos concéntricos como transiciones
+
+6.5 Correo Electrónico
+Encabezado con logo y línea en Púrpura Primario
+CTA (Botones): Fondo Púrpura Primario, texto blanco, bordes redondeados
+Firma: Logo pequeño + datos en Gris Oscuro
+7. Normas de Uso
+7.1 Logo
+Espacio Mínimo
+Mantener un espacio mínimo equivalente a 1/3 de la altura del logo en todos sus lados.
+
+Tamaño Mínimo
+Web: 200px de ancho | Impreso: 2.5cm de ancho | Favicon: 32x32px mínimo
+
+Variaciones de Color
+Sobre fondo blanco: Logo en Púrpura Primario
+Sobre fondo Púrpura: Logo en blanco
+Escala de grises: Aceptable solo cuando sea técnicamente necesario
+
+7.2 Prohibiciones
+NO distorsionar, estirar o comprimir el logo
+NO cambiar los colores del logo (excepto versión blanca)
+NO usar el logo en fondos que no proporcionen suficiente contraste
+NO agregar sombras, efectos o decoraciones al logo
+NO rotoscalear el logo a tamaños menores a lo especificado
+
+7.3 Contraste y Accesibilidad
+Púrpura Primario sobre blanco: Ratio 5.6:1 (WCAG AA)
+Púrpura Primario sobre Púrpura Secundario: Ratio 1.8:1 (use solo con texto grande o para decoración)
+Gris Oscuro sobre blanco: Ratio 9.8:1 (WCAG AAA)
+
+7.4 Tone of Voice
+Principios
+Prospectivo: Hablamos del futuro como algo que construimos hoy
+Técnicamente preciso: Sin jerga innecesaria, pero sin reduccionismo
+Empoderador: Mostramos posibilidades, no limitaciones
+Latinoamericano: Raíces locales, visión global
+
+Ejemplos
+Contexto
+Evitar
+Preferir
+Presentar funciones
+Este software resuelve X
+Orquestamos X para que tu negocio crezca
+Explicar MDDC
+Es nuestra metodología
+El contexto es tu mayor activo; nosotros lo orquestamos
+Hablar del futuro
+Quizás algún día
+Hoy construimos el mañana de Latinoamérica
+
+Conclusión
+Este manual de marca es un documento vivo. Conforme ProDig evoluciona y explora nuevas fronteras—desde blockchain hasta Materia Programable—estas directrices pueden adaptarse, pero nunca perderán su esencia:
+
+Soberanía del contexto. Agilidad de orquestación. Pragmatismo ético. Curiosidad prospectiva.
+
+Para consultas sobre la aplicación de este manual, contacta al equipo de marca de ProDig.
+Bogotá, Colombia | 2026

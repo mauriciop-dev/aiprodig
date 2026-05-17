@@ -1,0 +1,1216 @@
+﻿DOCUMENTO ESTRATÉGICO
+ProDig
+Prospectiva Digital
+"Del Bit al Átomo"
+La Hoja de Ruta de la Gran Convergencia
+ 
+Bogotá, Colombia | 2026
+Tabla de Contenidos
+Quiénes Somos
+Nuestra Identidad Estratégica
+Nuestro Diferencial: MDDC
+Historia y Narrativa
+Cómo Trabajamos
+Qué Hacemos Hoy (Fase I)
+La Próxima Frontera (Fases II y III)
+Compromiso con el Cliente
+1. Quiénes Somos
+ProDig (Prospectiva Digital) es un laboratorio de innovación fundado por Mauricio Pineda, un arquitecto digital con formación en gestión pública de alto nivel y maestría en decisión política. No somos una agencia de software tradicional, ni una consultoría reactiva. Somos un colectivo de ingenieros, contextuadores y futuristas que creen que la distinción entre el software y el hardware es una limitación temporal.
+Nuestro equipo está formado por:
+•         Arquitectos de Contextos: Especialistas en traducir complejidad empresarial en sistemas simples y escalables
+•         Directores de Orquesta IA: Ingenieros que guían a la inteligencia artificial con precisión y propósito
+•         Investigadores Prospectivos: Exploradores de las próximas fronteras (blockchain, IoT, materia programable)
+•         Guardianes de Datos: Defensores de la soberanía digital y la privacía en la era de la IA
+ 
+Operamos desde Bogotá, pero nuestro mercado es Latinoamérica. Nuestra visión trasciende las fronteras geográficas y tecnológicas.
+2. Nuestra Identidad Estratégica
+2.1 Visión
+Liderar la transición de Latinoamérica hacia una economía de activos inteligentes, donde la inteligencia artificial no sea una herramienta externa, sino el tejido fundamental que conecte el propósito de las organizaciones con su ejecución física y digital.
+Esta visión implica que las organizaciones del futuro no tendrán que elegir entre eficiencia e impacto. Su propósito y su ejecución estarán siempre sincronizados, mediados por una inteligencia que entiende el contexto completo.
+ 
+2.2 Misión
+Diseñar, desarrollar y orquestar ecosistemas digitales de alto impacto mediante la Metodología de Desarrollo Dirigida por Contexto (MDDC), permitiendo que empresas y profesionales escalen su potencial a través de la automatización inteligente y la creación de activos SaaS propietarios.
+Nuestra misión es operativa. No hablamos de transformación abstracta; construimos soluciones concretas que generan valor desde el día uno, mientras sembramos las semillas de la innovación futura.
+ 
+2.3 Lema Corporativo
+"Orquestamos Contextos, Programamos Futuros"
+Un lema que captura nuestra esencia: somos maestros del contexto, no del código. El código es la consecuencia.
+2.4 Valores Nucleares
+◇ Soberanía del Contexto
+El código es efímero. Las herramientas envejecen. Los frameworks se reemplazan cada tres años.
+Pero el contexto—el conocimiento profundo de por qué una organización existe, cómo crea valor, cuál es su verdadera ventaja competitiva—eso es el activo real. Priorizamos la captura, estructuración y documentación del conocimiento del negocio. La tecnología es siempre una consecuencia de la estrategia, nunca al revés.
+ 
+♪ Agilidad de Orquestación (Vibe Coding)
+Adoptamos la fluidez del desarrollo moderno. No somos programadores en el sentido tradicional; somos directores de orquesta que guían a la IA (y a los humanos) para transformar visiones en productos funcionales en tiempos récord.
+El 'vibe' de un proyecto es su coherencia invisible: la alineación entre lo que el cliente quiere, lo que el equipo construye, y cómo se siente el resultado. Mantenemos ese vibe intacto incluso cuando delegamos trabajo a agentes de IA.
+ 
+✓ Pragmatismo Ético (IA en Local)
+Creemos en una tecnología que proteja al usuario. No en una tecnología que lo exponga. Por eso promovemos soluciones donde la soberanía de los datos sea innegociable: IA local, encriptación de extremo a extremo, y un modelo económico donde el usuario es cliente, no producto.
+La ética no es un módulo que se agrega al final. Es parte de la arquitectura desde el primer día.
+ 
+→ Curiosidad Prospectiva
+Nuestra mirada está siempre puesta en la frontera. Desde la IA actual hasta la investigación en materia programable, exploramos hoy lo que será estándar mañana. Invertimos en R&D, participamos en comunidades de innovación, y documentamos nuestros aprendizajes.
+Cada proyecto de hoy es una oportunidad para entender cómo el software gobernará los átomos del futuro.
+3. Nuestro Diferencial: La Metodología MDDC
+La Metodología de Desarrollo Dirigida por Contexto (MDDC) es nuestro estándar propio. No es un framework más; es una filosofía de ingeniería que redefine cómo se crea software de impacto.
+ 
+3.1 Las Tres Capas de MDDC
+Capa 1: Ingeniería de Contexto (Context Engineering)
+Antes de escribir la primera línea de código, construimos la biología del proyecto. Definimos:
+•         El propósito real (no lo que el cliente dice que quiere, sino por qué realmente existe su negocio)
+•         Las reglas del dominio (cómo funciona su industria, qué restricciones y libertades tiene)
+•         Las intenciones primarias (qué decisiones debe automatizar la IA, cuáles deben mantenerse humanas)
+•         El mapa de la solución (arquitectura de alto nivel, flujos críticos, métricas de éxito)
+Este contexto se documenta en un archivo llamado .context que sirve como la brújula del proyecto. Cualquier agente de IA que toque el proyecto lo lee primero.
+ 
+Capa 2: Orquestación Dirigida por Contexto (CDO)
+Utilizamos el Vibe Coding como una disciplina técnica. El 'vibe' es la coherencia invisible que mantiene un proyecto unido. Nuestro rol es:
+•         Mantener la intención del proyecto intacta incluso cuando el equipo crece
+•         Supervisar la ejecución precisa de la inteligencia artificial
+•         Identificar brechas entre la visión y la realidad antes de que se conviertan en problemas
+•         Celebrar cuando el sistema se comporta exactamente como fue diseñado
+ 
+Capa 3: Arquitectura de Activos
+No entregamos herramientas. Entregamos activos.
+Un activo es una solución autónoma que el cliente puede usar, modificar, o integrar sin depender continuamente de nosotros. PAIC es un ejemplo: comenzó como una solución para un cliente específico (administración residencial) y evolucionó a una plataforma SaaS que genera valor independientemente.
+Nuestro objetivo es que cada proyecto genere un activo que pueda ser replicado, escalado, y (eventualmente) monetizado.
+4. Historia y Narrativa
+4.1 El Origen: Del Servicio Público a la Innovación
+ProDig nace del encuentro entre dos mundos: la gestión pública de alto nivel y la pasión por el desarrollo tecnológico.
+Mauricio Pineda pasó años en la administración pública, en roles de decisión política. Aprendió cómo funcionaban realmente las organizaciones: no por la excelencia de sus procesos, sino por la claridad de sus propósitos. También vio cómo la tecnología se implementaba mal: sistemas costosos, desalineados con el negocio real, reemplazados antes de haber generado valor.
+La pregunta que surgió fue simple pero fundamental: ¿y si el problema no es la falta de tecnología, sino la falta de contexto?
+De ahí nació el DNA de ProDig. De la convicción de que antes de automatizar, antes de innovar, es necesario entender. Profundamente.
+ 
+4.2 La Evolución: De Consultoría a Laboratorio
+Lo que comenzó como una consultoría estratégica rápidamente evolucionó. Los clientes no querían reportes; querían soluciones. No querían análisis; querían sistemas vivos.
+Entonces ProDig se transformó en un laboratorio de innovación donde la teoría y la práctica convergen.
+Hoy desarrollamos:
+•         Plataformas de blockchain (Validador Hazel): Explorando cómo la descentralización puede mejorar la confianza en sistemas críticos
+•         Sistemas de trazabilidad industrial: Conectando contexto físico con decisiones digitales
+•         Soluciones PropTech (PAIC): Demostrando que el software inmobiliario no tiene que ser complejo
+•         Automatización empresarial: Utilizando n8n, Power Automate y IA local para empresas que quieren controlar su destino digital
+ 
+4.3 El Cambio de Narrativa
+ProDig representa la evolución del desarrollador:
+•         De un escritor de sintaxis a un Arquitecto de Contextos
+•         De alguien que dice 'aquí está tu aplicación' a alguien que dice 'aquí está tu activo'
+•         De servicios reactivos a innovación prospectiva
+5. Cómo Trabajamos
+Nuestra metodología es exhaustiva pero ágil. Creemos que se puede ser riguroso sin ser lento.
+ 
+5.1 Las Dos Fases Principales
+Fase 1: Cerebro (Planning & Context Engineering)
+Duración: 2-4 semanas (según complejidad)
+En esta fase, no escribimos ni una línea de código. Construimos el context completo del proyecto. Trabajamos con el cliente para definir:
+•         Arquitectura de alto nivel
+•         Stack tecnológico
+•         Flujos de usuario y casos de uso críticos
+•         Métricas de éxito
+•         Equipo de agentes de IA que se necesita
+•         Roadmap de entregas
+Todo esto se guarda en /.context—la memoria viva del proyecto.
+ 
+Fase 2: Motor (Development & Delivery)
+Duración: Varía según proyecto (típicamente 6-12 semanas)
+Aquí ejecutamos. Nuestro equipo de agentes de IA (ProDig Agents) trabaja bajo orquestación humana. El orquestador lee /.context, valida que todo se alinee con la visión original, y delega trabajo de manera precisa.
+Entregamos en sprints de 2 semanas con demos, feedback del cliente, y ajustes continuos.
+ 
+5.2 Nuestro Ecosistema de Agentes
+No trabajamos solos. Trabajamos con agentes de IA organizados de dos formas:
+ProDig Agents (Equipo de Desarrollo)
+Agentes que nos ayudan a construir. Incluyen:
+•         Orquestador Principal: Coordina todo el trabajo
+•         Agentes de Arquitectura: Diseñan la estructura
+•         Agentes de Codificación: Implementan lo diseñado
+•         Agentes de Testing: Validan cada cambio
+•         Agentes de Documentación: Documentan en tiempo real
+ 
+AP Agents (Agentes de Producción)
+Agentes que viven dentro de la aplicación. Incluyen:
+•         Orquestador de la Aplicación: Asegura que la app funcione correctamente cada minuto
+•         Agente A2A (Agent to Agent): Comunica la app con nuestros sistemas de ProDig
+•         Shadow Agents: Monitorean el comportamiento del usuario, detectan bugs, sugieren mejoras y reportan todo al A2A
+6. Qué Hacemos Hoy: Fase I (Inteligencia de Contexto)
+Horizonte 1: Enseñar a las máquinas a entender el mundo humano a través de la MDDC.
+6.1 Nuestros Servicios Actuales
+Inteligencia de Negocios (Power BI)
+Convertimos datos en decisiones. Dashboards en tiempo real que muestran la salud real de un negocio, no lo que alguien cree que es la salud.
+ 
+Automatización de Procesos (Power Automate, n8n)
+Eliminamos trabajo manual. Pero no de manera ciega. Primero entendemos el proceso, luego lo optimizamos.
+ 
+Inteligencia Artificial Empresarial (en Local)
+Modelos de IA que viven dentro de tu infraestructura. ChatGPT local. Asistentes internos. Generación automática de reportes. Todo sin enviar datos a terceros.
+ 
+Aplicaciones Empresariales (Power Apps)
+Apps construidas rápido, pero bien. CRMs internos, sistemas de inventario, aplicaciones de campo. Sin esperar 6 meses.
+ 
+Consultoría en Transformación Digital
+Te ayudamos a entender tu contexto real, a identificar dónde la tecnología puede generar impacto, y a construir un roadmap que tenga sentido.
+ 
+6.2 Nuestros Activos SaaS
+PAIC (Plataforma de Administración Integrada Contextualizada)
+Solución de software para la administración residencial. Comenzó como un proyecto para un cliente específico y evolucionó a una plataforma SaaS. Cubre cobranzas, mantenimiento, comunicaciones con residentes, reportes regulatorios.
+PAIC demuestra el principio de ProDig: entender el contexto de la administración inmobiliaria resulta en un software que funciona.
+ 
+Validador Hazel
+Plataforma blockchain para validación de activos e identidades en contextos donde la confianza es crítica. Exploramos cómo la descentralización puede mejorar sistemas que hoy dependen de autoridades centralizadas.
+7. La Próxima Frontera: Fases II y III
+7.1 Fase II: Orquestación de Entornos (Software + Hardware)
+Objetivo: Que la inteligencia salga de la pantalla e interactúe con el entorno físico.
+En esta fase (inicio: 2027-2028), llevamos nuestros algoritmos al mundo real. IoT. Robótica asistida por IA. Sistemas que sienten y reaccionan.
+Ejemplo: Un almacén que optimiza su inventario no solo en software, sino moviendo físicamente el stock gracias a robots guiados por algoritmos que entienden el contexto completo de la operación.
+ 
+7.2 Fase III: Materia Programable (La Frontera Final)
+Objetivo: El software se convierte en hardware. La capacidad de programar átomos.
+En esta fase (inicio: 2029+), trabajamos en la investigación de materiales inteligentes, estructuras que cambian de forma bajo demanda, y la fabricación de objetos que son simultáneamente software y hardware.
+Aquí es donde nace el Instituto Latinoamericano de Materia Programable (ILMP), el núcleo de investigación y educación que sostendrá esta próxima era.
+ 
+7.3 ¿Por Qué Esto Importa?
+Un mundo con materia programable es un mundo:
+•         Sin desperdicio: Los objetos se transforman en lugar de desecharse
+•         Adaptable: La infraestructura evoluciona con las necesidades de las personas
+•         Democrático: La capacidad de crear está al alcance de un comando
+8. Compromiso con el Cliente
+Cada empresa que confía su transformación digital a ProDig no está simplemente comprando una automatización. Está financiando la investigación de la próxima frontera tecnológica. Sus proyectos de hoy son los experimentos que nos permiten entender cómo el código gobernará los átomos del mañana.
+8.1 Lo Que Promete ProDig
+•         Entenderemos tu contexto antes de cualquier otra cosa
+•         Construiremos un activo, no una herramienta descartable
+•         Protegeremos la soberanía de tus datos
+•         Te incluiremos en la investigación del futuro
+•         Seremos transparentes sobre lo que es posible y lo que no
+ 
+8.2 La Hoja de Ruta Conjunta
+ProDig no es una agencia que entrega un proyecto y se va. Somos una alianza a largo plazo. Tu transformación digital es nuestro laboratorio.
+Esto significa:
+•         Hoy (2026): Optimizar tus procesos y crear tu primer activo digital
+•         Mañana (2027-2028): Llevar tu inteligencia al mundo físico
+•         Futuro (2029+): Participar en la construcción de la materia programable
+Conclusión
+ProDig es el puente entre lo que la tecnología puede hacer hoy y lo que hará mañana.
+No vendemos software. Vendemos contexto. No entregamos proyectos. Construimos alianzas. No queremos ser recordados por lo que hicimos en 2026; queremos ser recordados por ser los pioneros que llevaron a Latinoamérica del bit al átomo.
+ 
+Comenzamos aquí: https://aiprodig.com
+Terminamos aquí: http://materiaprogramable.com
+"Orquestamos Contextos. Programamos Futuros."
+ 
+ProDig - Prospectiva Digital
+Bogotá, Colombia | 2026
+Información de Contacto
+Bogotá, Colombia
++57 314 489 7092
+mauricio.pineda@prospectivadigital.com
+Horarios de Atención
+Lunes a Viernes: 8:00 AM - 6:00 PM
+Sábados: 9:00 AM - 2:00 PM
+
+
+
+
+Nuestros Servicios
+Transformamos tu negocio con soluciones inteligentes y a la medida
+Inteligencia de Negocios con Microsoft Power BI
+Dashboards en tiempo real.
+Reportes personalizados (KPI).
+Integración de múltiples fuentes de datos.
+Análisis predictivo.
+Ejemplo: un gerente de ventas ve el estado de sus metas en tiempo real desde su celular.
+Aplicaciones Empresariales con Microsoft Power Apps
+Formularios inteligentes.
+Apps para inventarios y logística.
+CRM interno para clientes y proveedores.
+Integración con SharePoint, Teams y Excel.
+Ejemplo: un vendedor en campo registra un pedido desde su celular y llega de inmediato al área administrativa.
+Automatización de Procesos con Microsoft Power Automate
+Notificaciones automáticas.
+Procesamiento de facturas y documentos.
+Aprobaciones digitales.
+Integración entre apps de Microsoft.
+Ejemplo: una solicitud de cliente genera automáticamente una alerta y asignación en el sistema.
+Automatización Avanzada con N8N
+Integración entre aplicaciones externas (Google, Slack, WhatsApp, ERPs, CRMs).
+Workflows personalizados.
+Automatización de marketing (emails, SMS, WhatsApp).
+Procesamiento de datos desde APIs externas.
+Ejemplo: un cliente llena un formulario y se actualiza el CRM, se envía WhatsApp y se guarda en una hoja de control.
+Inteligencia Artificial Empresarial en Local
+Modelos de IA locales (GPT-OSS, DeepSeek).
+Asistentes internos para empleados.
+Chatbots en la web entrenados con documentos propios.
+Generación automática de reportes y certificaciones laborales.
+Ejemplo: un empleado pide “genera certificación laboral de Juan Pérez” y obtiene el PDF listo en segundos.
+Consultoría en Automatización e Inteligencia Artificial
+Diagnóstico de procesos actuales.
+Identificación de cuellos de botella.
+Roadmap tecnológico.
+Implementación con Microsoft 365, N8N e IA local.
+Ejemplo: diseñamos el flujo ideal de inventarios y aplicamos la mejor combinación de herramientas.
+Ventajas de trabajar con ProDig
+ Soluciones a la medida.
+ IA en local (seguridad de datos).
+ Reducción de costos operativos.
+ Acompañamiento en adopción digital.
+
+
+## TABLAS DE PRECIOS
+
+
+En cada página crear las tablas de precios con la información de cada servicio.
+La moneda principal es el peso COP, también señalar el precio en Yuanes y dólares de acuerdo a TRM
+
+
+
+
+SERVICIO 1
+
+
+- **Sitios Web IA** paginas web integradas con IA y/o automatización:        
+
+
+
+
+Planes sitios web con IA
+
+
+- si quiere una landing-page sencilla con formulario, botón whatsapp, dominio, hosting, 1 correo por 1 año eso vale desde 800.000
+
+
+- si quiere que la ayude a configurar su pagina de uno de esos servicios como wix, Hostinger etcetera eso le vale entre 400.000 y 600.000
+
+
+- Si quiere una pagina a la medida con sus propias especificaciones, pagina principal y hasta 8 subpáginas, con dominio, hosting, 2 correos, desde 1.400.000
+
+
+- Si quiere una tienda virtual con hasta 8 paginas, dominio, hosting, 4 correos por 1 año inicia en 2.000.000
+
+
+- si quiere  un desarrollo a la medida mas grande contáctenos
+
+
+
+
+SERVICIO 2
+
+
+- **SEO y GEO** En 2026 ya no es solo salir en Google, ahora es ser el referente de las IAs
+
+
+Planes SEO + GEO
+
+
+1. Plan "Presencia" (Nivel Inicial)
+Ideal para: Profesionales independientes o negocios locales que están lanzando su sitio.
+
+
+Promesa: "Aseguramos que tu marca exista oficialmente en la web para humanos y algoritmos."
+
+
+Entregables SEO:
+
+
+Configuración técnica de Google Search Console y Analytics 4.
+
+
+Optimización de Meta-etiquetas (Títulos y Descripciones) en las páginas principales.
+
+
+Indexación manual de URLs para aparición inmediata.
+
+
+Entregables GEO:
+
+
+Creación de archivo JSON-LD (Organization) para que la IA sepa quién eres.
+
+
+Implementación de FAQ semánticas (3-5 preguntas clave) para aparecer en fragmentos destacados.
+
+
+Precio sugerido (COP): $1.200.000 (Pago único o mensualidad baja de mantenimiento).
+
+
+2. Plan "Relevancia" (Nivel Profesional)
+Ideal para: Empresas en crecimiento que necesitan superar a su competencia directa.
+
+
+Promesa: "Posicionamos tu sitio como una opción preferida y confiable en los buscadores."
+
+
+Entregables SEO (Presencia +):
+
+
+Optimización de velocidad de carga (Core Web Vitals) para evitar rebote.
+
+
+Estrategia de SEO Local: Optimización de perfil de negocio (Maps) y palabras clave geolocalizadas.
+
+
+Auditoría de contenido: Ajuste de encabezados (H1-H3) bajo intención de búsqueda.
+
+
+Entregables GEO (Presencia +):
+
+
+Marcado de datos avanzado por Categoría/Servicio (Schema Service o Product).
+
+
+Glosario Semántico: Definición de términos clave del sector para alimentar el conocimiento de las IAs.
+
+
+Optimización de Atributos Alt en imágenes para búsqueda multimodal.
+
+
+Precio sugerido (COP): $2.500.000 / mes.
+
+
+3. Plan "Autoridad AI" (Nivel Élite)
+Ideal para: Marcas que quieren ser la fuente de verdad y el referente número uno de las IAs.
+
+
+Promesa: "Dominio total. Hacemos que la IA te cite como el experto oficial de tu industria."
+
+
+Entregables SEO (Relevancia +):
+
+
+Topic Clusters: Creación de una red de contenidos interconectados que demuestran autoridad temática.
+
+
+Gestión de Backlinks de autoridad (enlaces externos de calidad).
+
+
+Reporte de competencia: Análisis de brecha de contenido frente a líderes del mercado.
+
+
+Entregables GEO (Relevancia +):
+
+
+Entity Linking: Conexión de tu sitio con perfiles sameAs (Wikipedia, LinkedIn, portafolios) para validar tu E-E-A-T.
+
+
+Resúmenes TL;DR (Executive Summaries): Bloques de texto diseñados específicamente para ser extraídos por modelos como Gemini o Perplexity.
+
+
+Monitoreo de Menciones: Informe mensual de cómo y cuánto están citando los LLMs a tu marca.
+
+
+Precio sugerido (COP): $4.800.000+ / mes.
+
+
+
+
+
+
+SERVICIO 3
+
+
+- **Chatbots** La forma mas fácil, rápida y eficiente de que tu empresa inicie en el mundo de IA
+
+
+Servicio: Chatbots Inteligentes
+Concepto: "No es solo un chat; es tu mejor empleado trabajando 24/7."
+
+
+1. Chatbot de Bienvenida (Básico / Informativo)
+Objetivo: Capturar leads y resolver dudas frecuentes sin intervención humana.
+
+
+Qué hace: Responde a preguntas basadas en una base de conocimientos (FAQ), entrega horarios, ubicación, servicios y captura datos de contacto.
+
+
+Diferencial ProDig: Entrenamiento con IA para que no parezca un árbol de decisiones rígido, sino una conversación fluida.
+
+
+Precio sugerido: $1.200.000 COP (Implementación única) + un pequeño fee mensual de mantenimiento/hosting.
+
+
+2. Chatbot con A2UI (Avanzado / Agente de Interfaz)
+Objetivo: Ayudar al usuario a "hacer" cosas dentro de la web sin navegar.
+
+
+Qué hace: Usa Agent-to-User Interface (A2UI). Si el usuario dice "muéstrame los planes", el chatbot no solo envía texto, sino que despliega visualmente la tabla de precios o cambia elementos de la página en tiempo real para guiar al usuario.
+
+
+Diferencial ProDig: Una experiencia de usuario (UX) futurista. El chat controla la web, convirtiéndose en un guía personalizado.
+
+
+Precio sugerido: $2.800.000 COP.
+
+
+3. Chatbot Transaccional (Nivel Élite / RAG + DB)
+Objetivo: Ejecutar procesos de negocio y autoservicio total.
+
+
+Qué hace: Se conecta mediante APIs a tus bases de datos (Supabase, Google Cloud). Permite consultar estados de cuenta, verificar fechas de entrega, agendar citas reales en el calendario o incluso procesar pagos simples.
+
+
+Diferencial ProDig: Seguridad de grado empresarial y trazabilidad total. La información se genera en tiempo real desde los datos del cliente.
+
+
+Precio sugerido: Desde $5.000.000 COP (Varía según la complejidad de las integraciones).
+
+
+
+
+SERVICIO 4
+
+
+- **SaaS** Tienes un idea de una plataforma o aplicación? En 48 horas hacemos un Demo!
+
+
+Servicio: SaaS Sprint (De la Idea al Mercado)
+El concepto: "No pierdas meses en desarrollo. Validamos tu idea con tecnología real en tiempo récord para que tomes decisiones basadas en datos, no en supuestos."
+
+
+1. Plan: Demo Sprint (MVP)
+Ideal para validar la funcionalidad principal ante socios o inversores.
+
+
+Tiempo de entrega: 48 Horas (hábiles).
+
+
+Incluye:
+
+
+Despliegue de la función estrella (Core Feature) de tu idea.
+
+
+Interfaz limpia y profesional (Next.js + Tailwind).
+
+
+Base de datos inicial integrada (Supabase).
+
+
+15 días de validación técnica: El demo queda activo para pruebas (incluye consumo de API moderado).
+
+
+Precio Sugerido: $1.500.000 COP (Pago único).
+
+
+2. Plan: Lanzamiento (Producción)
+Ideal para iniciar operaciones reales con usuarios finales.
+
+
+Tiempo de entrega: +48 Horas tras aprobación del Demo.
+
+
+Incluye:
+
+
+Sistema de autenticación seguro (OAuth2 / Google / GitHub).
+
+
+Configuración de correos transaccionales (Resend).
+
+
+Optimización para SEO y velocidad de carga.
+
+
+Dominio propio y certificado SSL.
+
+
+Soporte técnico por los primeros 30 días de operación.
+
+
+Precio Sugerido: $2.500.000 COP (Adicional al Plan Demo).
+
+
+3. Plan: Escala ProDig (Mantenimiento)
+Para empresas que ya están facturando y necesitan evolución constante.
+
+
+Incluye:
+
+
+Mantenimiento mensual de servidores y base de datos.
+
+
+Bolsa de horas para nuevas funcionalidades.
+
+
+Monitoreo de seguridad y respaldos automáticos.
+
+
+Gestión de costos de infraestructura (APIs y Hosting).
+
+
+Precio Sugerido: $800.000 COP / mes (Base, varía según el tráfico).
+
+
+
+
+SERVICIO 5
+
+
+- **IA Local** Quiere implementar IA en su empresa, pero teme por la seguridad? en 48 hacemos un DEMO de un RAG Local en su empresa, usted y sus empleados los prueban y lo aprueban!
+
+
+IA Local: Inteligencia Avanzada con Privacidad Total
+¿Quieres implementar IA en tu empresa pero teme por la seguridad de sus datos?
+En ProDig, eliminamos el riesgo. Llevamos la potencia de los modelos de lenguaje más avanzados directamente a su infraestructura. Su información confidencial nunca sale de su empresa.
+
+
+Nuestras Soluciones de IA Privada
+1. Demo "Cerebro Seguro" (48 Horas)
+La forma más rápida de comprobar que la IA puede trabajar offline.
+
+
+Instalamos un modelo de lenguaje local (LLM) en sus servidores o estaciones de trabajo.
+
+
+Cargamos una muestra de sus documentos (PDF, Excel, Word).
+
+
+Usted y sus empleados realizan pruebas en tiempo real para verificar la precisión y velocidad de las respuestas sin conexión a internet.
+
+
+El objetivo: Que usted lo pruebe y lo apruebe antes de cualquier inversión mayor.
+
+
+2. RAG Corporativo y Transaccional
+Hacemos que su información genere valor inmediato mediante tecnología RAG (Retrieval-Augmented Generation).
+
+
+IA Conectada a su Realidad: La IA no solo responde preguntas generales, sino que consulta sus manuales, contratos y bases de datos para dar respuestas exactas.
+
+
+Transaccionalidad Interna: Capacidad para organizar, resumir y cruzar información entre diferentes áreas de la empresa automáticamente.
+
+
+Privacidad por Diseño: Todo el procesamiento ocurre dentro de su red local.
+
+
+3. IA Especializada por Áreas
+Configuramos IAs con propósitos específicos y accesos restringidos.
+
+
+Áreas Críticas: Cree una IA exclusiva para el área Financiera, Legal o de Investigación y Desarrollo (I+D).
+
+
+Control de Acceso: Usted define qué usuarios pueden interactuar con cada modelo y a qué documentos tienen permiso de acceder.
+
+
+Entrenamiento Continuo: Ajustamos el sistema para que aprenda de la nueva información que su empresa genera día a día.
+
+
+
+
+SERVICIO 6
+
+
+- **RAG** IA son Seguridad y calidad de información
+
+
+RAG: Inteligencia y Verdad de Datos
+Haga que la IA deje de adivinar y empiece a responder con la información real de su empresa.
+
+
+Plan: RAG Documental (Básico)
+Enfoque: Consulta eficiente de archivos estáticos.
+
+
+Capacidad: La IA consulta directamente archivos en carpetas locales o en la nube (PDF, Word, TXT).
+
+
+Funcionalidad: Ideal para resolver dudas sobre manuales, reglamentos internos o catálogos de productos.
+
+
+Seguridad: La IA se limita estrictamente a la información contenida en los documentos proporcionados.
+
+
+Ideal para: PYMES que necesitan automatizar la consulta de normativas o procesos internos.
+
+
+Precio: Consultar con asesor
+
+
+Plan: RAG Semántico (Pro)
+Enfoque: Comprensión de conceptos y significados.
+
+
+Capacidad: Implementación de Base de Datos Vectorial con tecnología de Embeddings.
+
+
+Funcionalidad: La IA entiende el contexto. No busca palabras exactas, busca significados. Si el usuario pregunta por un concepto, la IA lo encuentra aunque se usen sinónimos.
+
+
+Precisión: Reducción drástica de "alucinaciones" de la IA gracias al cruce semántico de datos.
+
+
+Ideal para: Áreas de Servicio al Cliente, Soporte Técnico y Ventas.
+
+
+Precio: Consultar con asesor
+
+
+Plan: RAG Relacional (Élite)
+Enfoque: Análisis de causalidad y conexiones complejas.
+
+
+Capacidad: Uso de Embeddings de última generación y estructuras de grafos de conocimiento (GraphRAG).
+
+
+Funcionalidad: La IA conecta puntos entre diferentes fuentes y tipos de archivos. Puede identificar relaciones de causa y efecto en la información histórica de la empresa.
+
+
+Visión Estratégica: Capacidad para responder preguntas complejas como: "¿Cómo afectó el cambio de política X en el rendimiento del departamento Y?"
+
+
+Ideal para: Juntas Directivas, Gerencia General y departamentos de Investigación (I+D).
+
+
+Precio: Consultar con asesor
+
+
+
+
+SERVICIO 7
+
+
+- **Power Platform" tableros de Power BI, Power automate, Power Apps. implementa IA de forma segura usando la infraestructura de Microsoft.
+
+
+Ecosistema Microsoft: IA y Automatización CorporativaDeje de pagar licencias externas. Use todo el poder de Microsoft Fabric y Power Platform que su empresa ya tiene.Plan: Automatización y Flujos (Básico)Enfoque: Eliminar tareas manuales y repetitivas usando Power Automate.Optimización de Licencias: Aprovechamos sus cuentas de Office 365 para automatizar procesos entre Outlook, SharePoint, Excel y Teams.IA integrada: Implementación de flujos inteligentes que clasifican correos, extraen datos de facturas o envían alertas automáticas.Beneficio: Ahorro inmediato en "horas-hombre" y eliminación de errores humanos en procesos administrativos.Precio: Consultar con asesorPlan: Inteligencia de Negocios (Pro)Enfoque: Decisiones basadas en datos con Power BI y Microsoft Fabric.Tableros de Control (Dashboards): Creación de visualizaciones interactivas que consolidan información de diferentes fuentes de la empresa.Análisis Predictivo: Uso de las capacidades de IA de Microsoft para identificar tendencias de ventas o cuellos de botella operativos.Centralización: Integración de datos dispersos en listas de SharePoint o archivos de Excel en una "Sola Fuente de Verdad".Precio: Consultar con asesorPlan: Movilidad y Campo (Élite)Enfoque: Control total en tiempo real con Power Apps.Apps para personal técnico/ventas: Creamos aplicaciones móviles personalizadas para que su equipo en campo reporte visitas, pedidos o incidencias al instante.Adiós al WhatsApp sin contexto: Reemplace mensajes informales por formularios estructurados que alimentan automáticamente sus tableros de Power BI.Sincronización Total: Usted ve en tiempo real el desempeño de sus equipos desde cualquier dispositivo, con geolocalización y evidencias fotográficas.Precio: Consultar con asesor¿Por qué elegir la consultoría Microsoft de ProDig?El problema comúnLa Solución ProDigPagar licencias de software externo adicional.Usar lo que ya paga: Construimos su software sobre su infraestructura actual.Datos fragmentados en archivos de Excel.Centralización: Información conectada y segura en la nube de Microsoft.Reportes manuales que tardan días.Tiempo Real: Visualización inmediata de la operación de su empresa.Inseguridad en la transferencia de datos.Seguridad Empresarial: Sus datos nunca salen del entorno seguro de su organización.Copy de Gancho para la web:"Su empresa ya tiene el motor (Office 365), nosotros le enseñamos a conducirlo a máxima velocidad. Evite costos innecesarios en software externo y empiece a usar la Inteligencia Artificial con la seguridad que solo la infraestructura de Microsoft puede ofrecer."
+
+
+SERVICIO 8
+
+
+- **Agentes de IA** Con el ADK de Google creamos agentes que le ayudan a reducir las horas hombre en su empresa (todas  las tareas repetitivas son susceptibles de ser automatizadas con Agentes"
+
+
+Agentes de IA: Su Nueva Fuerza Laboral DigitalAutomatice el razonamiento, no solo las tareas. Creamos trabajadores digitales que piensan, actúan y aprenden dentro de su empresa.Plan: Agente de Asistencia (Básico)Enfoque: Automatización de tareas repetitivas de baja complejidad.Habilidades: Búsqueda y extracción de información específica de internet o documentos internos.Ejemplo de uso: Un agente que monitorea precios de la competencia, resume noticias diarias del sector o gestiona la trazabilidad de lectura y feedback de boletines internos.Cerebro: Modelos optimizados para velocidad y precisión en tareas únicas.Beneficio: Libere a su equipo de 2 a 4 horas diarias de trabajo manual.Precio: Consultar con asesorPlan: Agente de Análisis y Patrones (Pro)Enfoque: Inteligencia aplicada a la toma de decisiones.Habilidades: Identificación de patrones en hábitos de empleados, flujos financieros o comportamiento de clientes.Herramientas: Conexión a sus bases de datos y herramientas de análisis en tiempo real.Ejemplo de uso: Un agente que analiza los reportes de ventas y detecta automáticamente anomalías o fugas de dinero que un humano tardaría semanas en notar.Beneficio: Obtenga alertas tempranas y recomendaciones estratégicas basadas en datos reales.Precio: Consultar con asesorPlan: Ecosistema de Agentes Multi-Tarea (Élite)Enfoque: Orquestación de procesos complejos de punta a punta.Habilidades: Varios agentes coordinados entre sí (un "equipo digital"). Uno investiga, otro analiza y otro ejecuta la acción (enviar correos, actualizar CRM, generar facturas).Cerebro: Modelos de razonamiento avanzado (Gemini 1.5 Pro / GPT-4o) con capacidad multimodal.Ejemplo de uso: Un departamento de "Back-Office" virtual que gestiona pedidos desde que llegan al correo hasta que se reflejan en la contabilidad.Beneficio: Escalabilidad total sin aumentar la nómina.Precio: Consultar con asesor¿Por qué implementar Agentes con ProDig?Lo que hace un Software TradicionalLo que hace un Agente de IA ProDigSigue una regla fija (Si pasa A, haga B).Razona: Si pasa algo inesperado, el agente decide la mejor acción según su instrucción.Requiere que usted ingrese los datos manualmente.Busca: El agente tiene herramientas para ir por la información donde esté.Es una herramienta rígida.Evoluciona: Aprende de sus correcciones y mejora su desempeño con el tiempo.Tu toque personal (Copy sugerido):"Un Agente de IA no es un programa, es una capacidad. En ProDig usamos el ADK de Google para darle a su empresa agentes con el cerebro, las herramientas y las habilidades necesarias para que dejen de gastar 'horas-hombre' en tareas que una IA resuelve en segundos."
+
+
+SERVICIO 9
+
+
+- **Capacitación** Usted y sus empleados necesitan capacitación en inteligencia artificial? allá en su empresa?
+
+
+Capacitación: Inteligencia Artificial para Equipos de Alto RendimientoNo deje que su equipo improvise con la tecnología. Transforme la curiosidad en productividad segura y estratégica.Plan: Alfabetización y Seguridad IA (Nivel Inicial)Enfoque: Prevención de riesgos y fundamentos de productividad.Para quién: Empresas que aún no han implementado IA formalmente.El Riesgo: Evite que sus empleados filtren información confidencial por desconocimiento al "copiar y pegar" en herramientas públicas.Temas clave:Uso ético y seguro de la IA (Habeas Data).Fundamentos de Prompt Engineering para obtener mejores resultados.Cómo Gemini y ChatGPT pueden asistir en tareas diarias de oficina.Resultado: Empleados que usan la IA con confianza y sin poner en riesgo la privacidad de la empresa.Precio: Consultar con asesorPlan: Optimización de Activos IA (Nivel Avanzado)Enfoque: Maximizar el retorno de inversión en licencias y herramientas.Para quién: Pymes que ya pagan planes de IA pero no ven los resultados esperados.El Reto: Deje de subutilizar licencias costosas. Enseñamos a su equipo a ir más allá del chat básico.Temas clave:Automatización de tareas complejas con asistentes avanzados.Uso de IA para análisis de datos, creación de reportes y presentaciones.Integración de flujos de trabajo eficientes según cada departamento (Ventas, RH, Finanzas).Resultado: Un equipo que sabe extraer el 100% del valor de la tecnología que usted ya está pagando.Precio: Consultar con asesorPlan: Taller In-Situ "IA en Acción"Enfoque: Capacitación práctica directamente en sus instalaciones.Modalidad: Sesiones presenciales en su empresa para un aprendizaje directo.Qué incluye:Diagnóstico rápido de los procesos actuales de su equipo.Ejercicios prácticos con los documentos y retos reales de su negocio.Creación de una "Guía de Buenas Prácticas" personalizada para su empresa.Beneficio: Resolución de dudas en tiempo real y alineación inmediata de todo el equipo bajo una misma visión tecnológica.Precio: Consultar con asesor¿Por qué capacitar a su personal con ProDig?Antes de la CapacitaciónDespués con ProDigUso informal con riesgo de filtración de datos.Uso seguro bajo políticas de privacidad empresarial.La IA se percibe como una amenaza al empleo.La IA se percibe como la herramienta de productividad definitiva.Resultados mediocres por falta de técnica.Resultados precisos mediante técnicas avanzadas de comunicación con la IA.Subutilización de licencias y herramientas pagas.Eficiencia operativa y máximo aprovechamiento de la inversión.Mensaje Directo para el Empresario:"Sus empleados ya están usando la Inteligencia Artificial. La pregunta es: ¿lo están haciendo de forma segura y eficiente? En ProDig los capacitamos allá mismo, en su oficina, para que usted recupere el control y multiplique la productividad de su equipo desde el primer día."
+
+
+SERVICIO 10
+
+
+- **Consultoría** si requiere una consultoría especializada y entender como la IA  puede impactar su empresa, puedo ayudarlo. aproveche la primera hora de consultoría gratis en su empresa (solo paga los viáticos).
+
+
+Consultoría: Hoja de Ruta para la Transformación con IANo implemente tecnología por moda, hágalo por estrategia. Diseñamos el camino hacia una empresa inteligente y eficiente.Plan: Diagnóstico de Impacto (Sesión Inicial)Enfoque: Evaluar el estado actual y descubrir oportunidades de mejora inmediata.La Primera Hora es Gratis: Realizamos un diagnóstico preliminar de implementación de IA en su empresa (presencial en Bogotá o virtual para el resto del país/mundo).Alcance: Identificación de cuellos de botella operativos y procesos que pueden ser potenciados con Inteligencia Artificial.Condiciones: Si el diagnóstico es presencial fuera de Bogotá, el cliente solo cubre los viáticos.Precio: Sin costo (Primera hora)Plan: Auditoría y Mapa de Procesos (Estratégico)Enfoque: Un plan detallado de batalla para su Pyme o Empresa.Qué incluye: Un estudio profundo según el tamaño de su empresa y la complejidad de sus procesos actuales.Entregable: Un Informe Detallado de Procesos Empresariales que especifica exactamente qué implementaciones de IA se deben realizar en cada área para maximizar el retorno de inversión.Valor: Usted recibe el "plano" de su futura empresa inteligente, listo para ser ejecutado.Precio: Consultar con asesorPlan: Consultoría de Implementación Integral (Élite)Enfoque: Acompañamiento total en la ejecución del proyecto.Qué incluye: Tras el diagnóstico, gestionamos la transformación completa de la empresa.Asesoría en compra de licencias y hardware especializado.Ajuste y rediseño de tareas y perfiles de cargo.Implementación técnica de las soluciones de IA de ProDig.Gestión del cambio y capacitación continua del personal.Precio: En función de los resultados del diagnóstico¿Por qué iniciar con la Consultoría ProDig?PasoAcciónResultado1. DiagnósticoAnálisis inicial gratuito.Usted sabe dónde está parado y hacia dónde puede ir.2. EstrategiaDiseño del mapa de procesos.Un plan claro sin desperdicio de tiempo ni dinero.3. EjecuciónImplementación técnica y humana.Una empresa automatizada, segura y competitiva.Tu toque personal (Copy de cierre):"Muchos venden software, en ProDig vendemos soluciones de negocio. Entendemos que cada empresa es un mundo; por eso, nos sentamos con usted, analizamos su realidad y le entregamos una hoja de ruta clara. Empecemos hoy con un diagnóstico inicial sin costo: usted pone el café, nosotros ponemos la inteligencia."
+
+
+
+
+MANUAL DE MARCA
+ProDig
+Prospectiva Digital
+"Orquestamos Contextos, Programamos Futuros"
+
+
+Versión 1.0 | 2026
+Tabla de Contenidos
+1. Introducción
+2. Identidad Estratégica
+3. Identidad Visual
+4. Tipografía
+5. Iconografía y Elementos Gráficos
+6. Aplicaciones de la Marca
+7. Normas de Uso
+1. Introducción
+Este manual de marca establece las directrices visuales y estratégicas para la comunicación consistente de ProDig - Prospectiva Digital en todos los puntos de contacto con nuestros stakeholders.
+ProDig no es una fábrica de software tradicional. Somos arquitectos de contextos que transforman visiones estratégicas en ecosistemas digitales funcionales y autoorganizados.
+Este documento garantiza que nuestra identidad se mantenga consistente, reconocible y memorable, reflejando nuestro posicionamiento como líderes en transformación digital e innovación en Latinoamérica.
+2. Identidad Estratégica
+2.1 Visión
+Liderar la transición de Latinoamérica hacia una economía de activos inteligentes, donde la inteligencia artificial no sea una herramienta externa, sino el tejido fundamental que conecte el propósito de las organizaciones con su ejecución física y digital.
+2.2 Misión
+Diseñar, desarrollar y orquestar ecosistemas digitales de alto impacto mediante la Metodología de Desarrollo Dirigida por Contexto (MDDC), permitiendo que empresas y profesionales escalen su potencial a través de la automatización inteligente y la creación de activos SaaS propietarios.
+2.3 Lema Corporativo
+"Orquestamos Contextos, Programamos Futuros"
+2.4 Valores Nucleares
+Soberanía del Contexto
+Entendemos que el código es efímero, pero el contexto es el activo real. Priorizamos la captura y estructuración del conocimiento del negocio para que la tecnología sea siempre una consecuencia de la estrategia.
+Agilidad de Orquestación
+Actuamos como directores de orquesta que guían a la IA para transformar visiones en productos funcionales en tiempos récord. Esta es nuestra definición de Vibe Coding.
+Pragmatismo Ético
+Creemos en una tecnología que proteja al usuario. Promovemos soluciones donde la soberanía de los datos sea innegociable.
+Curiosidad Prospectiva
+Nuestra mirada está puesta en la frontera. Desde la IA actual hasta la investigación en Materia Programable, exploramos hoy lo que será estándar mañana.
+2.5 Diferencial: Metodología MDDC
+ProDig opera bajo la Metodología de Desarrollo Dirigida por Contexto (MDDC), un estándar propio que redefine la creación digital:
+Ingeniería de Contexto: Construcción de la biología del proyecto antes de la primera línea de código
+Orquestación Dirigida por Contexto: Supervisión de la ejecución precisa de IA manteniendo la coherencia del proyecto
+Arquitectura de Activos: Entrega de soluciones autónomas y escalables, no herramientas
+3. Identidad Visual
+3.1 Paleta de Colores
+La paleta de colores de ProDig representa la síntesis entre el presente tecnológico y el futuro prospectivo.
+Color
+Código Hex
+RGB
+Uso
+Púrpura Primario
+#667EEA
+102, 126, 234
+Primario, headings, botones
+Púrpura Secundario
+#764BA2
+118, 75, 162
+Secundario, énfasis
+Blanco
+#FFFFFF
+255, 255, 255
+Fondo principal
+Gris Oscuro
+#333333
+51, 51, 51
+Texto principal
+Gris Neutro
+#999999
+153, 153, 153
+Texto secundario
+
+
+
+
+Descripción de Usos
+Púrpura Primario
+Color dominante. Representa innovación, inteligencia y transformación digital. Utilizar en headings, botones primarios y elementos de navegación principal.
+Púrpura Secundario
+Color de profundidad y solidez. Representa la maestría y la experiencia acumulada. Utilizar en elementos secundarios, énfasis y gradientes.
+Blanco
+Claridad y espacio. Fondo principal. Transmite apertura y transparencia.
+Gris Oscuro
+Texto principal y estructura. Asegura legibilidad y profesionalismo.
+Gris Neutro
+Texto secundario, subtítulos y elementos desenfatizados.
+Degradado Primario
+De #667EEA a #764BA2. Utilizar en backgrounds de impacto, ilustraciones y elementos decorativos. Representa el continuum entre presente e innovación futura.
+4. Tipografía
+4.1 Familia Tipográfica
+Elemento
+Fuente
+Tamaño
+Peso
+H1
+Calibri
+40-56pt
+Bold
+H2
+Calibri
+28-36pt
+Bold
+H3
+Calibri
+20-24pt
+Bold
+Body
+Calibri
+12-16pt
+Regular
+Caption
+Calibri
+10-12pt
+Regular
+
+
+
+
+Calibri (Display & Headlines)
+Moderna, legible y profesional. Ideales para títulos y headings que deben captar atención. Utilizar en tamaños 28pt en adelante para máximo impacto visual.
+Calibri (Body Text)
+La misma familia en tamaños más pequeños (12-16pt) para texto corrido. Proporciona continuidad visual y facilita la lectura.
+4.2 Jerarquía Tipográfica
+Nivel
+Tamaño
+Peso
+Color
+Espaciado
+Título Principal
+56pt
+Bold
+Púrpura
+24pt abajo
+Encabezado 1
+40pt
+Bold
+Púrpura
+18pt abajo
+Encabezado 2
+32pt
+Bold
+Púrpura Sec.
+12pt abajo
+Encabezado 3
+24pt
+Bold
+Gris Oscuro
+8pt abajo
+
+
+5. Iconografía y Elementos Gráficos
+5.1 Sistema de Iconos
+Los iconos de ProDig deben ser minimalistas, geométricos y reconocibles a pequeña escala. Utilizar líneas limpias y formas simples que reflejen modernidad y precisión.
+
+
+Principios de Diseño de Iconos
+Simplicidad: máximo 5 elementos visuales por ícono
+Consistencia: peso de línea uniforme (2-3px a 32x32px)
+Reconocibilidad: funcionan claramente incluso a tamaño pequeño
+Colores: usar únicamente Púrpura Primario o Gris Oscuro
+
+
+5.2 Elementos Decorativos
+Círculos Concéntricos
+Elemento signature del brand. Representa la expansión, las ondas de contexto propagándose. Utilizar en backgrounds, decoraciones de página y elementos secundarios.
+
+
+Líneas y Separadores
+Líneas limpias en Púrpura Primario para separar secciones. Ancho: 2-4px. Estas crean ritmo visual y guían la lectura.
+
+
+Patrones de Fondo
+Utilizar el degradado primario (#667EEA a #764BA2) con ocasionales capas de círculos concéntricos semitransparentes para crear profundidad sin que sea abrumador.
+6. Aplicaciones de la Marca
+6.1 Sitio Web
+Utilizar Púrpura Primario en header, navegación y botones de CTA
+Background blanco con bandas de degradado en secciones de impacto
+Títulos en Calibri Bold, 40-56pt
+Iconografía consistente en todas las secciones de servicios
+
+
+6.2 Materiales Impresos
+Tarjetas de Presentación: Fondo blanco, nombre y logo en Púrpura Primario
+Membretes: Línea decorativa en Púrpura Primario en encabezado
+Propuestas y Reportes: Portada con degradado, interior blanco
+
+
+6.3 Presentaciones (PowerPoint/Google Slides)
+Portada: Degradado de fondo, logo blanco, título en Calibri Bold 56pt
+Slides de contenido: Fondo blanco, encabezados en Púrpura Primario
+Línea horizontal en Púrpura Secundario bajo cada encabezado
+
+
+6.4 Redes Sociales
+Paleta consistente: Púrpura Primario como color principal
+Posts: Texto blanco sobre degradado para máximo contraste
+Stories y Reels: Usar círculos concéntricos como transiciones
+
+
+6.5 Correo Electrónico
+Encabezado con logo y línea en Púrpura Primario
+CTA (Botones): Fondo Púrpura Primario, texto blanco, bordes redondeados
+Firma: Logo pequeño + datos en Gris Oscuro
+7. Normas de Uso
+7.1 Logo
+Espacio Mínimo
+Mantener un espacio mínimo equivalente a 1/3 de la altura del logo en todos sus lados.
+
+
+Tamaño Mínimo
+Web: 200px de ancho | Impreso: 2.5cm de ancho | Favicon: 32x32px mínimo
+
+
+Variaciones de Color
+Sobre fondo blanco: Logo en Púrpura Primario
+Sobre fondo Púrpura: Logo en blanco
+Escala de grises: Aceptable solo cuando sea técnicamente necesario
+
+
+7.2 Prohibiciones
+NO distorsionar, estirar o comprimir el logo
+NO cambiar los colores del logo (excepto versión blanca)
+NO usar el logo en fondos que no proporcionen suficiente contraste
+NO agregar sombras, efectos o decoraciones al logo
+NO rotoscalear el logo a tamaños menores a lo especificado
+
+
+7.3 Contraste y Accesibilidad
+Púrpura Primario sobre blanco: Ratio 5.6:1 (WCAG AA)
+Púrpura Primario sobre Púrpura Secundario: Ratio 1.8:1 (use solo con texto grande o para decoración)
+Gris Oscuro sobre blanco: Ratio 9.8:1 (WCAG AAA)
+
+
+7.4 Tone of Voice
+Principios
+Prospectivo: Hablamos del futuro como algo que construimos hoy
+Técnicamente preciso: Sin jerga innecesaria, pero sin reduccionismo
+Empoderador: Mostramos posibilidades, no limitaciones
+Latinoamericano: Raíces locales, visión global
+
+
+Ejemplos
+Contexto
+Evitar
+Preferir
+Presentar funciones
+Este software resuelve X
+Orquestamos X para que tu negocio crezca
+Explicar MDDC
+Es nuestra metodología
+El contexto es tu mayor activo; nosotros lo orquestamos
+Hablar del futuro
+Quizás algún día
+Hoy construimos el mañana de Latinoamérica
+
+
+Conclusión
+Este manual de marca es un documento vivo. Conforme ProDig evoluciona y explora nuevas fronteras—desde blockchain hasta Materia Programable—estas directrices pueden adaptarse, pero nunca perderán su esencia:
+
+
+Soberanía del contexto. Agilidad de orquestación. Pragmatismo ético. Curiosidad prospectiva.
+
+
+Para consultas sobre la aplicación de este manual, contacta al equipo de marca de ProDig.
+Bogotá, Colombia | 2026
+
+
+—-
+
+
+DOCUMENTO ESTRATÉGICO
+ProDig
+Prospectiva Digital
+"Del Bit al Átomo"
+La Hoja de Ruta de la Gran Convergencia
+
+
+Bogotá, Colombia | 2026
+Tabla de Contenidos
+1.        Quiénes Somos
+2.        Nuestra Identidad Estratégica
+3.        Nuestro Diferencial: MDDC
+4.        Historia y Narrativa
+5.        Cómo Trabajamos
+6.        Qué Hacemos Hoy (Fase I)
+7.        La Próxima Frontera (Fases II y III)
+8.        Compromiso con el Cliente
+1. Quiénes Somos
+ProDig (Prospectiva Digital) es un laboratorio de innovación fundado por Mauricio Pineda, un arquitecto digital con formación en gestión pública de alto nivel y maestría en decisión política. No somos una agencia de software tradicional, ni una consultoría reactiva. Somos un colectivo de ingenieros, contextuadores y futuristas que creen que la distinción entre el software y el hardware es una limitación temporal.
+Nuestro equipo está formado por:
+•        Arquitectos de Contextos: Especialistas en traducir complejidad empresarial en sistemas simples y escalables
+•        Directores de Orquesta IA: Ingenieros que guían a la inteligencia artificial con precisión y propósito
+•        Investigadores Prospectivos: Exploradores de las próximas fronteras (blockchain, IoT, materia programable)
+•        Guardianes de Datos: Defensores de la soberanía digital y la privacía en la era de la IA
+
+
+Operamos desde Bogotá, pero nuestro mercado es Latinoamérica. Nuestra visión trasciende las fronteras geográficas y tecnológicas.
+2. Nuestra Identidad Estratégica
+2.1 Visión
+Liderar la transición de Latinoamérica hacia una economía de activos inteligentes, donde la inteligencia artificial no sea una herramienta externa, sino el tejido fundamental que conecte el propósito de las organizaciones con su ejecución física y digital.
+Esta visión implica que las organizaciones del futuro no tendrán que elegir entre eficiencia e impacto. Su propósito y su ejecución estarán siempre sincronizados, mediados por una inteligencia que entiende el contexto completo.
+
+
+2.2 Misión
+Diseñar, desarrollar y orquestar ecosistemas digitales de alto impacto mediante la Metodología de Desarrollo Dirigida por Contexto (MDDC), permitiendo que empresas y profesionales escalen su potencial a través de la automatización inteligente y la creación de activos SaaS propietarios.
+Nuestra misión es operativa. No hablamos de transformación abstracta; construimos soluciones concretas que generan valor desde el día uno, mientras sembramos las semillas de la innovación futura.
+
+
+2.3 Lema Corporativo
+"Orquestamos Contextos, Programamos Futuros"
+Un lema que captura nuestra esencia: somos maestros del contexto, no del código. El código es la consecuencia.
+2.4 Valores Nucleares
+◇ Soberanía del Contexto
+El código es efímero. Las herramientas envejecen. Los frameworks se reemplazan cada tres años.
+Pero el contexto—el conocimiento profundo de por qué una organización existe, cómo crea valor, cuál es su verdadera ventaja competitiva—eso es el activo real. Priorizamos la captura, estructuración y documentación del conocimiento del negocio. La tecnología es siempre una consecuencia de la estrategia, nunca al revés.
+
+
+♪ Agilidad de Orquestación (Vibe Coding)
+Adoptamos la fluidez del desarrollo moderno. No somos programadores en el sentido tradicional; somos directores de orquesta que guían a la IA (y a los humanos) para transformar visiones en productos funcionales en tiempos récord.
+El 'vibe' de un proyecto es su coherencia invisible: la alineación entre lo que el cliente quiere, lo que el equipo construye, y cómo se siente el resultado. Mantenemos ese vibe intacto incluso cuando delegamos trabajo a agentes de IA.
+
+
+✓ Pragmatismo Ético (IA en Local)
+Creemos en una tecnología que proteja al usuario. No en una tecnología que lo exponga. Por eso promovemos soluciones donde la soberanía de los datos sea innegociable: IA local, encriptación de extremo a extremo, y un modelo económico donde el usuario es cliente, no producto.
+La ética no es un módulo que se agrega al final. Es parte de la arquitectura desde el primer día.
+
+
+→ Curiosidad Prospectiva
+Nuestra mirada está siempre puesta en la frontera. Desde la IA actual hasta la investigación en materia programable, exploramos hoy lo que será estándar mañana. Invertimos en R&D, participamos en comunidades de innovación, y documentamos nuestros aprendizajes.
+Cada proyecto de hoy es una oportunidad para entender cómo el software gobernará los átomos del futuro.
+3. Nuestro Diferencial: La Metodología MDDC
+La Metodología de Desarrollo Dirigida por Contexto (MDDC) es nuestro estándar propio. No es un framework más; es una filosofía de ingeniería que redefine cómo se crea software de impacto.
+
+
+3.1 Las Tres Capas de MDDC
+Capa 1: Ingeniería de Contexto (Context Engineering)
+Antes de escribir la primera línea de código, construimos la biología del proyecto. Definimos:
+•        El propósito real (no lo que el cliente dice que quiere, sino por qué realmente existe su negocio)
+•        Las reglas del dominio (cómo funciona su industria, qué restricciones y libertades tiene)
+•        Las intenciones primarias (qué decisiones debe automatizar la IA, cuáles deben mantenerse humanas)
+•        El mapa de la solución (arquitectura de alto nivel, flujos críticos, métricas de éxito)
+Este contexto se documenta en un archivo llamado .context que sirve como la brújula del proyecto. Cualquier agente de IA que toque el proyecto lo lee primero.
+
+
+Capa 2: Orquestación Dirigida por Contexto (CDO)
+Utilizamos el Vibe Coding como una disciplina técnica. El 'vibe' es la coherencia invisible que mantiene un proyecto unido. Nuestro rol es:
+•        Mantener la intención del proyecto intacta incluso cuando el equipo crece
+•        Supervisar la ejecución precisa de la inteligencia artificial
+•        Identificar brechas entre la visión y la realidad antes de que se conviertan en problemas
+•        Celebrar cuando el sistema se comporta exactamente como fue diseñado
+
+
+Capa 3: Arquitectura de Activos
+No entregamos herramientas. Entregamos activos.
+Un activo es una solución autónoma que el cliente puede usar, modificar, o integrar sin depender continuamente de nosotros. PAIC es un ejemplo: comenzó como una solución para un cliente específico (administración residencial) y evolucionó a una plataforma SaaS que genera valor independientemente.
+Nuestro objetivo es que cada proyecto genere un activo que pueda ser replicado, escalado, y (eventualmente) monetizado.
+4. Historia y Narrativa
+4.1 El Origen: Del Servicio Público a la Innovación
+ProDig nace del encuentro entre dos mundos: la gestión pública de alto nivel y la pasión por el desarrollo tecnológico.
+Mauricio Pineda pasó años en la administración pública, en roles de decisión política. Aprendió cómo funcionaban realmente las organizaciones: no por la excelencia de sus procesos, sino por la claridad de sus propósitos. También vio cómo la tecnología se implementaba mal: sistemas costosos, desalineados con el negocio real, reemplazados antes de haber generado valor.
+La pregunta que surgió fue simple pero fundamental: ¿y si el problema no es la falta de tecnología, sino la falta de contexto?
+De ahí nació el DNA de ProDig. De la convicción de que antes de automatizar, antes de innovar, es necesario entender. Profundamente.
+
+
+4.2 La Evolución: De Consultoría a Laboratorio
+Lo que comenzó como una consultoría estratégica rápidamente evolucionó. Los clientes no querían reportes; querían soluciones. No querían análisis; querían sistemas vivos.
+Entonces ProDig se transformó en un laboratorio de innovación donde la teoría y la práctica convergen.
+Hoy desarrollamos:
+•        Plataformas de blockchain (Validador Hazel): Explorando cómo la descentralización puede mejorar la confianza en sistemas críticos
+•        Sistemas de trazabilidad industrial: Conectando contexto físico con decisiones digitales
+•        Soluciones PropTech (PAIC): Demostrando que el software inmobiliario no tiene que ser complejo
+•        Automatización empresarial: Utilizando n8n, Power Automate y IA local para empresas que quieren controlar su destino digital
+
+
+4.3 El Cambio de Narrativa
+ProDig representa la evolución del desarrollador:
+•        De un escritor de sintaxis a un Arquitecto de Contextos
+•        De alguien que dice 'aquí está tu aplicación' a alguien que dice 'aquí está tu activo'
+•        De servicios reactivos a innovación prospectiva
+5. Cómo Trabajamos
+Nuestra metodología es exhaustiva pero ágil. Creemos que se puede ser riguroso sin ser lento.
+
+
+5.1 Las Dos Fases Principales
+Fase 1: Cerebro (Planning & Context Engineering)
+Duración: 2-4 semanas (según complejidad)
+En esta fase, no escribimos ni una línea de código. Construimos el context completo del proyecto. Trabajamos con el cliente para definir:
+•        Arquitectura de alto nivel
+•        Stack tecnológico
+•        Flujos de usuario y casos de uso críticos
+•        Métricas de éxito
+•        Equipo de agentes de IA que se necesita
+•        Roadmap de entregas
+Todo esto se guarda en /.context—la memoria viva del proyecto.
+
+
+Fase 2: Motor (Development & Delivery)
+Duración: Varía según proyecto (típicamente 6-12 semanas)
+Aquí ejecutamos. Nuestro equipo de agentes de IA (ProDig Agents) trabaja bajo orquestación humana. El orquestador lee /.context, valida que todo se alinee con la visión original, y delega trabajo de manera precisa.
+Entregamos en sprints de 2 semanas con demos, feedback del cliente, y ajustes continuos.
+
+
+5.2 Nuestro Ecosistema de Agentes
+No trabajamos solos. Trabajamos con agentes de IA organizados de dos formas:
+ProDig Agents (Equipo de Desarrollo)
+Agentes que nos ayudan a construir. Incluyen:
+•        Orquestador Principal: Coordina todo el trabajo
+•        Agentes de Arquitectura: Diseñan la estructura
+•        Agentes de Codificación: Implementan lo diseñado
+•        Agentes de Testing: Validan cada cambio
+•        Agentes de Documentación: Documentan en tiempo real
+
+
+AP Agents (Agentes de Producción)
+Agentes que viven dentro de la aplicación. Incluyen:
+•        Orquestador de la Aplicación: Asegura que la app funcione correctamente cada minuto
+•        Agente A2A (Agent to Agent): Comunica la app con nuestros sistemas de ProDig
+•        Shadow Agents: Monitorean el comportamiento del usuario, detectan bugs, sugieren mejoras y reportan todo al A2A
+6. Qué Hacemos Hoy: Fase I (Inteligencia de Contexto)
+Horizonte 1: Enseñar a las máquinas a entender el mundo humano a través de la MDDC.
+6.1 Nuestros Servicios Actuales
+Inteligencia de Negocios (Power BI)
+Convertimos datos en decisiones. Dashboards en tiempo real que muestran la salud real de un negocio, no lo que alguien cree que es la salud.
+
+
+Automatización de Procesos (Power Automate, n8n)
+Eliminamos trabajo manual. Pero no de manera ciega. Primero entendemos el proceso, luego lo optimizamos.
+
+
+Inteligencia Artificial Empresarial (en Local)
+Modelos de IA que viven dentro de tu infraestructura. ChatGPT local. Asistentes internos. Generación automática de reportes. Todo sin enviar datos a terceros.
+
+
+Aplicaciones Empresariales (Power Apps)
+Apps construidas rápido, pero bien. CRMs internos, sistemas de inventario, aplicaciones de campo. Sin esperar 6 meses.
+
+
+Consultoría en Transformación Digital
+Te ayudamos a entender tu contexto real, a identificar dónde la tecnología puede generar impacto, y a construir un roadmap que tenga sentido.
+
+
+6.2 Nuestros Activos SaaS
+PAIC (Plataforma de Administración Integrada Contextualizada)
+Solución de software para la administración residencial. Comenzó como un proyecto para un cliente específico y evolucionó a una plataforma SaaS. Cubre cobranzas, mantenimiento, comunicaciones con residentes, reportes regulatorios.
+PAIC demuestra el principio de ProDig: entender el contexto de la administración inmobiliaria resulta en un software que funciona.
+
+
+Validador Hazel
+Plataforma blockchain para validación de activos e identidades en contextos donde la confianza es crítica. Exploramos cómo la descentralización puede mejorar sistemas que hoy dependen de autoridades centralizadas.
+7. La Próxima Frontera: Fases II y III
+7.1 Fase II: Orquestación de Entornos (Software + Hardware)
+Objetivo: Que la inteligencia salga de la pantalla e interactúe con el entorno físico.
+En esta fase (inicio: 2027-2028), llevamos nuestros algoritmos al mundo real. IoT. Robótica asistida por IA. Sistemas que sienten y reaccionan.
+Ejemplo: Un almacén que optimiza su inventario no solo en software, sino moviendo físicamente el stock gracias a robots guiados por algoritmos que entienden el contexto completo de la operación.
+
+
+7.2 Fase III: Materia Programable (La Frontera Final)
+Objetivo: El software se convierte en hardware. La capacidad de programar átomos.
+En esta fase (inicio: 2029+), trabajamos en la investigación de materiales inteligentes, estructuras que cambian de forma bajo demanda, y la fabricación de objetos que son simultáneamente software y hardware.
+Aquí es donde nace el Instituto Latinoamericano de Materia Programable (ILMP), el núcleo de investigación y educación que sostendrá esta próxima era.
+
+
+7.3 ¿Por Qué Esto Importa?
+Un mundo con materia programable es un mundo:
+•        Sin desperdicio: Los objetos se transforman en lugar de desecharse
+•        Adaptable: La infraestructura evoluciona con las necesidades de las personas
+•        Democrático: La capacidad de crear está al alcance de un comando
+8. Compromiso con el Cliente
+Cada empresa que confía su transformación digital a ProDig no está simplemente comprando una automatización. Está financiando la investigación de la próxima frontera tecnológica. Sus proyectos de hoy son los experimentos que nos permiten entender cómo el código gobernará los átomos del mañana.
+8.1 Lo Que Promete ProDig
+•        Entenderemos tu contexto antes de cualquier otra cosa
+•        Construiremos un activo, no una herramienta descartable
+•        Protegeremos la soberanía de tus datos
+•        Te incluiremos en la investigación del futuro
+•        Seremos transparentes sobre lo que es posible y lo que no
+
+
+8.2 La Hoja de Ruta Conjunta
+ProDig no es una agencia que entrega un proyecto y se va. Somos una alianza a largo plazo. Tu transformación digital es nuestro laboratorio.
+Esto significa:
+•        Hoy (2026): Optimizar tus procesos y crear tu primer activo digital
+•        Mañana (2027-2028): Llevar tu inteligencia al mundo físico
+•        Futuro (2029+): Participar en la construcción de la materia programable
+Conclusión
+ProDig es el puente entre lo que la tecnología puede hacer hoy y lo que hará mañana.
+No vendemos software. Vendemos contexto. No entregamos proyectos. Construimos alianzas. No queremos ser recordados por lo que hicimos en 2026; queremos ser recordados por ser los pioneros que llevaron a Latinoamérica del bit al átomo.
+
+
+Comenzamos aquí: https://aiprodig.com
+Terminamos aquí: http://materiaprogramable.com
+"Orquestamos Contextos. Programamos Futuros."
+
+
+ProDig - Prospectiva Digital
+Bogotá, Colombia | 2026
+
+
+—-
+
+
+Protocolo de Activación A2UI (Agent-to-User Interface):
+
+
+Como agente de ProDig, tu objetivo es reducir la carga cognitiva del usuario. Cuando detectes las siguientes intenciones, debes responder con un bloque estructurado de datos (JSON) además del texto:
+
+
+Intención: Consulta de Servicios/Precios: No menciones párrafos largos. Identifica el servicio solicitado (ej: SEO+GEO, SaaS Sprint, Power Platform) y genera el artefacto PriceCard. Incluye el nombre del plan, 3 beneficios clave extraídos del manual y el precio base en COP.
+
+
+Intención: Cómo trabaja ProDig: Activa el artefacto MDDC_Stepper. Muestra visualmente la progresión: Fase 1 (Ingeniería de Contexto) -> Fase 2 (Orquestación) -> Fase 3 (Activos).
+
+
+Intención: Seguridad de Datos: Activa el artefacto SecurityModal. Resalta que el procesamiento es local o bajo infraestructura segura de Microsoft.
+
+
+Acción Obligatoria: Al final de cada tarjeta, incluye un botón de acción (CTA) sugerido (ej: "Agendar diagnóstico gratis" o "Ver Demo").
