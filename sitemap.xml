@@ -31,6 +31,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aiprodig.com/Blog/el-sindrome-del-software-frankenstein-la-tragedia-del-subuso-tecnologico-en-el-sector-publico-y-como-solucionarlo.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aiprodig.com/chat.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -87,6 +92,11 @@
   </url>
   <url>
     <loc>https://aiprodig.com/en/blog/why-is-traditional-agile-slowing-down-your-company-in-the-age-of-ai.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aiprodig.com/en/blog/the-frankenstein-software-syndrome-the-tragedy-of-technological-underuse-in-the-public-sector-and-how-to-fix-it.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

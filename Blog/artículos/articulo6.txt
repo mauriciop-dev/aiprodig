@@ -1,0 +1,54 @@
+El Síndrome del "Software Frankenstein": La tragedia del subuso tecnológico en el sector público (y cómo solucionarlo)
+Todos tenemos ese amigo, familiar o conocido que trabaja en una entidad del Estado Colombiano. Hace unos días, conversando con uno de ellos, me contaba con frustración su día a día. Me describía una realidad que, lejos de ser una excepción, es la regla en la administración pública: entidades atrapadas en una burocracia digital ineficiente, donde se queman presupuestos gigantescos en tecnología mientras los funcionarios siguen atrapados en el papeleo y el "miedo" a la innovación.
+
+Esta conversación me dejó pensando en la enorme desconexión que existe entre la capacidad tecnológica que el Estado compra y la que realmente utiliza. Es una radiografía perfecta de lo que llamo "El Síndrome del Software Frankenstein", un mal que no solo afecta al sector público, sino a cientos de empresas tradicionales en nuestro país.
+
+A continuación, desglosamos los tres grandes síntomas de esta enfermedad digital y, lo más importante, cómo la mentalidad correcta puede curarla.
+
+Síntoma 1: El subuso criminal de las superlicencias
+
+Es común escuchar que las entidades públicas carecen de presupuesto. Sin embargo, cuando miras sus herramientas de uso diario, descubres que pagan millones de dólares en licencias corporativas de suites robustas (como Microsoft 365 o Google Workspace, entre otras).
+
+Tienen a su disposición herramientas de automatización de flujos, gestión documental, bases de datos la nube y analítica avanzada. Pero, ¿Cuál es la realidad? El uso real no pasa de enviar correos electrónicos, redactar textos en Word y llenar hojas de Excel infinitas que se rompen todo el tiempo.
+
+Tienen un Ferrari parqueado en el garaje institucional, pero lo usan únicamente para ir a la tienda de la esquina.
+
+Síntoma 2: El nacimiento del "Software Frankenstein"
+
+Como no se explotan las herramientas que ya están pagas, las organizaciones caen en una trampa costosa: contratar software a la medida para cada problema pequeño.
+
+Si llega una tutela, contratan un software externo para tutelas o para su gestion documental. Si necesitan validar el acceso de sus funcionarios a las instalaciones, contratan otro software,. Al final, la entidad termina con un ecosistema fragmentado de programas que no se hablan entre sí, donde cada uno requiere un contrato de mantenimiento independiente y, colmo de males, también contratan un "equipo de soporte técnico en sitio" para resolver manualmente lo que el software que compraron debería automatizar.
+
+Lo absurdo es que, utilizando el ecosistema que ya está incluido en sus licencias (como la Power Platform de Microsoft: Power Apps, Power Automate y SharePoint o el ecossitema empresarial de Google workspace), un solo ingeniero con la visión correcta podría unificar y automatizar el 90% de esos procesos en unas de semanas, a costo cero en licenciamiento nuevo.
+
+Síntoma 3: El "Elitismo del Código" y el miedo al cambio
+
+¿Por qué los equipos técnicos internos no lo hacen? Aquí chocamos contra dos muros culturales:
+
+La aversión al riesgo: En el sector público, el miedo a las investigaciones o sanciones paraliza la iniciativa. Es más fácil contratar a un tercero por cientos de millones de pesos y delegar la culpa si algo falla, que diseñar una solución interna eficiente y asumir la responsabilidad de su éxito.
+
+El sesgo de la ingeniería tradicional: Existe un desdén generalizado en el mundo del desarrollo de software hacia el Low-Code (bajo código) o el uso de Inteligencia Artificial para automatizar tareas. Muchos profesionales sienten que si no están picando líneas de código puro desde cero, el trabajo no es "respetable". Olvidan que el verdadero valor de un tecnólogo no es escribir código por placer, sino resolver problemas de la forma más rápida, barata y eficiente posible.
+
+La paradoja de la Inteligencia Artificial: ¿Vagancia o Superpoder?
+En medio de este panorama, la llegada de la Inteligencia Artificial generativa ha generado una reacción mixta. Por ejemplo un amigo me comentaba que en su entidad vieron con malos ojos a un funcionario que usó IA para una tarea, catalogando su trabajo como "mediocre".
+
+Y tienen parte de razón: el problema no es la herramienta, sino cómo se usa. El funcionario promedio usa la IA para "atajar": copia una instrucción genérica, genera un texto plano y lo pega sin editar ni verificar datos. El resultado, lógicamente, es acartonado y superficial.
+
+Pero cuando cambias el chip y usas la IA de forma analítica, el juego cambia. En esa misma conversación con mi amigo, hicimos  un ejercicio de prueba, tomamos datos de dos tablas complejas de Excel que a él le tomaba horas para cruzar la información y analizarla. Usando un modelo de IA estándar y gratuito, estructuramos los prompts correctos y en cinco minutos logramos extraer la información, limpiarla, organizarla y generar un análisis de datos impecable.
+
+La IA no es para reemplazar el pensamiento crítico; es para eliminar el trabajo mecánico que quema el cerebro de los profesionales.
+
+¿Cuál es el camino a seguir?
+El cambio en las organizaciones (públicas o privadas) no va a llegar a través de una directiva de alta gerencia o un nuevo manual de procesos de 200 páginas. Va a llegar desde adentro, gracias a los líderes de área, gerentes, coordinadores, que se cansen de la ineficiencia.
+
+La verdadera transformación digital consiste en:
+
+Auditar lo que ya tienes: Antes de comprar el próximo software brillante que te venda un proveedor, revisa qué herramientas ya estás pagando en tus licencias actuales.
+
+Capacitar en utilidad, no en teoría: Menos cátedras sobre "la era digital" y más talleres prácticos de cómo automatizar un reporte molesto que quita tres horas al día.
+
+Adoptar el Low-Code y la IA como aliados: Entender que la tecnología está para acelerar los resultados, no para inflar los egos.
+
+En ProDig, creemos firmemente que la inteligencia artificial y la automatización no son lujos exclusivos para multinacionales con presupuestos infinitos. Están aquí, al alcance de un clic, listas para transformar la gestión de cualquier equipo que se atreva a dejar atrás el "siempre se ha hecho así".
+
+¿Y en tu organización? ¿Están manejando un Ferrari o siguen alimentando al Frankenstein?
