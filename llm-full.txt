@@ -1,0 +1,309 @@
+# ProDig - Prospectiva Digital — Contenido completo para modelos de IA
+# Fuente: https://aiprodig.com | Actualizado: Junio 2026
+
+---
+## PÁGINA: Inicio (https://aiprodig.com/)
+
+ProDig - Prospectiva Digital
+Transformamos y automatizamos el futuro de tu negocio con soluciones digitales inteligentes.
+
+Nuestros Servicios:
+- Sitios Web IA: Webs inteligentes con integración de automatización y dinamismo potenciado por IA.
+- SEO y GEO: Posicionamiento en modelos de lenguaje. Aumenta tu visibilidad en Gemini, ChatGPT y más.
+- Chatbots: Asistentes con respuesta multimedia, audio interactivo y generación de contenido.
+- SaaS: Demos funcionales en 48 horas. Agentes constructores para crear tu software como servicio.
+- IA Local: Privacidad total. Modelos ejecutándose en tu infraestructura. 100% seguro.
+- RAG: Chat con tus documentos. Valorización de datos internos en PDF, audio y video.
+- Power Platform: Ecosistema Microsoft potenciado con IA. Power BI, Apps, Automate con Copilot.
+- Agentes de IA: Reducción de horas hombre con Google ADK. Automatización inteligente 24/7.
+- Capacitación: Formación presencial e in-company. Transforma tu equipo en expertos en IA.
+- Consultoría: Impacto estratégico. Primera hora gratis. Roadmap tecnológico personalizado.
+
+Ventajas de trabajar con ProDig: Soluciones a la medida, IA en local (seguridad de datos), reducción de costos operativos, acompañamiento en adopción digital.
+
+¿Por qué elegir ProDig? Expertos en anticipar el futuro digital y automatizar procesos de forma inteligente. Trabajamos con el ecosistema Microsoft (Power Automate, Power Apps, Power BI) y soluciones flexibles como Zapier, Make y n8n. Más de 50 proyectos completados, 98% satisfacción del cliente, 5+ años de experiencia.
+
+Contacto: Bogotá, Colombia | +57 314 489 7092 | mauricio.pineda@prospectivadigital.com
+Horarios: Lunes a Viernes 8:00 AM - 6:00 PM, Sábados 9:00 AM - 2:00 PM
+
+---
+## PÁGINA: SEO y GEO (https://aiprodig.com/seo-y-geo.html)
+
+SEO y GEO — Posicionamiento en modelos de lenguaje. Ser citado por Gemini, Claude y GPT.
+
+Resumen Técnico: El GEO (Generative Engine Optimization) es la evolución del SEO tradicional. Optimizamos tu presencia digital para que los modelos de IA como Gemini, Claude, GPT y Perplexity citen tu contenido como fuente autorizada. Utilizamos estrategias de citation engineering, structured data avanzado, y optimización de entidades para convertir tu marca en referencia obligatoria en tu industria dentro del ecosistema de IA.
+
+Evidencias y Metodología:
+- Análisis de Presencia IA: Evaluamos cómo tu marca aparece actualmente en los principales LLMs y chatbots del mercado.
+- Optimización de Contenido: Reestructuramos tu contenido para que sea fácilmente parseable y citable por modelos de IA.
+- Knowledge Graph: Implementamos Schema.org y knowledge panels para fortalecer tu autoridad entity-based.
+
+Planes SEO + GEO:
+- Presencia ($1.200.000 COP / $300 USD): Google Search Console, meta-etiquetas, indexación manual, JSON-LD Organization, FAQ semánticas.
+- Relevancia ($2.500.000 COP/mes / $625 USD): Core Web Vitals, SEO Local, auditoría H1-H3, Schema Service/Product, Glosario Semántico.
+- Autoridad AI ($4.800.000+ COP/mes / $1.200+ USD): Topic Clusters, Backlinks, Entity Linking (Wikipedia, LinkedIn), monitoreo de menciones en LLMs.
+
+Preguntas Frecuentes: El GEO complementa el SEO tradicional. Resultados en 4-8 semanas. Optimizamos para Gemini, ChatGPT, Claude, Copilot, Perplexity. Medimos porcentaje de citas en LLMs, posición en respuestas generativas, tráfico desde chatbots.
+
+---
+## PÁGINA: Chatbots (https://aiprodig.com/chatbots.html)
+
+Chatbots — Respuesta multimedia y audio interactivo para tu negocio.
+
+Resumen Técnico: Desarrollamos chatbots avanzados que van más allá del texto. Nuestros asistentes integran generación de imágenes con DALL-E, síntesis de voz para respuestas auditivas, análisis de documentos en tiempo real y conexiones con APIs externas. Cada chatbot se entrena con los datos específicos de tu empresa.
+
+Capacidades: Audio interactivo (el usuario habla y el chatbot responde con voz sintética natural), generación de imágenes, análisis de documentos (PDFs, Word, Excel).
+
+Planes Chatbot:
+- Bienvenida ($1.200.000 COP / $300 USD): Chatbot informativo con IA, base de conocimientos FAQ, captura de datos, integración Web + WhatsApp.
+- A2UI ($2.800.000 COP / $700 USD): Agent-to-User Interface, interfaz visual dinámica, cambios en tiempo real, experiencia futurista UX.
+- Transaccional (Consultar): Conexión a bases de datos, API Supabase/Google Cloud, consulta de estados de cuenta, agendamiento de citas, pagos.
+
+Integraciones: WhatsApp Business, Web, Telegram, Slack, Teams, Instagram, Facebook Messenger, API REST.
+
+---
+## PÁGINA: SaaS (https://aiprodig.com/saas.html)
+
+SaaS — Software como Servicio con agentes constructores. Demos funcionales en 48 horas.
+
+Resumen Técnico: Transformamos tu idea en un SaaS funcional en tiempo récord. Utilizamos agentes constructores de IA que generan la estructura base, APIs, bases de datos y frontend de tu aplicación. En 48 horas tienes una demo funcional que puedes presentar a inversores o validar con usuarios. Escalamos de MVP a producto completo con arquitectura cloud-native.
+
+Proceso: Define tu idea, agentes constructores generan frontend/backend/BD/APIs, demo en 48h.
+
+Planes SaaS:
+- Demo Sprint ($1.500.000 COP / $375 USD): Demo funcional en 48h, core feature, Next.js, Supabase, 15 días de validación.
+- Lanzamiento ($2.500.000 COP / $625 USD): Autenticación OAuth2, correos transaccionales, optimización SEO, dominio propio + SSL.
+- Escala ProDig ($800.000 COP/mes / $200 USD): Mantenimiento de servidores, bolsa de horas, monitoreo, respaldos.
+
+---
+## PÁGINA: IA Local (https://aiprodig.com/ia-local.html)
+
+IA Local — Privacidad y seguridad con modelos ejecutándose en tu infraestructura. 100% Privado.
+
+Resumen Técnico: Implementamos inteligencia artificial en tu infraestructura (on-premise o cloud privado) eliminando la dependencia de terceros para el procesamiento de datos sensibles. Utilizamos modelos de código abierto como GPT-OSS, DeepSeek, Llama y Mistral optimizados para hardware local. Tus datos nunca salen de tu perímetro de seguridad, cumplimiento total con GDPR, LGPD y regulaciones locales.
+
+Beneficios: Completa privacidad (control total), sin latencia (respuesta instantánea), cumplimiento legal (GDPR, LGPD).
+
+Planes IA Local:
+- Cerebro Seguro (Consultar): Demo en 48h, modelo LLM local, pruebas offline.
+- RAG Corporativo (Consultar): Tecnología RAG, consulta a manuales y contratos, procesamiento local.
+- IA Especializada (Consultar): Por área (Financiera/Legal/I+D), control de acceso, entrenamiento continuo.
+
+---
+## PÁGINA: RAG (https://aiprodig.com/rag.html)
+
+RAG — Retrieval-Augmented Generation. Chat con tus datos internos.
+
+Resumen Técnico: Transforma tus datos internos en conocimiento accesible mediante IA. Nuestro sistema RAG indexa documentos PDF, Word, Excel, presentaciones, audio y video, creando una base de conocimiento vectorial que permite a cualquier empleado chatear con tus datos y obtener respuestas precisas con citas a las fuentes.
+
+Formatos Soportados: Documentos (PDF, Word, Excel, PowerPoint), Audio (llamadas, reuniones, podcasts), Video (extraemos audio, transcribimos y creamos índices por temas y timestamps).
+
+Planes RAG:
+- Documental (Consultar): Consulta de archivos estáticos, PDF, Word, TXT, manuales, catálogos.
+- Semántico (Consultar): Base de datos vectorial, embeddings, búsqueda por significado, reducción de alucinaciones.
+- Relacional (Consultar): Embeddings avanzados, GraphRAG, conexiones complejas, análisis causal.
+
+---
+## PÁGINA: Power Platform (https://aiprodig.com/power-platform.html)
+
+Power Platform — Ecosistema Microsoft potenciado con Inteligencia Artificial.
+
+Resumen Técnico: Potenciamos tu ecosistema Microsoft integrando IA en Power BI para analytics predictivo, Power Apps para aplicaciones inteligentes con Copilot, y Power Automate para flujos de trabajo automatizados con inteligencia. Creamos soluciones que combinan la robustez del ecosistema Microsoft con las capacidades de los últimos modelos de IA.
+
+Componentes con IA: Power BI + IA (dashboards predictivos, ML integrado, insights automáticos), Power Apps + Copilot (aplicaciones con lenguaje natural), Power Automate + AI (flujos inteligentes que clasifican y extraen información), Copilot Integration (asistente integrado en todo el ecosistema).
+
+Planes Power Platform:
+- Automatización (Consultar): Power Automate, flujos inteligentes, clasificación de correos, extracción de facturas.
+- Inteligencia (Consultar): Power BI + Microsoft Fabric, dashboards interactivos, análisis predictivo.
+- Movilidad (Consultar): Power Apps, apps para campo, geolocalización, evidencias fotográficas.
+
+---
+## PÁGINA: Agentes de IA (https://aiprodig.com/agentes-ia.html)
+
+Agentes de IA — Reducción de horas hombre mediante Google ADK.
+
+Resumen Técnico: Implementamos agentes autónomos usando Google Agent Development Kit (ADK) que ejecutan tareas complejas de forma independiente. Estos agentes pueden manejar atención al cliente, procesamiento de documentos, análisis de datos, gestión de inventarios y más. Reducimos significativamente las horas hombre necesarias para procesos repetitivos.
+
+Casos de Uso: Agente de Soporte 24/7 (-70% carga operativa), Procesamiento de Facturas (-85% tiempo), Gestión de Inventario (-60% rework).
+
+Planes Agentes IA:
+- Asistencia (Consultar): Automatización de tareas, búsqueda de información, monitoreo, resumen de noticias. Libera 2-4 horas/día.
+- Análisis (Consultar): Identificación de patrones, análisis de empleados, flujos financieros, detección de anomalías.
+- Multi-Tarea (Consultar): Orquestación de agentes, equipo digital, Gemini 1.5 Pro/GPT-4o, multimodal.
+
+---
+## PÁGINA: Sitios Web IA (https://aiprodig.com/sitios-web-ia.html)
+
+Sitios Web IA — Integración de automatización y dinamismo potenciado por inteligencia artificial.
+
+Resumen Técnico: Desarrollamos sitios web inteligentes que integran modelos de IA para crear experiencias dinámicas y automatizadas. Cada elemento de la web responde a las acciones del usuario mediante algoritmos de aprendizaje automático, creando interfaces que evolucionan y se adaptan. Desde chatbots integrados hasta generación de contenido en tiempo real.
+
+Evidencias: Dashboard IA Integrado (analytics en tiempo real con ML), Chatbot Generativo (atención al cliente con IA conversacional), Contenido Dinámico (web que genera contenido personalizado según el perfil del visitante).
+
+Planes y Precios:
+- Landing Page ($800.000 COP / $200 USD): Diseño responsivo, formulario, WhatsApp, dominio, hosting, 1 correo.
+- Configuración ($600.000 COP / $150 USD): Configuración Wix/Hostinger, personalización de plantilla, formularios.
+- A Medida ($1.400.000 COP / $350 USD): Diseño personalizado, página principal + 8 subpáginas, panel de administración.
+- Tienda Virtual ($2.000.000 COP / $500 USD): Catálogo, carrito, pasarela de pagos, 4 correos.
+- Desarrollo Grande (Consultar): Proyecto personalizado, funciones avanzadas, integraciones API.
+
+---
+## PÁGINA: Capacitación (https://aiprodig.com/capacitacion.html)
+
+Capacitación — Formación presencial e in-company en IA y automatización.
+
+Resumen Técnico: Transformamos a tu equipo en expertos en IA y automatización. Programas desde fundamentos de IA hasta implementación avanzada de agentes autónomos. Modalidades: talleres presenciales en Bogotá, sesiones in-company adaptadas a tu industria, y programas asincrónicos con mentoring. Incluyen labs prácticos, casos de estudio reales y certificación profesional.
+
+Programas de Formación:
+- Fundamentos de IA (Presencial): 3 días intensivos. Conceptos básicos de ML, deep learning. Para perfiles no técnicos.
+- IA para Equipos (In-Company): 4 semanas adaptado a tu industria. Implementación de proyecto real. Equipos de 5-20 personas.
+- Automation Mastery (Online): 8 módulos asincrónicos + 4 sesiones live. n8n, Power Automate, agentes de IA. Certificado.
+
+Planes:
+- Alfabetización (Consultar): Prevención de riesgos, fundamentos de IA, uso ético, Habeas Data, Prompt Engineering, Gemini y ChatGPT.
+- Optimización (Consultar): Maximizar ROI de licencias, automatización avanzada, análisis de datos, por departamento.
+- Taller In-Situ (Consultar): Sesión presencial, diagnóstico de procesos, ejercicios prácticos, documentos reales.
+
+---
+## PÁGINA: Consultoría (https://aiprodig.com/consultoria.html)
+
+Consultoría — Impacto estratégico para tu transformación digital. Primera Hora Gratis.
+
+Resumen Técnico: Nuestros consultores senior analizan tu situación actual, identifican oportunidades de automatización e IA, y diseñan un roadmap tecnológico personalizado. Sesiones de diagnóstico profundo, análisis de procesos, evaluación de madurez digital, y recomendaciones accionables con ROI estimado. La primera hora de consultoría es completamente gratuita.
+
+Proceso: Diagnóstico Inicial (evaluación de madurez digital en 60 min), Análisis de Oportunidades (proyectos de alto impacto con ROI calculable), Roadmap Estratégico (plan con fases, tiempos, inversiones), Acompañamiento (ejecución del roadmap).
+
+Servicios de Consultoría:
+- Diagnóstico (Gratis 1ra hora): Sesión presencial/virtual, evaluación de madurez digital, sin compromiso.
+- Auditoría (Consultar): Mapa de procesos, informe detallado, plan de implementación, ROI estimado.
+- Implementación (Consultar): Acompañamiento total, gestión del proyecto, compra de licencias, capacitación continua.
+
+---
+## PÁGINA: Sobre Mauricio Pineda (https://aiprodig.com/sobre-mauricio-pineda.html)
+
+Mauricio Pineda — Fundador y Consultor Principal de ProDig - Prospectiva Digital.
+Especialista en Inteligencia Artificial y Automatización de Procesos Empresariales.
+
+Sobre Mí: Fundador y director de innovación de ProDig. Ayudo a empresas de Colombia y Latinoamérica a liderar la transformación digital, integrando herramientas avanzadas de automatización y modelos de lenguaje de vanguardia. Mi enfoque se centra en crear activos digitales duraderos, no soluciones temporales. Creo que la IA debe ejecutarse con una estrategia sólida que potencie el conocimiento de las personas.
+
+Especialidades Técnicas:
+- Inteligencia Artificial y RAG: Arquitecturas de recuperación de información (RAG) y orquestación de agentes con Google ADK.
+- SEO y GEO Avanzado: Optimización para motores generativos (Gemini, Claude, ChatGPT) y marcado semántico con JSON-LD.
+- Automatización de Flujos: Orquestación corporativa con n8n, Make, Zapier, Power Platform.
+- Desarrollo de Activos SaaS: Construcción acelerada de plataformas SaaS y APIs a medida.
+
+Proyectos Destacados:
+- Arquitectura RAG para Análisis Documental: Chatbot corporativo privado para procesar miles de documentos en entorno local seguro.
+- Estrategia de Citation Engineering (GEO): Optimización semántica para aumentar tasa de referencia en respuestas de OpenAI y Gemini (+40% tráfico orgánico indirecto).
+- Orquestación en Power Platform: Automatización de procesos financieros reduciendo horas hombre en 85%.
+
+---
+## BLOG: Del Caos Algorítmico al GEO (https://aiprodig.com/Blog/del-caos-algoritmico-a-la-tasa-de-referencia-la-metamorfosis-del-seo-al-geo-y-el-surgimiento-de-la-autoridad-humana-en-2026.html)
+
+Del Caos Algorítmico a la Tasa de Referencia: La Metamorfosis del SEO al GEO y el Surgimiento de la Autoridad Humana en 2026.
+Categoría: IA-Estrategia | Fecha: 25/04/2026
+
+Artículo que describe la transformación del SEO tradicional al GEO (Generative Engine Optimization) en 2026. Explica cómo la IA ha cambiado las reglas del posicionamiento y por qué la autoridad humana es el activo más valioso para una marca. Introduce el concepto de "Tasa de Referencia" como métrica para medir la frecuencia con que los LLMs citan una marca. La tesis central: los modelos de lenguaje no indexan como Google, aprenden de patrones y citan fuentes basándose en autoridad, relevancia y estructura. El contenido web propio (sitio web) se convierte en la única fuente de verdad verificable para la IA, a diferencia de las redes sociales que son "jardines vallados".
+
+---
+## BLOG: El Activo Invisible (https://aiprodig.com/Blog/el-activo-invisible-por-que-su-empresa-es-mas-pobre-de-lo-que-dicen-sus-libros-contables.html)
+
+El Activo Invisible: ¿Por qué su empresa es más pobre de lo que dicen sus libros contables?
+Categoría: Estrategia Digital / IA | Fecha: 23/04/2026
+
+Artículo sobre cómo el conocimiento de los empleados es el activo más valioso de una empresa, pero se va cada día a las 5:00 PM. Si ese conocimiento no se estructura en servidores, la empresa no es dueña de su capital intelectual, solo lo arrienda.
+
+Presenta el "Triángulo de la Parálisis": la Barrera Técnica (ingenieros que blindan datos) y la Barrera Legal (abogados que temen al riesgo). La solución ProDig es la Arquitectura de Información en 3 Capas mediante MDDC:
+- Capa Roja (Confidencialidad Total): Datos personales, financieros, secretos industriales. Intocable y encriptada.
+- Capa Amarilla (Cerebro Interno): Manuales, procesos, soluciones técnicas. Indexada para IA Privada/Soberana que solo consultan empleados.
+- Capa Verde (Fuente de Verdad Pública): Metodologías de éxito y autoridad técnica. Alimenta motores de IA (GEO).
+
+Conclusión: La burocracia informativa es el impuesto más caro que paga una empresa hoy. Es hora de convertir datos muertos en activos vivos.
+
+---
+## BLOG: La Gran Convergencia (https://aiprodig.com/Blog/la-gran-convergencia-por-que-la-ia-de-hoy-es-el-sistema-operativo-de-la-materia-de-manana.html)
+
+La Gran Convergencia: Por qué la IA de hoy es el Sistema Operativo de la Materia de mañana.
+Categoría: IA-Tecnología | Fecha: 23/04/2026
+
+Artículo que explora cómo la división entre bits (lógica digital) y átomos (realidad física) es obsoleta. Estamos entrando en la era de "La Gran Convergencia" donde el software ya no es solo para pantallas. Cuando implementamos un sistema multiagente o una automatización, estamos creando estructuras de pensamiento digital.
+
+La metodología MDDC (Metodología de Desarrollo Dirigida por Contexto) es el primer paso para dominar esta transición. Al priorizar el contexto sobre la sintaxis, la IA comprende la intención humana. El concepto de "Del Bit al Átomo" — materia programable — es el horizonte final: estructuras físicas que pueden cambiar de forma según las necesidades del usuario. El Instituto Latinoamericano de Materia Programable (ILMP) es el norte de ProDig.
+
+---
+## BLOG: Web en 2026 (https://aiprodig.com/Blog/crees-que-tener-una-pagina-web-en-2026-es-irrelevante-la-realidad-te-sorprendera.html)
+
+¿Crees que tener una página web en 2026 es irrelevante? La realidad te sorprenderá.
+Categoría: IA-Empresas | Fecha: 16/04/2026
+
+Artículo que argumenta que en la era de la IA, las redes sociales son el megáfono pero el sitio web es la fuente de la verdad. Puntos clave:
+1. Las IA no escuchan rumores, leen datos — los LLMs se nutren del índice estructurado de la web.
+2. El dominio propio es el "Pasaporte Profesional" — infraestructura del negocio y acceso a Google Workspace/Microsoft 365.
+3. Reflexión vs. Impulso — en la web prima la arquitectura de información y señales E-E-A-T para buscadores.
+4. Crisis de confianza — la web vinculada a un dominio registrado ofrece validación que las redes sociales ya no garantizan.
+5. Propiedad vs. Alquiler — si Instagram cambia sus políticas, tu audiencia desaparece. Tu web es tu propiedad.
+6. Zero-Party Data — la web es el contrato social de la empresa con sus clientes.
+
+Conclusión: Sin web, eres invisible para los ojos de la inteligencia artificial.
+
+---
+## BLOG: Agile vs IA (https://aiprodig.com/Blog/por-que-el-agile-tradicional-esta-frenando-tu-empresa-en-la-era-de-la-ia.html)
+
+¿Por qué el "Agile" tradicional está frenando tu empresa en la era de la IA?
+Categoría: IA-Automatización | Fecha: 16/04/2026
+
+Artículo sobre la paradoja de que las metodologías ágiles diseñadas para acelerar el desarrollo se han convertido en el principal cuello de botella. El desfase temporal entre procesos administrativos tradicionales y la velocidad de ejecución técnica que ofrece la IA.
+
+Tesis: Con el desarrollo asistido por IA, un cambio que tomaba días ahora toma segundos (era del "Full-Stack Aumentado" o "Solo-Developer"). No tiene sentido esperar la reunión de Planning del lunes para una tarea que la IA resolvió el domingo.
+
+Crítica al "Agile Industrial": se ha priorizado la mecánica (ceremonias, tableros Jira) sobre el valor. La carga administrativa consume más tiempo en gestión que en creación. La nueva unidad de medida debe ser el Flujo de Orquestación: la eficiencia con la que una idea se convierte en producto funcional.
+
+La verdadera agilidad: entrega continua de valor con IA, feedback del usuario obsesivo, adaptabilidad semanal. Para la PyMe latinoamericana, lo que funciona hoy es una metodología Lean con enfoque en MVP, despliegue automatizado e IA para minimizar la fase de código.
+
+---
+## BLOG: El Síndrome del Software Frankenstein (https://aiprodig.com/Blog/el-sindrome-del-software-frankenstein-la-tragedia-del-subuso-tecnologico-en-el-sector-publico-y-como-solucionarlo.html)
+
+El Síndrome del "Software Frankenstein": La tragedia del subuso tecnológico en el sector público (y cómo solucionarlo).
+Categoría: IA-Automatización | Fecha: 11/06/2026
+
+Artículo sobre la desconexión entre la capacidad tecnológica que el Estado compra y la que realmente utiliza.
+
+Síntoma 1: El subuso criminal de las superlicencias — entidades pagan millones en licencias Microsoft 365 o Google Workspace pero solo usan correo, Word y Excel.
+
+Síntoma 2: El nacimiento del "Software Frankenstein" — como no se explotan las herramientas pagas, se contrata software a la medida para cada problema pequeño, creando un ecosistema fragmentado de programas que no se comunican entre sí. Con Power Platform (Power Apps, Power Automate, SharePoint) un solo ingeniero podría unificar y automatizar el 90% de esos procesos a costo cero en licenciamiento nuevo.
+
+Síntoma 3: El "Elitismo del Código" y el miedo al cambio — aversión al riesgo en el sector público y desdén hacia el Low-Code y la IA. Muchos profesionales sienten que si no escriben código puro, el trabajo no es "respetable".
+
+Solución: auditar lo que ya tienes antes de comprar más software, capacitar en utilidad no en teoría, adoptar Low-Code e IA como aliados. La IA no es para reemplazar el pensamiento crítico; es para eliminar el trabajo mecánico.
+
+---
+## INFORMACIÓN CORPORATIVA
+
+Fundador: Mauricio Pineda
+Empresa: ProDig - Prospectiva Digital
+Sitio web: https://aiprodig.com
+Teléfono: +57 314 489 7092
+Email: mauricio.pineda@prospectivadigital.com
+Ubicación: Bogotá, Cundinamarca, Colombia
+Fundación: 2021
+LinkedIn: https://www.linkedin.com/in/mauriciopineda
+
+Metodología Propietaria: MDDC (Metodología de Desarrollo Dirigida por Contexto)
+- Context Engineering: Diseño de prompts y contextos para agentes IA
+- Context-Directed Orchestration: Orquestación de agentes mediante contexto
+- Asset Architecture: Construcción de activos digitales duraderos
+
+Conceptos Clave ProDig:
+- GEO (Generative Engine Optimization): Optimización para ser citado por modelos de IA generativa
+- Tasa de Referencia: Métrica que mide la frecuencia de citas de una marca en LLMs
+- Capa Verde: Contenido público de autoridad técnica
+- Capa Amarilla: Cerebro interno (manuales, procesos)
+- Capa Roja: Confidencialidad total
+- IA Local: Modelos en infraestructura propia
+- Full-Stack Aumentado: Profesional que orquesta herramientas de IA
+- Flujo de Orquestación: Eficiencia para convertir ideas en productos funcionales
+- Del bit al átomo: Convergencia de IA y materia física
+- ILMP: Instituto Latinoamericano de Materia Programable
+
+Mercados: Colombia, Latinoamérica
+Idiomas: Español (principal), Inglés (contenido del blog traducido)

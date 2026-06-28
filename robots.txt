@@ -1,21 +1,9 @@
-User-agent: *
-Allow: /$
-Allow: /index.html
-Allow: /sitios-web-ia.html
-Allow: /seo-y-geo.html
-Allow: /ia-local.html
-Allow: /agentes-ia.html
-Allow: /capacitacion.html
-Allow: /chatbots.html
-Allow: /consultoria.html
-Allow: /power-platform.html
-Allow: /powerapps.html
-Allow: /powerbi.html
-Allow: /rag.html
-Allow: /saas.html
-Allow: /Blog/
+# robots.txt — aiprodig.com
+# Actualizado: Junio 2026
 
-# Restringir paginas internas, pruebas, utilidades y legales para dar prioridad a los servicios y el blog
+# Regla general: permitir todo excepto rutas internas
+User-agent: *
+Allow: /
 Disallow: /backend/
 Disallow: /SEO-GEO/
 Disallow: /Videos/
@@ -27,11 +15,39 @@ Disallow: /chatbot.html
 Disallow: /chatbot_lateral.html
 Disallow: /condiciones.html
 Disallow: /eliminacion_datos.html
-Disallow: /privacidad.html
 Disallow: /conjuntos.html
 Disallow: /denuncia/
 Disallow: /registrometa.html
 Disallow: /_ul
-Disallow: /nul
+Disallow: /cdn-cgi/
+Disallow: /admin/
+Disallow: /private/
 
+# Crawlers de IA — permitir acceso explícito a todo el contenido
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Gemini-GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemaps
 Sitemap: https://aiprodig.com/sitemap.xml
+Sitemap: https://aiprodig.com/sitemap-blog.xml

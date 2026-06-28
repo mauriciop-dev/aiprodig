@@ -71,20 +71,50 @@
         footer { background: #0d1b2a; color: white; text-align: center; padding: 2rem 0; }
         .back-link { position: absolute; top: 100px; left: 2rem; color: white; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
     </style>
+    <!-- JSON-LD: SpeakableSpecification (GEO para voz y asistentes) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://aiprodig.com/seo-y-geo.html",
+      "name": "SEO y GEO — Posicionamiento en Modelos de IA | ProDig",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", ".resumen-tecnico", ".faq-answer"]
+      },
+      "isPartOf": {
+        "@id": "https://aiprodig.com/#website"
+      }
+    }
+    </script>
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://aiprodig.com/seo-y-geo.html#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://aiprodig.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://aiprodig.com/#servicios"},
+        {"@type": "ListItem", "position": 3, "name": "SEO y GEO", "item": "https://aiprodig.com/seo-y-geo.html"}
+      ]
+    }
+    </script>
 </head>
 <body>
     <header>
         <nav>
             <a href="/" class="logo">ProDig</a>
             <ul class="nav-links">
-                <li><a href="/#inicio">Inicio</a></li>
-                <li><a href="/#servicios">Servicios</a></li>
-                <li><a href="/#nosotros">Nosotros</a></li>
-                <li><a href="/#contacto">Contacto</a></li>
+                <li><a href="/#inicio" aria-label="Inicio">Inicio</a></li>
+                <li><a href="/#servicios" aria-label="Servicios">Servicios</a></li>
+                <li><a href="/#nosotros" aria-label="Nosotros">Nosotros</a></li>
+                <li><a href="/#contacto" aria-label="Contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
     <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <main role="main">
     <section class="hero-section">
         <a href="/#servicios" class="back-link"><i class="fas fa-arrow-left"></i> Volver a servicios</a>
         <div class="hero-content">
@@ -209,8 +239,17 @@
             <a href="https://wa.me/573144897092?text=Hola%20ProDig,%20me%20interesa%20el%20servicio%20de%20SEO%20y%20GEO" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Consultar Ahora</a>
         </div>
     </section>
-    <footer>
+    </main>
+    <footer itemscope itemtype="https://schema.org/LocalBusiness">
         <div class="container">
+            <address style="font-style: normal;">
+                <span itemprop="name"><strong>ProDig - Prospectiva Digital</strong></span> |
+                <span itemprop="addressLocality">Bogotá</span>,
+                <span itemprop="addressRegion">Cundinamarca</span>,
+                <span itemprop="addressCountry">Colombia</span> |
+                <a itemprop="telephone" href="tel:+573144897092">+57 314 489 7092</a> |
+                <a itemprop="email" href="mailto:mauricio.pineda@prospectivadigital.com">mauricio.pineda@prospectivadigital.com</a>
+            </address>
             <p>&copy; 2026 ProDig - Prospectiva Digital. Todos los derechos reservados.</p>
         </div>
     </footer>
@@ -218,11 +257,93 @@
     {
         "@context": "https://schema.org",
         "@type": "Service",
-        "name": "SEO y GEO",
-        "description": "Posicionamiento en modelos de lenguaje - Ser citado por Gemini, Claude y GPT",
-        "provider": { "@type": "Organization", "name": "ProDig", "url": "https://aiprodig.com" },
-        "areaServed": { "@type": "Country", "name": "Colombia" },
-        "priceRange": "$1.200.000-$4.800.000+ COP/mes"
+        "@id": "https://aiprodig.com/seo-y-geo.html#service",
+        "name": "SEO y GEO — Posicionamiento en Motores de IA",
+        "alternateName": "Generative Engine Optimization",
+        "description": "Servicio de posicionamiento para que tu marca sea citada por Gemini, ChatGPT, Claude y Perplexity. Incluye auditoría de presencia en LLMs, optimización de contenido semántico, implementación de schema.org y monitoreo mensual de menciones.",
+        "url": "https://aiprodig.com/seo-y-geo.html",
+        "provider": {"@id": "https://aiprodig.com/#organization"},
+        "serviceType": "Generative Engine Optimization",
+        "category": "Marketing Digital / IA",
+        "areaServed": [
+            {"@type": "Country", "name": "Colombia"},
+            {"@type": "Place", "name": "Latinoamérica"}
+        ],
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "Plan Presencia",
+                "price": "1200000",
+                "priceCurrency": "COP",
+                "description": "Configuración Google Search Console, meta-etiquetas, indexación manual, JSON-LD Organization y FAQ semánticas"
+            },
+            {
+                "@type": "Offer",
+                "name": "Plan Relevancia",
+                "price": "2500000",
+                "priceCurrency": "COP",
+                "priceSpecification": {"@type": "RecurringCharge", "billingIncrement": "month"},
+                "description": "Core Web Vitals, SEO Local, auditoría H1-H3, Schema Service/Product, Glosario Semántico"
+            },
+            {
+                "@type": "Offer",
+                "name": "Plan Autoridad AI",
+                "price": "4800000",
+                "priceCurrency": "COP",
+                "priceSpecification": {"@type": "RecurringCharge", "billingIncrement": "month"},
+                "description": "Topic Clusters, Backlinks, Entity Linking (Wikipedia, LinkedIn), Monitoreo de menciones en LLMs"
+            }
+        ],
+        "mainEntityOfPage": {"@id": "https://aiprodig.com/seo-y-geo.html"}
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://aiprodig.com/seo-y-geo.html#faq",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Qué diferencia hay entre SEO tradicional y GEO?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El SEO tradicional optimiza para motores de búsqueda como Google, mientras que el GEO (Generative Engine Optimization) optimiza para modelos de IA generativa. Los LLMs no indexan como Google; aprenden de patrones y citan fuentes basándose en autoridad, relevancia y estructura. El GEO requiere optimizar para 'cited by AI' en lugar de 'ranked by algorithm'."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cuánto tiempo toma ver resultados en GEO?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Los primeros resultados aparecen en 4-8 semanas, pero la autoridad de marca en IA se construye a lo largo de 3-6 meses. Realizamos reportes mensuales de citas en LLMs y ajustes estratégicos continuos para maximizar la visibilidad."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Para qué modelos de IA optimizamos?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Optimizamos para todos los principales: Google Gemini, OpenAI ChatGPT, Anthropic Claude, Microsoft Copilot, Perplexity, y otros emergentes. Cada modelo tiene particularidades que adaptamos en nuestra estrategia."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿El GEO reemplaza al SEO tradicional?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, el GEO complementa y amplifica el SEO tradicional. Los factores técnicos básicos (velocidad, mobile-friendly, backlinks) siguen siendo relevantes. GEO añade una capa de optimización para el nuevo paradigma de búsqueda generativa."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cómo miden el éxito del GEO?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Medimos mediante: porcentaje de citas en LLMs para términos clave, posición de marca en respuestas generativas, tráfico desde chatbots, y share of voice en el espacio de IA. Proporcionamos dashboard en tiempo real."
+                }
+            }
+        ]
     }
     </script>
     <script>

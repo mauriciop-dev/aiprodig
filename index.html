@@ -58,38 +58,157 @@
     <meta name="twitter:title" content="ProDig - Prospectiva Digital">
     <meta name="twitter:description" content="Consultoría de vanguardia en IA y desarrollo de activos digitales.">
     
-    <!-- JSON-LD -->
+    <!-- JSON-LD: Organization (Entidad Raíz) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://aiprodig.com/#organization",
+      "name": "ProDig - Prospectiva Digital",
+      "alternateName": "ProDig",
+      "url": "https://aiprodig.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://aiprodig.com/images/prodig-logo.png",
+        "width": 300,
+        "height": 100
+      },
+      "description": "Consultoría en Inteligencia Artificial y desarrollo de activos digitales. Chatbots, SaaS, SEO/GEO, Agentes IA, Power Platform. Bogotá, Colombia.",
+      "foundingDate": "2021",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://aiprodig.com/#mauricio-pineda",
+        "name": "Mauricio Pineda",
+        "jobTitle": "Fundador y Director de Innovación Digital",
+        "url": "https://aiprodig.com/sobre-mauricio-pineda.html",
+        "sameAs": ["https://www.linkedin.com/in/mauriciopineda"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bogotá",
+        "addressRegion": "Cundinamarca",
+        "addressCountry": "CO"
+      },
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+57-314-489-7092",
+        "contactType": "customer service",
+        "availableLanguage": ["Spanish"],
+        "areaServed": ["CO", "LATAM"]
+      }],
+      "sameAs": [
+        "https://aiprodig.com",
+        "https://materiaprogramable.com"
+      ],
+      "knowsAbout": [
+        "Inteligencia Artificial",
+        "Generative Engine Optimization",
+        "SEO",
+        "Chatbots",
+        "Automatización de procesos",
+        "Power Platform",
+        "RAG - Retrieval Augmented Generation",
+        "Agentes de IA"
+      ],
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 4.711,
+          "longitude": -74.0721
+        },
+        "name": "Bogotá, Colombia y Latinoamérica"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "3",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "3"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios ProDig",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO y GEO", "url": "https://aiprodig.com/seo-y-geo.html"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Chatbots con IA", "url": "https://aiprodig.com/chatbots.html"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Agentes de IA", "url": "https://aiprodig.com/agentes-ia.html"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "RAG - Chat con documentos", "url": "https://aiprodig.com/rag.html"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SaaS a medida", "url": "https://aiprodig.com/saas.html"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "IA Local", "url": "https://aiprodig.com/ia-local.html"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Power Platform con IA", "url": "https://aiprodig.com/power-platform.html"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Sitios Web con IA", "url": "https://aiprodig.com/sitios-web-ia.html"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Capacitación en IA", "url": "https://aiprodig.com/capacitacion.html"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Consultoría estratégica", "url": "https://aiprodig.com/consultoria.html"}}
+        ]
+      }
+    }
+    </script>
+    <!-- JSON-LD: WebSite -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "ProDig - Prospectiva Digital",
+      "@id": "https://aiprodig.com/#website",
       "url": "https://aiprodig.com",
-      "description": "Consultoría de vanguardia en Inteligencia Artificial y desarrollo de activos digitales",
-      "publisher": {
-        "@type": "Organization",
-        "name": "ProDig",
-        "url": "https://aiprodig.com",
-        "logo": "https://aiprodig.com/images/prodig-logo.png",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+57-3144897092",
-          "contactType": "customer service",
-          "email": "info@aiprodig.com"
+      "name": "ProDig - Prospectiva Digital",
+      "description": "Consultoría en IA y activos digitales para empresas latinoamericanas",
+      "inLanguage": "es",
+      "publisher": {"@id": "https://aiprodig.com/#organization"}
+    }
+    </script>
+    <!-- JSON-LD: DefinedTermSet (Glosario ProDig para GEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "@id": "https://aiprodig.com/#glosario-prodig",
+      "name": "Glosario ProDig — Conceptos propietarios de IA y GEO",
+      "publisher": {"@id": "https://aiprodig.com/#organization"},
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Tasa de Referencia",
+          "description": "Métrica propietaria de ProDig que mide la frecuencia con la que modelos de lenguaje como Gemini, Claude y ChatGPT citan una marca o contenido en sus respuestas generativas. Análogo al PageRank pero para el ecosistema de IA.",
+          "inDefinedTermSet": "https://aiprodig.com/#glosario-prodig"
         },
-        "sameAs": [
-          "https://wa.me/573144897092"
-        ]
-      },
-      "areaServed": {
-        "@type": "State",
-        "name": "Colombia"
-      },
-      "availableLanguage": ["Spanish", "English"]
+        {
+          "@type": "DefinedTerm",
+          "name": "GEO - Generative Engine Optimization",
+          "description": "Disciplina de optimización digital orientada a que el contenido de una empresa sea citado, referenciado y recomendado por motores de búsqueda generativos basados en IA, como Google AI Overviews, ChatGPT, Claude y Perplexity.",
+          "inDefinedTermSet": "https://aiprodig.com/#glosario-prodig"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Capa Verde",
+          "description": "Concepto ProDig que describe el conjunto de contenido público, técnico y verificable que actúa como combustible para el posicionamiento en modelos de lenguaje. La Capa Verde es el activo de autoridad que los LLMs consumen para aprender sobre una marca.",
+          "inDefinedTermSet": "https://aiprodig.com/#glosario-prodig"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "MDDC - Metodología de Desarrollo Dirigida por Contexto",
+          "description": "Marco metodológico propietario de ProDig para el desarrollo de productos digitales con IA. Se basa en tres pilares: Context Engineering, Context-Directed Orchestration y Asset Architecture.",
+          "inDefinedTermSet": "https://aiprodig.com/#glosario-prodig"
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "IA Local",
+          "description": "Modalidad de implementación de inteligencia artificial en la que los modelos de lenguaje se ejecutan en la infraestructura propia de la empresa, sin enviar datos a servidores externos. Garantiza privacidad total y cumplimiento normativo.",
+          "inDefinedTermSet": "https://aiprodig.com/#glosario-prodig"
+        }
+      ]
     }
     </script>
     <title>ProDig - Prospectiva Digital | Transformamos el futuro de tu negocio</title>
+    <!-- Preconnects para Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload imagen LCP (hero) -->
+    <link rel="preload" as="image" href="/images/prodig-hero-futuro-digital.webp" fetchpriority="high">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Three.js requerido por las tarjetas de servicio -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         * {
@@ -1005,14 +1124,16 @@
         <nav>
             <div class="logo">ProDig</div>
             <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#inicio" aria-label="Inicio">Inicio</a></li>
+                <li><a href="#servicios" aria-label="Servicios">Servicios</a></li>
+                <li><a href="#nosotros" aria-label="Nosotros">Nosotros</a></li>
+                <li><a href="#blog" aria-label="Blog">Blog</a></li>
+                <li><a href="#contacto" aria-label="Contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
+
+    <main role="main">
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
@@ -1041,70 +1162,70 @@
             </div>
             <div class="services-grid">
                 <!-- Servicio 1: Sitios Web IA -->
-                <a href="sitios-web-ia.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
+                <a href="sitios-web-ia.html" class="service-card" style="text-decoration: none; color: inherit; display: block;" aria-label="Servicio de Sitios Web con IA">
                     <canvas id="canvas1" class="service-canvas"></canvas>
                     <div class="service-icon"><i class="fas fa-globe"></i></div>
                     <h3>Sitios Web IA</h3>
                     <p>Webs inteligentes con integración de automatización y dinamismo potenciado por IA.</p>
                 </a>
                 <!-- Servicio 2: SEO y GEO -->
-                <a href="seo-y-geo.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
+                <a href="seo-y-geo.html" class="service-card" style="text-decoration: none; color: inherit; display: block;" aria-label="Servicio de SEO y GEO">
                     <canvas id="canvas2" class="service-canvas"></canvas>
                     <div class="service-icon"><i class="fas fa-search"></i></div>
                     <h3>SEO y GEO</h3>
                     <p>Posicionamiento en modelos de lenguaje. Aumenta tu visibilidad en Gemini, ChatGPT y más.</p>
                 </a>
                 <!-- Servicio 3: Chatbots -->
-                <a href="chatbots.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
+                <a href="chatbots.html" class="service-card" style="text-decoration: none; color: inherit; display: block;" aria-label="Servicio de Chatbots con IA">
                     <canvas id="canvas3" class="service-canvas"></canvas>
                     <div class="service-icon"><i class="fas fa-comments"></i></div>
                     <h3>Chatbots</h3>
                     <p>Asistentes con respuesta multimedia, audio interactivo y generación de contenido.</p>
                 </a>
                 <!-- Servicio 4: SaaS -->
-                <a href="saas.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
+                <a href="saas.html" class="service-card" style="text-decoration: none; color: inherit; display: block;" aria-label="Servicio de SaaS a medida">
                     <canvas id="canvas4" class="service-canvas"></canvas>
                     <div class="service-icon"><i class="fas fa-rocket"></i></div>
                     <h3>SaaS</h3>
                     <p>Demos funcionales en 48 horas. Agentes constructores para crear tu software como servicio.</p>
                 </a>
                 <!-- Servicio 5: IA Local -->
-                <a href="ia-local.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
+                <a href="ia-local.html" class="service-card" style="text-decoration: none; color: inherit; display: block;" aria-label="Servicio de IA Local">
                     <canvas id="canvas5" class="service-canvas"></canvas>
                     <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>IA Local</h3>
                     <p>Privacidad total. Modelos ejecutándose en tu infraestructura. 100% seguro.</p>
                 </a>
                 <!-- Servicio 6: RAG -->
-                <a href="rag.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
+                <a href="rag.html" class="service-card" style="text-decoration: none; color: inherit; display: block;" aria-label="Servicio de RAG - Chat con documentos">
                     <canvas id="canvas6" class="service-canvas"></canvas>
                     <div class="service-icon"><i class="fas fa-database"></i></div>
                     <h3>RAG</h3>
                     <p>Chat con tus documentos. Valorización de datos internos en PDF, audio y video.</p>
                 </a>
                 <!-- Servicio 7: Power Platform -->
-                <a href="power-platform.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
+                <a href="power-platform.html" class="service-card" style="text-decoration: none; color: inherit; display: block;" aria-label="Servicio de Power Platform con IA">
                     <canvas id="canvas7" class="service-canvas"></canvas>
                     <div class="service-icon"><i class="fab fa-microsoft"></i></div>
                     <h3>Power Platform</h3>
                     <p>Ecosistema Microsoft potenciado con IA. Power BI, Apps, Automate con Copilot.</p>
                 </a>
                 <!-- Servicio 8: Agentes de IA -->
-                <a href="agentes-ia.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
+                <a href="agentes-ia.html" class="service-card" style="text-decoration: none; color: inherit; display: block;" aria-label="Servicio de Agentes de IA">
                     <canvas id="canvas8" class="service-canvas"></canvas>
                     <div class="service-icon"><i class="fas fa-robot"></i></div>
                     <h3>Agentes de IA</h3>
                     <p>Reducción de horas hombre con Google ADK. Automatización inteligente 24/7.</p>
                 </a>
                 <!-- Servicio 9: Capacitación -->
-                <a href="capacitacion.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
+                <a href="capacitacion.html" class="service-card" style="text-decoration: none; color: inherit; display: block;" aria-label="Servicio de Capacitación en IA">
                     <canvas id="canvas9" class="service-canvas"></canvas>
                     <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
                     <h3>Capacitación</h3>
                     <p>Formación presencial e in-company. Transforma tu equipo en expertos en IA.</p>
                 </a>
                 <!-- Servicio 10: Consultoría -->
-                <a href="consultoria.html" class="service-card" style="text-decoration: none; color: inherit; display: block;">
+                <a href="consultoria.html" class="service-card" style="text-decoration: none; color: inherit; display: block;" aria-label="Servicio de Consultoría estratégica">
                     <canvas id="canvas10" class="service-canvas"></canvas>
                     <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
                     <h3>Consultoría</h3>
@@ -1135,7 +1256,7 @@
             pointer-events: none;
         }
     </style>
-    <script>
+    <script defer>
         const serviceCanvases = ['canvas1','canvas2','canvas3','canvas4','canvas5','canvas6','canvas7','canvas8','canvas9','canvas10'];
         const serviceColors = [
             [0x667eea, 0x764ba2], [0x00ff88, 0x00d4ff], [0xff6b6b, 0xfad0c4],
@@ -1219,27 +1340,27 @@
                     <div class="stats">
                         <div style="display: flex; gap: 2rem; margin-top: 2rem;">
                             <div style="text-align: center;">
-                                <h3 style="color: #667eea; font-size: 2rem;">+50</h3>
+                                <h3 style="color: #667eea; font-size: 2rem;"><data value="50">+50</data></h3>
                                 <p>Proyectos Completados</p>
                             </div>
                             <div style="text-align: center;">
-                                <h3 style="color: #667eea; font-size: 2rem;">98%</h3>
+                                <h3 style="color: #667eea; font-size: 2rem;"><data value="98">98%</data></h3>
                                 <p>Satisfacción del Cliente</p>
                             </div>
                             <div style="text-align: center;">
-                                <h3 style="color: #667eea; font-size: 2rem;">5+</h3>
+                                <h3 style="color: #667eea; font-size: 2rem;"><data value="5">5+</data></h3>
                                 <p>Años de Experiencia</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23667eea'/%3E%3Cstop offset='100%25' stop-color='%23764ba2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23bg)'/%3E%3Cg transform='translate(200,150)'%3E%3Ccircle r='80' fill='none' stroke='white' stroke-width='2' opacity='0.3'/%3E%3Ccircle r='60' fill='none' stroke='white' stroke-width='2' opacity='0.5'/%3E
-                    <circle r='40' fill='none' stroke='white' stroke-width='2' opacity='0.7'/%3E
-                    <circle r='20' fill='white' opacity='0.9'/%3E
-                    <text y='100' text-anchor='middle' fill='white' font-size='16' font-family='Arial'%3EFuturo Digital%3C/text%3E
-                </g>
-            </svg>" alt="Prospectiva Digital">
+                    <img 
+                        src="/images/prodig-hero-futuro-digital.webp" 
+                        alt="ProDig - Consultoría en Inteligencia Artificial y automatización digital en Bogotá, Colombia"
+                        width="400" height="300"
+                        loading="lazy"
+                    >
                 </div>
             </div>
         </div>
@@ -1413,6 +1534,61 @@
         </div>
     </section>
 
+    </main>
+
+    <!-- NAP Footer - Datos de negocio local para GEO/SEO -->
+    <footer itemscope itemtype="https://schema.org/LocalBusiness" style="background: #0f172a; color: #94a3b8; padding: 3rem 0; margin-top: 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div>
+                    <strong itemprop="name" style="color: #fff; font-size: 1.1rem;">ProDig — Prospectiva Digital</strong>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Consultoría en Inteligencia Artificial<br>y Activos Digitales</p>
+                    <span itemprop="foundingDate" style="display:none">2021</span>
+                    <link itemprop="url" href="https://aiprodig.com"/>
+                </div>
+                <div itemscope itemprop="address" itemtype="https://schema.org/PostalAddress">
+                    <strong style="color: #fff;">Ubicación</strong>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                        <span itemprop="addressLocality">Bogotá</span>,
+                        <span itemprop="addressRegion">Cundinamarca</span>,
+                        <span itemprop="addressCountry">Colombia</span>
+                    </p>
+                    <a href="https://maps.google.com/?q=ProDig+Prospectiva+Digital+Bogota" target="_blank" rel="noopener noreferrer"
+                       style="color: #667eea; font-size: 0.85rem; text-decoration: none;">
+                        Ver en Google Maps →
+                    </a>
+                </div>
+                <div>
+                    <strong style="color: #fff;">Contacto</strong>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                        <a itemprop="telephone" href="tel:+573144897092" style="color: #94a3b8; text-decoration: none; display: block; margin-bottom: 0.3rem;">+57 314 489 7092</a>
+                        <a itemprop="email" href="mailto:mauricio.pineda@prospectivadigital.com" style="color: #94a3b8; text-decoration: none; font-size: 0.85rem;">mauricio.pineda@prospectivadigital.com</a>
+                    </p>
+                    <p style="margin-top: 0.5rem; font-size: 0.85rem;" itemprop="openingHours" content="Mo-Fr 08:00-18:00">Lun–Vie: 8:00 AM – 6:00 PM</p>
+                </div>
+                <div>
+                    <strong style="color: #fff;">Servicios</strong>
+                    <ul style="list-style: none; padding: 0; margin-top: 0.5rem; font-size: 0.85rem; line-height: 2;">
+                        <li><a href="/seo-y-geo.html" style="color: #94a3b8; text-decoration: none;">SEO y GEO</a></li>
+                        <li><a href="/chatbots.html" style="color: #94a3b8; text-decoration: none;">Chatbots con IA</a></li>
+                        <li><a href="/agentes-ia.html" style="color: #94a3b8; text-decoration: none;">Agentes de IA</a></li>
+                        <li><a href="/rag.html" style="color: #94a3b8; text-decoration: none;">RAG</a></li>
+                        <li><a href="/power-platform.html" style="color: #94a3b8; text-decoration: none;">Power Platform</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border-color: #1e293b; margin: 2rem 0;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.8rem;">
+                <span>© 2026 ProDig – Prospectiva Digital. Todos los derechos reservados.</span>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="/privacidad.html" style="color: #94a3b8; text-decoration: none;">Privacidad</a>
+                    <a href="/condiciones.html" style="color: #94a3b8; text-decoration: none;">Términos</a>
+                    <a href="/sobre-mauricio-pineda.html" style="color: #94a3b8; text-decoration: none;">Sobre el autor</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- Floating Buttons -->
     <div class="floating-buttons">
         <!-- WhatsApp Button -->
@@ -1434,7 +1610,7 @@
         </form>
     </div>
 
-    <script>
+    <script defer>
         const form = document.getElementById('contact-form');
         // ESTO ES NUEVO Y NO AFECTA AL CHAT
         async function enviarFormularioContacto(event) {
@@ -1962,7 +2138,7 @@
             }
         }
     </script>
-    <script src="/blog/images/telemetry.js"></script>
+    <script src="/blog/images/telemetry.js" defer></script>
 </body>
 
 </html>

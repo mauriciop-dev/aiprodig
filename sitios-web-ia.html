@@ -82,19 +82,33 @@
             .back-link { top: 80px; }
         }
     </style>
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": "https://aiprodig.com/sitios-web-ia.html#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://aiprodig.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://aiprodig.com/#servicios"},
+        {"@type": "ListItem", "position": 3, "name": "Sitios Web IA", "item": "https://aiprodig.com/sitios-web-ia.html"}
+      ]
+    }
+    </script>
 </head>
 <body>
     <header>
         <nav>
             <a href="/" class="logo">ProDig</a>
             <ul class="nav-links">
-                <li><a href="/#inicio">Inicio</a></li>
-                <li><a href="/#servicios">Servicios</a></li>
-                <li><a href="/#nosotros">Nosotros</a></li>
-                <li><a href="/#contacto">Contacto</a></li>
+                <li><a href="/#inicio" aria-label="Inicio">Inicio</a></li>
+                <li><a href="/#servicios" aria-label="Servicios">Servicios</a></li>
+                <li><a href="/#nosotros" aria-label="Nosotros">Nosotros</a></li>
+                <li><a href="/#contacto" aria-label="Contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
+    <main role="main">
     <canvas id="heroCanvas" class="hero-canvas"></canvas>
     <section class="hero-section">
         <a href="/#servicios" class="back-link"><i class="fas fa-arrow-left"></i> Volver a servicios</a>
@@ -255,24 +269,31 @@
             <a href="https://wa.me/573144897092?text=Hola%20ProDig,%20me%20interesa%20el%20servicio%20de%20Sitios%20Web%20IA" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Chatear con un Experto</a>
         </div>
     </section>
-    <footer>
+    </main>
+    <footer itemscope itemtype="https://schema.org/LocalBusiness">
         <div class="container">
+            <address style="font-style: normal;">
+                <span itemprop="name"><strong>ProDig - Prospectiva Digital</strong></span> |
+                <span itemprop="addressLocality">Bogotá</span>,
+                <span itemprop="addressRegion">Cundinamarca</span>,
+                <span itemprop="addressCountry">Colombia</span> |
+                <a itemprop="telephone" href="tel:+573144897092">+57 314 489 7092</a> |
+                <a itemprop="email" href="mailto:mauricio.pineda@prospectivadigital.com">mauricio.pineda@prospectivadigital.com</a>
+            </address>
             <p>&copy; 2026 ProDig - Prospectiva Digital. Todos los derechos reservados.</p>
         </div>
     </footer>
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "Sitios Web IA",
-        "description": "Desarrollo de sitios web con integración de inteligencia artificial",
-        "provider": {
-            "@type": "Organization",
-            "name": "ProDig - Prospectiva Digital",
-            "url": "https://aiprodig.com"
-        },
-        "areaServed": { "@type": "Country", "name": "Colombia" },
-        "priceRange": "$800.000-$2.000.000+ COP"
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://aiprodig.com/sitios-web-ia.html#service",
+      "name": "Sitios Web IA — Integración de automatización y dinamismo potenciado por inteligencia artificial",
+      "description": "Desarrollo de sitios web con integración de inteligencia artificial. Automatización, dinamismo y experiencias interactivas potenciadas por IA.",
+      "provider": {"@id": "https://aiprodig.com/#organization"},
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://aiprodig.com/sitios-web-ia.html"},
+      "areaServed": "Latinoamérica",
+      "serviceType": "Desarrollo Web con IA"
     }
     </script>
     <script>

@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Página no encontrada / Page not found | ProDig</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://aiprodig.com/404.html",
+      "name": "404 - Página no encontrada | ProDig",
+      "description": "Página no encontrada. Utilice los enlaces de navegación para encontrar lo que busca.",
+      "isPartOf": {"@id": "https://aiprodig.com/#website"}
+    }
+    </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -171,10 +181,11 @@
 </head>
 <body>
 
-    <header>
+    <header role="banner">
         <a href="/" class="logo">ProDig</a>
     </header>
 
+    <main role="main">
     <div class="container">
         <div class="lang-toggle">
             <button class="lang-btn active" onclick="setLang('es')">ES</button>
@@ -246,6 +257,19 @@
             </div>
         </div>
     </div>
+    </main>
+
+    <footer itemscope itemtype="https://schema.org/LocalBusiness">
+        <div class="container" style="text-align: center; padding: 1.5rem; color: #666; font-size: 0.85rem;">
+            <address style="font-style: normal;">
+                <span itemprop="name"><strong>ProDig - Prospectiva Digital</strong></span> |
+                <span itemprop="addressLocality">Bogotá</span>,
+                <span itemprop="addressCountry">Colombia</span> |
+                <a itemprop="telephone" href="tel:+573144897092" style="color: #667eea;">+57 314 489 7092</a>
+            </address>
+            <p>&copy; 2026 ProDig - Prospectiva Digital.</p>
+        </div>
+    </footer>
 
     <script>
         function setLang(lang) {
