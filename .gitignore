@@ -29,5 +29,8 @@ nul
 SEO-GEO/seogeoprodig.json
 *.json
 
+# Marketing assets - no forman parte del sitio web
+Marketing/
+
 # Videos - demasiado grandes para Cloudflare Pages (max 25MB)
 Videos/*.mp4
