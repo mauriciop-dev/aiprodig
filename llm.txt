@@ -23,6 +23,7 @@ Mercados: Colombia, Latinoamérica
 
 ## Blog — Contenido de autoridad
 
+- [El colapso del reclutamiento tech — Ofertas de Ingeniero de IA](https://aiprodig.com/Blog/el-colapso-del-reclutamiento-tech-por-que-las-ofertas-para-ingeniero-de-ia-estan-desconectadas-de-la-realidad.html)
 - [El ajedrez silencioso de Google — Gemini vs el mainstream](https://aiprodig.com/Blog/el-ajedrez-silencioso-de-google-por-que-gemini-juega-un-juego-diferente.html)
 - [Del Caos Algorítmico al GEO (2026)](https://aiprodig.com/Blog/del-caos-algoritmico-a-la-tasa-de-referencia-la-metamorfosis-del-seo-al-geo-y-el-surgimiento-de-la-autoridad-humana-en-2026.html)
 - [El Activo Invisible — Soberanía digital](https://aiprodig.com/Blog/el-activo-invisible-por-que-su-empresa-es-mas-pobre-de-lo-que-dicen-sus-libros-contables.html)

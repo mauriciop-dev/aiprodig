@@ -1,0 +1,45 @@
+El colapso del reclutamiento tech: Por qué las ofertas para “Ingeniero de IA” están desconectadas de la realidad
+
+Si llevas unos meses observando las ofertas de empleo en la industria tecnológica, es muy probable que hayas sentido una extraña sensación de desfase. Por un lado, las empresas proclaman urgencia por incorporar talento en Inteligencia Artificial. Por el otro, los requisitos que publican parecen sacados de un manual de contratación de 2015.
+
+Existe un cortocircuito evidente entre cómo se contrata hoy y cómo se construye software en la era de la IA. La raíz del problema no es la falta de talento, sino un modelo de selección obsoleto.
+
+1. El sesgo del título: Profesión vs. Habilidad
+En el mundo hispanohablante, el término “Ingeniero” suele asociarse estrictamente a una carrera universitaria formal de cinco años. En el contexto anglosajón, Engineer describe frecuentemente la función o la habilidad operativa (Prompt Engineer, Context Engineer, Systems Engineer).
+
+Exigir un título universitario específico en “Ingeniería en Inteligencia Artificial Generativa” para roles aplicados es absurdo: la disciplina apenas se está estructurando en las facultades. Muchas de las personas que hoy dominan la orquestación de modelos, el diseño de contextos y la integración de arquitecturas asistidas por IA son autodidactas. Al filtrar por el "cartón", las empresas descartan al talento práctico que ya está resolviendo problemas reales.
+
+2. La paradoja de los "N años de experiencia"
+Seguimos viendo vacantes que exigen 5 o más años de experiencia en frameworks de IA generativa o lenguajes específicos.
+
+El ecosistema de LLMs modernos y desarrollo asistido post-ChatGPT tiene apenas 3 o 4 años de evolución real. Medir la capacidad de un desarrollador actual por la cantidad de años que lleva escribiendo sintaxis manual es evaluar la herramienta del pasado. En la era actual, la métrica clave no es la antigüedad en un lenguaje, sino la capacidad de abstracción, lógica y velocidad para orquestar herramientas.
+
+3. Diseñados por la era "Pre-IA"
+¿Por qué las descripciones de cargo están tan desconectadas? Porque en gran medida las siguen redactando líderes de TI y departamentos de Selección formados en el paradigma tradicional.
+
+Se concibe el software como una línea de ensamblaje donde cada línea de código se redacta carácter por carácter. No han experimentado el flujo de trabajo moderno, donde el rol del desarrollador ha migrado de la escritura de código a la especificación, evaluación, auditoría e integración de componentes generados por modelos.
+
+4. La obsolescencia de las metodologías tradicionales
+Durante años, Agile y Scrum fueron el estándar para estructurar el trabajo. Sin embargo, la burocracia de los Sprints de dos semanas, las estimaciones complejas de puntos de historia y los tableros estáticos se están convirtiendo en un cuello de botella.
+
+Cuando la construcción y validación de un prototipo funcional toma un par de horas en lugar de semanas, el ciclo de desarrollo cambia por completo. La velocidad de la IA exige flujos de trabajo continuos, prototipado dinámico y despliegue inmediato. Adaptar la velocidad de la IA a la burocracia de un Sprint es como ponerle frenos de bicicleta a un jet.
+
+5. Menos currículum, más ejecución en vivo
+Si las hojas de vida infladas y los años de experiencia ya no son métricas fiables, 
+
+¿cómo validar a un candidato?
+
+La respuesta es la evaluación por ejecución en tiempo real. En lugar de entrevistas teóricas de tres rondas, las empresas deberían proponer pruebas prácticas de 2 horas.
+
+En un par de horas, un profesional que domine el ecosistema actual asistido por IA puede:
+
+Configurar una base de datos y autenticación (ej. Supabase).
+
+Integrar un flujo de pagos o envío de correos.
+
+Desplegar la arquitectura en la nube (ej. Vercel) y entregar un MVP o PWA funcional.
+
+Esa capacidad de integración rápida, resolución de problemas y despliegue en tiempo real es la verdadera prueba de fuego.
+
+Conclusión
+El mercado no necesita más filtros burocráticos; necesita adaptar sus procesos a la velocidad del desarrollo moderno. Las empresas que entiendan que la "Ingeniería de IA" es una habilidad de ejecución y no un título acumulativo serán las que realmente logren captar al talento que lidera esta transformación.

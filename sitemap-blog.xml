@@ -3,8 +3,14 @@
   <!-- Blog en Español -->
   <url>
     <loc>https://aiprodig.com/Blog/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiprodig.com/Blog/el-colapso-del-reclutamiento-tech-por-que-las-ofertas-para-ingeniero-de-ia-estan-desconectadas-de-la-realidad</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -52,8 +58,14 @@
   <!-- Blog en Inglés -->
   <url>
     <loc>https://aiprodig.com/en/blog/</loc>
-    <lastmod>2026-07-19</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://aiprodig.com/en/blog/the-collapse-of-tech-recruitment-why-ai-engineer-job-listings-are-out-of-touch-with-reality</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
