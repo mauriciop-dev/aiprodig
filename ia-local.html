@@ -18,7 +18,7 @@
     <meta property="og:locale" content="es_CO">
     <meta property="og:title" content="IA Local | ProDig">
     <meta property="og:description" content="Inteligencia artificial local con privacidad y seguridad garantizada.">
-    <meta property="og:url" content="https://aiprodig.com/ia-local.html">
+    <meta property="og:url" content="https://aiprodig.com/ia-local">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="IA Local | ProDig">
@@ -65,6 +65,9 @@
         footer { background: #0c0c0c; color: white; text-align: center; padding: 2rem 0; }
         .back-link { position: absolute; top: 100px; left: 2rem; color: white; text-decoration: none; }
         .security-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(0,210,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid #00d2ff; margin-bottom: 1rem; }
+    
+        h3.faq-question { margin: 0; font-size: 1.15rem; font-weight: 600; font-family: inherit; line-height: 1.4; color: #1e293b; display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 1.5rem; }
+
     </style>
     <!-- JSON-LD: BreadcrumbList -->
     <script type="application/ld+json">
@@ -75,7 +78,7 @@
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://aiprodig.com/"},
         {"@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://aiprodig.com/#servicios"},
-        {"@type": "ListItem", "position": 3, "name": "IA Local", "item": "https://aiprodig.com/ia-local.html"}
+        {"@type": "ListItem", "position": 3, "name": "IA Local", "item": "https://aiprodig.com/ia-local"}
       ]
     }
     </script>
@@ -97,11 +100,11 @@
         <a href="/#servicios" class="back-link"><i class="fas fa-arrow-left"></i> Volver</a>
         <div class="hero-content">
             <div class="security-badge"><i class="fas fa-shield-alt"></i> 100% Privado</div>
-            <h1>IA Local</h1>
+            <h1>IA Local: Modelos de Inteligencia Artificial On-Premise y Privados</h1>
             <p>Privacidad y seguridad con modelos ejecutándose en tu infraestructura</p>
             <div class="resumen-tecnico">
                 <h3>Resumen Técnico</h3>
-                <p>Implementamos inteligencia artificial en tu infraestructura (on-premise o cloud privado) eliminando la dependencia de terceros para el procesamiento de datos sensibles. Utilizamos modelos de código abierto como GPT-OSS, DeepSeek, Llama y Mistral optimizados para hardware local. Tus datos nunca salen de tu perímetro de seguridad, cumplimiento total con GDPR, LGPD y regulaciones locales.</p>
+                <p>Implementamos modelos de lenguaje de código abierto de vanguardia (Ollama, DeepSeek-R1, Llama 3, Mistral) desplegados directamente en la infraestructura on-premise o nube privada de tu empresa mediante contenedores Docker y Linux. Eliminamos costos recurrentes por consumo de tokens y dependencias de terceros, garantizando que los datos confidenciales nunca salgan del perímetro corporativo. Desarrollamos canalizaciones RAG locales con bases de datos vectoriales en servidores cerrados (air-gapped), asegurando cumplimiento absoluto con regulaciones de protección de datos (GDPR, Ley 1581).</p>
             </div>
             <a href="#contacto" class="btn btn-primary"><i class="fas fa-lock"></i> Implementar IA Local</a>
         </div>
@@ -111,16 +114,19 @@
             <div class="section-title"><h2>Beneficios de IA Local</h2></div>
             <div class="evidencias-grid">
                 <div class="evidencia-card">
-                    <h4><i class="fas fa-user-secret"></i> Completa Privacidad</h4>
-                    <p>Tus datos sensibles nunca abandonan tu infraestructura. Control total sobre dónde se procesa y almacena la información.</p>
+                    <span class="course-badge" style="background:#2563eb;color:#fff;padding:0.2rem 0.6rem;border-radius:99px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:0.8rem;">Sector Salud</span>
+<h4><i class="fas fa-user-md"></i> Servidor Local NexoSalud RDA</h4>
+                    <p>Despliegue de DeepSeek local en infraestructura hospitalaria privada con procesamiento de registros clínicos sensibles sin conexión a nubes públicas.</p>
                 </div>
                 <div class="evidencia-card">
-                    <h4><i class="fas fa-server"></i> Sin Latencia</h4>
-                    <p>Procesamiento local significa respuesta instantánea sin depender de conexiones a servicios externos.</p>
+                    <span class="course-badge" style="background:#2563eb;color:#fff;padding:0.2rem 0.6rem;border-radius:99px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:0.8rem;">Sector Jurídico</span>
+<h4><i class="fas fa-balance-scale"></i> Indexador Jurídico Corporativo</h4>
+                    <p>Motor Ollama / Llama 3 en servidores locales de alta densidad para análisis forense y extracción documental confidencial de contratos empresariales.</p>
                 </div>
                 <div class="evidencia-card">
-                    <h4><i class="fas fa-file-contract"></i> Cumplimiento Legal</h4>
-                    <p>Cumple con GDPR, LGPD, y regulaciones sectoriales. Auditoría completa de cómo se procesan los datos.</p>
+                    <span class="course-badge" style="background:#2563eb;color:#fff;padding:0.2rem 0.6rem;border-radius:99px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:0.8rem;">Microservicio Seguro</span>
+<h4><i class="fas fa-server"></i> Nodo de Procesamiento PAIC Local</h4>
+                    <p>Microservicio en contenedor para validación y conciliación de extractos bancarios sensibles en red local privada con cero latencia.</p>
                 </div>
             </div>
         </div>
@@ -128,22 +134,24 @@
     <section class="section faq-section">
         <div class="container">
             <div class="section-title"><h2>Preguntas Frecuentes</h2></div>
-            <div class="faq-item">
-                <div class="faq-question">¿Qué hardware necesito?</div>
-                <div class="faq-answer">
-                    <p>Depende del modelo. Modelos pequeños (7B parámetros) funcionan en GPUs de gama media (RTX 3090/4090). Modelos grandes requieren GPUs profesionales (A100, H100). Evaluamos tu infraestructura existente y recomendamos upgrades.</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Qué infraestructura de hardware se requiere para ejecutar IA local?</h3>
+                    <div class="faq-answer">
+                        <p>Para modelos optimizados de 7B a 14B parámetros es suficiente una estación de trabajo o servidor con GPU NVIDIA (RTX 3090, 4090 o A4000). Para modelos de mayor escala empresarial (70B+) recomendamos configuraciones con GPUs profesionales A100/H100 o clústeres en nube privada.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">¿Puedo usar mis propios datos para entrenar?</div>
-                <div class="faq-answer">
-                    <p>Sí, puedes hacer fine-tuning con tus datos para crear un modelo especializado en tu dominio. Esto se hace completamente offline en tu infraestructura.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cómo se garantiza la privacidad absoluta de los datos con IA local?</h3>
+                    <div class="faq-answer">
+                        <p>Al ejecutarse en hardware propio o VPCs privadas aisladas, las peticiones y documentos nunca se envían a servidores de OpenAI, Google o Microsoft. Los datos se procesan en memoria local y permanecen bajo el control estricto de tu política de ciberseguridad.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">¿Qué pasa si no tengo infraestructura?</div>
-                <div class="faq-answer">
-                    <p>Ofrecemos soluciones híbridas donde el procesamiento sensible se hace en tu cloud privado y el resto en infraestructura serverless. También podemos configurar ambientes cloud privados dedicados.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Es posible realizar fine-tuning o entrenamiento con la información propia de mi empresa?</h3>
+                    <div class="faq-answer">
+                        <p>Sí, realizamos procesos de adaptación de dominio (Fine-Tuning con LoRA / QLoRA) o Retrieval-Augmented Generation (RAG) completamente offline. El modelo aprende la terminología y procedimientos internos de tu negocio de forma segura.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -213,7 +221,7 @@
                 <span itemprop="addressRegion">Cundinamarca</span>,
                 <span itemprop="addressCountry">Colombia</span> |
                 <a itemprop="telephone" href="tel:+573144897092">+57 314 489 7092</a> |
-                <a itemprop="email" href="mailto:mauricio.pineda@prospectivadigital.com">mauricio.pineda@prospectivadigital.com</a>
+                <!--email_off--><a itemprop="email" href="mailto:contacto@aiprodig.com">contacto@aiprodig.com</a><!--/email_off-->
             </address>
             <p>&copy; 2026 ProDig - Prospectiva Digital. Todos los derechos reservados.</p>
         </div>

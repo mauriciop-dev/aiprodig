@@ -13,7 +13,6 @@ Disallow: /chat.html
 Disallow: /chat-a2ui-test.html
 Disallow: /chatbot.html
 Disallow: /chatbot_lateral.html
-Disallow: /condiciones.html
 Disallow: /eliminacion_datos.html
 Disallow: /conjuntos.html
 Disallow: /denuncia/

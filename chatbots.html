@@ -16,7 +16,7 @@
     <meta property="og:locale" content="es_CO">
     <meta property="og:title" content="Chatbots con IA | ProDig">
     <meta property="og:description" content="Chatbots con respuesta multimedia y audio interactivo.">
-    <meta property="og:url" content="https://aiprodig.com/chatbots.html">
+    <meta property="og:url" content="https://aiprodig.com/chatbots">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Chatbots con IA | ProDig">
@@ -61,6 +61,9 @@
         .contact-section { background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-align: center; }
         footer { background: #1a1a2e; color: white; text-align: center; padding: 2rem 0; }
         .back-link { position: absolute; top: 100px; left: 2rem; color: white; text-decoration: none; }
+    
+        h3.faq-question { margin: 0; font-size: 1.15rem; font-weight: 600; font-family: inherit; line-height: 1.4; color: #1e293b; display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 1.5rem; }
+
     </style>
     <!-- JSON-LD: BreadcrumbList -->
     <script type="application/ld+json">
@@ -71,7 +74,7 @@
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://aiprodig.com/"},
         {"@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://aiprodig.com/#servicios"},
-        {"@type": "ListItem", "position": 3, "name": "Chatbots", "item": "https://aiprodig.com/chatbots.html"}
+        {"@type": "ListItem", "position": 3, "name": "Chatbots", "item": "https://aiprodig.com/chatbots"}
       ]
     }
     </script>
@@ -92,11 +95,11 @@
     <section class="hero-section">
         <a href="/#servicios" class="back-link"><i class="fas fa-arrow-left"></i> Volver</a>
         <div class="hero-content">
-            <h1>Chatbots</h1>
+            <h1>Chatbots Inteligentes y Asistentes Conversacionales con IA</h1>
             <p>Respuesta multimedia y audio interactivo para tu negocio</p>
             <div class="resumen-tecnico">
                 <h3>Resumen Técnico</h3>
-                <p>Desarrollamos chatbots avanzados que van más allá del texto. Nuestros asistentes integran generación de imágenes con DALL-E, síntesis de voz para respuestas auditivas, análisis de documentos en tiempo real y conexiones con APIs externas. Cada chatbot se entrena con los datos específicos de tu empresa para proporcionar respuestas precisas y personalizadas que evolucionan con cada interacción.</p>
+                <p>Diseñamos e implementamos agentes conversacionales multimodales construidos sobre Gemini API, WebSockets y backend en Python, conectados nativamente a WhatsApp Business, Slack y canales web. Incorporamos síntesis de voz en tiempo real, captura de intenciones estructuradas y conexión bidireccional a bases de datos PostgreSQL y Supabase. Nuestra arquitectura propietaria A2UI (Agent-to-User Interface) permite al chatbot interactuar con el frontend para adaptar componentes visuales en tiempo real según el diálogo.</p>
             </div>
             <a href="#contacto" class="btn btn-primary"><i class="fas fa-comments"></i> Implementar Chatbot</a>
         </div>
@@ -106,16 +109,19 @@
             <div class="section-title"><h2>Capacidades del Chatbot</h2></div>
             <div class="evidencias-grid">
                 <div class="evidencia-card">
-                    <h4><i class="fas fa-microphone"></i> Audio Interactivo</h4>
-                    <p>El usuario puede hablar y el chatbot responde con voz sintética natural, creando conversaciones fluidas.</p>
+                    <span class="course-badge" style="background:#2563eb;color:#fff;padding:0.2rem 0.6rem;border-radius:99px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:0.8rem;">Tecnología ProDig</span>
+<h4><i class="fas fa-desktop"></i> Asistente Virtual A2UI (ProDig)</h4>
+                    <p>Sistema conversacional en vivo capaz de guiar la navegación web y modificar dinámicamente componentes visuales del frontend según la interacción del usuario.</p>
                 </div>
                 <div class="evidencia-card">
-                    <h4><i class="fas fa-image"></i> Generación de Imágenes</h4>
-                    <p>El chatbot puede generar imágenes relevantes como respuestas, ideal para e-commerce y educación.</p>
+                    <span class="course-badge" style="background:#2563eb;color:#fff;padding:0.2rem 0.6rem;border-radius:99px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:0.8rem;">Caso Empresarial</span>
+<h4><i class="fab fa-whatsapp"></i> Bot Residencial de Gestión para PAIC</h4>
+                    <p>Asistente en WhatsApp Business que atiende consultas de residentes, gestiona pagos y radica solicitudes 24/7 conectado a la base de datos de la copropiedad.</p>
                 </div>
                 <div class="evidencia-card">
-                    <h4><i class="fas fa-file-pdf"></i> Análisis de Documentos</h4>
-                    <p>Capacidad de recibir PDFs, Word, Excel y extraer información relevante al instante.</p>
+                    <span class="course-badge" style="background:#2563eb;color:#fff;padding:0.2rem 0.6rem;border-radius:99px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:0.8rem;">Sector Salud</span>
+<h4><i class="fas fa-stethoscope"></i> NexoSalud Triaje Bot</h4>
+                    <p>Asistente clínico inteligente con filtrado preliminar de síntomas, captura de consentimientos informados y agendamiento automático con especialistas médicos.</p>
                 </div>
             </div>
         </div>
@@ -123,28 +129,30 @@
     <section class="section faq-section">
         <div class="container">
             <div class="section-title"><h2>Preguntas Frecuentes</h2></div>
-            <div class="faq-item">
-                <div class="faq-question">¿Qué canales puedo integrar con mi chatbot?</div>
-                <div class="faq-answer">
-                    <p>Integramos con WhatsApp Business, Web (embebido), Telegram, Slack, Teams, Instagram, Facebook Messenger y API REST para sistemas personalizados. Cada canal mantiene la misma inteligencia y memoria de conversación.</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Qué canales y plataformas se pueden integrar con el chatbot?</h3>
+                    <div class="faq-answer">
+                        <p>Integramos chatbots en WhatsApp Business API, sitios web mediante widgets embebidos, Telegram, Slack, Microsoft Teams y aplicaciones móviles mediante API REST. Toda la lógica de inteligencia, contexto y memoria se mantiene sincronizada entre los distintos canales.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">¿El chatbot aprende de las conversaciones?</div>
-                <div class="faq-answer">
-                    <p>Sí, implementamos sistemas de aprendizaje donde el chatbot analiza las interacciones para mejorar sus respuestas. También puedes alimentarlo manualmente con nuevos documentos y conocimientos.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Qué es la tecnología A2UI (Agent-to-User Interface)?</h3>
+                    <div class="faq-answer">
+                        <p>A2UI es una arquitectura desarrollada por ProDig que permite al modelo de IA no solo responder en texto o voz, sino también emitir instrucciones al frontend para cambiar vistas, resaltar productos y desplegar formularios interactivos en tiempo real.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">¿Cuánto tiempo toma implementar un chatbot?</div>
-                <div class="faq-answer">
-                    <p>Un chatbot básico con Q&A está listo en 5 días. Chatbots con voz, generación de imágenes y conexiones a sistemas empresariales tardan 2-4 semanas.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿El chatbot puede conectarse con las bases de datos y CRM de mi empresa?</h3>
+                    <div class="faq-answer">
+                        <p>Sí, nuestros asistentes se conectan directamente a bases de datos SQL (PostgreSQL, Supabase, MySQL), CRMs (HubSpot, Salesforce) y ERPs a través de APIs seguras. Esto permite consultar saldos, crear tickets y ejecutar transacciones de manera autónoma.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">¿Puedo usar mi propia voz para el chatbot?</div>
-                <div class="faq-answer">
-                    <p>Sí, podemos clonar tu voz o la de un actor de voz para que el chatbot hable con una voz personalizada y reconocible.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cuánto tiempo toma implementar un chatbot con IA en producción?</h3>
+                    <div class="faq-answer">
+                        <p>Un asistente conversacional estándar para atención al cliente y preguntas frecuentes se despliega en 5 a 10 días laborables. Proyectos avanzados con síntesis de voz o integraciones transaccionales complejas requieren de 2 a 4 semanas.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -213,7 +221,7 @@
                 <span itemprop="addressRegion">Cundinamarca</span>,
                 <span itemprop="addressCountry">Colombia</span> |
                 <a itemprop="telephone" href="tel:+573144897092">+57 314 489 7092</a> |
-                <a itemprop="email" href="mailto:mauricio.pineda@prospectivadigital.com">mauricio.pineda@prospectivadigital.com</a>
+                <!--email_off--><a itemprop="email" href="mailto:contacto@aiprodig.com">contacto@aiprodig.com</a><!--/email_off-->
             </address>
             <p>&copy; 2026 ProDig - Prospectiva Digital. Todos los derechos reservados.</p>
         </div>

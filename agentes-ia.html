@@ -18,7 +18,7 @@
     <meta property="og:locale" content="es_CO">
     <meta property="og:title" content="Agentes de IA | ProDig">
     <meta property="og:description" content="Agentes de IA con Google ADK para reducción de horas hombre.">
-    <meta property="og:url" content="https://aiprodig.com/agentes-ia.html">
+    <meta property="og:url" content="https://aiprodig.com/agentes-ia">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Agentes de IA | ProDig">
@@ -66,6 +66,9 @@
         .contact-section { background: linear-gradient(135deg, #4285f4, #0f9d58); color: white; text-align: center; }
         footer { background: #1a1a2e; color: white; text-align: center; padding: 2rem 0; }
         .back-link { position: absolute; top: 100px; left: 2rem; color: white; text-decoration: none; }
+    
+        h3.faq-question { margin: 0; font-size: 1.15rem; font-weight: 600; font-family: inherit; line-height: 1.4; color: #1e293b; display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 1.5rem; }
+
     </style>
     <!-- JSON-LD: BreadcrumbList -->
     <script type="application/ld+json">
@@ -76,7 +79,7 @@
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://aiprodig.com/"},
         {"@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://aiprodig.com/#servicios"},
-        {"@type": "ListItem", "position": 3, "name": "Agentes de IA", "item": "https://aiprodig.com/agentes-ia.html"}
+        {"@type": "ListItem", "position": 3, "name": "Agentes de IA", "item": "https://aiprodig.com/agentes-ia"}
       ]
     }
     </script>
@@ -97,11 +100,11 @@
     <section class="hero-section">
         <a href="/#servicios" class="back-link"><i class="fas fa-arrow-left"></i> Volver</a>
         <div class="hero-content">
-            <h1>Agentes de IA</h1>
+            <h1>Agentes Autónomos de Inteligencia Artificial con Google ADK</h1>
             <p>Reducción de horas hombre mediante Google ADK</p>
             <div class="resumen-tecnico">
                 <h3>Resumen Técnico</h3>
-                <p>Implementamos agentes autónomos usando Google Agent Development Kit (ADK) que ejecutan tareas complejas de forma independiente. Estos agentes pueden manejar atención al cliente, procesamiento de documentos, análisis de datos, gestión de inventarios y más. Reducimos significativamente las horas hombre necesarias para procesos repetitivos, liberando a tu equipo para tareas de mayor valor agregado. Cada agente aprende y mejora con cada interacción.</p>
+                <p>Desarrollamos e implementamos agentes autónomos de software utilizando Google Agent Development Kit (ADK) y modelos Gemini configurados para razonamiento multi-paso y llamada a herramientas (function calling). Conectamos los agentes a bases de datos SQL, APIs REST corporativas y sistemas ERP para planificar, ejecutar y auditar flujos complejos de trabajo de extremo a extremo sin intervención manual. Reducimos hasta un 80% las horas hombre dedicadas a tareas operativas repetitivas con observabilidad continua y trazabilidad en Python.</p>
             </div>
             <a href="#contacto" class="btn btn-primary"><i class="fas fa-robot"></i> Implementar Agentes</a>
         </div>
@@ -111,16 +114,19 @@
             <div class="section-title"><h2>Casos de Uso</h2></div>
             <div class="evidencias-grid">
                 <div class="evidencia-card">
-                    <h4><i class="fas fa-headset"></i> Agente de Soporte 24/7</h4>
-                    <p>Responde preguntas frecuentes, resuelve problemas técnicos y escala casos complejos. <span class="time-saved">-70% carga operativa</span></p>
+                    <span class="course-badge" style="background:#2563eb;color:#fff;padding:0.2rem 0.6rem;border-radius:99px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:0.8rem;">Automatización Integral</span>
+<h4><i class="fas fa-tasks"></i> Agente Radicador PAIC</h4>
+                    <p>Agente autónomo con Google ADK que clasifica PQRs residenciales, valida soportes adjuntos y programa cuadrillas de mantenimiento automáticamente.</p>
                 </div>
                 <div class="evidencia-card">
-                    <h4><i class="fas fa-file-invoice-dollar"></i> Procesamiento de Facturas</h4>
-                    <p>Lee, valida y procesa facturas automáticamente. Extrae datos y actualiza sistemas contables. <span class="time-saved">-85% tiempo</span></p>
+                    <span class="course-badge" style="background:#2563eb;color:#fff;padding:0.2rem 0.6rem;border-radius:99px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:0.8rem;">Fact-Checking Multi-Agente</span>
+<h4><i class="fas fa-check-double"></i> Agente Fact-Checker VeriNews</h4>
+                    <p>Pipeline multi-agente que contrasta noticias en tiempo real con bases de datos gubernamentales y genera informes de fiabilidad automatizados.</p>
                 </div>
                 <div class="evidencia-card">
-                    <h4><i class="fas fa-warehouse"></i> Gestión de Inventario</h4>
-                    <p>Monitorea niveles, genera órdenes de compra y predice necesidades. <span class="time-saved">-60% rework</span></p>
+                    <span class="course-badge" style="background:#2563eb;color:#fff;padding:0.2rem 0.6rem;border-radius:99px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:0.8rem;">Auditoría Médica</span>
+<h4><i class="fas fa-file-invoice"></i> Agente Conciliador NexoSalud</h4>
+                    <p>Agente de auditoría médica que cruza notas de enfermería contra consumos de inventario farmacéutico, reportando anomalías al instante.</p>
                 </div>
             </div>
         </div>
@@ -128,22 +134,24 @@
     <section class="section faq-section">
         <div class="container">
             <div class="section-title"><h2>Preguntas Frecuentes</h2></div>
-            <div class="faq-item">
-                <div class="faq-question">¿Qué es Google ADK?</div>
-                <div class="faq-answer">
-                    <p>Agent Development Kit (ADK) es el framework de Google para construir agentes de IA robustos y escalables. Permite crear agentes que planifican, razonan, ejecutan acciones y aprenden de manera autónoma. Es la evolución de los chatbots hacia sistemas que realmente hacen trabajo.</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Qué es Google Agent Development Kit (ADK) y en qué se diferencia de un chatbot?</h3>
+                    <div class="faq-answer">
+                        <p>Google ADK es un marco de desarrollo para construir sistemas con capacidad de razonamiento, planificación y ejecución de acciones (llamada a herramientas y APIs). A diferencia de un chatbot pasivo, un agente autónomo ejecuta tareas en sistemas corporativos de principio a fin.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">¿Cuánto tiempo takes implementar un agente?</div>
-                <div class="faq-answer">
-                    <p>Un agente básico toma 2-3 semanas. Agentes complejos con múltiples herramientas y integraciones 4-8 semanas. Incluimos testing,training de datos y deployment a producción.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Qué nivel de autonomía tienen los agentes y cómo se controlan sus acciones críticas?</h3>
+                    <div class="faq-answer">
+                        <p>Los agentes operan bajo políticas estrictas de seguridad (Human-in-the-Loop). Las tareas operativas rutinarias se ejecutan de forma automática, mientras que las acciones que involucren transacciones monetarias o cambios sensibles requieren confirmación humana.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">¿El agente puedeintegrar con mis sistemas?</div>
-                <div class="faq-answer">
-                    <p>Sí, los agentes se conectan a APIs, bases de datos, CRMs, ERPs, y cualquier sistema con API. También pueden ejecutar acciones como enviar emails, crear tickets, actualizar registros y generar reportes.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cuánto tiempo toma implementar un agente autónomo en producción?</h3>
+                    <div class="faq-answer">
+                        <p>Un agente enfocado en un caso de uso específico (como soporte o radicación) se implementa en 2 a 3 semanas. Agentes multi-herramienta con integraciones profundas a ERPs o CRMs toman entre 4 y 6 semanas.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -213,7 +221,7 @@
                 <span itemprop="addressRegion">Cundinamarca</span>,
                 <span itemprop="addressCountry">Colombia</span> |
                 <a itemprop="telephone" href="tel:+573144897092">+57 314 489 7092</a> |
-                <a itemprop="email" href="mailto:mauricio.pineda@prospectivadigital.com">mauricio.pineda@prospectivadigital.com</a>
+                <!--email_off--><a itemprop="email" href="mailto:contacto@aiprodig.com">contacto@aiprodig.com</a><!--/email_off-->
             </address>
             <p>&copy; 2026 ProDig - Prospectiva Digital. Todos los derechos reservados.</p>
         </div>

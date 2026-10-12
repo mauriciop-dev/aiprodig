@@ -18,7 +18,7 @@
     <meta property="og:locale" content="es_CO">
     <meta property="og:title" content="Power Platform | ProDig">
     <meta property="og:description" content="Ecosistema Microsoft Power Platform con IA.">
-    <meta property="og:url" content="https://aiprodig.com/power-platform.html">
+    <meta property="og:url" content="https://aiprodig.com/power-platform">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Power Platform | ProDig">
@@ -65,6 +65,9 @@
         .contact-section { background: linear-gradient(135deg, #0078d4, #106ebe); color: white; text-align: center; }
         footer { background: #0c2d48; color: white; text-align: center; padding: 2rem 0; }
         .back-link { position: absolute; top: 100px; left: 2rem; color: white; text-decoration: none; }
+    
+        h3.faq-question { margin: 0; font-size: 1.15rem; font-weight: 600; font-family: inherit; line-height: 1.4; color: #1e293b; display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 1.5rem; }
+
     </style>
     <!-- JSON-LD: BreadcrumbList -->
     <script type="application/ld+json">
@@ -75,7 +78,7 @@
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://aiprodig.com/"},
         {"@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://aiprodig.com/#servicios"},
-        {"@type": "ListItem", "position": 3, "name": "Power Platform", "item": "https://aiprodig.com/power-platform.html"}
+        {"@type": "ListItem", "position": 3, "name": "Power Platform", "item": "https://aiprodig.com/power-platform"}
       ]
     }
     </script>
@@ -96,11 +99,11 @@
     <section class="hero-section">
         <a href="/#servicios" class="back-link"><i class="fas fa-arrow-left"></i> Volver</a>
         <div class="hero-content">
-            <h1>Power Platform</h1>
+            <h1>Microsoft Power Platform con Inteligencia Artificial y Copilot</h1>
             <p>Ecosistema Microsoft potenciado con Inteligencia Artificial</p>
             <div class="resumen-tecnico">
                 <h3>Resumen Técnico</h3>
-                <p>Potenciamos tu ecosistema Microsoft integrando IA en Power BI para analytics predictivo, Power Apps para aplicaciones inteligentes con Copilot, y Power Automate para flujos de trabajo automatizados con intelligence. Creamos soluciones que combinan la robustez del ecosistema Microsoft con las capacidades de los últimos modelos de IA, permitiendo análisis de datos avanzado, automatización inteligente y aplicaciones que aprenden de tus procesos.</p>
+                <p>Modernizamos la operativa empresarial integrando el ecosistema Microsoft Power Platform (Power BI, Power Apps, Power Automate y Copilot Studio) con modelos de lenguaje y APIs de Azure OpenAI. Desarrollamos tableros analíticos predictivos en DAX y Power BI, automatizaciones de documentos estructurados mediante AI Builder y conectores empresariales personalizados en Dataverse. Minimizamos el trabajo manual repetitivo y aceleramos la toma de decisiones con flujos de trabajo inteligentes, gobernados y auditables.</p>
             </div>
             <a href="#contacto" class="btn btn-primary"><i class="fab fa-microsoft"></i> Implementar Power Platform + IA</a>
         </div>
@@ -110,24 +113,19 @@
             <div class="section-title"><h2>Componentes con IA</h2></div>
             <div class="evidencias-grid">
                 <div class="evidencia-card">
-                    <div class="icon-microsoft"><i class="fas fa-chart-bar"></i></div>
-                    <h4>Power BI + IA</h4>
-                    <p>Dashboards predictivos, análisis de tendencias con ML integrado, insights automáticos y natural language queries.</p>
+                    <span class="course-badge" style="background:#2563eb;color:#fff;padding:0.2rem 0.6rem;border-radius:99px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:0.8rem;">Analítica Predictiva</span>
+<h4><i class="fas fa-chart-pie"></i> Tableros Predictivos NexoSalud en Power BI</h4>
+                    <p>Dashboard predictivo con machine learning para proyección de ocupación de camas, rotación de insumos y optimización de suministros hospitalarios.</p>
                 </div>
                 <div class="evidencia-card">
-                    <div class="icon-microsoft"><i class="fas fa-mobile-alt"></i></div>
-                    <h4>Power Apps + Copilot</h4>
-                    <p>Aplicaciones que se crean con lenguaje natural. Copilot帮助你 construir apps hablando.</p>
+                    <span class="course-badge" style="background:#2563eb;color:#fff;padding:0.2rem 0.6rem;border-radius:99px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:0.8rem;">Automatización</span>
+<h4><i class="fas fa-robot"></i> Automatización Contable PAIC en Power Automate</h4>
+                    <p>Flujo inteligente con AI Builder que procesa extractos bancarios en PDF y genera asientos de conciliación directos en Microsoft Dataverse.</p>
                 </div>
                 <div class="evidencia-card">
-                    <div class="icon-microsoft"><i class="fas fa-cogs"></i></div>
-                    <h4>Power Automate + AI</h4>
-                    <p>Flujos inteligentes que clasifican, extraen información y toman decisiones basadas en IA.</p>
-                </div>
-                <div class="evidencia-card">
-                    <div class="icon-microsoft"><i class="fas fa-robot"></i></div>
-                    <h4>Copilot Integration</h4>
-                    <p>Asistente de IA integrado en todo el ecosistema. Consulta tus datos conversacionalmente.</p>
+                    <span class="course-badge" style="background:#2563eb;color:#fff;padding:0.2rem 0.6rem;border-radius:99px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:0.8rem;">App Low-Code</span>
+<h4><i class="fas fa-mobile-alt"></i> App de Inspecciones de Campo con Copilot</h4>
+                    <p>Solución móvil en Power Apps con comandos de voz y visión artificial para captura de evidencias y reportes técnicos en terreno.</p>
                 </div>
             </div>
         </div>
@@ -135,22 +133,24 @@
     <section class="section faq-section">
         <div class="container">
             <div class="section-title"><h2>Preguntas Frecuentes</h2></div>
-            <div class="faq-item">
-                <div class="faq-question">¿Necesito licencia de Microsoft 365?</div>
-                <div class="faq-answer">
-                    <p>Sí, Power Platform requiere licencias específicas. Evaluamos tu licensing actual y recomendamos la mejor configuración. Hay opciones para empresas de todos los tamaños, desde planes por usuario hasta licencias enterprise.</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Qué licenciamiento de Microsoft se requiere para implementar Power Platform con IA?</h3>
+                    <div class="faq-answer">
+                        <p>Se requiere licenciamiento activo de Microsoft 365, complementado con licencias de Power Apps o Power Automate por usuario o por aplicación según el caso de uso. Asesoramos en la optimización de licencias para minimizar el costo operativo de la organización.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">¿Cuánto tiempo toma implementar?</div>
-                <div class="faq-answer">
-                    <p>Un dashboard de Power BI con IA básico toma 1-2 semanas. Una aplicación de Power Apps con Copilot toma 3-4 semanas. Automatizaciones complejas 2-3 semanas. Combinaciones de varios componentes 6-12 semanas.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cómo se integra Copilot Studio con los datos y procesos específicos de mi empresa?</h3>
+                    <div class="faq-answer">
+                        <p>Copilot Studio se conecta a través de Dataverse, SharePoint, bases de datos SQL y conectores personalizados a APIs externas. Esto permite a los asistentes corporativos responder preguntas sobre políticas internas y ejecutar flujos autorizados.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">¿Podemos migrar desde otras plataformas?</div>
-                <div class="faq-answer">
-                    <p>Sí, migramos desde Excel complejo, sistemas Legacy, y otras plataformas de BI. También podemos integrar con sistemas existentes manteniendo la infraestructura actual mientras migramos gradualmente.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cuánto tiempo toma desarrollar y desplegar una solución en Power Platform?</h3>
+                    <div class="faq-answer">
+                        <p>Un tablero analítico avanzado en Power BI toma de 1 a 2 semanas, mientras que aplicaciones completas en Power Apps con flujos en Power Automate e IA se entregan en 3 a 5 semanas de trabajo estructurado.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -220,7 +220,7 @@
                 <span itemprop="addressRegion">Cundinamarca</span>,
                 <span itemprop="addressCountry">Colombia</span> |
                 <a itemprop="telephone" href="tel:+573144897092">+57 314 489 7092</a> |
-                <a itemprop="email" href="mailto:mauricio.pineda@prospectivadigital.com">mauricio.pineda@prospectivadigital.com</a>
+                <!--email_off--><a itemprop="email" href="mailto:contacto@aiprodig.com">contacto@aiprodig.com</a><!--/email_off-->
             </address>
             <p>&copy; 2026 ProDig - Prospectiva Digital. Todos los derechos reservados.</p>
         </div>

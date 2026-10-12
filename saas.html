@@ -18,7 +18,7 @@
     <meta property="og:locale" content="es_CO">
     <meta property="og:title" content="SaaS | ProDig">
     <meta property="og:description" content="Desarrollo SaaS con demos funcionales en 48 horas.">
-    <meta property="og:url" content="https://aiprodig.com/saas.html">
+    <meta property="og:url" content="https://aiprodig.com/saas">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="SaaS | ProDig">
@@ -64,6 +64,9 @@
         footer { background: #0f2027; color: white; text-align: center; padding: 2rem 0; }
         .back-link { position: absolute; top: 100px; left: 2rem; color: white; text-decoration: none; }
         .badge-48h { background: #38ef7d; color: #0f2027; padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; display: inline-block; margin-bottom: 1rem; }
+    
+        h3.faq-question { margin: 0; font-size: 1.15rem; font-weight: 600; font-family: inherit; line-height: 1.4; color: #1e293b; display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 1.5rem; }
+
     </style>
     <!-- JSON-LD: BreadcrumbList -->
     <script type="application/ld+json">
@@ -74,7 +77,7 @@
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://aiprodig.com/"},
         {"@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://aiprodig.com/#servicios"},
-        {"@type": "ListItem", "position": 3, "name": "SaaS", "item": "https://aiprodig.com/saas.html"}
+        {"@type": "ListItem", "position": 3, "name": "SaaS", "item": "https://aiprodig.com/saas"}
       ]
     }
     </script>
@@ -96,11 +99,11 @@
         <a href="/#servicios" class="back-link"><i class="fas fa-arrow-left"></i> Volver</a>
         <div class="hero-content">
             <div class="badge-48h"><i class="fas fa-bolt"></i> Demos en 48 horas</div>
-            <h1>SaaS</h1>
+            <h1>Desarrollo de Plataformas SaaS a Medida con IA</h1>
             <p>Software como Servicio con agentes constructores</p>
             <div class="resumen-tecnico">
                 <h3>Resumen Técnico</h3>
-                <p>Transformamos tu idea en un SaaS funcional en tiempo récord. Utilizamos agentes constructores de IA que generan la estructura base, APIs, bases de datos y frontend de tu aplicación. En 48 horas tienes una demo funcional que puedes presentar a inversores o validar con usuarios. Escalamos de MVP a producto completo con arquitectura cloud-native lista para producción.</p>
+                <p>Desarrollamos soluciones de Software as a Service (SaaS) multi-tenant de alto rendimiento con backend en Python, base de datos Supabase (PostgreSQL con Row Level Security) y despliegue global en Vercel. Automatizamos la generación de microservicios mediante agentes constructores basados en Gemini API, entregando prototipos operativos y funcionales en sprints de 48 horas. Integramos pasarelas de pago recurrentes (Stripe, Wompi), control de suscripciones y arquitecturas escalables con entrega total del código fuente propietario.</p>
             </div>
             <a href="#contacto" class="btn btn-primary"><i class="fas fa-rocket"></i> Crear Mi SaaS</a>
         </div>
@@ -110,16 +113,19 @@
             <div class="section-title"><h2>Proceso de Construcción</h2></div>
             <div class="evidencias-grid">
                 <div class="evidencia-card">
-                    <h4><i class="fas fa-lightbulb"></i> Define Tu Idea</h4>
-                    <p>Especificafeatures, usuarios objetivo y modelo de negocio. Nosotros transformamos tu descripción en specs técnicos.</p>
+                    <span class="course-badge" style="background:#2563eb;color:#fff;padding:0.2rem 0.6rem;border-radius:99px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:0.8rem;">Ecosistema SaaS</span>
+<h4><i class="fas fa-city"></i> PAIC — Plataforma SaaS Residencial</h4>
+                    <p>Ecosistema multi-inquilino de gestión de copropiedades con módulos de recaudo, control de accesos, reservas y asambleas virtuales en tiempo real.</p>
                 </div>
                 <div class="evidencia-card">
-                    <h4><i class="fas fa-robot"></i> Agentes Constructores</h4>
-                    <p>Nuestro equipo de IA genera automáticamente frontend, backend, base de datos y APIs de tu SaaS.</p>
+                    <span class="course-badge" style="background:#2563eb;color:#fff;padding:0.2rem 0.6rem;border-radius:99px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:0.8rem;">SaaS de Analítica</span>
+<h4><i class="fas fa-chart-line"></i> VeriNews Analytics</h4>
+                    <p>Plataforma SaaS para monitoreo de medios, detección de sesgos algorítmicos y clasificación semántica de noticias a gran escala mediante IA.</p>
                 </div>
                 <div class="evidencia-card">
-                    <h4><i class="fas fa-clock"></i> Demo en 48h</h4>
-                    <p>Recibe un prototipo funcional con la interfaz y funcionalidades básicas lista para pruebas y presentaciones.</p>
+                    <span class="course-badge" style="background:#2563eb;color:#fff;padding:0.2rem 0.6rem;border-radius:99px;font-size:0.75rem;font-weight:700;display:inline-block;margin-bottom:0.8rem;">SaaS Salud</span>
+<h4><i class="fas fa-hospital"></i> NexoSalud RDA Portal</h4>
+                    <p>Suite SaaS hospitalaria para auditoría de facturación médica, control de historias clínicas electrónicas y teleconsulta segura con cumplimiento de normativas.</p>
                 </div>
             </div>
         </div>
@@ -127,22 +133,24 @@
     <section class="section faq-section">
         <div class="container">
             <div class="section-title"><h2>Preguntas Frecuentes</h2></div>
-            <div class="faq-item">
-                <div class="faq-question">¿Qué incluye la demo en 48 horas?</div>
-                <div class="faq-answer">
-                    <p>Includes: Interfaz de usuario funcional, panel de administración básico, base de datos configurada, API REST lista, sistema de autenticación, y deployment en staging. Es un MVP funcional, no un mockup.</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Qué incluye exactamente la entrega de una demo funcional en 48 horas?</h3>
+                    <div class="faq-answer">
+                        <p>Incluye una interfaz de usuario interactiva y navegable, esquema de base de datos en Supabase, autenticación de usuarios funcional y endpoints de API listos para probar la propuesta de valor con usuarios e inversionistas reales.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">¿Puedo elegir la tecnología?</div>
-                <div class="faq-answer">
-                    <p>Sí, puedes elegir entre stack tradicional (React/Node, Python/Django) o modernas (Next.js, Supabase, Flutter). También podemos sugerir la mejor opción según tu caso de uso.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Quién mantiene la propiedad intelectual y el código fuente del SaaS?</h3>
+                    <div class="faq-answer">
+                        <p>El cliente es el propietario absoluto del código fuente, modelos y activos creados desde el primer día. No generamos dependencias propietarias ni contratos de retención de código.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">¿Qué pasa después de la demo?</div>
-                <div class="faq-answer">
-                    <p>Puedes contratar el desarrollo completo, iterar sobre la demo, o llevar el código base para desarrollarlo internamente. Te entregamos el código fuente completo.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Qué stack tecnológico se utiliza para asegurar la escalabilidad del SaaS?</h3>
+                    <div class="faq-answer">
+                        <p>Utilizamos arquitecturas cloud-native basadas en Python, Supabase (PostgreSQL con replicación y RLS) y despliegue serverless en Vercel. Este stack soporta desde cientos hasta millones de peticiones mensuales con costes de infraestructura óptimos.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -212,7 +220,7 @@
                 <span itemprop="addressRegion">Cundinamarca</span>,
                 <span itemprop="addressCountry">Colombia</span> |
                 <a itemprop="telephone" href="tel:+573144897092">+57 314 489 7092</a> |
-                <a itemprop="email" href="mailto:mauricio.pineda@prospectivadigital.com">mauricio.pineda@prospectivadigital.com</a>
+                <!--email_off--><a itemprop="email" href="mailto:contacto@aiprodig.com">contacto@aiprodig.com</a><!--/email_off-->
             </address>
             <p>&copy; 2026 ProDig - Prospectiva Digital. Todos los derechos reservados.</p>
         </div>
