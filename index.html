@@ -65,47 +65,59 @@
     
     <!-- JSON-LD: Organization (Entidad Raíz) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "@id": "https://aiprodig.com/#organization",
-      "name": "ProDig - Prospectiva Digital",
-      "alternateName": "ProDig",
-      "url": "https://aiprodig.com",
-      "logo": {
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://aiprodig.com/#organization",
+    "name": "ProDig - Prospectiva Digital",
+    "alternateName": "ProDig",
+    "url": "https://aiprodig.com",
+    "logo": {
         "@type": "ImageObject",
         "url": "https://aiprodig.com/images/prodig-logo.webp",
         "width": 300,
         "height": 100
-      },
-      "description": "Consultoría en Inteligencia Artificial y desarrollo de activos digitales. Chatbots, SaaS, SEO/GEO, Agentes IA, Power Platform. Bogotá, Colombia.",
-      "foundingDate": "2021",
-      "founder": {
+    },
+    "description": "Consultoría en Inteligencia Artificial y desarrollo de activos digitales. Especialistas en IA Generativa, Agentes Autónomos, Automatizaciones y SEO/GEO. Bogotá, Colombia.",
+    "foundingDate": "2021",
+    "founder": {
         "@type": "Person",
         "@id": "https://aiprodig.com/#mauricio-pineda",
         "name": "Mauricio Pineda",
         "jobTitle": "Fundador y Director de Innovación Digital",
         "url": "https://aiprodig.com/sobre-mauricio-pineda.html",
-        "sameAs": ["https://www.linkedin.com/in/mauriciopineda"]
-      },
-      "address": {
+        "sameAs": [
+            "https://www.linkedin.com/in/mauriciopineda"
+        ]
+    },
+    "address": {
         "@type": "PostalAddress",
         "addressLocality": "Bogotá",
         "addressRegion": "Cundinamarca",
         "addressCountry": "CO"
-      },
-      "contactPoint": [{
-        "@type": "ContactPoint",
-        "telephone": "+57-314-489-7092",
-        "contactType": "customer service",
-        "availableLanguage": ["Spanish"],
-        "areaServed": ["CO", "LATAM"]
-      }],
-      "sameAs": [
+    },
+    "contactPoint": [
+        {
+            "@type": "ContactPoint",
+            "telephone": "+57-314-489-7092",
+            "contactType": "customer service",
+            "email": "contacto@aiprodig.com",
+            "availableLanguage": [
+                "Spanish",
+                "English"
+            ],
+            "areaServed": [
+                "CO",
+                "LATAM",
+                "Global"
+            ]
+        }
+    ],
+    "sameAs": [
         "https://aiprodig.com",
         "https://materiaprogramable.com"
-      ],
-      "knowsAbout": [
+    ],
+    "knowsAbout": [
         "Inteligencia Artificial",
         "Generative Engine Optimization",
         "SEO",
@@ -114,41 +126,422 @@
         "Power Platform",
         "RAG - Retrieval Augmented Generation",
         "Agentes de IA"
-      ],
-      "areaServed": {
+    ],
+    "areaServed": {
         "@type": "GeoCircle",
         "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": 4.711,
-          "longitude": -74.0721
+            "@type": "GeoCoordinates",
+            "latitude": 4.711,
+            "longitude": -74.0721
         },
         "name": "Bogotá, Colombia y Latinoamérica"
-      },
-      "aggregateRating": {
+    },
+    "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
         "reviewCount": "3",
         "bestRating": "5",
         "worstRating": "1",
         "ratingCount": "3"
-      },
-      "hasOfferCatalog": {
+    },
+    "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Servicios ProDig",
+        "name": "Catálogo Integral de Servicios ProDig - IA & GEO",
+        "description": "Portafolio de soluciones corporativas de IA, automatización inteligente y posicionamiento generativo con precios transparentes en COP y USD.",
         "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO y GEO", "url": "https://aiprodig.com/seo-y-geo.html"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Chatbots con IA", "url": "https://aiprodig.com/chatbots.html"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Agentes de IA", "url": "https://aiprodig.com/agentes-ia.html"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "RAG - Chat con documentos", "url": "https://aiprodig.com/rag.html"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SaaS a medida", "url": "https://aiprodig.com/saas.html"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "IA Local", "url": "https://aiprodig.com/ia-local.html"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Power Platform con IA", "url": "https://aiprodig.com/power-platform.html"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Sitios Web con IA", "url": "https://aiprodig.com/sitios-web-ia.html"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Capacitación en IA", "url": "https://aiprodig.com/capacitacion.html"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Consultoría estratégica", "url": "https://aiprodig.com/consultoria.html"}}
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "SEO y GEO — Posicionamiento en Motores de IA",
+                    "serviceType": "Generative Engine Optimization (GEO) & SEO Técnico",
+                    "description": "Optimización de activos web corporativos para ser citados y recomendados como fuentes de verdad por modelos generativos como Gemini, ChatGPT, Claude y Perplexity. Incluye grafos de conocimiento estructurados, llms.txt y métricas de citabilidad.",
+                    "url": "https://aiprodig.com/seo-y-geo",
+                    "provider": {
+                        "@id": "https://aiprodig.com/#organization"
+                    },
+                    "offers": [
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Presencia (Fundamentos GEO)",
+                            "price": "1200000",
+                            "priceCurrency": "COP",
+                            "description": "$1.200.000COP / $300 USD",
+                            "url": "https://aiprodig.com/seo-y-geo"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Relevancia (Topic Clusters & Knowledge Graph)",
+                            "price": "2500000",
+                            "priceCurrency": "COP",
+                            "description": "$2.500.000COP/mes / $625 USD/mes",
+                            "url": "https://aiprodig.com/seo-y-geo"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Autoridad AI (Dominio Generativo Integral)",
+                            "price": "4800000",
+                            "priceCurrency": "COP",
+                            "description": "$4.800.000+COP/mes / $1.200+ USD/mes",
+                            "url": "https://aiprodig.com/seo-y-geo"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Chatbots con IA — Respuesta Multimedia y Asistentes Conversacionales",
+                    "serviceType": "Chatbots de Inteligencia Artificial & A2UI",
+                    "description": "Desarrollo de asistentes conversacionales con Gemini API, síntesis de voz y arquitectura A2UI (Agent-to-User Interface) para interacción visual y omnicanal en Web, WhatsApp y plataformas corporativas.",
+                    "url": "https://aiprodig.com/chatbots",
+                    "provider": {
+                        "@id": "https://aiprodig.com/#organization"
+                    },
+                    "offers": [
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Starter (Web & WhatsApp)",
+                            "price": "1200000",
+                            "priceCurrency": "COP",
+                            "description": "$1.200.000COP / $300 USD",
+                            "url": "https://aiprodig.com/chatbots"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Pro A2UI (Agent-to-User Interface)",
+                            "price": "2800000",
+                            "priceCurrency": "COP",
+                            "description": "$2.800.000COP / $700 USD",
+                            "url": "https://aiprodig.com/chatbots"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Enterprise (Chatbot Transaccional & ERP)",
+                            "price": "0",
+                            "priceCurrency": "COP",
+                            "description": "ConsultarAsesor / Tarifa personalizada en COP / USD",
+                            "url": "https://aiprodig.com/chatbots"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "SaaS a Medida — Software como Servicio con Agentes Constructores",
+                    "serviceType": "Desarrollo de Software como Servicio (SaaS) con Agentes IA",
+                    "description": "Desarrollo ágil de plataformas SaaS escalables sobre Python, Supabase y Vercel. Validación y prototipado rápido en 48 horas con arquitectura multi-inquilino, suscripciones y propiedad total del código.",
+                    "url": "https://aiprodig.com/saas",
+                    "provider": {
+                        "@id": "https://aiprodig.com/#organization"
+                    },
+                    "offers": [
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Demo Sprint (MVP en 48h)",
+                            "price": "1500000",
+                            "priceCurrency": "COP",
+                            "description": "$1.500.000COP / $375 USD",
+                            "url": "https://aiprodig.com/saas"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Lanzamiento (SaaS en Producción)",
+                            "price": "3200000",
+                            "priceCurrency": "COP",
+                            "description": "$3.200.000COP / $800 USD",
+                            "url": "https://aiprodig.com/saas"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Scale (Arquitectura Enterprise)",
+                            "price": "0",
+                            "priceCurrency": "COP",
+                            "description": "ConsultarAsesor / Tarifa personalizada en COP / USD",
+                            "url": "https://aiprodig.com/saas"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "IA Local — Modelos Privados y Privacidad Absoluta On-Premise",
+                    "serviceType": "Inteligencia Artificial On-Premise y Modelos Locales Privados",
+                    "description": "Despliegue de modelos de lenguaje de código abierto (DeepSeek, Llama 3, Ollama) en servidores físicos o redes aisladas sin fuga de datos ni dependencia de APIs externas. RAG offline y fine-tuning corporativo.",
+                    "url": "https://aiprodig.com/ia-local",
+                    "provider": {
+                        "@id": "https://aiprodig.com/#organization"
+                    },
+                    "offers": [
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Servidor Privado (Setup On-Premise)",
+                            "price": "2400000",
+                            "priceCurrency": "COP",
+                            "description": "$2.400.000COP / $600 USD",
+                            "url": "https://aiprodig.com/ia-local"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan RAG Corporativo Local",
+                            "price": "4500000",
+                            "priceCurrency": "COP",
+                            "description": "$4.500.000COP / $1.125 USD",
+                            "url": "https://aiprodig.com/ia-local"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Clúster & Fine-Tuning Dedicado",
+                            "price": "0",
+                            "priceCurrency": "COP",
+                            "description": "ConsultarAsesor / Tarifa personalizada en COP / USD",
+                            "url": "https://aiprodig.com/ia-local"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "RAG — Retrieval-Augmented Generation & Chat con Documentos Corporativos",
+                    "serviceType": "Retrieval-Augmented Generation (RAG) & Bases Vectoriales",
+                    "description": "Sistemas de búsqueda semántica y recuperación de información sobre documentos corporativos (PDF, Excel, bases de datos) utilizando bases vectoriales como pgvector y Supabase. Respuestas con citas exactas y cero alucinaciones.",
+                    "url": "https://aiprodig.com/rag",
+                    "provider": {
+                        "@id": "https://aiprodig.com/#organization"
+                    },
+                    "offers": [
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Documental Starter",
+                            "price": "1800000",
+                            "priceCurrency": "COP",
+                            "description": "$1.800.000COP / $450 USD",
+                            "url": "https://aiprodig.com/rag"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Corporativo Multimodal",
+                            "price": "3600000",
+                            "priceCurrency": "COP",
+                            "description": "$3.600.000COP / $900 USD",
+                            "url": "https://aiprodig.com/rag"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Enterprise Knowledge Graph",
+                            "price": "0",
+                            "priceCurrency": "COP",
+                            "description": "ConsultarAsesor / Tarifa personalizada en COP / USD",
+                            "url": "https://aiprodig.com/rag"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Agentes de IA — Reducción de Horas Hombre mediante Google ADK",
+                    "serviceType": "Agentes Autónomos de IA con Google ADK y Python",
+                    "description": "Construcción de agentes de software con capacidad de razonamiento, ejecución de herramientas y orquestación de flujos de trabajo multi-agente en Python con Google Agent Development Kit.",
+                    "url": "https://aiprodig.com/agentes-ia",
+                    "provider": {
+                        "@id": "https://aiprodig.com/#organization"
+                    },
+                    "offers": [
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Agente Especializado (Caso de Uso Único)",
+                            "price": "2200000",
+                            "priceCurrency": "COP",
+                            "description": "$2.200.000COP / $550 USD",
+                            "url": "https://aiprodig.com/agentes-ia"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Pipeline Multi-Agente",
+                            "price": "4400000",
+                            "priceCurrency": "COP",
+                            "description": "$4.400.000COP / $1.100 USD",
+                            "url": "https://aiprodig.com/agentes-ia"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Agente Autónomo Enterprise",
+                            "price": "0",
+                            "priceCurrency": "COP",
+                            "description": "ConsultarAsesor / Tarifa personalizada en COP / USD",
+                            "url": "https://aiprodig.com/agentes-ia"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Power Platform con IA — Ecosistema Microsoft Potenciado con IA",
+                    "serviceType": "Automatización y Analítica Empresarial con Microsoft Power Platform",
+                    "description": "Modernización de flujos y tableros de control con Power BI predictivo, Power Apps corporativas y agentes en Copilot Studio conectados a Dataverse y SharePoint para empresas latinoamericanas.",
+                    "url": "https://aiprodig.com/power-platform",
+                    "provider": {
+                        "@id": "https://aiprodig.com/#organization"
+                    },
+                    "offers": [
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Analytics Predictivo (Power BI + IA)",
+                            "price": "1600000",
+                            "priceCurrency": "COP",
+                            "description": "$1.600.000COP / $400 USD",
+                            "url": "https://aiprodig.com/power-platform"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Apps & Workflows (Power Apps + Copilot)",
+                            "price": "3200000",
+                            "priceCurrency": "COP",
+                            "description": "$3.200.000COP / $800 USD",
+                            "url": "https://aiprodig.com/power-platform"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Transformación Microsoft Enterprise",
+                            "price": "0",
+                            "priceCurrency": "COP",
+                            "description": "ConsultarAsesor / Tarifa personalizada en COP / USD",
+                            "url": "https://aiprodig.com/power-platform"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Capacitación en IA — Talleres Ejecutivos y Bootcamps Técnicos",
+                    "serviceType": "Capacitación In-Company y Bootcamps Técnicos en Inteligencia Artificial",
+                    "description": "Programas prácticos in-company en Bogotá y online para capacitar equipos ejecutivos y de ingeniería en uso de IA generativa, prompting avanzado, RAG y automatización de procesos.",
+                    "url": "https://aiprodig.com/capacitacion",
+                    "provider": {
+                        "@id": "https://aiprodig.com/#organization"
+                    },
+                    "offers": [
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Taller Ejecutivo (IA para Líderes & Equipos)",
+                            "price": "1200000",
+                            "priceCurrency": "COP",
+                            "description": "$1.200.000COP / $300 USD",
+                            "url": "https://aiprodig.com/capacitacion"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Bootcamp Técnico (Desarrollo & Automatización)",
+                            "price": "2800000",
+                            "priceCurrency": "COP",
+                            "description": "$2.800.000COP / $700 USD",
+                            "url": "https://aiprodig.com/capacitacion"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Programa In-Company a Medida",
+                            "price": "0",
+                            "priceCurrency": "COP",
+                            "description": "ConsultarAsesor / Tarifa personalizada en COP / USD",
+                            "url": "https://aiprodig.com/capacitacion"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Consultoría Estratégica en IA — Transformación Digital y Activos Digitales",
+                    "serviceType": "Consultoría Estratégica en Adopción de IA y Transformación Digital",
+                    "description": "Diagnóstico de madurez tecnológica, auditoría de procesos y diseño de roadmaps de adopción de IA con cálculo riguroso de retorno de inversión (ROI) y selección de stacks cloud eficientes.",
+                    "url": "https://aiprodig.com/consultoria",
+                    "provider": {
+                        "@id": "https://aiprodig.com/#organization"
+                    },
+                    "offers": [
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Diagnóstico Inicial (Primera Hora Gratis)",
+                            "price": "1",
+                            "priceCurrency": "COP",
+                            "description": "Gratis1ra hora / $0 COP / $0 USD (60 min)",
+                            "url": "https://aiprodig.com/consultoria"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Roadmap Tecnológico & Arquitectura",
+                            "price": "2500000",
+                            "priceCurrency": "COP",
+                            "description": "$2.500.000COP / $625 USD",
+                            "url": "https://aiprodig.com/consultoria"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Acompañamiento Estratégico Continuo",
+                            "price": "0",
+                            "priceCurrency": "COP",
+                            "description": "ConsultarAsesor / Tarifa personalizada en COP / USD",
+                            "url": "https://aiprodig.com/consultoria"
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Sitios Web con IA — Integración de Automatización y Experiencias Dinámicas",
+                    "serviceType": "Desarrollo Web Dinámico Potenciado por Inteligencia Artificial",
+                    "description": "Desarrollo de sitios web corporativos y web apps optimizados con Gemini API, Three.js interactivo, despliegue global en Vercel y estructura semántica preparada para máxima indexación y citabilidad en GEO.",
+                    "url": "https://aiprodig.com/sitios-web-ia",
+                    "provider": {
+                        "@id": "https://aiprodig.com/#organization"
+                    },
+                    "offers": [
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Starter (Landing + Chatbot IA)",
+                            "price": "800000",
+                            "priceCurrency": "COP",
+                            "description": "$800.000COP / $200 USD",
+                            "url": "https://aiprodig.com/sitios-web-ia"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Pro (Web App Dinámica + API)",
+                            "price": "1600000",
+                            "priceCurrency": "COP",
+                            "description": "$1.600.000COP / $400 USD",
+                            "url": "https://aiprodig.com/sitios-web-ia"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Plan Enterprise (Arquitectura a Medida)",
+                            "price": "2800000",
+                            "priceCurrency": "COP",
+                            "description": "$2.800.000+COP / $700+ USD",
+                            "url": "https://aiprodig.com/sitios-web-ia"
+                        }
+                    ]
+                }
+            }
         ]
-      }
     }
+}
     </script>
     <!-- JSON-LD: WebSite -->
     <script type="application/ld+json">

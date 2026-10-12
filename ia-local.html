@@ -227,17 +227,62 @@
         </div>
     </footer>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "@id": "https://aiprodig.com/ia-local#service",
-      "name": "IA Local — Privacidad y seguridad con modelos ejecutándose en tu infraestructura",
-      "description": "Inteligencia artificial local con privacidad y seguridad garantizada. Modelos como GPT-OSS, DeepSeek ejecutándose en tus servidores.",
-      "provider": {"@id": "https://aiprodig.com/#organization"},
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://aiprodig.com/ia-local"},
-      "areaServed": "Latinoamérica",
-      "serviceType": "IA Local y On-Premise"
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://aiprodig.com/ia-local#service",
+    "name": "IA Local — Modelos Privados y Privacidad Absoluta On-Premise",
+    "description": "Despliegue de modelos de lenguaje de código abierto (DeepSeek, Llama 3, Ollama) en servidores físicos o redes aisladas sin fuga de datos ni dependencia de APIs externas. RAG offline y fine-tuning corporativo.",
+    "url": "https://aiprodig.com/ia-local",
+    "provider": {
+        "@id": "https://aiprodig.com/#organization"
+    },
+    "serviceType": "Inteligencia Artificial On-Premise y Modelos Locales Privados",
+    "category": "Ciberseguridad / Infraestructura IA",
+    "areaServed": [
+        {
+            "@type": "Country",
+            "name": "Colombia"
+        },
+        {
+            "@type": "Place",
+            "name": "Latinoamérica"
+        },
+        {
+            "@type": "Place",
+            "name": "Global"
+        }
+    ],
+    "offers": [
+        {
+            "@type": "Offer",
+            "name": "Plan Servidor Privado (Setup On-Premise)",
+            "price": "2400000",
+            "priceCurrency": "COP",
+            "description": "Instalación de Ollama, DeepSeek o Llama 3 en servidores propios; Contenedores Docker optimizados para aceleración por GPU; Interfaz web corporativa privada y segura (Open-WebUI) — Tarifa: $2.400.000COP / $600 USD",
+            "url": "https://aiprodig.com/ia-local"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan RAG Corporativo Local",
+            "price": "4500000",
+            "priceCurrency": "COP",
+            "description": "Base de datos vectorial local con pgvector o ChromaDB; Indexación de documentos confidenciales en red aislada (air-gapped); Búsqueda semántica de precisión con respuestas citadas en local — Tarifa: $4.500.000COP / $1.125 USD",
+            "url": "https://aiprodig.com/ia-local"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan Clúster & Fine-Tuning Dedicado",
+            "price": "0",
+            "priceCurrency": "COP",
+            "description": "Entrenamiento o Fine-Tuning (LoRA / QLoRA) con datos propietarios; Orquestación en clústeres multi-GPU (NVIDIA A100/H100 o Cloud Privado); Monitoreo de latencia, throughput y rendimiento del modelo — Tarifa: ConsultarAsesor / Tarifa personalizada en COP / USD",
+            "url": "https://aiprodig.com/ia-local"
+        }
+    ],
+    "mainEntityOfPage": {
+        "@id": "https://aiprodig.com/ia-local"
     }
+}
     </script>
     <script>
         const canvas = document.getElementById('heroCanvas');
@@ -274,6 +319,39 @@
         animate();
         window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
         document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('active')));
+    </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://aiprodig.com/ia-local#faq",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "¿Qué infraestructura de hardware se requiere para ejecutar IA local?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Para modelos optimizados de 7B a 14B parámetros es suficiente una estación de trabajo o servidor con GPU NVIDIA (RTX 3090, 4090 o A4000). Para modelos de mayor escala empresarial (70B+) recomendamos configuraciones con GPUs profesionales A100/H100 o clústeres en nube privada."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Cómo se garantiza la privacidad absoluta de los datos con IA local?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Al ejecutarse en hardware propio o VPCs privadas aisladas, las peticiones y documentos nunca se envían a servidores de OpenAI, Google o Microsoft. Los datos se procesan en memoria local y permanecen bajo el control estricto de tu política de ciberseguridad."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Es posible realizar fine-tuning o entrenamiento con la información propia de mi empresa?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, realizamos procesos de adaptación de dominio (Fine-Tuning con LoRA / QLoRA) o Retrieval-Augmented Generation (RAG) completamente offline. El modelo aprende la terminología y procedimientos internos de tu negocio de forma segura."
+            }
+        }
+    ]
+}
     </script>
 </body>
 </html>

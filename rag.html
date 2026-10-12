@@ -225,17 +225,62 @@
         </div>
     </footer>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "@id": "https://aiprodig.com/rag#service",
-      "name": "RAG — Retrieval-Augmented Generation - Chat con tus datos internos",
-      "description": "Retrieval-Augmented Generation para valorización de datos internos. Chat con tus documentos PDF, audio y video.",
-      "provider": {"@id": "https://aiprodig.com/#organization"},
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://aiprodig.com/rag"},
-      "areaServed": "Latinoamérica",
-      "serviceType": "RAG y Procesamiento de Datos"
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://aiprodig.com/rag#service",
+    "name": "RAG — Retrieval-Augmented Generation & Chat con Documentos Corporativos",
+    "description": "Sistemas de búsqueda semántica y recuperación de información sobre documentos corporativos (PDF, Excel, bases de datos) utilizando bases vectoriales como pgvector y Supabase. Respuestas con citas exactas y cero alucinaciones.",
+    "url": "https://aiprodig.com/rag",
+    "provider": {
+        "@id": "https://aiprodig.com/#organization"
+    },
+    "serviceType": "Retrieval-Augmented Generation (RAG) & Bases Vectoriales",
+    "category": "Gestión del Conocimiento / IA",
+    "areaServed": [
+        {
+            "@type": "Country",
+            "name": "Colombia"
+        },
+        {
+            "@type": "Place",
+            "name": "Latinoamérica"
+        },
+        {
+            "@type": "Place",
+            "name": "Global"
+        }
+    ],
+    "offers": [
+        {
+            "@type": "Offer",
+            "name": "Plan Documental Starter",
+            "price": "1800000",
+            "priceCurrency": "COP",
+            "description": "Indexación vectorial de hasta 5.000 páginas (PDF, Word, Excel); Generación de embeddings de alta resolución con OpenAI o Gemini; Búsqueda semántica con citas exactas de página y fuente — Tarifa: $1.800.000COP / $450 USD",
+            "url": "https://aiprodig.com/rag"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan Corporativo Multimodal",
+            "price": "3600000",
+            "priceCurrency": "COP",
+            "description": "Procesamiento híbrido de documentos, audio y video con transcripción; Pipeline de re-ranking semántico para máxima precisión de respuesta; Base de datos vectorial escalable en Supabase (pgvector) — Tarifa: $3.600.000COP / $900 USD",
+            "url": "https://aiprodig.com/rag"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan Enterprise Knowledge Graph",
+            "price": "0",
+            "priceCurrency": "COP",
+            "description": "RAG híbrido asistido por Grafo de Conocimiento corporativo; Indexación masiva de millones de registros estructurados y no estructurados; Control de acceso y permisos por roles de usuario (RBAC) — Tarifa: ConsultarAsesor / Tarifa personalizada en COP / USD",
+            "url": "https://aiprodig.com/rag"
+        }
+    ],
+    "mainEntityOfPage": {
+        "@id": "https://aiprodig.com/rag"
     }
+}
     </script>
     <script>
         const canvas = document.getElementById('heroCanvas');
@@ -290,6 +335,39 @@
         animate();
         window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
         document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('active')));
+    </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://aiprodig.com/rag#faq",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "¿Cómo previene la tecnología RAG que la IA alucine o invente datos?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El sistema RAG no responde usando conocimiento probabilístico general, sino recuperando fragmentos exactos de los documentos corporativos previamente indexados. El modelo recibe la instrucción estricta de basar su respuesta únicamente en la evidencia recuperada e incluir la cita bibliográfica."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Qué tipos y volúmenes de documentos puede procesar el sistema RAG?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Procesa formatos PDF, Word, Excel, presentaciones PowerPoint, archivos de texto plano, audios MP3/WAV y videos MP4. La arquitectura distribuida con pgvector y Supabase permite escalar desde cientos hasta millones de páginas indexadas."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿La información indexada en el sistema RAG se utiliza para reentrenar modelos públicos?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, las consultas y documentos son totalmente confidenciales y no se comparten con terceros para entrenamiento de modelos base. Las bases de datos vectoriales residen en tu entorno privado con cifrado en reposo y en tránsito."
+            }
+        }
+    ]
+}
     </script>
 </body>
 </html>

@@ -227,17 +227,62 @@
         </div>
     </footer>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "@id": "https://aiprodig.com/agentes-ia#service",
-      "name": "Agentes de IA — Reducción de horas hombre mediante Google ADK",
-      "description": "Agentes de IA con Google ADK para reducción de horas hombre. Automatización inteligente de procesos empresariales.",
-      "provider": {"@id": "https://aiprodig.com/#organization"},
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://aiprodig.com/agentes-ia"},
-      "areaServed": "Latinoamérica",
-      "serviceType": "Agentes de IA y Automatización"
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://aiprodig.com/agentes-ia#service",
+    "name": "Agentes de IA — Reducción de Horas Hombre mediante Google ADK",
+    "description": "Construcción de agentes de software con capacidad de razonamiento, ejecución de herramientas y orquestación de flujos de trabajo multi-agente en Python con Google Agent Development Kit.",
+    "url": "https://aiprodig.com/agentes-ia",
+    "provider": {
+        "@id": "https://aiprodig.com/#organization"
+    },
+    "serviceType": "Agentes Autónomos de IA con Google ADK y Python",
+    "category": "Automatización Inteligente / IA",
+    "areaServed": [
+        {
+            "@type": "Country",
+            "name": "Colombia"
+        },
+        {
+            "@type": "Place",
+            "name": "Latinoamérica"
+        },
+        {
+            "@type": "Place",
+            "name": "Global"
+        }
+    ],
+    "offers": [
+        {
+            "@type": "Offer",
+            "name": "Plan Agente Especializado (Caso de Uso Único)",
+            "price": "2200000",
+            "priceCurrency": "COP",
+            "description": "Agente autónomo desarrollado con Google Agent Development Kit (ADK); Enfocado en un caso de uso clave (atención, radicación o soporte); Llamada a herramientas (function calling) e integración con APIs — Tarifa: $2.200.000COP / $550 USD",
+            "url": "https://aiprodig.com/agentes-ia"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan Pipeline Multi-Agente",
+            "price": "4400000",
+            "priceCurrency": "COP",
+            "description": "Orquestación de ecosistema multi-agente con roles diferenciados; Validación cruzada de resultados y memoria compartida contextual; Conexión con bases de datos SQL y almacenes documentales vectoriales — Tarifa: $4.400.000COP / $1.100 USD",
+            "url": "https://aiprodig.com/agentes-ia"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan Agente Autónomo Enterprise",
+            "price": "0",
+            "priceCurrency": "COP",
+            "description": "Integración profunda a ERPs, CRMs y sistemas bancarios/transaccionales; Ejecución autónoma de tareas operativas de extremo a extremo; Monitoreo de observabilidad en tiempo real con alertas de seguridad — Tarifa: ConsultarAsesor / Tarifa personalizada en COP / USD",
+            "url": "https://aiprodig.com/agentes-ia"
+        }
+    ],
+    "mainEntityOfPage": {
+        "@id": "https://aiprodig.com/agentes-ia"
     }
+}
     </script>
     <script>
         const canvas = document.getElementById('heroCanvas');
@@ -282,6 +327,39 @@
         animate();
         window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
         document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('active')));
+    </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://aiprodig.com/agentes-ia#faq",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "¿Qué es Google Agent Development Kit (ADK) y en qué se diferencia de un chatbot?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Google ADK es un marco de desarrollo para construir sistemas con capacidad de razonamiento, planificación y ejecución de acciones (llamada a herramientas y APIs). A diferencia de un chatbot pasivo, un agente autónomo ejecuta tareas en sistemas corporativos de principio a fin."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Qué nivel de autonomía tienen los agentes y cómo se controlan sus acciones críticas?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Los agentes operan bajo políticas estrictas de seguridad (Human-in-the-Loop). Las tareas operativas rutinarias se ejecutan de forma automática, mientras que las acciones que involucren transacciones monetarias o cambios sensibles requieren confirmación humana."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Cuánto tiempo toma implementar un agente autónomo en producción?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Un agente enfocado en un caso de uso específico (como soporte o radicación) se implementa en 2 a 3 semanas. Agentes multi-herramienta con integraciones profundas a ERPs o CRMs toman entre 4 y 6 semanas."
+            }
+        }
+    ]
+}
     </script>
 </body>
 </html>

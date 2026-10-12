@@ -229,17 +229,62 @@
         </div>
     </footer>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "@id": "https://aiprodig.com/consultoria#service",
-      "name": "Consultoría — Impacto estratégico para tu transformación digital",
-      "description": "Consultoría estratégica en IA y automatización. Impacto transformador para tu empresa. Primera hora gratis.",
-      "provider": {"@id": "https://aiprodig.com/#organization"},
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://aiprodig.com/consultoria"},
-      "areaServed": "Latinoamérica",
-      "serviceType": "Consultoría en IA"
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://aiprodig.com/consultoria#service",
+    "name": "Consultoría Estratégica en IA — Transformación Digital y Activos Digitales",
+    "description": "Diagnóstico de madurez tecnológica, auditoría de procesos y diseño de roadmaps de adopción de IA con cálculo riguroso de retorno de inversión (ROI) y selección de stacks cloud eficientes.",
+    "url": "https://aiprodig.com/consultoria",
+    "provider": {
+        "@id": "https://aiprodig.com/#organization"
+    },
+    "serviceType": "Consultoría Estratégica en Adopción de IA y Transformación Digital",
+    "category": "Consultoría de Negocios / Tecnología",
+    "areaServed": [
+        {
+            "@type": "Country",
+            "name": "Colombia"
+        },
+        {
+            "@type": "Place",
+            "name": "Latinoamérica"
+        },
+        {
+            "@type": "Place",
+            "name": "Global"
+        }
+    ],
+    "offers": [
+        {
+            "@type": "Offer",
+            "name": "Plan Diagnóstico Inicial (Primera Hora Gratis)",
+            "price": "1",
+            "priceCurrency": "COP",
+            "description": "Sesión estratégica de diagnóstico de 60 minutos con consultor senior; Auditoría rápida del estado actual de procesos y madurez tecnológica; Identificación de los 3 principales cuellos de botella automatizables — Tarifa: Gratis1ra hora / $0 COP / $0 USD (60 min)",
+            "url": "https://aiprodig.com/consultoria"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan Roadmap Tecnológico & Arquitectura",
+            "price": "2500000",
+            "priceCurrency": "COP",
+            "description": "Plan maestro de adopción de IA a 6 y 12 meses para tu empresa; Definición de stack tecnológico (Gemini, Supabase, Vercel, Cloudflare); Mapeo de arquitectura de datos y requisitos de infraestructura — Tarifa: $2.500.000COP / $625 USD",
+            "url": "https://aiprodig.com/consultoria"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan Acompañamiento Estratégico Continuo",
+            "price": "0",
+            "priceCurrency": "COP",
+            "description": "Rol de Advisor / Asesor de IA externo mensual para la dirección; Supervisión y control de calidad de desarrollos internos o terceros; Validación técnica de entregables, modelos y arquitecturas — Tarifa: ConsultarAsesor / Tarifa personalizada en COP / USD",
+            "url": "https://aiprodig.com/consultoria"
+        }
+    ],
+    "mainEntityOfPage": {
+        "@id": "https://aiprodig.com/consultoria"
     }
+}
     </script>
     <script>
         const canvas = document.getElementById('heroCanvas');
@@ -281,6 +326,39 @@
         animate();
         window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
         document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('active')));
+    </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://aiprodig.com/consultoria#faq",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "¿Qué alcance y entregables incluye la primera hora gratuita de consultoría?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La sesión de 60 minutos permite analizar el estado actual de tus procesos, identificar los 3 principales cuellos de botella automatizables y estimar la viabilidad técnica y el ROI potencial sin ningún compromiso comercial."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Cómo calcula ProDig el retorno de inversión (ROI) de un proyecto de IA?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Cuantificamos el ahorro en horas hombre dedicadas a tareas manuales, la reducción de errores operativos, la aceleración de ciclos de venta y el incremento en capacidad de atención sin aumentar la nómina fija."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Qué metodología se sigue durante un proyecto integral de consultoría tecnológica?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Seguimos un marco de 4 etapas: Diagnóstico y Auditoría de Procesos, Definición de Arquitectura y Stack Tecnológico, Prototipado Rápido en Sprint de Validación y Acompañamiento en el Despliegue en Producción."
+            }
+        }
+    ]
+}
     </script>
 </body>
 </html>

@@ -227,17 +227,62 @@
         </div>
     </footer>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "@id": "https://aiprodig.com/chatbots#service",
-      "name": "Chatbots — Respuesta multimedia y audio interactivo para tu negocio",
-      "description": "Chatbots con respuesta multimedia y audio interactivo. Asistentes virtuales avanzados con IA conversacional para tu empresa.",
-      "provider": {"@id": "https://aiprodig.com/#organization"},
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://aiprodig.com/chatbots"},
-      "areaServed": "Latinoamérica",
-      "serviceType": "Chatbots e IA Conversacional"
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://aiprodig.com/chatbots#service",
+    "name": "Chatbots con IA — Respuesta Multimedia y Asistentes Conversacionales",
+    "description": "Desarrollo de asistentes conversacionales con Gemini API, síntesis de voz y arquitectura A2UI (Agent-to-User Interface) para interacción visual y omnicanal en Web, WhatsApp y plataformas corporativas.",
+    "url": "https://aiprodig.com/chatbots",
+    "provider": {
+        "@id": "https://aiprodig.com/#organization"
+    },
+    "serviceType": "Chatbots de Inteligencia Artificial & A2UI",
+    "category": "Atención al Cliente / IA",
+    "areaServed": [
+        {
+            "@type": "Country",
+            "name": "Colombia"
+        },
+        {
+            "@type": "Place",
+            "name": "Latinoamérica"
+        },
+        {
+            "@type": "Place",
+            "name": "Global"
+        }
+    ],
+    "offers": [
+        {
+            "@type": "Offer",
+            "name": "Plan Starter (Web & WhatsApp)",
+            "price": "1200000",
+            "priceCurrency": "COP",
+            "description": "Asistente conversacional con Gemini API; Base de conocimientos institucional para resolución de FAQs; Captura de datos de leads y envío de alertas a WhatsApp — Tarifa: $1.200.000COP / $300 USD",
+            "url": "https://aiprodig.com/chatbots"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan Pro A2UI (Agent-to-User Interface)",
+            "price": "2800000",
+            "priceCurrency": "COP",
+            "description": "Arquitectura A2UI con manipulación visual del frontend en vivo; Respuestas multimodales con síntesis de voz y generación dinámica; Memoria de contexto persistente sobre Supabase/PostgreSQL — Tarifa: $2.800.000COP / $700 USD",
+            "url": "https://aiprodig.com/chatbots"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan Enterprise (Chatbot Transaccional & ERP)",
+            "price": "0",
+            "priceCurrency": "COP",
+            "description": "Conexión directa a bases de datos SQL, CRMs y ERPs corporativos; Ejecución de pagos, agendamiento y transacciones autónomas; Manejo de lenguaje natural complejo y llamadas a APIs internas — Tarifa: ConsultarAsesor / Tarifa personalizada en COP / USD",
+            "url": "https://aiprodig.com/chatbots"
+        }
+    ],
+    "mainEntityOfPage": {
+        "@id": "https://aiprodig.com/chatbots"
     }
+}
     </script>
     <script>
         const canvas = document.getElementById('heroCanvas');
@@ -277,6 +322,47 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
         document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('active')));
+    </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://aiprodig.com/chatbots#faq",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "¿Qué canales y plataformas se pueden integrar con el chatbot?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Integramos chatbots en WhatsApp Business API, sitios web mediante widgets embebidos, Telegram, Slack, Microsoft Teams y aplicaciones móviles mediante API REST. Toda la lógica de inteligencia, contexto y memoria se mantiene sincronizada entre los distintos canales."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Qué es la tecnología A2UI (Agent-to-User Interface)?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A2UI es una arquitectura desarrollada por ProDig que permite al modelo de IA no solo responder en texto o voz, sino también emitir instrucciones al frontend para cambiar vistas, resaltar productos y desplegar formularios interactivos en tiempo real."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿El chatbot puede conectarse con las bases de datos y CRM de mi empresa?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, nuestros asistentes se conectan directamente a bases de datos SQL (PostgreSQL, Supabase, MySQL), CRMs (HubSpot, Salesforce) y ERPs a través de APIs seguras. Esto permite consultar saldos, crear tickets y ejecutar transacciones de manera autónoma."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Cuánto tiempo toma implementar un chatbot con IA en producción?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Un asistente conversacional estándar para atención al cliente y preguntas frecuentes se despliega en 5 a 10 días laborables. Proyectos avanzados con síntesis de voz o integraciones transaccionales complejas requieren de 2 a 4 semanas."
+            }
+        }
+    ]
+}
     </script>
 </body>
 </html>

@@ -226,17 +226,62 @@
         </div>
     </footer>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "@id": "https://aiprodig.com/capacitacion#service",
-      "name": "Capacitación — Formación presencial e in-company en IA y automatización",
-      "description": "Capacitación en IA y automatización. Formación presencial e in-company para equipos.",
-      "provider": {"@id": "https://aiprodig.com/#organization"},
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://aiprodig.com/capacitacion"},
-      "areaServed": "Latinoamérica",
-      "serviceType": "Capacitación y Formación"
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://aiprodig.com/capacitacion#service",
+    "name": "Capacitación en IA — Talleres Ejecutivos y Bootcamps Técnicos",
+    "description": "Programas prácticos in-company en Bogotá y online para capacitar equipos ejecutivos y de ingeniería en uso de IA generativa, prompting avanzado, RAG y automatización de procesos.",
+    "url": "https://aiprodig.com/capacitacion",
+    "provider": {
+        "@id": "https://aiprodig.com/#organization"
+    },
+    "serviceType": "Capacitación In-Company y Bootcamps Técnicos en Inteligencia Artificial",
+    "category": "Formación Profesional / IA",
+    "areaServed": [
+        {
+            "@type": "Country",
+            "name": "Colombia"
+        },
+        {
+            "@type": "Place",
+            "name": "Latinoamérica"
+        },
+        {
+            "@type": "Place",
+            "name": "Global"
+        }
+    ],
+    "offers": [
+        {
+            "@type": "Offer",
+            "name": "Plan Taller Ejecutivo (IA para Líderes & Equipos)",
+            "price": "1200000",
+            "priceCurrency": "COP",
+            "description": "Taller intensivo in-company (presencial en Bogotá u online); Fundamentos prácticos de IA generativa y prompting profesional; Casos de uso aplicados y evaluación de ROI por área de negocio — Tarifa: $1.200.000COP / $300 USD",
+            "url": "https://aiprodig.com/capacitacion"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan Bootcamp Técnico (Desarrollo & Automatización)",
+            "price": "2800000",
+            "priceCurrency": "COP",
+            "description": "Programa técnico de 4 semanas para desarrolladores y analistas; Construcción de agentes autónomos con Google ADK y Python; Arquitecturas RAG prácticas sobre bases vectoriales (pgvector) — Tarifa: $2.800.000COP / $700 USD",
+            "url": "https://aiprodig.com/capacitacion"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan Programa In-Company a Medida",
+            "price": "0",
+            "priceCurrency": "COP",
+            "description": "Programa diseñado a la medida de los retos y procesos de tu empresa; Diagnóstico previo de necesidades operativas y brecha tecnológica; Resolución de desafíos de negocio reales durante las sesiones — Tarifa: ConsultarAsesor / Tarifa personalizada en COP / USD",
+            "url": "https://aiprodig.com/capacitacion"
+        }
+    ],
+    "mainEntityOfPage": {
+        "@id": "https://aiprodig.com/capacitacion"
     }
+}
     </script>
     <script>
         const canvas = document.getElementById('heroCanvas');
@@ -275,6 +320,39 @@
         animate();
         window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
         document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('active')));
+    </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://aiprodig.com/capacitacion#faq",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "¿Se requieren conocimientos previos de programación para los programas de capacitación?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No es necesario para los módulos ejecutivos y de productividad empresarial, los cuales están diseñados para profesionales sin perfil técnico. Para los bootcamps de desarrollo de agentes e ingeniería RAG se requiere experiencia básica en desarrollo de software."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Cómo se personalizan los talleres in-company para las necesidades de mi empresa?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Previo al taller realizamos una sesión de diagnóstico para relevar los procesos, sistemas y retos concretos de tu organización. Los ejercicios y proyectos desarrollados durante el curso se aplican directamente sobre casos reales de tu negocio."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Los participantes reciben certificación profesional y acompañamiento posterior?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, todos los programas otorgan certificación emitida por ProDig - Prospectiva Digital con respaldo de horas prácticas. Además, incluimos sesiones de mentoría post-capacitación para asegurar la adopción real de lo aprendido."
+            }
+        }
+    ]
+}
     </script>
 </body>
 </html>

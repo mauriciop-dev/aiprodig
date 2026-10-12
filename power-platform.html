@@ -226,17 +226,62 @@
         </div>
     </footer>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "@id": "https://aiprodig.com/power-platform#service",
-      "name": "Power Platform — Ecosistema Microsoft potenciado con Inteligencia Artificial",
-      "description": "Ecosistema Microsoft Power Platform con IA. Power BI, Power Apps, Power Automate potenciados con inteligencia artificial.",
-      "provider": {"@id": "https://aiprodig.com/#organization"},
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://aiprodig.com/power-platform"},
-      "areaServed": "Latinoamérica",
-      "serviceType": "Power Platform y Microsoft IA"
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://aiprodig.com/power-platform#service",
+    "name": "Power Platform con IA — Ecosistema Microsoft Potenciado con IA",
+    "description": "Modernización de flujos y tableros de control con Power BI predictivo, Power Apps corporativas y agentes en Copilot Studio conectados a Dataverse y SharePoint para empresas latinoamericanas.",
+    "url": "https://aiprodig.com/power-platform",
+    "provider": {
+        "@id": "https://aiprodig.com/#organization"
+    },
+    "serviceType": "Automatización y Analítica Empresarial con Microsoft Power Platform",
+    "category": "Productividad Empresarial / Microsoft 365",
+    "areaServed": [
+        {
+            "@type": "Country",
+            "name": "Colombia"
+        },
+        {
+            "@type": "Place",
+            "name": "Latinoamérica"
+        },
+        {
+            "@type": "Place",
+            "name": "Global"
+        }
+    ],
+    "offers": [
+        {
+            "@type": "Offer",
+            "name": "Plan Analytics Predictivo (Power BI + IA)",
+            "price": "1600000",
+            "priceCurrency": "COP",
+            "description": "Dashboards predictivos en Power BI con machine learning integrado; Modelado analítico avanzado en DAX y automatización de datos; Consultas de datos en lenguaje natural para directivos — Tarifa: $1.600.000COP / $400 USD",
+            "url": "https://aiprodig.com/power-platform"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan Apps & Workflows (Power Apps + Copilot)",
+            "price": "3200000",
+            "priceCurrency": "COP",
+            "description": "Aplicación corporativa a medida en Power Apps con Copilot Studio; Flujos automatizados en Power Automate con AI Builder para documentos; Almacenamiento seguro y modelado de datos en Microsoft Dataverse — Tarifa: $3.200.000COP / $800 USD",
+            "url": "https://aiprodig.com/power-platform"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan Transformación Microsoft Enterprise",
+            "price": "0",
+            "priceCurrency": "COP",
+            "description": "Modernización integral de procesos departamentales con Copilot; Conectores personalizados a ERPs, CRMs y APIs corporativas; Políticas de gobierno, seguridad y prevención de fuga de datos (DLP) — Tarifa: ConsultarAsesor / Tarifa personalizada en COP / USD",
+            "url": "https://aiprodig.com/power-platform"
+        }
+    ],
+    "mainEntityOfPage": {
+        "@id": "https://aiprodig.com/power-platform"
     }
+}
     </script>
     <script>
         const canvas = document.getElementById('heroCanvas');
@@ -287,6 +332,39 @@
         animate();
         window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
         document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('active')));
+    </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://aiprodig.com/power-platform#faq",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "¿Qué licenciamiento de Microsoft se requiere para implementar Power Platform con IA?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Se requiere licenciamiento activo de Microsoft 365, complementado con licencias de Power Apps o Power Automate por usuario o por aplicación según el caso de uso. Asesoramos en la optimización de licencias para minimizar el costo operativo de la organización."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Cómo se integra Copilot Studio con los datos y procesos específicos de mi empresa?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Copilot Studio se conecta a través de Dataverse, SharePoint, bases de datos SQL y conectores personalizados a APIs externas. Esto permite a los asistentes corporativos responder preguntas sobre políticas internas y ejecutar flujos autorizados."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Cuánto tiempo toma desarrollar y desplegar una solución en Power Platform?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Un tablero analítico avanzado en Power BI toma de 1 a 2 semanas, mientras que aplicaciones completas en Power Apps con flujos en Power Automate e IA se entregan en 3 a 5 semanas de trabajo estructurado."
+            }
+        }
+    ]
+}
     </script>
 </body>
 </html>

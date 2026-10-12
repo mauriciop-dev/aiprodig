@@ -226,17 +226,62 @@
         </div>
     </footer>
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "@id": "https://aiprodig.com/saas#service",
-      "name": "SaaS — Software como Servicio con agentes constructores",
-      "description": "Desarrollo SaaS con demos funcionales en 48 horas. Agentes constructores para crear tu software como servicio.",
-      "provider": {"@id": "https://aiprodig.com/#organization"},
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://aiprodig.com/saas"},
-      "areaServed": "Latinoamérica",
-      "serviceType": "Desarrollo SaaS"
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://aiprodig.com/saas#service",
+    "name": "SaaS a Medida — Software como Servicio con Agentes Constructores",
+    "description": "Desarrollo ágil de plataformas SaaS escalables sobre Python, Supabase y Vercel. Validación y prototipado rápido en 48 horas con arquitectura multi-inquilino, suscripciones y propiedad total del código.",
+    "url": "https://aiprodig.com/saas",
+    "provider": {
+        "@id": "https://aiprodig.com/#organization"
+    },
+    "serviceType": "Desarrollo de Software como Servicio (SaaS) con Agentes IA",
+    "category": "Desarrollo de Software / Cloud",
+    "areaServed": [
+        {
+            "@type": "Country",
+            "name": "Colombia"
+        },
+        {
+            "@type": "Place",
+            "name": "Latinoamérica"
+        },
+        {
+            "@type": "Place",
+            "name": "Global"
+        }
+    ],
+    "offers": [
+        {
+            "@type": "Offer",
+            "name": "Plan Demo Sprint (MVP en 48h)",
+            "price": "1500000",
+            "priceCurrency": "COP",
+            "description": "Prototipo SaaS funcional y navegable entregado en 48 horas; Arquitectura cloud moderna en Supabase y Vercel; Módulo de autenticación de usuarios y perfiles listo — Tarifa: $1.500.000COP / $375 USD",
+            "url": "https://aiprodig.com/saas"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan Lanzamiento (SaaS en Producción)",
+            "price": "3200000",
+            "priceCurrency": "COP",
+            "description": "Plataforma multi-inquilino (multi-tenant) completa para producción; Pasarela de pagos recurrentes y suscripciones (Stripe / Wompi); Panel administrativo con métricas de uso y gestión de clientes — Tarifa: $3.200.000COP / $800 USD",
+            "url": "https://aiprodig.com/saas"
+        },
+        {
+            "@type": "Offer",
+            "name": "Plan Scale (Arquitectura Enterprise)",
+            "price": "0",
+            "priceCurrency": "COP",
+            "description": "Arquitectura distribuida cloud de alta concurrencia; Microservicios en Python y políticas de aislamiento de datos RLS; Cumplimiento normativo y auditorías de seguridad informática — Tarifa: ConsultarAsesor / Tarifa personalizada en COP / USD",
+            "url": "https://aiprodig.com/saas"
+        }
+    ],
+    "mainEntityOfPage": {
+        "@id": "https://aiprodig.com/saas"
     }
+}
     </script>
     <script>
         const canvas = document.getElementById('heroCanvas');
@@ -268,6 +313,39 @@
         animate();
         window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
         document.querySelectorAll('.faq-question').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('active')));
+    </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://aiprodig.com/saas#faq",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "¿Qué incluye exactamente la entrega de una demo funcional en 48 horas?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Incluye una interfaz de usuario interactiva y navegable, esquema de base de datos en Supabase, autenticación de usuarios funcional y endpoints de API listos para probar la propuesta de valor con usuarios e inversionistas reales."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Quién mantiene la propiedad intelectual y el código fuente del SaaS?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El cliente es el propietario absoluto del código fuente, modelos y activos creados desde el primer día. No generamos dependencias propietarias ni contratos de retención de código."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Qué stack tecnológico se utiliza para asegurar la escalabilidad del SaaS?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Utilizamos arquitecturas cloud-native basadas en Python, Supabase (PostgreSQL con replicación y RLS) y despliegue serverless en Vercel. Este stack soporta desde cientos hasta millones de peticiones mensuales con costes de infraestructura óptimos."
+            }
+        }
+    ]
+}
     </script>
 </body>
 </html>
